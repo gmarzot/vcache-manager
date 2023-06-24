@@ -1,0 +1,213 @@
+[
+    {
+        "id": "953eb73365d84859",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "052b56c89572e05e",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#0eb8c0",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "light-green",
+                "accents": "light-green",
+                "warn": "red",
+                "background": "grey",
+                "palette": "dark"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "01520deab0927305",
+        "type": "ui_tab",
+        "name": "Tab 1",
+        "icon": "dashboard",
+        "order": 1
+    },
+    {
+        "id": "66d92f18708659f1",
+        "type": "ui_group",
+        "name": "Group 1",
+        "tab": "01520deab0927305",
+        "order": 1,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "20322f0058561fd5",
+        "type": "daemon",
+        "z": "953eb73365d84859",
+        "name": "",
+        "command": "salt-master",
+        "args": "",
+        "autorun": true,
+        "cr": true,
+        "redo": true,
+        "op": "string",
+        "closer": "SIGTERM",
+        "x": 350,
+        "y": 40,
+        "wires": [
+            [
+                "702555190bb686fd"
+            ],
+            [
+                "702555190bb686fd"
+            ],
+            [
+                "702555190bb686fd"
+            ]
+        ]
+    },
+    {
+        "id": "702555190bb686fd",
+        "type": "debug",
+        "z": "953eb73365d84859",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 780,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "530b57a13f57ac7e",
+        "type": "inject",
+        "z": "953eb73365d84859",
+        "name": "init",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "start",
+                "v": "true",
+                "vt": "bool"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 90,
+        "y": 40,
+        "wires": [
+            [
+                "20322f0058561fd5"
+            ]
+        ]
+    },
+    {
+        "id": "b50fc4e92efcdb8d",
+        "type": "ui_table",
+        "z": "953eb73365d84859",
+        "group": "66d92f18708659f1",
+        "name": "vCache Nodes",
+        "order": 0,
+        "width": "6",
+        "height": "3",
+        "columns": [],
+        "outputs": 1,
+        "cts": true,
+        "x": 340,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    }
+]

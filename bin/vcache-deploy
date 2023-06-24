@@ -1,0 +1,169 @@
+#!/usr/bin/env perl
+
+use strict;
+
+use FindBin;
+use lib "$FindBin::Bin/../perllib";
+
+use Getopt::Long qw(:config no_ignore_case);
+use File::Basename;
+use File::Path qw(make_path rmtree remove_tree);
+use File::Copy;
+use Cwd 'abs_path';
+
+use Net::OpenSSH::Parallel;
+use Expect;
+$Net::OpenSSH::Parallel::debug = -1;
+
+use Data::Dumper;
+
+my $VCACHE_MGR_ROOT = "$FindBin::Bin/..";
+
+use constant
+  {
+   HOST => 0,
+   USER => 1,
+   KEY => 2,
+   PW => 3
+  };
+
+my $usage = "$0 [-?|--help] [-d|--debug] [-D|--dry-run] [-i|--installer <installer>] [-f|--roster-file <roster-file>] [-u|--ssh-user <ssh-user>] [-p|--ssh-password <ssh-password>] [-k|--ssh-key <ssh-key>] [-h|--ssh-host <ssh-host>]\n";
+
+my $help = 0;
+my $debug = 0;
+my $quiet = 0;
+my $dry_run = 0;
+my $installer;
+my $roster;
+my $ssh_user;
+my $ssh_password;
+my $ssh_key;
+my $ssh_host;
+
+my $date_str = `date +%Y-%m-%d-%H:%m`;chomp $date_str;
+my $app = basename($0);
+my $log_file = "$VCACHE_MGR_ROOT/log/$app-$date_str.log";
+
+sub app_debug {
+  if ($debug) {
+    app_log(@_)
+  }
+}
+
+sub app_log {
+  my $text = join '',@_;
+  my $mod_text = "";
+  foreach my $line (split(/\n/, $text)){
+    $mod_text .= (scalar localtime()).":: ".$line."\n" unless $line =~ /^\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+ \d+/;
+  }
+
+  print $mod_text unless $quiet;
+  print LOG $mod_text;
+}
+
+sub app_cmd {
+    my $cmd = shift;
+    open(F, "$cmd 2>&1 |") or app_die("open failed: $cmd [return: $?]");
+    while (<F>) {
+        app_log($_);
+    }
+    close F; # to set $?
+}
+
+sub app_die {
+  my ($package, $filename, $line) = caller;
+  app_log @_, " ($package, $filename:$line)\n";
+  close_log();
+  exit 1;
+}
+
+sub open_log {
+  if (not -e dirname($log_file)) {
+    mkdir dirname($log_file), 0777;
+  }
+  if (-e $log_file) {
+      unlink $log_file;
+  }
+  open(LOG, '>', $log_file) or die "Could not open $log_file!";
+  print "logging to: $log_file\n";
+}
+
+sub close_log {
+  close LOG;
+  print "log written to: $log_file\n";
+}
+
+GetOptions('help|?' => \$help, 'q|quiet' => \$quiet, 'd|debug' =>\$debug, 'D|dry-run' => \$dry_run,
+		   'i|installer=s' => \$installer, 'r|deployment-roster=s' => \$roster, 'h|ssh-host=s' => \$ssh_host,
+		   'u|ssh-user=s' => \$ssh_user, 'p|ssh-password=s' => \$ssh_password, 'k|ssh-key=s' => \$ssh_key, ) or die($usage);
+
+if ($help) {
+  print $usage; exit 0;
+}
+
+open_log();
+app_die("installer not defined") unless defined($installer);
+app_die("installer not readbale: $installer") unless -r $installer;
+app_die("unable to determine deployment target (no host or roster)") unless defined($ssh_host) or defined($roster);
+app_die("unable to read roster: $roster") if defined($roster) and not -r $roster;
+
+my @deployment_targets = ();
+if (defined($roster)) {
+  app_debug("processing roster: $roster");
+  open(R, '<', $roster) or app_die("could not open roster: $roster ($!)");
+  while (my $entry = <R>) {
+	next if $entry =~ /^\s*$/ or $entry =~ /^\s*#/;
+	app_debug("processing roster entry: $entry");
+	my @entry = split(/(?<!\\),/, $entry); # <host-dns-or-ip[:<port>]>,<user>,[<keyfile[:passphrase]>],[<password>]
+	app_die("unable to parse host: $entry") if not defined($entry[HOST]) or length($entry[HOST])==0;
+	app_die("unable to parse user: $entry") if not defined($entry[USER]) or length($entry[USER])==0;
+	app_die("unable to read keyfile: $entry") if defined($entry[KEY]) and not -r $entry[KEY];
+	push(@deployment_targets, \@entry);
+  }
+  close(R);
+}
+
+if (defined($ssh_host)) {
+  app_die("user not defined for deployment target: $ssh_host") unless defined($ssh_user);
+  app_die("key or password not defined for deployment target: $ssh_host") unless defined($ssh_key) or defined($ssh_password);
+  my $key = (defined($ssh_key)?$ssh_key:'<undef>');
+  my $pw = (defined($ssh_password)?$ssh_password:'<undef>');
+  app_debug("adding ssh host: $ssh_host, $ssh_user, $key, $pw");
+  push(@deployment_targets, [$ssh_host, $ssh_user, $ssh_key, $ssh_password]);
+}
+
+my $pssh = new Net::OpenSSH::Parallel;
+# populate deployment targets
+foreach my $entry (@deployment_targets) {
+  my @args;
+  my ($host,$user,$key,$password) = @{$entry};
+  push(@args, $host, 'user' => $user);
+  my $passphrase;
+  ($key,$passphrase) = split(/:/,$key) if $key =~ /:/;
+  push(@args, 'key_path' => $key) if defined($key);
+#  push(@args, 'passphrase' => $passphrase) if defined($passphrase);
+  push(@args, 'password' => $password) if defined($password); # do not pass password if key is defined
+  $pssh->add_host(@args);
+}
+
+sub install_exp {
+  my ($host, $ssh, @cmd) = @_;
+  my ($pty) = $ssh->open2pty(@cmd);
+  my $expect = Expect->init($pty);
+  $expect->debug(3);
+  $expect->log_stdout(1);
+  $expect->raw_pty(1);
+  $expect->expect(5, ":");
+  $expect->send("test\n");
+  $expect->expect(5, "\n");
+  $expect->raw_pty(0);
+  while(<$expect>) { print };
+  close $expect;
+}
+
+my $remote_installer = '/tmp/' . basename($installer);
+$pssh->push('*', scp_put => $installer, $remote_installer);
+$pssh->push('*', parsub => \&install_exp, $remote_installer);
+
+$pssh->run() unless $dry_run;
+

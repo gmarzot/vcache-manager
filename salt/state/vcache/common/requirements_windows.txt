@@ -1,0 +1,10 @@
+m3u8
+python_hosts
+requests
+pyhamcrest
+beautifulsoup4
+simplejson
+shell
+boto3
+singleton-decorator
+kamene

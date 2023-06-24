@@ -1,20 +1,42 @@
 version: '3'
 
 services:
-  vcache_mgr:
-    image: vcache-mgr
+  vcache_mgr_frontend:
+    image: nginx-perl
     build:
-      context: ./docker-context/node-red
-    container_name: vcache_mgr
-    hostname: ${VCACHE_HOSTNAME}
+      context: ./context
+      dockerfile: ./nginx/Dockerfile
+    container_name: vcache_mgr_frontend
+    hostname: ${VCACHE_MGR_HOSTNAME}
     volumes:
-      - "./mgmt-data:/data"
-      - "./run:/var/run"
-      - "./salt:/srv/salt"
+      - var_run:/var/run
+      - nginx_log:/var/log/nginx
+      - etc_frontend:/etc/nginx
+    networks:
+      - vcache_mgr_net
     ports:
-      - "4505:4505"
-      - "4506:4506"
-      - "1880:1880"     # close this for production
+      - 9443:8443
+    restart: always
+    depends_on:
+      - vcache_mgr
+      
+  vcache_mgr:
+    image: node-red
+    build:
+      context: ./context
+      dockerfile: ./node-red/Dockerfile
+    container_name: vcache_mgr
+    hostname: ${VCACHE_MGR_HOSTNAME}
+    volumes:
+      - ./context/node-red/mgmt-data:/data # comment out for production
+      - var_run:/var/run
+      - nginx_log:/var/log/nginx
+    networks:
+      - vcache_mgr_net
+    ports:
+      - 4505:4505
+      - 4506:4506
+      - 1880:1880     # close this for production
     pid: shareable
     restart: always
     depends_on:
@@ -24,15 +46,21 @@ services:
     image: redis:latest
     container_name: vcache_mgr_redis
     volumes:
-      - "redis_data:/data"
+      - redis_data:/data
     networks:
       - vcache_mgr_net
     # close this for production
     ports:
-      - "6380:6379"
+      - 6379:6379
     restart: always
 
 volumes:
+  nginx_log:
+    name: vcache_mgr_nginx_log
+  var_run:
+    name: vcache_mgr_var_run
+  etc_frontend:
+    name: vcache_mgr_etc_frontend
   redis_data:
     name: vcache_mgr_redis_data
 

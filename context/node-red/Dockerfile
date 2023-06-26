@@ -20,6 +20,7 @@ RUN npm install uuid
 #COPY ./node-red/mgmt-data /data
 #VOLUME /data
 
+COPY ./node-red/etc/vcache-mgr /etc/vcache-mgr
 COPY ./perllib /usr/local/perllib
 COPY ./scripts/* /usr/local/bin
 
@@ -33,5 +34,5 @@ COPY ./node-red/salt /srv/salt
 
 COPY ./node-red/custom-entrypoint.sh /usr/src/node-red/custom-entrypoint.sh
 
-ENTRYPOINT ["/usr/src/node-red/custom-entrypoint.sh"]
+# ENTRYPOINT ["/usr/src/node-red/custom-entrypoint.sh"]
 

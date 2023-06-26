@@ -14,16 +14,18 @@ mkdir release
 GIT_REVISION=$(git describe)
 
 if [[ $? != 0 ]]; then
-    echo "[$?] unabl,e to run `git describe`..."
+    echo "[$?] unable to run `git describe`..."
     exit 2
 fi
 
-echo -n ${GIT_REVISION} > ./run/vcache-version.txt
+echo -n ${GIT_REVISION} > ./.version
+# this will be included in released images
+echo -n ${GIT_REVISION} > ./context/node-red/etc/vcache-mgr/vcache.version
 
 cd ..
 
-mv $SOURCE_DIR vcache-${GIT_REVISION}
+mv $SOURCE_DIR vcache-mgr-${GIT_REVISION}
 
-./vcache-${GIT_REVISION}/makeself.sh --sha256 --nox11 --notemp --tar-extra "--exclude=.env --exclude=uuid.txt --exclude=run/*.pid --exclude=run/*.sock --exclude=log/* --exclude=*.incl --exclude=frontend.cfg --exclude=.git --exclude=.gitignore --exclude=make* --exclude=.venv --exclude=.npm --exclude=release --exclude=*~ ./log" --license LICENSE vcache-${GIT_REVISION} vcache-${GIT_REVISION}/release/vcache-${GIT_REVISION}.run "VCache Deployment" ./bin/vcache-setup.sh
+./vcache-mgr-${GIT_REVISION}/makeself.sh --sha256 --nox11 --notemp --tar-extra "--exclude=.git --exclude=.gitignore --exclude=make* --exclude=.npm --exclude=release --exclude=*~" --license LICENSE vcache-mgr-${GIT_REVISION} vcache-mgr-${GIT_REVISION}/release/vcache-mgr-${GIT_REVISION}.run "vCache Mnagager Deployment" 
 
-mv vcache-${GIT_REVISION} $SOURCE_DIR
+mv vcache-mgr-${GIT_REVISION} $SOURCE_DIR

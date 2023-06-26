@@ -112,13 +112,21 @@ if (defined($roster)) {
   app_debug("processing roster: $roster");
   open(R, '<', $roster) or app_die("could not open roster: $roster ($!)");
   while (my $entry = <R>) {
+	chomp $entry;
 	next if $entry =~ /^\s*$/ or $entry =~ /^\s*#/;
 	app_debug("processing roster entry: $entry");
-	my @entry = split(/(?<!\\),/, $entry); # <host-dns-or-ip[:<port>]>,<user>,[<keyfile[:passphrase]>],[<password>]
-	app_die("unable to parse host: $entry") if not defined($entry[HOST]) or length($entry[HOST])==0;
-	app_die("unable to parse user: $entry") if not defined($entry[USER]) or length($entry[USER])==0;
-	app_die("unable to read keyfile: $entry") if defined($entry[KEY]) and not -r $entry[KEY];
-	push(@deployment_targets, \@entry);
+	my ($host,$user,$key,$pw);
+	# <host-dns-or-ip[:<port>]>,<user>,[<keyfile[:passphrase]>],[<password>]
+	($host,$user,$key,$pw) = split(/(?<!\\),/, $entry,4);
+	app_die("unable to parse host: $host [$entry])") if not defined($host) or length($host)==0;
+	app_die("unable to parse user: $user [$entry]") if not defined($user) or length($user)==0;
+	if (defined($key) and length($key)) {
+	  app_debug("key from roster: $key");
+	  $key = glob($key);
+	  app_debug("key from roster: $key");
+	  app_die("unable to read keyfile: $key [$entry]") unless -r $key;
+	}
+	push(@deployment_targets, [$host,$user,$key,$pw]);
   }
   close(R);
 }
@@ -133,16 +141,20 @@ if (defined($ssh_host)) {
 }
 
 my $pssh = new Net::OpenSSH::Parallel;
+my %sudo_pw;
 # populate deployment targets
 foreach my $entry (@deployment_targets) {
   my @args;
-  my ($host,$user,$key,$password) = @{$entry};
+  my ($host,$user,$key,$pw) = @{$entry};
   push(@args, $host, 'user' => $user);
   my $passphrase;
   ($key,$passphrase) = split(/:/,$key) if $key =~ /:/;
+  app_debug("ssh target - adding entry: $host,$user,$key,$pw");
   push(@args, 'key_path' => $key) if defined($key);
-#  push(@args, 'passphrase' => $passphrase) if defined($passphrase);
-  push(@args, 'password' => $password) if defined($password); # do not pass password if key is defined
+  push(@args, 'passphrase' => $passphrase) if defined($passphrase);
+  push(@args, 'password' => $pw) if defined($pw) and not defined($key); # do not pass password if key is defined
+  push(@args, 'master_opts' => [-o => "UserKnownHostsFile=/dev/null", -o => "StrictHostKeyChecking=no"]);
+  $sudo_pw{$host} = $pw if defined($pw) and length($pw);
   $pssh->add_host(@args);
 }
 
@@ -161,9 +173,27 @@ sub install_exp {
   close $expect;
 }
 
+sub sudo_cmd {
+  my ($label, $ssh, @cmd) = @_;
+  my $pw = $sudo_pw{$label};
+  if (defined($pw)) {
+	my ($pty) = $ssh->open2pty(@cmd);
+	my $expect = Expect->init($pty);
+	$expect->raw_pty(1);
+	$expect->expect(5, ":");
+	$expect->send("$pw\n");
+	$expect->expect(5, "\n");
+	$expect->raw_pty(0);
+	while(<$expect>) { print "$label: $_" };
+	close $expect;
+  } else {
+	app_log("unable to execute @cmd: no sudo password supplied for $label");
+  }
+}
+
 my $remote_installer = '/tmp/' . basename($installer);
 $pssh->push('*', scp_put => $installer, $remote_installer);
-$pssh->push('*', parsub => \&install_exp, $remote_installer);
+$pssh->push('*', parsub => \&sudo_cmd, $remote_installer);
 
 $pssh->run() unless $dry_run;
 

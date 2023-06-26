@@ -2,7 +2,7 @@
     {
         "id": "953eb73365d84859",
         "type": "tab",
-        "label": "Flow 1",
+        "label": "vCache Manager",
         "disabled": false,
         "info": "",
         "env": []
@@ -107,18 +107,112 @@
     {
         "id": "01520deab0927305",
         "type": "ui_tab",
-        "name": "Tab 1",
+        "name": "vCache Manager",
         "icon": "dashboard",
-        "order": 1
+        "order": 1,
+        "disabled": false,
+        "hidden": false
     },
     {
         "id": "66d92f18708659f1",
         "type": "ui_group",
-        "name": "Group 1",
+        "name": "Caches",
         "tab": "01520deab0927305",
         "order": 1,
         "disp": true,
-        "width": 6
+        "width": "18",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "eb3f42549e9aa245",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "66d92f18708659f1",
+        "order": 2,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "d36fb753fa0aaff7",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "66d92f18708659f1",
+        "order": 4,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "e9019b50071bf290",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "66d92f18708659f1",
+        "order": 5,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "21718c30e0ea773e",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "66d92f18708659f1",
+        "order": 6,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "afbda8d6b569b781",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "66d92f18708659f1",
+        "order": 7,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "fa7eba34fcf69364",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "66d92f18708659f1",
+        "order": 8,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "04352ea1a62cae81",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "66d92f18708659f1",
+        "order": 9,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "a4cee90679bd1f0a",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "66d92f18708659f1",
+        "order": 10,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "e06dc52bde8ca85c",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "66d92f18708659f1",
+        "order": 11,
+        "width": 4,
+        "height": 1
     },
     {
         "id": "20322f0058561fd5",
@@ -135,32 +229,10 @@
         "x": 350,
         "y": 40,
         "wires": [
-            [
-                "702555190bb686fd"
-            ],
-            [
-                "702555190bb686fd"
-            ],
-            [
-                "702555190bb686fd"
-            ]
+            [],
+            [],
+            []
         ]
-    },
-    {
-        "id": "702555190bb686fd",
-        "type": "debug",
-        "z": "953eb73365d84859",
-        "name": "debug 1",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 780,
-        "y": 140,
-        "wires": []
     },
     {
         "id": "530b57a13f57ac7e",
@@ -198,16 +270,197 @@
         "z": "953eb73365d84859",
         "group": "66d92f18708659f1",
         "name": "vCache Nodes",
-        "order": 0,
-        "width": "6",
-        "height": "3",
-        "columns": [],
+        "order": 1,
+        "width": 14,
+        "height": 8,
+        "columns": [
+            {
+                "field": "node",
+                "title": "node",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "status",
+                "title": "status",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "cache-eff",
+                "title": "cache eff",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "users",
+                "title": "users",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
         "outputs": 1,
         "cts": true,
-        "x": 340,
-        "y": 380,
+        "x": 600,
+        "y": 320,
         "wires": [
+            [
+                "accef592a1144340"
+            ]
+        ],
+        "inputLabels": [
+            "msg.payload"
+        ]
+    },
+    {
+        "id": "9ca920d805009264",
+        "type": "ui_button",
+        "z": "953eb73365d84859",
+        "name": "Accept All",
+        "group": "66d92f18708659f1",
+        "order": 3,
+        "width": 2,
+        "height": 1,
+        "passthru": false,
+        "label": "Accept All",
+        "tooltip": "Accept all pending cache mgmt registrations",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 780,
+        "y": 320,
+        "wires": [
+            [
+                "1e980162154930d3"
+            ]
+        ]
+    },
+    {
+        "id": "1e980162154930d3",
+        "type": "exec",
+        "z": "953eb73365d84859",
+        "command": "salt-key -y -A",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 950,
+        "y": 100,
+        "wires": [
+            [],
+            [],
             []
+        ]
+    },
+    {
+        "id": "466978b03cbfdd40",
+        "type": "inject",
+        "z": "953eb73365d84859",
+        "name": "poll",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "7",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 70,
+        "y": 160,
+        "wires": [
+            [
+                "623b6c0fa90fd974"
+            ]
+        ]
+    },
+    {
+        "id": "623b6c0fa90fd974",
+        "type": "exec",
+        "z": "953eb73365d84859",
+        "command": "salt '*' test.true --timeout 10 --output json",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "12",
+        "winHide": false,
+        "oldrc": false,
+        "name": "probe minions",
+        "x": 180,
+        "y": 320,
+        "wires": [
+            [
+                "accef592a1144340",
+                "20d20815baf40586"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "accef592a1144340",
+        "type": "debug",
+        "z": "953eb73365d84859",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 500,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "20d20815baf40586",
+        "type": "function",
+        "z": "953eb73365d84859",
+        "name": "minion data",
+        "func": "if (msg.payload.length === 0) return null;\nvar json = JSON.parse(msg.payload);\nvar table = Object.keys(json).map(key => {\n    return {\n        \"node\": key,\n        \"status\": \"up\",\n        \"cache-eff\": 0,\n        \"users\": 0\n    }\n});\nmsg.payload = table;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 320,
+        "wires": [
+            [
+                "b50fc4e92efcdb8d"
+            ]
         ]
     }
 ]

@@ -31,6 +31,8 @@ services:
       - ./context/node-red/mgmt-data:/data # comment out for production
       - var_run:/var/run
       - nginx_log:/var/log/nginx
+      - etc_vcache:/etc/vcache-mgr
+      - etc_frontend:/etc/nginx-fe
     networks:
       - vcache_mgr_net
     ports:
@@ -59,6 +61,8 @@ volumes:
     name: vcache_mgr_nginx_log
   var_run:
     name: vcache_mgr_var_run
+  etc_vcache:
+    name: vcache_mgr_etc_vcache
   etc_frontend:
     name: vcache_mgr_etc_frontend
   redis_data:

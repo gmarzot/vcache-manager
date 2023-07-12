@@ -63,7 +63,7 @@ if [[ -f .env && -r .env ]]; then
 	echo "--------------"
 else
 	echo "generating .env file..."
-	read -p "enter the vcache hostname[$HOSTNAME]: " hostname
+	read -p "enter the vcache manager hostname[$HOSTNAME]: " hostname
 	hostname=${hostname:-$HOSTNAME}
     echo "VCACHE_MGR_HOSTNAME=${hostname}" > .env
 fi

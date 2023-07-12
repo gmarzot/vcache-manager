@@ -903,5 +903,102 @@
                 "file": "/usr/src/node-red/node_modules/node-red-node-smooth/17-smooth.js"
             }
         }
+    },
+    "node-red-upload-file-to-box": {
+        "name": "node-red-upload-file-to-box",
+        "version": "0.0.1",
+        "local": true,
+        "user": true,
+        "nodes": {
+            "face-detection": {
+                "name": "face-detection",
+                "types": [
+                    "img-blur",
+                    "img-box"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-upload-file-to-box",
+                "file": "/data/node_modules/node-red-upload-file-to-box/img-box.js"
+            }
+        }
+    },
+    "node-red-contrib-file-manager": {
+        "name": "node-red-contrib-file-manager",
+        "version": "2.0.8",
+        "local": true,
+        "user": true,
+        "nodes": {
+            "node-red-contrib-file-manager": {
+                "name": "node-red-contrib-file-manager",
+                "types": [
+                    "fm-save-file",
+                    "fm-move-file"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-file-manager",
+                "file": "/data/node_modules/node-red-contrib-file-manager/file-manager.js"
+            }
+        }
+    },
+    "@cappern/node-red-tls-cert-info": {
+        "name": "@cappern/node-red-tls-cert-info",
+        "version": "1.1.3",
+        "local": true,
+        "user": true,
+        "nodes": {
+            "TlsCertInfoNode": {
+                "name": "TlsCertInfoNode",
+                "types": [
+                    "tls-cert-info"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "@cappern/node-red-tls-cert-info",
+                "file": "/data/node_modules/@cappern/node-red-tls-cert-info/TlsCertInfoNode.js"
+            }
+        }
+    },
+    "node-red-contrib-ui-contextmenu": {
+        "name": "node-red-contrib-ui-contextmenu",
+        "version": "2.0.1",
+        "local": true,
+        "user": true,
+        "nodes": {
+            "ui_context_menu": {
+                "name": "ui_context_menu",
+                "types": [
+                    "ui_context_menu"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-ui-contextmenu",
+                "file": "/data/node_modules/node-red-contrib-ui-contextmenu/context_menu.js"
+            }
+        }
+    },
+    "@prescient-devices/node-red-contrib-promptinput": {
+        "name": "@prescient-devices/node-red-contrib-promptinput",
+        "version": "1.0.7",
+        "local": true,
+        "user": true,
+        "nodes": {
+            "promptinput": {
+                "name": "promptinput",
+                "types": [
+                    "promptinput"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "@prescient-devices/node-red-contrib-promptinput",
+                "file": "/data/node_modules/@prescient-devices/node-red-contrib-promptinput/promptinput.js"
+            }
+        }
     }
 }

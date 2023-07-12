@@ -26,6 +26,6 @@ cd ..
 
 mv $SOURCE_DIR vcache-mgr-${GIT_REVISION}
 
-./vcache-mgr-${GIT_REVISION}/makeself.sh --sha256 --nox11 --notemp --tar-extra "--exclude=.git --exclude=.gitignore --exclude=make* --exclude=.npm --exclude=release --exclude=*~" --license LICENSE vcache-mgr-${GIT_REVISION} vcache-mgr-${GIT_REVISION}/release/vcache-mgr-${GIT_REVISION}.run "vCache Mnagager Deployment" 
+./vcache-mgr-${GIT_REVISION}/makeself.sh --sha256 --nox11 --notemp --tar-extra "--exclude=.git --exclude=.gitignore --exclude=make* --exclude=.npm --exclude=release --exclude=*~" --license LICENSE vcache-mgr-${GIT_REVISION} vcache-mgr-${GIT_REVISION}/release/vcache-mgr-${GIT_REVISION}.run "vCache Manager Deployment" ./bin/vcache-mgr-setup.sh 
 
 mv vcache-mgr-${GIT_REVISION} $SOURCE_DIR

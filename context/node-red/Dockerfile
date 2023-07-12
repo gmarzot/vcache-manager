@@ -1,4 +1,4 @@
-FROM nodered/node-red:latest
+FROM nodered/node-red:latest-18
 RUN npm install node-red-contrib-os
 RUN npm install node-red-contrib-fs-ops
 RUN npm install node-red-contrib-cpu
@@ -31,8 +31,14 @@ RUN apk add gettext
 
 RUN apk add salt-master
 COPY ./node-red/salt /srv/salt
+COPY ./node-red/etc/salt/master /etc/salt/master
+COPY ./node-red/etc/salt/reactor.conf /etc/salt/master.d/reactor.conf
+
+apk add py3-pip py3-numpy py3-pandas py3-scikit-learn
+RUN pip install redis
+
+RUN echo "vm.overcommit_memory = 1" >> /etc/sysctl.conf
 
 COPY ./node-red/custom-entrypoint.sh /usr/src/node-red/custom-entrypoint.sh
-
 # ENTRYPOINT ["/usr/src/node-red/custom-entrypoint.sh"]
 

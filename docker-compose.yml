@@ -1,27 +1,8 @@
 version: '3'
 
 services:
-  vcache_mgr_frontend:
-    image: nginx-perl
-    build:
-      context: ./context
-      dockerfile: ./nginx/Dockerfile
-    container_name: vcache_mgr_frontend
-    hostname: ${VCACHE_MGR_HOSTNAME}
-    volumes:
-      - var_run:/var/run
-      - nginx_log:/var/log/nginx
-      - etc_frontend:/etc/nginx
-    networks:
-      - vcache_mgr_net
-    ports:
-      - 9443:8443
-    restart: always
-    depends_on:
-      - vcache_mgr
-      
   vcache_mgr:
-    image: node-red
+    image: vcache-mgr-node-red
     build:
       context: ./context
       dockerfile: ./node-red/Dockerfile
@@ -44,6 +25,26 @@ services:
     depends_on:
       - vcache_mgr_redis
 
+  vcache_mgr_frontend:
+    image: vcache-mgr-nginx-perl
+    build:
+      context: ./context
+      dockerfile: ./nginx/Dockerfile
+    container_name: vcache_mgr_frontend
+    hostname: ${VCACHE_MGR_HOSTNAME}
+    volumes:
+      - var_run:/var/run
+      - nginx_log:/var/log/nginx
+      - etc_frontend:/etc/nginx
+    networks:
+      - vcache_mgr_net
+    ports:
+      - 9443:8443
+    pid: service:vcache_mgr
+    restart: always
+    depends_on:
+      - vcache_mgr
+      
   vcache_mgr_redis:
     image: redis:latest
     container_name: vcache_mgr_redis

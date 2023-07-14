@@ -319,86 +319,6 @@
         "hidden": false
     },
     {
-        "id": "b3e138b5138f9e08",
-        "type": "ui_spacer",
-        "z": "953eb73365d84859",
-        "name": "spacer",
-        "group": "66d92f18708659f1",
-        "order": 2,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "8ab3d4740215bc31",
-        "type": "ui_spacer",
-        "z": "953eb73365d84859",
-        "name": "spacer",
-        "group": "66d92f18708659f1",
-        "order": 3,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "12b9637d70ce53c5",
-        "type": "ui_spacer",
-        "z": "953eb73365d84859",
-        "name": "spacer",
-        "group": "66d92f18708659f1",
-        "order": 4,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "3aaa8740f2fcce23",
-        "type": "ui_spacer",
-        "z": "953eb73365d84859",
-        "name": "spacer",
-        "group": "2bfbf363d31643c1",
-        "order": 3,
-        "width": 2,
-        "height": 1
-    },
-    {
-        "id": "4295dca5da026580",
-        "type": "ui_spacer",
-        "z": "953eb73365d84859",
-        "name": "spacer",
-        "group": "2bfbf363d31643c1",
-        "order": 4,
-        "width": 2,
-        "height": 1
-    },
-    {
-        "id": "3a3d53264f16106e",
-        "type": "ui_spacer",
-        "z": "953eb73365d84859",
-        "name": "spacer",
-        "group": "2871cce383627674",
-        "order": 2,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "b1b1bec682e8d6fe",
-        "type": "ui_spacer",
-        "z": "953eb73365d84859",
-        "name": "spacer",
-        "group": "2871cce383627674",
-        "order": 4,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "ecb5f4707d5ffb49",
-        "type": "ui_spacer",
-        "z": "953eb73365d84859",
-        "name": "spacer",
-        "group": "2871cce383627674",
-        "order": 5,
-        "width": 7,
-        "height": 1
-    },
-    {
         "id": "51ce6aa1.620754",
         "type": "ui_group",
         "name": "ui_control",
@@ -416,6 +336,104 @@
         "order": 1,
         "disabled": false,
         "hidden": false
+    },
+    {
+        "id": "92ca2c694d9d5c55",
+        "type": "redis-config",
+        "name": "vcache_mgr_redis:6379",
+        "options": "{\"host\":\"vcache_mgr_redis\",\"db\":0}",
+        "cluster": false,
+        "optionsType": "json"
+    },
+    {
+        "id": "cc5e5a3051cde4f0",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "66d92f18708659f1",
+        "order": 2,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "674ac7a150b6259c",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "66d92f18708659f1",
+        "order": 3,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "a0805855c6a245cb",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "66d92f18708659f1",
+        "order": 4,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "3ec6ff38020a7ec2",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "2bfbf363d31643c1",
+        "order": 2,
+        "width": 16,
+        "height": 1
+    },
+    {
+        "id": "f33980483bd80a16",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "2871cce383627674",
+        "order": 1,
+        "width": 10,
+        "height": 1
+    },
+    {
+        "id": "1c6ce972356febc5",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "2871cce383627674",
+        "order": 3,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "de268e1669493d5f",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "2871cce383627674",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "ca9838713e165aeb",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "2871cce383627674",
+        "order": 7,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "5b59999a1eea7274",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "2871cce383627674",
+        "order": 8,
+        "width": 9,
+        "height": 1
     },
     {
         "id": "208379c0.81563e",
@@ -554,8 +572,8 @@
         "z": "19ad2b6f.f11b85",
         "group": "2871cce383627674",
         "name": "Upload",
-        "order": 1,
-        "width": 11,
+        "order": 4,
+        "width": 9,
         "height": 2,
         "format": "<form id=\"upload_form\" enctype=\"multipart/form-data\" method=\"post\">\n    <input type=\"file\" name=\"file1\" id=\"file1\"><br>\n    <input type=\"button\" value=\"Upload File\" onclick=\"uploadFile()\">\n    <progress id=\"progressBar\" value=\"0\" max=\"100\" style=\"width:300px;\"></progress>\n    <p id=\"status\"></p>\n    <p id=\"loaded_n_total\"></p>\n</form>\n\n<script>\n    function _(el){\n    return document.getElementById(el);\n}\nfunction uploadFile(){\n    var file = _(\"file1\").files[0];\n    // alert(file.name+\" | \"+file.size+\" | \"+file.type);\n    var formdata = new FormData();\n    formdata.append(\"file1\", file);\n    var ajax = new XMLHttpRequest();\n    ajax.upload.addEventListener(\"progress\", progressHandler, false);\n    ajax.addEventListener(\"load\", completeHandler, false);\n    ajax.addEventListener(\"error\", errorHandler, false);\n    ajax.addEventListener(\"abort\", abortHandler, false);\n    ajax.open(\"POST\", \"/fileupload\");\n    ajax.send(formdata);\n}\nfunction progressHandler(event){\n    _(\"loaded_n_total\").innerHTML = \"Uploaded \"+event.loaded+\" bytes of \"+event.total;\n    var percent = (event.loaded / event.total) * 100;\n    _(\"progressBar\").value = Math.round(percent);\n    _(\"status\").innerHTML = Math.round(percent)+\"% uploaded... please wait\";\n}\nfunction completeHandler(event){\n    _(\"status\").innerHTML = event.target.responseText;\n    _(\"progressBar\").value = 0;\n}\nfunction errorHandler(event){\n    _(\"status\").innerHTML = \"Upload Failed\";\n}\nfunction abortHandler(event){\n    _(\"status\").innerHTML = \"Upload Aborted\";\n}\n</script>",
         "storeOutMessages": true,
@@ -1060,21 +1078,17 @@
         "z": "953eb73365d84859",
         "name": "",
         "command": "salt-master",
-        "args": "",
+        "args": "-l debug",
         "autorun": false,
         "cr": false,
         "redo": true,
         "op": "string",
         "closer": "SIGTERM",
-        "x": 290,
+        "x": 270,
         "y": 40,
         "wires": [
-            [
-                "0981b4b596408865"
-            ],
-            [
-                "0981b4b596408865"
-            ],
+            [],
+            [],
             []
         ]
     },
@@ -1100,7 +1114,7 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 110,
+        "x": 90,
         "y": 40,
         "wires": [
             [
@@ -1114,7 +1128,7 @@
         "z": "953eb73365d84859",
         "name": "Accept All",
         "group": "2bfbf363d31643c1",
-        "order": 2,
+        "order": 1,
         "width": 2,
         "height": 1,
         "passthru": false,
@@ -1128,8 +1142,8 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 920,
-        "y": 400,
+        "x": 620,
+        "y": 420,
         "wires": [
             [
                 "1e980162154930d3"
@@ -1148,19 +1162,21 @@
         "winHide": false,
         "oldrc": false,
         "name": "",
-        "x": 1090,
-        "y": 400,
+        "x": 870,
+        "y": 420,
         "wires": [
             [],
             [],
-            []
+            [
+                "d6147e86664e5e9b"
+            ]
         ]
     },
     {
         "id": "466978b03cbfdd40",
         "type": "inject",
         "z": "953eb73365d84859",
-        "name": "poll",
+        "name": "poll (7)",
         "props": [
             {
                 "p": "payload"
@@ -1177,12 +1193,12 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 110,
-        "y": 160,
+        "x": 100,
+        "y": 200,
         "wires": [
             [
                 "10f3fcd2a840965b",
-                "a5aefc95535d6fd1"
+                "e573f44cd6952735"
             ]
         ]
     },
@@ -1197,30 +1213,11 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 490,
-        "y": 160,
+        "x": 510,
+        "y": 200,
         "wires": [
             [
                 "c347b6521867b6fb"
-            ]
-        ]
-    },
-    {
-        "id": "56d02ee6f9a91524",
-        "type": "function",
-        "z": "953eb73365d84859",
-        "name": "pending minion data",
-        "func": "if (msg.payload.length === 0) return null;\nvar json = JSON.parse(msg.payload);\nvar table = json[\"minions_pre\"].map((node) => (\n    {\n        \"node\": node,\n        \"status\": \"up\",\n        \"cache-eff\": 0,\n        \"client_bw\": 0,\n        \"upstream_bw\": 0,\n        \"users\": 0\n    }\n));\nmsg.payload = table;\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 500,
-        "y": 400,
-        "wires": [
-            [
-                "86e8dc8c61d45169"
             ]
         ]
     },
@@ -1237,7 +1234,7 @@
         "oldrc": false,
         "name": "probe minions",
         "x": 280,
-        "y": 180,
+        "y": 200,
         "wires": [
             [
                 "20d20815baf40586"
@@ -1254,19 +1251,21 @@
         "env": [
             {
                 "name": "UPLOAD_DIR",
-                "value": "./",
+                "value": "/tmp",
                 "type": "str"
             },
             {
                 "name": "EXTENSIONS",
-                "value": "[\"p12\",\"pkcs12\",\"pfx\"]",
+                "value": "[\"p12\",\"pkcs12\",\"pfx\",\"pem\"]",
                 "type": "json"
             }
         ],
-        "x": 740,
-        "y": 480,
+        "x": 120,
+        "y": 500,
         "wires": [
-            []
+            [
+                "469da55fab1bd5c1"
+            ]
         ]
     },
     {
@@ -1275,9 +1274,9 @@
         "z": "953eb73365d84859",
         "name": "",
         "label": "password",
-        "tooltip": "",
+        "tooltip": "pkcs12 password (blank if none)",
         "group": "2871cce383627674",
-        "order": 3,
+        "order": 6,
         "width": 5,
         "height": 1,
         "passthru": true,
@@ -1287,8 +1286,8 @@
         "sendOnBlur": false,
         "className": "",
         "topicType": "msg",
-        "x": 940,
-        "y": 480,
+        "x": 440,
+        "y": 500,
         "wires": [
             []
         ]
@@ -1368,8 +1367,8 @@
                 "module": "clone"
             }
         ],
-        "x": 680,
-        "y": 220,
+        "x": 720,
+        "y": 260,
         "wires": [
             [
                 "567783dfb28f09df"
@@ -1416,7 +1415,7 @@
         "checkall": "false",
         "repair": false,
         "outputs": 2,
-        "x": 890,
+        "x": 870,
         "y": 320,
         "wires": [
             [],
@@ -1448,26 +1447,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1080,
+        "x": 1060,
         "y": 320,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "86e8dc8c61d45169",
-        "type": "ui_table",
-        "z": "953eb73365d84859",
-        "group": "2bfbf363d31643c1",
-        "name": "NodesPending",
-        "order": 1,
-        "width": 16,
-        "height": 3,
-        "columns": [],
-        "outputs": 1,
-        "cts": true,
-        "x": 740,
-        "y": 400,
         "wires": [
             []
         ]
@@ -1567,46 +1548,50 @@
         ]
     },
     {
-        "id": "a5aefc95535d6fd1",
-        "type": "exec",
-        "z": "953eb73365d84859",
-        "command": "salt-key -L --output json",
-        "addpay": "",
-        "append": "",
-        "useSpawn": "false",
-        "timer": "12",
-        "winHide": false,
-        "oldrc": false,
-        "name": "probe minions",
-        "x": 280,
-        "y": 400,
-        "wires": [
-            [
-                "56d02ee6f9a91524"
-            ],
-            [],
-            []
-        ]
-    },
-    {
         "id": "17f908c5c029e02d",
         "type": "function",
         "z": "953eb73365d84859",
-        "name": "init table",
+        "name": "re-init table",
         "func": "global.set(\"nodeData\", [], \"nodes\")\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 260,
+        "x": 270,
         "y": 100,
         "wires": [
             []
         ]
     },
     {
-        "id": "0981b4b596408865",
+        "id": "d6147e86664e5e9b",
+        "type": "exec",
+        "z": "953eb73365d84859",
+        "command": "sleep 5; salt '*' saltutil.sync_beacons",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "sync beacons",
+        "x": 1100,
+        "y": 420,
+        "wires": [
+            [
+                "310f84861a29be4f"
+            ],
+            [
+                "310f84861a29be4f"
+            ],
+            [
+                "310f84861a29be4f"
+            ]
+        ]
+    },
+    {
+        "id": "310f84861a29be4f",
         "type": "debug",
         "z": "953eb73365d84859",
         "name": "debug 5",
@@ -1617,9 +1602,126 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 520,
-        "y": 40,
+        "x": 1120,
+        "y": 680,
         "wires": []
+    },
+    {
+        "id": "3a60dfa8e2ea231a",
+        "type": "inject",
+        "z": "953eb73365d84859",
+        "name": "inject",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 90,
+        "y": 100,
+        "wires": [
+            [
+                "17f908c5c029e02d"
+            ]
+        ]
+    },
+    {
+        "id": "e573f44cd6952735",
+        "type": "redis-command",
+        "z": "953eb73365d84859",
+        "server": "92ca2c694d9d5c55",
+        "command": "KEYS",
+        "name": "vcache nodes",
+        "topic": "vcache:*",
+        "params": "",
+        "paramsType": "json",
+        "payloadType": "json",
+        "block": false,
+        "x": 280,
+        "y": 260,
+        "wires": [
+            [
+                "3a9bce3d609e11ce"
+            ]
+        ]
+    },
+    {
+        "id": "469da55fab1bd5c1",
+        "type": "debug",
+        "z": "953eb73365d84859",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "f886bb801a5b9919",
+        "type": "redis-instance",
+        "z": "953eb73365d84859",
+        "server": "92ca2c694d9d5c55",
+        "name": "vcache_mgr_redis",
+        "topic": "redis",
+        "location": "global",
+        "x": 110,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "3a9bce3d609e11ce",
+        "type": "function",
+        "z": "953eb73365d84859",
+        "name": "function 1",
+        "func": "const redis = global.get('redis'); // Assumes Redis client is globally available\n\n// Function to retrieve hash objects for each key\nfunction getHashObjects(keys, callback) {\n    const hashObjects = [];\n    let count = 0;\n    keys.forEach(function (key) {\n        redis.hgetall(key, function (err, hash) {\n            if (err) {\n                callback(err);\n                return;\n            }\n            hashObjects.push(hash);\n            count++;\n            if (count === keys.length) {\n                callback(null, hashObjects);\n            }\n        });\n    });\n}\n\n// Main function\ngetHashObjects(msg.payload, function (err, hashObjects) {\n    if (err) {\n        node.error(err);\n        return;\n    }\n    msg.payload = hashObjects;\n    return msg;\n});\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 380,
+        "wires": [
+            [
+                "469da55fab1bd5c1"
+            ]
+        ]
+    },
+    {
+        "id": "6349b7a97ec7d3e7",
+        "type": "ui_text_input",
+        "z": "953eb73365d84859",
+        "name": "certificate tag",
+        "label": "certificate tag",
+        "tooltip": "certificate tag name identifying the destination",
+        "group": "2871cce383627674",
+        "order": 2,
+        "width": 5,
+        "height": 1,
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 290,
+        "y": 500,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "885b77a57ea1e3ac",

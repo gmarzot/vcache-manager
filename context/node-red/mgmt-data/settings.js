@@ -479,6 +479,17 @@ module.exports = {
      *  ioMiddleware:{function or array}, (socket,next) - socket.io middleware
      */
     //ui: { path: "ui" },
+    ui: {
+                path: "ui",
+                middleware: function (req, res, next) {
+        path = require('path')
+        if (['/OK.jpg','/icon64x64.png', '/icon120x120.png', '/icon192x192.png'].includes(req.url)) {
+          res.sendFile(path.resolve(path.join(__dirname, '/icons', req.url)))
+        } else {
+          next()
+        }
+      }
+    },
 
     /** Colourise the console output of the debug node */
     //debugUseColors: true,

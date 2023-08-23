@@ -8,17 +8,17 @@
         "env": []
     },
     {
-        "id": "9a56025e8414a3d5",
+        "id": "08ebeea6e2046abd",
         "type": "tab",
-        "label": "Table demo",
+        "label": "Configuration",
         "disabled": false,
         "info": "",
         "env": []
     },
     {
-        "id": "f27cc9072e20fd59",
+        "id": "9a56025e8414a3d5",
         "type": "tab",
-        "label": "Flow 1",
+        "label": "Table demo",
         "disabled": false,
         "info": "",
         "env": []
@@ -118,7 +118,7 @@
             "darkTheme": {
                 "default": "#097479",
                 "baseColor": "#097479",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "baseFont": "Lucida Sans Typewriter,Lucida Console,Monaco,monospace",
                 "edited": true,
                 "reset": false
             },
@@ -171,7 +171,7 @@
                     "edited": false
                 },
                 "base-font": {
-                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                    "value": "Lucida Sans Typewriter,Lucida Console,Monaco,monospace"
                 }
             },
             "angularTheme": {
@@ -183,7 +183,7 @@
             }
         },
         "site": {
-            "name": "Node-RED Dashboard",
+            "name": "vCache Manager",
             "hideToolbar": "false",
             "allowSwipe": "false",
             "lockMenu": "false",
@@ -217,18 +217,18 @@
         "tab": "01520deab0927305",
         "order": 1,
         "disp": true,
-        "width": 18,
+        "width": 19,
         "collapse": true,
         "className": ""
     },
     {
         "id": "2bfbf363d31643c1",
         "type": "ui_group",
-        "name": "vCache Nodes (pending)",
-        "tab": "01520deab0927305",
-        "order": 2,
+        "name": "Pending Nodes",
+        "tab": "94c965dfa02ebec9",
+        "order": 1,
         "disp": true,
-        "width": 18,
+        "width": "19",
         "collapse": true,
         "className": ""
     },
@@ -237,26 +237,208 @@
         "type": "ui_group",
         "name": "Certificate Upload",
         "tab": "01520deab0927305",
-        "order": 3,
+        "order": 2,
         "disp": true,
-        "width": 18,
+        "width": 19,
         "collapse": false,
         "className": ""
     },
     {
-        "id": "53cf504.e9555b",
-        "type": "ui_group",
-        "name": "test",
-        "tab": "52aaa596.768b7c",
-        "order": 1,
-        "disp": true,
-        "width": "12"
+        "id": "92ca2c694d9d5c55",
+        "type": "redis-config",
+        "name": "vcache_mgr_redis:6379",
+        "options": "{\"host\":\"vcache_mgr_redis\",\"db\":0}",
+        "cluster": false,
+        "optionsType": "json"
     },
     {
-        "id": "52aaa596.768b7c",
+        "id": "94c965dfa02ebec9",
         "type": "ui_tab",
-        "name": "Test",
-        "icon": "dashboard"
+        "name": "Configuration",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "df0d18fc21c1e03c",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "66d92f18708659f1",
+        "order": 2,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "f9e4191bb0c85a8d",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "66d92f18708659f1",
+        "order": 3,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "9b78a7e8634be13a",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "66d92f18708659f1",
+        "order": 4,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "b92ea40f96e2eaf4",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "66d92f18708659f1",
+        "order": 5,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "c03018c2a016ab7a",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "2871cce383627674",
+        "order": 1,
+        "width": 10,
+        "height": 1
+    },
+    {
+        "id": "ba2ea0a60eb7cf69",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "2871cce383627674",
+        "order": 3,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "24689e1ffc6951d3",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "2871cce383627674",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "83fa158c026c0be8",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "2871cce383627674",
+        "order": 7,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "f0d4c8602c045d57",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "2871cce383627674",
+        "order": 8,
+        "width": 10,
+        "height": 1
+    },
+    {
+        "id": "90cedd2a8446aa03",
+        "type": "ui_group",
+        "name": "Rejected Nodes",
+        "tab": "94c965dfa02ebec9",
+        "order": 2,
+        "disp": true,
+        "width": 19,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "2da8a42232fce766",
+        "type": "ui_spacer",
+        "z": "08ebeea6e2046abd",
+        "name": "spacer",
+        "group": "2bfbf363d31643c1",
+        "order": 2,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "40c8f8f860bce829",
+        "type": "ui_spacer",
+        "z": "08ebeea6e2046abd",
+        "name": "spacer",
+        "group": "2bfbf363d31643c1",
+        "order": 4,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "74349c7fb9a9e917",
+        "type": "ui_spacer",
+        "z": "08ebeea6e2046abd",
+        "name": "spacer",
+        "group": "2bfbf363d31643c1",
+        "order": 6,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "bb6d185b3fa228f4",
+        "type": "ui_spacer",
+        "z": "08ebeea6e2046abd",
+        "name": "spacer",
+        "group": "2bfbf363d31643c1",
+        "order": 8,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "73f8a57304b2ea9c",
+        "type": "ui_spacer",
+        "z": "08ebeea6e2046abd",
+        "name": "spacer",
+        "group": "2bfbf363d31643c1",
+        "order": 10,
+        "width": 18,
+        "height": 1
+    },
+    {
+        "id": "e2d9d8c893f54955",
+        "type": "ui_spacer",
+        "z": "08ebeea6e2046abd",
+        "name": "spacer",
+        "group": "90cedd2a8446aa03",
+        "order": 2,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "fcf6b2d069160ad1",
+        "type": "ui_spacer",
+        "z": "08ebeea6e2046abd",
+        "name": "spacer",
+        "group": "90cedd2a8446aa03",
+        "order": 4,
+        "width": 9,
+        "height": 1
+    },
+    {
+        "id": "87d1a1edfdbbfb91",
+        "type": "ui_spacer",
+        "z": "08ebeea6e2046abd",
+        "name": "spacer",
+        "group": "90cedd2a8446aa03",
+        "order": 6,
+        "width": 18,
+        "height": 1
     },
     {
         "id": "3a8f4976ca221093",
@@ -317,123 +499,6 @@
         "order": 5,
         "disabled": false,
         "hidden": false
-    },
-    {
-        "id": "51ce6aa1.620754",
-        "type": "ui_group",
-        "name": "ui_control",
-        "tab": "3b08fac0.8f06b6",
-        "order": 1,
-        "disp": true,
-        "width": "22",
-        "collapse": false
-    },
-    {
-        "id": "3b08fac0.8f06b6",
-        "type": "ui_tab",
-        "name": "Home",
-        "icon": "track_changes",
-        "order": 1,
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "92ca2c694d9d5c55",
-        "type": "redis-config",
-        "name": "vcache_mgr_redis:6379",
-        "options": "{\"host\":\"vcache_mgr_redis\",\"db\":0}",
-        "cluster": false,
-        "optionsType": "json"
-    },
-    {
-        "id": "cc5e5a3051cde4f0",
-        "type": "ui_spacer",
-        "z": "953eb73365d84859",
-        "name": "spacer",
-        "group": "66d92f18708659f1",
-        "order": 2,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "674ac7a150b6259c",
-        "type": "ui_spacer",
-        "z": "953eb73365d84859",
-        "name": "spacer",
-        "group": "66d92f18708659f1",
-        "order": 3,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "a0805855c6a245cb",
-        "type": "ui_spacer",
-        "z": "953eb73365d84859",
-        "name": "spacer",
-        "group": "66d92f18708659f1",
-        "order": 4,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "3ec6ff38020a7ec2",
-        "type": "ui_spacer",
-        "z": "953eb73365d84859",
-        "name": "spacer",
-        "group": "2bfbf363d31643c1",
-        "order": 2,
-        "width": 16,
-        "height": 1
-    },
-    {
-        "id": "f33980483bd80a16",
-        "type": "ui_spacer",
-        "z": "953eb73365d84859",
-        "name": "spacer",
-        "group": "2871cce383627674",
-        "order": 1,
-        "width": 10,
-        "height": 1
-    },
-    {
-        "id": "1c6ce972356febc5",
-        "type": "ui_spacer",
-        "z": "953eb73365d84859",
-        "name": "spacer",
-        "group": "2871cce383627674",
-        "order": 3,
-        "width": 3,
-        "height": 1
-    },
-    {
-        "id": "de268e1669493d5f",
-        "type": "ui_spacer",
-        "z": "953eb73365d84859",
-        "name": "spacer",
-        "group": "2871cce383627674",
-        "order": 5,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "ca9838713e165aeb",
-        "type": "ui_spacer",
-        "z": "953eb73365d84859",
-        "name": "spacer",
-        "group": "2871cce383627674",
-        "order": 7,
-        "width": 3,
-        "height": 1
-    },
-    {
-        "id": "5b59999a1eea7274",
-        "type": "ui_spacer",
-        "z": "953eb73365d84859",
-        "name": "spacer",
-        "group": "2871cce383627674",
-        "order": 8,
-        "width": 9,
-        "height": 1
     },
     {
         "id": "208379c0.81563e",
@@ -1073,26 +1138,6 @@
         ]
     },
     {
-        "id": "20322f0058561fd5",
-        "type": "daemon",
-        "z": "953eb73365d84859",
-        "name": "",
-        "command": "salt-master",
-        "args": "-l debug",
-        "autorun": false,
-        "cr": false,
-        "redo": true,
-        "op": "string",
-        "closer": "SIGTERM",
-        "x": 270,
-        "y": 40,
-        "wires": [
-            [],
-            [],
-            []
-        ]
-    },
-    {
         "id": "530b57a13f57ac7e",
         "type": "inject",
         "z": "953eb73365d84859",
@@ -1115,60 +1160,11 @@
         "payload": "",
         "payloadType": "date",
         "x": 90,
-        "y": 40,
+        "y": 220,
         "wires": [
             [
-                "20322f0058561fd5"
-            ]
-        ]
-    },
-    {
-        "id": "9ca920d805009264",
-        "type": "ui_button",
-        "z": "953eb73365d84859",
-        "name": "Accept All",
-        "group": "2bfbf363d31643c1",
-        "order": 1,
-        "width": 2,
-        "height": 1,
-        "passthru": false,
-        "label": "Accept All",
-        "tooltip": "Accept all pending cache mgmt registrations",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "payload": "",
-        "payloadType": "str",
-        "topic": "topic",
-        "topicType": "msg",
-        "x": 620,
-        "y": 420,
-        "wires": [
-            [
-                "1e980162154930d3"
-            ]
-        ]
-    },
-    {
-        "id": "1e980162154930d3",
-        "type": "exec",
-        "z": "953eb73365d84859",
-        "command": "salt-key -y -A",
-        "addpay": "",
-        "append": "",
-        "useSpawn": "false",
-        "timer": "",
-        "winHide": false,
-        "oldrc": false,
-        "name": "",
-        "x": 870,
-        "y": 420,
-        "wires": [
-            [],
-            [],
-            [
-                "d6147e86664e5e9b"
+                "9c1cae2c8cd579f1",
+                "8b6caa4128b0ab62"
             ]
         ]
     },
@@ -1194,102 +1190,11 @@
         "payload": "",
         "payloadType": "date",
         "x": 100,
-        "y": 200,
+        "y": 440,
         "wires": [
             [
-                "10f3fcd2a840965b",
                 "e573f44cd6952735"
             ]
-        ]
-    },
-    {
-        "id": "20d20815baf40586",
-        "type": "function",
-        "z": "953eb73365d84859",
-        "name": "minion data",
-        "func": "if (msg.payload.length === 0) return null;\nvar json = JSON.parse(msg.payload);\nvar table = json[\"minions\"].map((node) => (\n    {\n        \"node\": node,\n        \"status\": \"up\",\n        \"cache_eff\": Math.round(100 * Math.random()),\n        \"client_bw\": Math.round(100 * Math.random()),\n        \"upstream_bw\": Math.round(100 * Math.random()),\n        \"users\": Math.round(100 * Math.random()),\n    }\n    ));\nif (\"down\" in json &&  json[\"down\"].length > 0) {\n    table = [...table,\n        ...json[\"down\"].map((node) => (\n            {\n                \"node\": node,\n                \"status\": \"down\",\n                \"cache_eff\": 0,\n                \"client_bw\": 0,\n                \"upstream_bw\": 0,\n                \"users\": 0,\n            }\n        ))\n    ]\n}\n\nmsg.payload = table;\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 510,
-        "y": 200,
-        "wires": [
-            [
-                "c347b6521867b6fb"
-            ]
-        ]
-    },
-    {
-        "id": "10f3fcd2a840965b",
-        "type": "exec",
-        "z": "953eb73365d84859",
-        "command": "salt-key -L --output json",
-        "addpay": "",
-        "append": "",
-        "useSpawn": "false",
-        "timer": "30",
-        "winHide": false,
-        "oldrc": false,
-        "name": "probe minions",
-        "x": 280,
-        "y": 200,
-        "wires": [
-            [
-                "20d20815baf40586"
-            ],
-            [],
-            []
-        ]
-    },
-    {
-        "id": "3696af61.5b451",
-        "type": "subflow:19ad2b6f.f11b85",
-        "z": "953eb73365d84859",
-        "name": "certificate upload",
-        "env": [
-            {
-                "name": "UPLOAD_DIR",
-                "value": "/tmp",
-                "type": "str"
-            },
-            {
-                "name": "EXTENSIONS",
-                "value": "[\"p12\",\"pkcs12\",\"pfx\",\"pem\"]",
-                "type": "json"
-            }
-        ],
-        "x": 120,
-        "y": 500,
-        "wires": [
-            [
-                "469da55fab1bd5c1"
-            ]
-        ]
-    },
-    {
-        "id": "b1d1fd628d350803",
-        "type": "ui_text_input",
-        "z": "953eb73365d84859",
-        "name": "",
-        "label": "password",
-        "tooltip": "pkcs12 password (blank if none)",
-        "group": "2871cce383627674",
-        "order": 6,
-        "width": 5,
-        "height": 1,
-        "passthru": true,
-        "mode": "password",
-        "delay": 300,
-        "topic": "topic",
-        "sendOnBlur": false,
-        "className": "",
-        "topicType": "msg",
-        "x": 440,
-        "y": 500,
-        "wires": [
-            []
         ]
     },
     {
@@ -1298,8 +1203,8 @@
         "z": "953eb73365d84859",
         "name": "Refresh",
         "events": "all",
-        "x": 500,
-        "y": 260,
+        "x": 280,
+        "y": 500,
         "wires": [
             [
                 "27eedc6ffafb236a"
@@ -1324,7 +1229,7 @@
         "payload": "change",
         "payloadType": "str",
         "x": 100,
-        "y": 320,
+        "y": 560,
         "wires": [
             [
                 "27eedc6ffafb236a"
@@ -1336,14 +1241,14 @@
         "type": "function",
         "z": "953eb73365d84859",
         "name": "refresh table",
-        "func": "if ([\"connect\", \"change\"].includes(msg.payload)) {\n  const fields = [\"node\", \"status\", \"cache_eff\", \"client_bw\", \"upstream_bw\",\"users\"]\n  const dataSorted =\n    \"function (sorters, rows) { const ret = sorters.map((item) => { return { column: item.field, dir: item.dir }});const ids = rows.map((item)=>item.getData().id);this.send({payload:{sorters:ret,ids}});}\";\n  const rowContext = \"function (e, row) { e.preventDefault(); console.log(\\\"Right clickt! \\\", row.getData());}\";\n  const effLegend = \"function (value) { return (value > 0) ? '&nbsp;&nbsp;' + value + ' %' : '-'; }\";\n  msg = {}; \n  msg.refresh = true\n  msg.payload = []\n  msg.ui_control = {\n    tabulator: {\n      rowContext: rowContext,\n      initialSort: (global.get(\"nodeSort\", \"nodes\") || {}).sorters || [],\n      dataSorted,\n      columns: [\n        {\n          field: \"node\",\n          title: \"Node\",\n          align: \"center\",\n          sorter: \"string\",\n        },\n        {\n          field: \"status\",\n          title: \"Status\",\n          align: \"center\",\n          sorter: \"string\",\n        },\n        {\n          field: \"cache_eff\",\n          title: \"Cache Eff [%]\",\n          align: \"left\",\n          formatter: \"progress\",\n          formatterParams: {\n            legend: effLegend,\n            legendColor: \"#101010\",\n            legendAlign: \"center\",\n          },\n          sorter: \"number\",\n        },\n        {\n          field: \"client_bw\",\n          title: \"Client BW\",\n          align: \"center\",\n          sorter: \"number\",\n        }, \n        {\n          field: \"upstream_bw\",\n          title: \"Upstream BW\",\n          align: \"center\",\n          sorter: \"number\",\n        }, \n        {\n          field: \"users\",\n          title: \"Users\",\n          align: \"center\",\n          sorter: \"number\",\n        },\n      ],\n    },\n  }\n  return msg\n}\n",
+        "func": "if ([\"connect\", \"change\"].includes(msg.payload)) {\n  const fields = [\"node\", \"status\", \"cpu_use_pct\", \"mem_use_pct\", \"client_bw\", \"upstream_bw\", \"users\",\"cache_eff\", ]\n  const dataSorted =\n    \"function (sorters, rows) { const ret = sorters.map((item) => { return { column: item.field, dir: item.dir }});const ids = rows.map((item)=>item.getData().id);this.send({payload:{sorters:ret,ids}});}\";\n  const rowContext = \"function (e, row) { e.preventDefault(); console.log(\\\"Right clickt! \\\", row.getData());console.log(\\\"e event:\\\", e); this.send({payload: {row: row.getData(), clientX: e.clientX, clientY: e.clientY}});}\";\n  const effLegend = \"function (value) { return (value >= 0) ? '&nbsp;&nbsp;' + value + ' %' : '-'; }\";\n  const statusColor = \"function (value) { if (value==0) return 'lightgray'; if (value==1) return 'springgreen'; if (value==2) return 'gold'; if (value==3) return 'red'; return 'black';}\";\n  const useColor = \"function (value) { if (value > 90) return 'red'; if (value > 80) return 'gold'; return 'limegreen';}\";\n  msg = {}; \n  msg.refresh = true\n  msg.payload = []\n  msg.ui_control = {\n    tabulator: {\n      rowContext: rowContext,\n      initialSort: (global.get(\"nodeSort\", \"file\") || {}).sorters || [],\n      dataSorted,\n      columns: [\n//        {\n//          field: \"id\",\n//          title: \"&nbsp;ID\",\n//          align: \"center\",\n//          sorter: \"number\",\n//          width: 45,\n//        },\n        {\n          field: \"node\",\n          title: \"Node\",\n          align: \"left\",\n          sorter: \"string\",\n          width: 240,\n        },\n        {\n          field: \"status\",\n          title: \"Status\",\n          align: \"center\",\n          formatter: \"traffic\",\n          formatterParams: {\n            color: statusColor,\n          },\n          sorter: \"string\",\n          width: 85,\n        },\n        {\n          field: \"cpu_use_pct\",\n          title: \"&nbsp;&nbsp;CPU\",\n          align: \"left\",\n          formatter: \"progress\",\n          formatterParams: {\n            legend: effLegend,\n            legendColor: \"#ffffff\",\n            legendAlign: \"center\",\n            color: useColor\n          },\n          sorter: \"number\",\n          width: 85,\n        }, {\n          field: \"mem_use_pct\",\n          title: \"&nbsp;&nbsp;RAM\",\n          align: \"left\",\n          formatter: \"progress\",\n          formatterParams: {\n            legend: effLegend,\n            legendColor: \"#ffffff\",\n            legendAlign: \"center\",\n            color: useColor\n          },\n          sorter: \"number\",\n          width: 85,\n        },\n        {\n          field: \"client_bw\",\n          title: \"&nbsp;BW &#129095;\",\n          align: \"center\",\n          sorter: \"number\",\n          width: 85,\n        }, \n        {\n          field: \"upstream_bw\",\n          title: \"&nbsp;BW &#129093;\",\n          align: \"center\",\n          sorter: \"number\",\n          width: 85,\n        },\n        {\n          field: \"users\",\n          title: \"&nbsp;Users\",\n          align: \"center\",\n          sorter: \"number\",\n          width: 85,\n        },\n        {\n          field: \"cache_eff\",\n          title: \"&nbsp;&nbsp;Cache Eff\",\n          align: \"left\",\n          formatter: \"progress\",\n          formatterParams: {\n            legend: effLegend,\n            legendColor: \"#ffffff\",\n            legendAlign: \"center\",\n          },\n          sorter: \"number\",\n        },\n      ],\n    },\n  }\n  return msg\n}\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 510,
-        "y": 320,
+        "x": 290,
+        "y": 560,
         "wires": [
             [
                 "567783dfb28f09df",
@@ -1355,8 +1260,8 @@
         "id": "c347b6521867b6fb",
         "type": "function",
         "z": "953eb73365d84859",
-        "name": "Node table manager",
-        "func": "///////////////\n// Functions //\n///////////////\n\n// Find a node object in the data store\nfunction byKey(obj) {\n  return function (item) {\n    return item.node === obj.node;\n  }\n}\n\n// Row object going to table\nfunction makeObj(id, obj) {\n  const colors = [\"#C8E6C8\", \"#64A064\", \"#1E461E\"]\n  obj.id = id\n  const idx = obj.cache_eff < 25 ? 0 : obj.cache_eff < 50 ? 1 : 2\n  obj.displayEff = `<font color=\"${colors[idx]}\">${obj.cache_eff}</font>`\n  return obj\n}\n\n// Parameterized array sort function\nfunction sorterFactory(obj) {\n  let { column, dir } = obj[0]\n  column = column === \"displayEff\" ? \"cache_eff\" : column\n  return function sorter(itemA, itemB) {\n    const a = itemA[column]\n    const b = itemB[column]\n    const factor = dir === \"asc\" ? +1 : -1\n    return a < b ? -1 * factor : a > b ? +1 * factor : 0\n  }\n}\n\n// Sort data store based on selected table sort\nfunction sortStore(store) {\n  let obj = global.get(\"nodeSort\", \"nodes\")\n  if (!obj || (obj && !obj.sorters.length)) {\n    return\n  }\n  store.sort(sorterFactory(obj.sorters))\n  for (let i = 0; i < store.length; i++) {\n    store[i].id = i < obj.ids.length ? obj.ids[i] : i\n  }\n}\n\n////////////////\n// Processing //\n////////////////\nconst nodeObjArray = Array.isArray(msg.payload) ? msg.payload : [msg.payload]\nlet store = global.get(\"nodeData\", \"nodes\") || []\n\n// When dashboard is reloaded or when\n// flows start, display last table state\nif (msg.refresh) {\n  return { payload: store }\n}\n\nlet sendStore = false\nlet deletedRows = []\nfor (let nodeObj of nodeObjArray) {\n  if (nodeObj.delete) {\n    const idx = store.findIndex(byKey(nodeObj))\n    if (idx !== -1) {\n      deletedRows.push({ id: store[idx].id, idx })\n    }\n  } else {\n    sendStore = true\n    let obj = store.find(byKey(nodeObj))\n    const id = obj ? obj.id : store.length\n    const row = makeObj(id, nodeObj) // This is the row that is sent to table\n    if (obj) {\n      Object.assign(obj, row) // Update store (obj is an item of mutable array)\n    } else {\n      store.push(row) // Append to store\n    }\n  }\n}\nif (deletedRows.length) {\n  // Tabulator does not have a single commmand to delete multiple rows at a time\n  deletedRows.forEach((obj) => {\n    msg.payload = {\n      command: \"deleteRow\",\n      arguments: [obj.id],\n    }\n    node.send(msg)\n    store.splice(obj.idx, 1)\n  })\n}\nif (sendStore) {\n  sortStore(store)\n  msg.payload = {\n    command: \"updateOrAddData\",\n    arguments: [store],\n  }\n  node.send(msg)\n}\nglobal.set(\"nodeData\", store, \"nodes\")\n",
+        "name": "node table manager",
+        "func": "///////////////\n// Functions //\n///////////////\n\nfunction byKey(obj) {\n  return function (item) {\n    return item.node === obj.node;\n  }\n}\n\nfunction byVal(val) {\n  return function (item) {\n    return item == val;\n  }\n}\n\n// Row object going to table\nfunction makeObj(obj) {\n  const colors = [\"#C8E6C8\", \"#64A064\", \"#1E461E\"]\n  const idx = obj.cache_eff < 25 ? 0 : obj.cache_eff < 50 ? 1 : 2\n  obj.displayEff = `<font color=\"${colors[idx]}\">${obj.cache_eff}</font>`\n  return obj\n}\n\n// Parameterized array sort function\nfunction sorterFactory(obj) {\n  let { column, dir } = obj[0]\n  column = column === \"displayEff\" ? \"cache_eff\" : column\n  return function sorter(itemA, itemB) {\n    const a = itemA[column]\n    const b = itemB[column]\n    const factor = dir === \"asc\" ? +1 : -1\n    return a < b ? -1 * factor : a > b ? +1 * factor : 0\n  }\n}\n\n// find the next available index of make a new one\nfunction findNextId(store) {\n  const list = [...store].sort((a, b) => a.id - b.id);\n\n  let nextId = 0;\n\n  for (const item of list) {\n    const id = item.id;\n    if (id == nextId) {\n      nextId++;\n    } else if (id > nextId) {\n      break;\n    }\n  }\n  return nextId;\n}\n\n// find the next available index of make a new one\nfunction findNextIdx(store) {\n  const list = [...store].sort((a, b) => a - b);\n\n  let nextVal = 0;\n\n  for (const val of list) {\n    if (val == nextVal) {\n      nextVal++;\n    } else if (val > nextVal) {\n      break;\n    }\n  }\n  return nextVal;\n}\n\n// Sort data store based on selected table sort\nfunction sortStore(sort, data) {\n  if (!sort || !sort.sorters.length) {\n    node.error(\"sortStore: sort store error\");\n    return\n  }\n  data.sort(sorterFactory(sort.sorters))\n  var i;\n  for (i = 0; i < data.length; i++) {\n    if (i < sort.ids.length) {\n      data[i].id = sort.ids[i];\n    } else {\n      data[i].id = sort.ids[i] = findNextIdx(sort.ids);\n      node.warn(\"sortStore: new index not in nodeSort: \" + data[i].id)\n    }\n  }\n  if (sort.ids.length > i) {\n    let n = sort.ids.length - i;\n    node.warn(\"sortStore: trimming nodeSort: \" + n + \" (\" + i + \" to \" + (sort.ids.length-1) + \")\")\n    sort.ids.splice(-n, n);\n  }\n}\n\n////////////////\n// Processing //\n////////////////\nlet data_store = global.get(\"nodeData\", \"file\") || [];\nlet sort_store = global.get(\"nodeSort\", \"file\") || [];\nif (msg.refresh) {\n  return { payload: data_store };\n}\nif (Array.isArray(msg.payload)) { // process table data update or add\n  for (let in_row of msg.payload) {\n    in_row = makeObj(in_row) // This is the row that is sent to table\n    let row_data = data_store.find(byKey(in_row));\n    if (!row_data) {\n      in_row.id = findNextId(data_store);\n      node.warn(\"table mgr: node not in data store: \" + in_row.node + \" new id: \" + in_row.id);\n      data_store.push(in_row) // Append to store\n    } else {\n      Object.assign(row_data, in_row) // Update store (row_data is an item of mutable array)\n    }\n  }\n  sortStore(sort_store, data_store);\n  msg.payload = {\n    command: \"updateOrAddData\",\n    arguments: [data_store],\n  };\n} else { // process single message - refresh or delete\n  // When dashboard is reloaded or when flows start, display last table state\n  let row = msg.payload;\n  let idx = data_store.findIndex(byKey(row));\n  if (idx >=0) {\n    data_store.splice(idx, 1);\n    let sidx = sort_store.ids.findIndex(byVal(row.id));\n    if (sidx>0) {\n      sort_store.ids.splice(sidx, 1);\n    } else {\n      node.warn(\"delete: id not found in sort store: \"  + row.id); \n    }\n  } else {\n    node.warn(\"delete: node not found in data store: \" + row.node);\n  }\n  msg.payload = {\n    command: \"deleteRow\",\n    arguments: [row.id],\n  }\n}\n\nglobal.set(\"nodeData\", data_store, \"file\");\nglobal.set(\"nodeSort\", sort_store, \"file\");\n\nreturn msg;\n\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -1367,11 +1272,12 @@
                 "module": "clone"
             }
         ],
-        "x": 720,
-        "y": 260,
+        "x": 540,
+        "y": 500,
         "wires": [
             [
-                "567783dfb28f09df"
+                "567783dfb28f09df",
+                "a8c3985ad1292b73"
             ]
         ]
     },
@@ -1383,15 +1289,15 @@
         "name": "Nodes",
         "order": 1,
         "width": 17,
-        "height": 3,
+        "height": 4,
         "columns": [],
         "outputs": 1,
         "cts": true,
-        "x": 710,
-        "y": 320,
+        "x": 530,
+        "y": 560,
         "wires": [
             [
-                "ce2ff155071f51ec"
+                "05143c60bda4315f"
             ]
         ]
     },
@@ -1400,7 +1306,7 @@
         "type": "switch",
         "z": "953eb73365d84859",
         "name": "Non-empty sorter?",
-        "property": "payload.sorters.length",
+        "property": "payload.ids.length",
         "propertyType": "msg",
         "rules": [
             {
@@ -1415,136 +1321,17 @@
         "checkall": "false",
         "repair": false,
         "outputs": 2,
-        "x": 870,
-        "y": 320,
+        "x": 930,
+        "y": 560,
         "wires": [
             [],
             [
-                "bde009c3218ba1f1"
+                "11e6118b3d66d8ed"
             ]
         ],
         "outputLabels": [
             "Yes",
             ""
-        ]
-    },
-    {
-        "id": "bde009c3218ba1f1",
-        "type": "change",
-        "z": "953eb73365d84859",
-        "name": "Save sort",
-        "rules": [
-            {
-                "t": "set",
-                "p": "nodeSort",
-                "pt": "global",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1060,
-        "y": 320,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "ba92cba0.ee4ad8",
-        "type": "inject",
-        "z": "953eb73365d84859",
-        "name": "",
-        "props": [
-            {
-                "p": "payload",
-                "v": "[{\"name\":\"MEQ0451495\",\"room\":\"Bathroom\",\"SET_TEMPERATURE-value\":22,\"ACTUAL_TEMPERATURE-value\":21.8,\"VALVE_STATE-value\":90,\"BATTERY_STATE-value\":2.7,\"BOOST_STATE-value\":0,\"AUTO_MODE-value\":true,\"CONTROL_MODE-value\":0},{\"name\":\"MEQ1875547\",\"room\":\"Living Room\",\"SET_TEMPERATURE-value\":12,\"ACTUAL_TEMPERATURE-value\":16.2,\"VALVE_STATE-value\":0,\"BATTERY_STATE-value\":2.7,\"BOOST_STATE-value\":0,\"AUTO_MODE-value\":false,\"CONTROL_MODE-value\":1},{\"name\":\"MEQ1875538\",\"room\":\"Living Room\",\"SET_TEMPERATURE-value\":18,\"ACTUAL_TEMPERATURE-value\":19.5,\"VALVE_STATE-value\":0,\"BATTERY_STATE-value\":2.6,\"BOOST_STATE-value\":0,\"AUTO_MODE-value\":false,\"CONTROL_MODE-value\":2},{\"name\":\"MEQ0447462\",\"room\":\"Kitchen\",\"SET_TEMPERATURE-value\":17,\"ACTUAL_TEMPERATURE-value\":22.2,\"VALVE_STATE-value\":0,\"BATTERY_STATE-value\":2.7,\"BOOST_STATE-value\":10,\"AUTO_MODE-value\":false,\"CONTROL_MODE-value\":3},{\"name\":\"MEQ1875551\",\"room\":\"Office\",\"SET_TEMPERATURE-value\":18,\"ACTUAL_TEMPERATURE-value\":20.2,\"VALVE_STATE-value\":0,\"BATTERY_STATE-value\":2.7,\"BOOST_STATE-value\":0,\"AUTO_MODE-value\":false,\"CONTROL_MODE-value\":0},{\"name\":\"MEQ0447425\",\"room\":\"Dining Room\",\"SET_TEMPERATURE-value\":19,\"ACTUAL_TEMPERATURE-value\":20.4,\"VALVE_STATE-value\":0,\"BATTERY_STATE-value\":2.7,\"BOOST_STATE-value\":0,\"AUTO_MODE-value\":false,\"CONTROL_MODE-value\":0},{\"name\":\"MEQ1875546\",\"room\":\"Dining Room\",\"SET_TEMPERATURE-value\":20,\"ACTUAL_TEMPERATURE-value\":18.8,\"VALVE_STATE-value\":99,\"BATTERY_STATE-value\":2.7,\"BOOST_STATE-value\":0,\"AUTO_MODE-value\":false,\"CONTROL_MODE-value\":0},{\"name\":\"MEQ0447483\",\"room\":\"Bedroom\",\"SET_TEMPERATURE-value\":17,\"ACTUAL_TEMPERATURE-value\":22.4,\"VALVE_STATE-value\":0,\"BATTERY_STATE-value\":2.7,\"BOOST_STATE-value\":0,\"AUTO_MODE-value\":false,\"CONTROL_MODE-value\":0},{\"name\":\"MEQ1875541\",\"room\":\"Child\",\"SET_TEMPERATURE-value\":18,\"ACTUAL_TEMPERATURE-value\":20.4,\"VALVE_STATE-value\":0,\"BATTERY_STATE-value\":2.7,\"BOOST_STATE-value\":0,\"AUTO_MODE-value\":false,\"CONTROL_MODE-value\":0},{\"name\":\"MEQ1875552\",\"room\":\"Guest Room\",\"SET_TEMPERATURE-value\":20,\"ACTUAL_TEMPERATURE-value\":21.1,\"VALVE_STATE-value\":9,\"BATTERY_STATE-value\":2.8,\"BOOST_STATE-value\":0,\"AUTO_MODE-value\":false,\"CONTROL_MODE-value\":0}]",
-                "vt": "json"
-            },
-            {
-                "p": "topic",
-                "v": "",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "[{\"name\":\"MEQ0451495\",\"room\":\"Bathroom\",\"SET_TEMPERATURE-value\":22,\"ACTUAL_TEMPERATURE-value\":21.8,\"VALVE_STATE-value\":90,\"BATTERY_STATE-value\":2.7,\"BOOST_STATE-value\":0,\"AUTO_MODE-value\":true,\"CONTROL_MODE-value\":0},{\"name\":\"MEQ1875547\",\"room\":\"Living Room\",\"SET_TEMPERATURE-value\":12,\"ACTUAL_TEMPERATURE-value\":16.2,\"VALVE_STATE-value\":0,\"BATTERY_STATE-value\":2.7,\"BOOST_STATE-value\":0,\"AUTO_MODE-value\":false,\"CONTROL_MODE-value\":1},{\"name\":\"MEQ1875538\",\"room\":\"Living Room\",\"SET_TEMPERATURE-value\":18,\"ACTUAL_TEMPERATURE-value\":19.5,\"VALVE_STATE-value\":0,\"BATTERY_STATE-value\":2.6,\"BOOST_STATE-value\":0,\"AUTO_MODE-value\":false,\"CONTROL_MODE-value\":2},{\"name\":\"MEQ0447462\",\"room\":\"Kitchen\",\"SET_TEMPERATURE-value\":17,\"ACTUAL_TEMPERATURE-value\":22.2,\"VALVE_STATE-value\":0,\"BATTERY_STATE-value\":2.7,\"BOOST_STATE-value\":10,\"AUTO_MODE-value\":false,\"CONTROL_MODE-value\":3},{\"name\":\"MEQ1875551\",\"room\":\"Office\",\"SET_TEMPERATURE-value\":18,\"ACTUAL_TEMPERATURE-value\":20.2,\"VALVE_STATE-value\":0,\"BATTERY_STATE-value\":2.7,\"BOOST_STATE-value\":0,\"AUTO_MODE-value\":false,\"CONTROL_MODE-value\":0},{\"name\":\"MEQ0447425\",\"room\":\"Dining Room\",\"SET_TEMPERATURE-value\":19,\"ACTUAL_TEMPERATURE-value\":20.4,\"VALVE_STATE-value\":0,\"BATTERY_STATE-value\":2.7,\"BOOST_STATE-value\":0,\"AUTO_MODE-value\":false,\"CONTROL_MODE-value\":0},{\"name\":\"MEQ1875546\",\"room\":\"Dining Room\",\"SET_TEMPERATURE-value\":20,\"ACTUAL_TEMPERATURE-value\":18.8,\"VALVE_STATE-value\":99,\"BATTERY_STATE-value\":2.7,\"BOOST_STATE-value\":0,\"AUTO_MODE-value\":false,\"CONTROL_MODE-value\":0},{\"name\":\"MEQ0447483\",\"room\":\"Bedroom\",\"SET_TEMPERATURE-value\":17,\"ACTUAL_TEMPERATURE-value\":22.4,\"VALVE_STATE-value\":0,\"BATTERY_STATE-value\":2.7,\"BOOST_STATE-value\":0,\"AUTO_MODE-value\":false,\"CONTROL_MODE-value\":0},{\"name\":\"MEQ1875541\",\"room\":\"Child\",\"SET_TEMPERATURE-value\":18,\"ACTUAL_TEMPERATURE-value\":20.4,\"VALVE_STATE-value\":0,\"BATTERY_STATE-value\":2.7,\"BOOST_STATE-value\":0,\"AUTO_MODE-value\":false,\"CONTROL_MODE-value\":0},{\"name\":\"MEQ1875552\",\"room\":\"Guest Room\",\"SET_TEMPERATURE-value\":20,\"ACTUAL_TEMPERATURE-value\":21.1,\"VALVE_STATE-value\":9,\"BATTERY_STATE-value\":2.8,\"BOOST_STATE-value\":0,\"AUTO_MODE-value\":false,\"CONTROL_MODE-value\":0}]",
-        "payloadType": "json",
-        "x": 150,
-        "y": 800,
-        "wires": [
-            [
-                "8115c722.5d91d8"
-            ]
-        ]
-    },
-    {
-        "id": "8115c722.5d91d8",
-        "type": "change",
-        "z": "953eb73365d84859",
-        "name": "ui_control",
-        "rules": [
-            {
-                "t": "set",
-                "p": "ui_control",
-                "pt": "msg",
-                "to": "{\"tabulator\":{\"columnResized\":\"function(column){     var newColumn = {         field: column._column.field,         visible: column._column.visible,         width: column._column.width,         widthFixed: column._column.widthFixed,         widthStyled: column._column.widthStyled     }; this.send({topic:this.config.topic,ui_control:{callback:'columnResized',columnWidths:newColumn}}); }\",\"columnMoved\":\"function(column, columns){     var newColumns=[];     columns.forEach(function (column) {         newColumns.push({'field': column._column.field});     });     this.send({topic:this.config.topic,ui_control:{callback:'columnMoved',columns:newColumns}}); }\",\"groupHeader\":\"function (value, count, data, group) {return value + \\\"<span style='color:#d00; margin-left:10px;'>(\\\" + count + \\\" Termostat\\\"+((count>1) ? \\\"e\\\" : \\\"\\\") + \\\")</span>\\\";}\",\"columns\":[{\"formatterParams\":{\"target\":\"_blank\"},\"title\":\"ROom\",\"field\":\"room\",\"width\":100,\"frozen\":true},{\"formatterParams\":{\"target\":\"_blank\"},\"title\":\"Device\",\"field\":\"name\",\"width\":100,\"align\":\"center\"},{\"formatterParams\":{\"target\":\"_blank\"},\"title\":\"Type\",\"field\":\"deviceType\",\"width\":100,\"align\":\"center\"},{\"formatterParams\":{\"target\":\"_blank\"},\"title\":\"Measurements\",\"columns\":[{\"formatterParams\":{\"target\":\"_blank\"},\"title\":\"target\",\"field\":\"SET_TEMPERATURE-value\",\"formatter\":\"function(cell, formatterParams, onRendered){return cell.getValue()+'°C';}\",\"topCalc\":\"avg\",\"width\":100},{\"formatterParams\":{\"target\":\"_blank\",\"min\":10,\"max\":25,\"color\":[\"blue\",\"green\",\"red\"],\"legend\":\"function (value) {return '&nbsp;&nbsp;'+value+'°C';}\",\"legendColor\":\"#101010\",\"legendAlign\":\"left\"},\"title\":\"current\",\"field\":\"ACTUAL_TEMPERATURE-value\",\"formatter\":\"progress\",\"topCalc\":\"avg\",\"width\":100},{\"formatterParams\":{\"target\":\"_blank\",\"min\":0,\"max\":99,\"color\":[\"gray\",\"orange\",\"red\"],\"legend\":\"function (value) {return (value>0)? '&nbsp;&nbsp;'+value+' %' : '-';}\",\"legendColor\":\"#101010\",\"legendAlign\":\"center\"},\"title\":\"Valve\",\"field\":\"VALVE_STATE-value\",\"formatter\":\"progress\",\"topCalc\":\"max\",\"width\":100},{\"formatterParams\":{\"target\":\"_blank\",\"min\":1.5,\"max\":4.6,\"color\":[\"red\",\"orange\",\"green\"],\"legend\":\"function (value) {return value+' V';}\",\"legendColor\":\"#101010\",\"legendAlign\":\"center\"},\"title\":\"Batt\",\"field\":\"BATTERY_STATE-value\",\"formatter\":\"progress\",\"topCalc\":\"min\",\"width\":100}]},{\"formatterParams\":{\"target\":\"_blank\"},\"title\":\"Settings\",\"columns\":[{\"formatterParams\":{\"target\":\"_blank\",\"min\":0,\"max\":30,\"color\":[\"red\",\"orange\",\"green\"],\"legend\":\"function (value) {     if (value>0)         return \\\"<span style='color:#101010;'>\\\"+value+\\\" min</span>\\\";     else         return \\\"<span style='color:#A0A0A0;'>aus</span>\\\"; }\",\"legendColor\":\"#101010\",\"legendAlign\":\"center\"},\"title\":\"Boost\",\"field\":\"BOOST_STATE-value\",\"formatter\":\"progress\",\"width\":100},{\"formatterParams\":{\"target\":\"_blank\",\"allowEmpty\":true,\"allowTruthy\":true,\"tickElement\":\"<i class='fa fa-clock-o'></i>\",\"crossElement\":\"<i class='fa fa-ban'></i>\"},\"title\":\"Auto\",\"field\":\"AUTO_MODE-value\",\"formatter\":\"tickCross\",\"width\":100,\"align\":\"center\"},{\"formatterParams\":{\"target\":\"_blank\"},\"title\":\"Mode\",\"field\":\"CONTROL_MODE-value\",\"formatter\":\"function(cell, formatterParams, onRendered){     var html=\\\"<i class=\\\\\\\"\\\";     switch(cell.getValue()) {         case 0: html+=\\\"fa fa-calendar-check-o\\\"; break;         case 1: html+=\\\"fa fa-hand-o-up\\\"; break;         case 2: html+=\\\"fa fa-suitcase\\\"; break;         case 3: html+=\\\"fa fa-spinner fa-spin fa-fw\\\"; break;     }     html+='\\\\\\\"></i>';     return html; }\",\"width\":100,\"align\":\"center\"},{\"formatterParams\":{\"target\":\"_blank\"},\"title\":\"Auto\",\"field\":\"AUTO_MODE-value\",\"formatter\":\"tick\",\"width\":100,\"align\":\"center\"}]}],\"layout\":\"fitColumns\",\"movableColumns\":true,\"groupBy\":\"\"},\"customHeight\":12}",
-                "tot": "json"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 296,
-        "y": 800,
-        "wires": [
-            [
-                "4b960bb2.f61934"
-            ]
-        ]
-    },
-    {
-        "id": "5d38f5fa.6541bc",
-        "type": "debug",
-        "z": "953eb73365d84859",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "x": 609,
-        "y": 800,
-        "wires": []
-    },
-    {
-        "id": "4b960bb2.f61934",
-        "type": "ui_table",
-        "z": "953eb73365d84859",
-        "group": "51ce6aa1.620754",
-        "name": "Thermostats",
-        "order": 1,
-        "width": "20",
-        "height": "7",
-        "columns": [],
-        "outputs": 1,
-        "cts": true,
-        "x": 459,
-        "y": 800,
-        "wires": [
-            [
-                "5d38f5fa.6541bc"
-            ]
         ]
     },
     {
@@ -1558,53 +1345,11 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 270,
-        "y": 100,
+        "x": 290,
+        "y": 320,
         "wires": [
             []
         ]
-    },
-    {
-        "id": "d6147e86664e5e9b",
-        "type": "exec",
-        "z": "953eb73365d84859",
-        "command": "sleep 5; salt '*' saltutil.sync_beacons",
-        "addpay": "",
-        "append": "",
-        "useSpawn": "false",
-        "timer": "",
-        "winHide": false,
-        "oldrc": false,
-        "name": "sync beacons",
-        "x": 1100,
-        "y": 420,
-        "wires": [
-            [
-                "310f84861a29be4f"
-            ],
-            [
-                "310f84861a29be4f"
-            ],
-            [
-                "310f84861a29be4f"
-            ]
-        ]
-    },
-    {
-        "id": "310f84861a29be4f",
-        "type": "debug",
-        "z": "953eb73365d84859",
-        "name": "debug 5",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1120,
-        "y": 680,
-        "wires": []
     },
     {
         "id": "3a60dfa8e2ea231a",
@@ -1624,7 +1369,7 @@
         "payload": "true",
         "payloadType": "bool",
         "x": 90,
-        "y": 100,
+        "y": 320,
         "wires": [
             [
                 "17f908c5c029e02d"
@@ -1638,35 +1383,18 @@
         "server": "92ca2c694d9d5c55",
         "command": "KEYS",
         "name": "vcache nodes",
-        "topic": "vcache:*",
+        "topic": "vcache_node:*:*",
         "params": "",
         "paramsType": "json",
         "payloadType": "json",
         "block": false,
-        "x": 280,
-        "y": 260,
+        "x": 300,
+        "y": 440,
         "wires": [
             [
                 "3a9bce3d609e11ce"
             ]
         ]
-    },
-    {
-        "id": "469da55fab1bd5c1",
-        "type": "debug",
-        "z": "953eb73365d84859",
-        "name": "debug 6",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 720,
-        "y": 560,
-        "wires": []
     },
     {
         "id": "f886bb801a5b9919",
@@ -1677,33 +1405,490 @@
         "topic": "redis",
         "location": "global",
         "x": 110,
-        "y": 400,
+        "y": 100,
         "wires": []
     },
     {
         "id": "3a9bce3d609e11ce",
         "type": "function",
         "z": "953eb73365d84859",
-        "name": "function 1",
-        "func": "const redis = global.get('redis'); // Assumes Redis client is globally available\n\n// Function to retrieve hash objects for each key\nfunction getHashObjects(keys, callback) {\n    const hashObjects = [];\n    let count = 0;\n    keys.forEach(function (key) {\n        redis.hgetall(key, function (err, hash) {\n            if (err) {\n                callback(err);\n                return;\n            }\n            hashObjects.push(hash);\n            count++;\n            if (count === keys.length) {\n                callback(null, hashObjects);\n            }\n        });\n    });\n}\n\n// Main function\ngetHashObjects(msg.payload, function (err, hashObjects) {\n    if (err) {\n        node.error(err);\n        return;\n    }\n    msg.payload = hashObjects;\n    return msg;\n});\nreturn msg;",
+        "name": "nodes from table",
+        "func": "const redis = global.get('redis'); // Assumes Redis client is globally available\nconst now = Date.now();\nvar table = [];\n/**\n* 3 - CRIT, 2 - WARN, 1 - OK, 0 - UNKNOWN\n* @param {string | number | Date} stamp\n* @param {number} now\n* @param {number} cpu\n* @param {number} mem\n* @param {number} disk\n*/\nfunction calc_status(now, stamp, cpu, mem, disk) {\n    const stamp_ms = new Date(stamp).getTime();\n    const diff = (now - stamp_ms) / 1000;\n    if (diff > 30) return 0;\n    if (cpu > 90 || mem > 90 || disk > 90) return 3;\n    if (cpu > 80 || mem > 80 || disk > 80) return 2;\n    return 1;\n}\n\n// Function to retrieve hash objects for each key\nfunction get_nodes(keys, callback) {\n    let count = 0;\n    keys.forEach(function (key) {\n        redis.hgetall(key, function (err, hash) {\n            if (err) {\n                callback(err);\n                return;\n            }\n            \n            hash.node = hash.id;\n            delete hash.id;\n\n            hash.status = calc_status(now, hash._stamp, hash.cpu_use_pct, hash.mem_use_pct, hash.disk_use_pct);\n            if (hash.status == 0) {\n                hash.cache_eff = -1;\n                hash.cpu_use_pct = -1;\n                hash.mem_use_pct = -1;\n                hash.client_bw = NaN;\n                hash.upstream_bw = NaN;\n                hash.users = NaN;\n            } else {\n                hash.cache_eff = parseInt(hash.cache_eff_pct);\n                hash.mem_use_pct = parseFloat(hash.mem_use_pct);\n                hash.cpu_use_pct = parseFloat(hash.cpu_use_pct);\n                hash.client_bw = parseInt(hash.client_bw);\n                hash.upstream_bw = parseInt(hash.upstream_bw);\n                hash.users = parseInt(hash.client_sess);\n            }\n            table.push(hash);\n            count++;\n            if (count >= keys.length) {\n                callback(null,table);\n            }\n        });\n    });\n}\n\nfunction sort_arr(in_arr) {\n    const arr = [...in_arr].sort((a, b) => {\n        const A = a.node.toLowerCase();\n        const B = b.node.toLowerCase();\n        if (A < B) return -1;\n        if (A > B) return 1;\n        return 0;\n    });\n    return arr;\n}\n\n// Main function\nget_nodes(msg.payload, function (err, nodes) {\n    if (err) {\n        node.error(err);\n        return;\n    }\n//  table = nodes.map((/** @type {{ id: string; cache_eff_pct: string; client_sess: string; client_bw: string; upstream_bw: string; }} */ n) => ({\n//       \"node\": n.id.toLowerCase(),\n//       \"status\": \"up\".toUpperCase(),\n//        \"cache_eff\": parseInt(n.cache_eff_pct) == 0 ? 1 : parseInt(n.cache_eff_pct),\n//        \"client_bw\": parseInt(n.client_bw),\n//        \"upstream_bw\": parseInt(n.upstream_bw),\n//        \"users\": parseInt(n.client_sess),\n//    }));\n    msg.payload = nodes;\n    node.send(msg);\n});\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 320,
-        "y": 380,
+        "x": 510,
+        "y": 440,
         "wires": [
             [
-                "469da55fab1bd5c1"
+                "c347b6521867b6fb"
+            ]
+        ]
+    },
+    {
+        "id": "da2988f368c4b510",
+        "type": "ui_context_menu",
+        "z": "953eb73365d84859",
+        "group": "66d92f18708659f1",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "fontSize": 16,
+        "inputPositionXField": "payload.clientX",
+        "inputPositionXType": "msg",
+        "inputPositionYField": "payload.clientY",
+        "inputPositionYType": "msg",
+        "outputField": "payload",
+        "inputMenuField": "menu",
+        "inputMenuType": "fixed",
+        "menuItems": [
+            {
+                "id": "",
+                "icon": "",
+                "label": "Details",
+                "topic": "",
+                "payload": "",
+                "payloadType": "str",
+                "visible": true,
+                "enabled": true
+            },
+            {
+                "id": "",
+                "icon": "",
+                "label": "Delete",
+                "topic": "",
+                "payload": "",
+                "payloadType": "str",
+                "visible": true,
+                "enabled": true
+            }
+        ],
+        "colors": "theme",
+        "textColor": "#000000",
+        "backgroundColor": "#ffffff",
+        "borderColor": "#626262",
+        "intervalLength": 0,
+        "intervalUnit": "secs",
+        "startTimerAtOpen": false,
+        "startTimerAtLeave": true,
+        "stopTimerAtEnter": true,
+        "name": "RowCtxMenu",
+        "x": 540,
+        "y": 640,
+        "wires": [
+            [
+                "ac59be7fa2383fc7"
+            ]
+        ]
+    },
+    {
+        "id": "05143c60bda4315f",
+        "type": "switch",
+        "z": "953eb73365d84859",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "hask",
+                "v": "sorters",
+                "vt": "str"
+            },
+            {
+                "t": "hask",
+                "v": "clientX",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 710,
+        "y": 560,
+        "wires": [
+            [
+                "ce2ff155071f51ec",
+                "8319d2c0d1da848a"
+            ],
+            [
+                "da2988f368c4b510"
+            ]
+        ]
+    },
+    {
+        "id": "f773b77e37a40bb6",
+        "type": "uuid",
+        "z": "953eb73365d84859",
+        "uuidVersion": "v4",
+        "namespaceType": "custom",
+        "namespace": "VIVOH_CACHE",
+        "namespaceCustom": "VIVOH",
+        "name": "UUID (gen)",
+        "field": "payload",
+        "fieldType": "msg",
+        "x": 510,
+        "y": 240,
+        "wires": [
+            [
+                "51ab9183e6c445ee",
+                "03470a367efdaf2e"
+            ]
+        ]
+    },
+    {
+        "id": "51ab9183e6c445ee",
+        "type": "file",
+        "z": "953eb73365d84859",
+        "name": "",
+        "filename": "/var/run/vcache-mgr.uuid",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "utf8",
+        "x": 750,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9c1cae2c8cd579f1",
+        "type": "fs-ops-access",
+        "z": "953eb73365d84859",
+        "name": "vcache.mgr uuid",
+        "path": "/var/run",
+        "pathType": "str",
+        "filename": "vcache-mgr.uuid",
+        "filenameType": "str",
+        "read": true,
+        "write": true,
+        "throwerror": false,
+        "x": 300,
+        "y": 220,
+        "wires": [
+            [
+                "ac931b189bcafeb4"
+            ],
+            [
+                "f773b77e37a40bb6"
+            ]
+        ]
+    },
+    {
+        "id": "8b6caa4128b0ab62",
+        "type": "fs-ops-access",
+        "z": "953eb73365d84859",
+        "name": "vcache.mgr version",
+        "path": "/var/run/",
+        "pathType": "str",
+        "filename": "vcache-mgr.version",
+        "filenameType": "str",
+        "read": true,
+        "write": false,
+        "throwerror": false,
+        "x": 310,
+        "y": 260,
+        "wires": [
+            [
+                "28e546a9e90ffb1f"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "05bef2ebd6355241",
+        "type": "function",
+        "z": "953eb73365d84859",
+        "name": "set global version",
+        "func": "global.set(\"version\", msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 730,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "28e546a9e90ffb1f",
+        "type": "file in",
+        "z": "953eb73365d84859",
+        "name": "vcache mgr version",
+        "filename": "/var/run/vcache.version",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 530,
+        "y": 280,
+        "wires": [
+            [
+                "05bef2ebd6355241"
+            ]
+        ]
+    },
+    {
+        "id": "03470a367efdaf2e",
+        "type": "function",
+        "z": "953eb73365d84859",
+        "name": "UUID (object)",
+        "func": "msg.payload = { \"uuid\": msg.payload.replace(/\\n+$/, '')};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 720,
+        "y": 200,
+        "wires": [
+            [
+                "c5ba86245edf6da7"
+            ]
+        ]
+    },
+    {
+        "id": "ac931b189bcafeb4",
+        "type": "file in",
+        "z": "953eb73365d84859",
+        "name": "vcache mgr uuid",
+        "filename": "/var/run/vcache-mgr.uuid",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 520,
+        "y": 200,
+        "wires": [
+            [
+                "03470a367efdaf2e"
+            ]
+        ]
+    },
+    {
+        "id": "c5ba86245edf6da7",
+        "type": "redis out",
+        "z": "953eb73365d84859",
+        "hostname": "vcache_mgr_redis",
+        "port": 6379,
+        "name": "UUID (out)",
+        "key": "vcache_mgr",
+        "structtype": "hash",
+        "x": 930,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "ac59be7fa2383fc7",
+        "type": "function",
+        "z": "953eb73365d84859",
+        "name": "handle context menu",
+        "func": "if (msg.payload.toLowerCase() === 'delete') {\n    const node_id = msg.sourceMsg.payload.row.node;\n    msg.payload = \"salt-key -y -d \" + node_id;\n} else if (msg.payload.toLowerCase() === 'accept') {\n    const node_id = msg.sourceMsg.payload.row.node;\n    msg.payload = \"salt-key -y -a \" + node_id;\n} else {\n    msg.topic = null;\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 700,
+        "wires": [
+            [
+                "7ede68d2930d2f9d"
+            ]
+        ]
+    },
+    {
+        "id": "dedbd31c5db0034f",
+        "type": "exec",
+        "z": "953eb73365d84859",
+        "command": "",
+        "addpay": "payload",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 910,
+        "y": 680,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "7ede68d2930d2f9d",
+        "type": "switch",
+        "z": "953eb73365d84859",
+        "name": "",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nnull"
+            },
+            {
+                "t": "eq",
+                "v": "Delete",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 710,
+        "y": 700,
+        "wires": [
+            [
+                "dedbd31c5db0034f"
+            ],
+            [
+                "b9e49c705dadd4fc"
+            ]
+        ]
+    },
+    {
+        "id": "b9e49c705dadd4fc",
+        "type": "function",
+        "z": "953eb73365d84859",
+        "name": "delete node from table",
+        "func": "const redis = global.get('redis'); // Assumes Redis client is globally available\n\nconst row = msg.sourceMsg.payload.row;\n\nconst key = \"vcache_node:\" + row.node + \":\" + row.uuid;\nredis.del(key, function (err, reply) {\n    if (err) {\n        node.error(\"Error deleting key(\" + reply + \"): \", err );\n    } else {\n        row.delete = true;\n        msg.payload = row\n        node.send(msg);\n    }\n});\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 240,
+        "y": 780,
+        "wires": [
+            [
+                "c347b6521867b6fb"
+            ]
+        ]
+    },
+    {
+        "id": "11e6118b3d66d8ed",
+        "type": "change",
+        "z": "953eb73365d84859",
+        "name": "Save sort",
+        "rules": [
+            {
+                "t": "set",
+                "p": "nodeSort",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1140,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a8c3985ad1292b73",
+        "type": "debug",
+        "z": "953eb73365d84859",
+        "name": "debug 8",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 880,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "8319d2c0d1da848a",
+        "type": "debug",
+        "z": "953eb73365d84859",
+        "name": "debug 9",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 900,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "3696af61.5b451",
+        "type": "subflow:19ad2b6f.f11b85",
+        "z": "08ebeea6e2046abd",
+        "name": "certificate upload",
+        "env": [
+            {
+                "name": "UPLOAD_DIR",
+                "value": "/tmp",
+                "type": "str"
+            },
+            {
+                "name": "EXTENSIONS",
+                "value": "[\"p12\",\"pkcs12\",\"pfx\",\"pem\"]",
+                "type": "json"
+            }
+        ],
+        "x": 240,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b1d1fd628d350803",
+        "type": "ui_text_input",
+        "z": "08ebeea6e2046abd",
+        "name": "cert pw",
+        "label": "password",
+        "tooltip": "pkcs12 password (blank if none)",
+        "group": "2871cce383627674",
+        "order": 6,
+        "width": 5,
+        "height": 1,
+        "passthru": true,
+        "mode": "password",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 440,
+        "y": 660,
+        "wires": [
+            [
+                "cbb5141d17c16d5c"
             ]
         ]
     },
     {
         "id": "6349b7a97ec7d3e7",
         "type": "ui_text_input",
-        "z": "953eb73365d84859",
-        "name": "certificate tag",
+        "z": "08ebeea6e2046abd",
+        "name": "cert tag",
         "label": "certificate tag",
         "tooltip": "certificate tag name identifying the destination",
         "group": "2871cce383627674",
@@ -1717,8 +1902,643 @@
         "sendOnBlur": true,
         "className": "",
         "topicType": "msg",
-        "x": 290,
+        "x": 440,
+        "y": 620,
+        "wires": [
+            [
+                "a1954ee40501addf"
+            ]
+        ]
+    },
+    {
+        "id": "9ca920d805009264",
+        "type": "ui_button",
+        "z": "08ebeea6e2046abd",
+        "name": "Accept All",
+        "group": "2bfbf363d31643c1",
+        "order": 3,
+        "width": 3,
+        "height": 1,
+        "passthru": false,
+        "label": "Accept All",
+        "tooltip": "Accept all pending cache mgmt registrations",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 220,
+        "y": 560,
+        "wires": [
+            [
+                "1e980162154930d3"
+            ]
+        ]
+    },
+    {
+        "id": "1e980162154930d3",
+        "type": "exec",
+        "z": "08ebeea6e2046abd",
+        "command": "salt-key -y -A",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 790,
+        "y": 560,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "d6147e86664e5e9b",
+        "type": "exec",
+        "z": "08ebeea6e2046abd",
+        "command": "sleep 10; salt '*' saltutil.sync_beacons",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "sync beacons",
+        "x": 800,
+        "y": 200,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "32ac04d1f6fe6e9e",
+        "type": "ui_table",
+        "z": "08ebeea6e2046abd",
+        "group": "2bfbf363d31643c1",
+        "name": "Pending Minions",
+        "order": 1,
+        "width": 6,
+        "height": 1,
+        "columns": [
+            {
+                "field": "node",
+                "title": "Node",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 1,
+        "cts": true,
+        "x": 550,
+        "y": 320,
+        "wires": [
+            [
+                "acf4447a9db5dc4c"
+            ]
+        ]
+    },
+    {
+        "id": "5a890de0ddaf48bb",
+        "type": "inject",
+        "z": "08ebeea6e2046abd",
+        "name": "poll (7)",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "7",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 300,
+        "wires": [
+            [
+                "694d6fe2baa337a6"
+            ]
+        ]
+    },
+    {
+        "id": "694d6fe2baa337a6",
+        "type": "exec",
+        "z": "08ebeea6e2046abd",
+        "command": "salt-key -L --output json",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "30",
+        "winHide": false,
+        "oldrc": false,
+        "name": "probe minions",
+        "x": 300,
+        "y": 300,
+        "wires": [
+            [
+                "f1ecdf3d66c25ebd",
+                "75933c13fdf23b68"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "f1ecdf3d66c25ebd",
+        "type": "function",
+        "z": "08ebeea6e2046abd",
+        "name": "pending minion data",
+        "func": "if (msg.payload.length === 0) return null;\nvar json = JSON.parse(msg.payload);\nvar table = json[\"minions_pre\"].map((node) => (\n    {\n        \"node\": node,\n    }\n    ));\nconst rowContext = \"function (e, row) { e.preventDefault(); console.log(\\\"Right clickt! \\\", row.getData());console.log(\\\"e event:\\\", e); this.send({payload: {row: row.getData(), clientX: e.clientX, clientY: e.clientY}});}\";\nmsg.ui_control = {\n    tabulator: {\n        rowContext: rowContext\n    }\n}\n    \nmsg.payload = table;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 260,
+        "wires": [
+            [
+                "32ac04d1f6fe6e9e"
+            ]
+        ]
+    },
+    {
+        "id": "20322f0058561fd5",
+        "type": "daemon",
+        "z": "08ebeea6e2046abd",
+        "name": "",
+        "command": "salt-master",
+        "args": "-l debug",
+        "autorun": false,
+        "cr": false,
+        "redo": true,
+        "op": "string",
+        "closer": "SIGTERM",
+        "x": 790,
+        "y": 120,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "941674b482aa389f",
+        "type": "function",
+        "z": "08ebeea6e2046abd",
+        "name": "restart mgr agent",
+        "func": "msg.kill =  true;\nmsg.start = true;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 120,
+        "wires": [
+            [
+                "20322f0058561fd5"
+            ]
+        ]
+    },
+    {
+        "id": "27206406fc11d2ef",
+        "type": "inject",
+        "z": "08ebeea6e2046abd",
+        "name": "init",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 90,
+        "y": 40,
+        "wires": [
+            [
+                "d8c7f242128e6d08",
+                "fd6fa0f7672dae01"
+            ]
+        ]
+    },
+    {
+        "id": "acf4447a9db5dc4c",
+        "type": "ui_context_menu",
+        "z": "08ebeea6e2046abd",
+        "group": "2bfbf363d31643c1",
+        "order": 9,
+        "width": 1,
+        "height": 1,
+        "fontSize": 16,
+        "inputPositionXField": "payload.clientX",
+        "inputPositionXType": "msg",
+        "inputPositionYField": "payload.clientY",
+        "inputPositionYType": "msg",
+        "outputField": "payload",
+        "inputMenuField": "menu",
+        "inputMenuType": "fixed",
+        "menuItems": [
+            {
+                "id": "",
+                "icon": "",
+                "label": "Accept",
+                "topic": "",
+                "payload": "",
+                "payloadType": "str",
+                "visible": true,
+                "enabled": true
+            },
+            {
+                "id": "",
+                "icon": "",
+                "label": "Reject",
+                "topic": "",
+                "payload": "",
+                "payloadType": "str",
+                "visible": true,
+                "enabled": true
+            },
+            {
+                "id": "",
+                "icon": "",
+                "label": "Delete",
+                "topic": "",
+                "payload": "",
+                "payloadType": "str",
+                "visible": true,
+                "enabled": true
+            }
+        ],
+        "colors": "theme",
+        "textColor": "#000000",
+        "backgroundColor": "#ffffff",
+        "borderColor": "#626262",
+        "intervalLength": 0,
+        "intervalUnit": "secs",
+        "startTimerAtOpen": false,
+        "startTimerAtLeave": true,
+        "stopTimerAtEnter": true,
+        "name": "pending nodes ctx",
+        "x": 810,
+        "y": 320,
+        "wires": [
+            [
+                "7965e8cf8c0f94ee"
+            ]
+        ]
+    },
+    {
+        "id": "7965e8cf8c0f94ee",
+        "type": "function",
+        "z": "08ebeea6e2046abd",
+        "name": "handle context menu",
+        "func": "if (msg.payload.toLowerCase() === 'delete') {\n    const node_id = msg.sourceMsg.payload.row.node;\n    msg.payload = \"salt-key -y -d \" + node_id;\n} else if (msg.payload.toLowerCase() === 'accept') {\n    const node_id = msg.sourceMsg.payload.row.node;\n    msg.payload = \"salt-key -y -a \" + node_id;\n} else if (msg.payload.toLowerCase() === 'reject') {\n    const node_id = msg.sourceMsg.payload.row.node;\n    msg.payload = \"salt-key -y -r \" + node_id;\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1080,
+        "y": 340,
+        "wires": [
+            [
+                "430201fe36756d7b"
+            ]
+        ]
+    },
+    {
+        "id": "430201fe36756d7b",
+        "type": "exec",
+        "z": "08ebeea6e2046abd",
+        "command": "",
+        "addpay": "payload",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "salt-key cmd",
+        "x": 1290,
+        "y": 340,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "d8c7f242128e6d08",
+        "type": "ui_button",
+        "z": "08ebeea6e2046abd",
+        "name": "restart salt master",
+        "group": "2bfbf363d31643c1",
+        "order": 7,
+        "width": 3,
+        "height": 1,
+        "passthru": true,
+        "label": "Restart Salt",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 310,
+        "y": 120,
+        "wires": [
+            [
+                "941674b482aa389f"
+            ]
+        ]
+    },
+    {
+        "id": "fd6fa0f7672dae01",
+        "type": "ui_button",
+        "z": "08ebeea6e2046abd",
+        "name": "sync beacons",
+        "group": "2bfbf363d31643c1",
+        "order": 5,
+        "width": 3,
+        "height": 1,
+        "passthru": true,
+        "label": "Sync Beacons",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 300,
+        "y": 200,
+        "wires": [
+            [
+                "d6147e86664e5e9b"
+            ]
+        ]
+    },
+    {
+        "id": "3e0cb6f98233ae1e",
+        "type": "complete",
+        "z": "08ebeea6e2046abd",
+        "name": "sync beacons trigger",
+        "scope": [
+            "1e980162154930d3",
+            "430201fe36756d7b"
+        ],
+        "uncaught": false,
+        "x": 90,
+        "y": 200,
+        "wires": [
+            [
+                "fd6fa0f7672dae01"
+            ]
+        ]
+    },
+    {
+        "id": "c66030ce72b513a0",
+        "type": "ui_table",
+        "z": "08ebeea6e2046abd",
+        "group": "90cedd2a8446aa03",
+        "name": "Rejected Minions",
+        "order": 1,
+        "width": 6,
+        "height": 1,
+        "columns": [
+            {
+                "field": "node",
+                "title": "Node",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 1,
+        "cts": true,
+        "x": 550,
+        "y": 380,
+        "wires": [
+            [
+                "82b1693fd1f95a9a"
+            ]
+        ]
+    },
+    {
+        "id": "75933c13fdf23b68",
+        "type": "function",
+        "z": "08ebeea6e2046abd",
+        "name": "rejected minion data",
+        "func": "if (msg.payload.length === 0) return null;\nvar json = JSON.parse(msg.payload);\nvar table = json[\"minions_rejected\"].map((node) => (\n    {\n        \"node\": node,\n    }\n    ));\nconst rowContext = \"function (e, row) { e.preventDefault(); console.log(\\\"Right clickt! \\\", row.getData());console.log(\\\"e event:\\\", e); this.send({payload: {row: row.getData(), clientX: e.clientX, clientY: e.clientY}});}\";\nmsg.ui_control = {\n    tabulator: {\n        rowContext: rowContext\n    }\n}\n    \nmsg.payload = table;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 440,
+        "wires": [
+            [
+                "c66030ce72b513a0"
+            ]
+        ]
+    },
+    {
+        "id": "7876ca71a72f89cd",
+        "type": "ui_button",
+        "z": "08ebeea6e2046abd",
+        "name": "",
+        "group": "90cedd2a8446aa03",
+        "order": 3,
+        "width": 3,
+        "height": 1,
+        "passthru": false,
+        "label": "Delete All",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 220,
         "y": 500,
+        "wires": [
+            [
+                "56b4fe9fdbfea327"
+            ]
+        ]
+    },
+    {
+        "id": "cbadd1ff66949d65",
+        "type": "debug",
+        "z": "08ebeea6e2046abd",
+        "name": "debug 7",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1260,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "82b1693fd1f95a9a",
+        "type": "ui_context_menu",
+        "z": "08ebeea6e2046abd",
+        "group": "90cedd2a8446aa03",
+        "order": 5,
+        "width": 1,
+        "height": 1,
+        "fontSize": 16,
+        "inputPositionXField": "payload.clientX",
+        "inputPositionXType": "msg",
+        "inputPositionYField": "payload.clientY",
+        "inputPositionYType": "msg",
+        "outputField": "payload",
+        "inputMenuField": "menu",
+        "inputMenuType": "fixed",
+        "menuItems": [
+            {
+                "id": "",
+                "icon": "",
+                "label": "Delete",
+                "topic": "",
+                "payload": "",
+                "payloadType": "str",
+                "visible": true,
+                "enabled": true
+            }
+        ],
+        "colors": "theme",
+        "textColor": "#000000",
+        "backgroundColor": "#ffffff",
+        "borderColor": "#626262",
+        "intervalLength": 0,
+        "intervalUnit": "secs",
+        "startTimerAtOpen": false,
+        "startTimerAtLeave": true,
+        "stopTimerAtEnter": true,
+        "name": "rejected nodes ctx",
+        "x": 810,
+        "y": 380,
+        "wires": [
+            [
+                "7965e8cf8c0f94ee"
+            ]
+        ]
+    },
+    {
+        "id": "56b4fe9fdbfea327",
+        "type": "exec",
+        "z": "08ebeea6e2046abd",
+        "command": "salt-key -L -r --output json",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "30",
+        "winHide": false,
+        "oldrc": false,
+        "name": "probe minions",
+        "x": 480,
+        "y": 500,
+        "wires": [
+            [
+                "4991dec486cbc8e7"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "4991dec486cbc8e7",
+        "type": "function",
+        "z": "08ebeea6e2046abd",
+        "name": "delete all rejected",
+        "func": "if (msg.payload.length === 0) return null;\nvar json = JSON.parse(msg.payload);\nvar table = json[\"minions_rejected\"].map((node) => (\n    {\n        \"node\": node,\n    }\n    ));\n\ntable.forEach(function (row) {\n    // Create a new message for each row\n    var msg = {\n        payload: \"salt-key -y -d \" + row.node\n    };\n\n    // Send the message to the next node or debug it\n    node.send(msg);\n});\n    ",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1070,
+        "y": 500,
+        "wires": [
+            [
+                "430201fe36756d7b"
+            ]
+        ]
+    },
+    {
+        "id": "cbb5141d17c16d5c",
+        "type": "function",
+        "z": "08ebeea6e2046abd",
+        "name": "set cert pw cfg",
+        "func": "global.set('CERT_PW_CFG', msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a1954ee40501addf",
+        "type": "function",
+        "z": "08ebeea6e2046abd",
+        "name": "set cert tag cfg",
+        "func": "global.set('CERT_TAG_CFG', msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 620,
         "wires": [
             []
         ]
@@ -1738,7 +2558,6 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "",
         "payloadType": "date",
         "x": 110,
         "y": 40,
@@ -1784,6 +2603,7 @@
         "y": 200,
         "wires": [
             [
+                "3c7c3eadaffd6355",
                 "4462413a63e4b79f"
             ]
         ]
@@ -1808,6 +2628,7 @@
         "y": 160,
         "wires": [
             [
+                "0f61c07cc7630837",
                 "4048f14b0d7195b5"
             ]
         ]
@@ -1829,12 +2650,11 @@
         "topic": "",
         "payload": "change",
         "payloadType": "str",
-        "x": 160,
-        "y": 340,
+        "x": 180,
+        "y": 300,
         "wires": [
             [
-                "929c2e6d31291d23",
-                "a2497f2005085264"
+                "929c2e6d31291d23"
             ]
         ]
     },
@@ -1843,7 +2663,7 @@
         "type": "function",
         "z": "9a56025e8414a3d5",
         "name": "Init table",
-        "func": "if ([\"connect\", \"change\"].includes(msg.payload)) {\n  const fields = [\"city\", \"state\", \"displayTemperature\", \"humidity\"]\n  const tempSorter =\n    \"function (a, b, aRow, bRow, column, dir, sorterParams) { const aNum = aRow.getData().temperature; const bNum = bRow.getData().temperature;return aNum-bNum}\";\n  const dataSorted =\n    \"function (sorters, rows) { const ret = sorters.map((item) => { return { column: item.field, dir: item.dir }});const ids = rows.map((item)=>item.getData().id);this.send({payload:{sorters:ret,ids}});}\";\n  const rowContext = \"function (e, row) { e.preventDefault(); console.log(\\\"Right clickt! \\\", row.getData());}\";\n  msg = {}; \n  msg.refresh = true\n  msg.payload = []\n  msg.ui_control = {\n    tabulator: {\n      rowContext: rowContext,\n      initialSort: (global.get(\"tableSort\", \"file\") || {}).sorters || [],\n      dataSorted,\n      columns: [\n        {\n          field: \"id\",\n          title: \"ID\",\n          align: \"center\",\n          sorter: \"number\",\n        },\n        {\n          field: \"city\",\n          title: \"City\",\n          align: \"center\",\n          sorter: \"string\",\n        },\n        {\n          field: \"state\",\n          title: \"State\",\n          align: \"center\",\n          sorter: \"string\",\n        },\n        {\n          field: \"displayTemperature\",\n          title: \"Temperature [\\u00b0F]\",\n          align: \"center\",\n          sorter: tempSorter,\n          formatter: \"html\",\n        },\n        {\n          field: \"humidity\",\n          title: \"Humidity [%]\",\n          align: \"center\",\n          sorter: \"number\",\n        },\n      ],\n    },\n  }\n  return msg\n}\n",
+        "func": "if ([\"connect\", \"change\"].includes(msg.payload)) {\n  const fields = [\"city\", \"state\", \"displayTemperature\", \"humidity\"]\n  const tempSorter =\n    \"function (a, b, aRow, bRow, column, dir, sorterParams) { const aNum = aRow.getData().temperature; const bNum = bRow.getData().temperature;return aNum-bNum}\"\n  const dataSorted =\n    \"function (sorters, rows) { const ret = sorters.map((item) => { return { column: item.field, dir: item.dir }});const ids = rows.map((item)=>item.getData().id);this.send({payload:{sorters:ret,ids}});}\"\n  msg = {}\n  msg.refresh = true\n  msg.payload = []\n  msg.ui_control = {\n    tabulator: {\n      initialSort: (global.get(\"tableSort\", \"file\") || {}).sorters || [],\n      dataSorted,\n      columns: [\n        {\n          field: \"id\",\n          title: \"ID\",\n          align: \"center\",\n          sorter: \"number\",\n        },\n        {\n          field: \"city\",\n          title: \"City\",\n          align: \"center\",\n          sorter: \"string\",\n        },\n        {\n          field: \"state\",\n          title: \"State\",\n          align: \"center\",\n          sorter: \"string\",\n        },\n        {\n          field: \"displayTemperature\",\n          title: \"Temperature [\\u00b0F]\",\n          align: \"center\",\n          sorter: tempSorter,\n          formatter: \"html\",\n        },\n        {\n          field: \"humidity\",\n          title: \"Humidity [%]\",\n          align: \"center\",\n          sorter: \"number\",\n        },\n      ],\n    },\n  }\n  return msg\n}\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -1854,8 +2674,42 @@
         "wires": [
             [
                 "4048f14b0d7195b5",
-                "d7974a7d5a52bbfa",
-                "c518da427e363a19"
+                "0ec87ff34a660692",
+                "d7974a7d5a52bbfa"
+            ]
+        ]
+    },
+    {
+        "id": "b106ce5bec21c7bb",
+        "type": "promptinput",
+        "z": "9a56025e8414a3d5",
+        "name": "City to delete",
+        "datatype": "str",
+        "prompt": "What city to delete?",
+        "property": "payload",
+        "propertyType": "msg",
+        "x": 170,
+        "y": 120,
+        "wires": [
+            [
+                "8ac7c8d417c703dd"
+            ]
+        ]
+    },
+    {
+        "id": "8d4de88d88908211",
+        "type": "promptinput",
+        "z": "9a56025e8414a3d5",
+        "name": "City to add",
+        "datatype": "str",
+        "prompt": "City to add?",
+        "property": "payload",
+        "propertyType": "msg",
+        "x": 180,
+        "y": 200,
+        "wires": [
+            [
+                "8e6c70000f600c13"
             ]
         ]
     },
@@ -1867,7 +2721,7 @@
         "rules": [
             {
                 "t": "set",
-                "p": "tableSort",
+                "p": "#:(file)::tableSort",
                 "pt": "global",
                 "to": "payload",
                 "tot": "msg"
@@ -1878,11 +2732,62 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1140,
-        "y": 200,
+        "x": 1100,
+        "y": 180,
         "wires": [
             []
         ]
+    },
+    {
+        "id": "3c7c3eadaffd6355",
+        "type": "debug",
+        "z": "9a56025e8414a3d5",
+        "name": "Table output",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 890,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "0ec87ff34a660692",
+        "type": "debug",
+        "z": "9a56025e8414a3d5",
+        "name": "Table init",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "0f61c07cc7630837",
+        "type": "debug",
+        "z": "9a56025e8414a3d5",
+        "name": "Table manager",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 740,
+        "y": 120,
+        "wires": []
     },
     {
         "id": "fcf8b936f83d85a5",
@@ -1890,12 +2795,11 @@
         "z": "9a56025e8414a3d5",
         "name": "Refresh",
         "events": "all",
-        "x": 160,
-        "y": 280,
+        "x": 180,
+        "y": 260,
         "wires": [
             [
-                "929c2e6d31291d23",
-                "a2497f2005085264"
+                "929c2e6d31291d23"
             ]
         ]
     },
@@ -1908,28 +2812,23 @@
         "propertyType": "msg",
         "rules": [
             {
-                "t": "null"
-            },
-            {
                 "t": "neq",
                 "v": "0",
                 "vt": "num"
             }
         ],
-        "checkall": "false",
+        "checkall": "true",
         "repair": false,
-        "outputs": 2,
-        "x": 930,
-        "y": 200,
+        "outputs": 1,
+        "x": 910,
+        "y": 180,
         "wires": [
-            [],
             [
                 "9abb64c652472d61"
             ]
         ],
         "outputLabels": [
-            "Yes",
-            ""
+            "Yes"
         ]
     },
     {
@@ -2052,10 +2951,6 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "style": false,
-        "font": "",
-        "fontSize": "",
-        "color": "#000000",
         "x": 740,
         "y": 320,
         "wires": []
@@ -2073,10 +2968,6 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "style": false,
-        "font": "",
-        "fontSize": "",
-        "color": "#000000",
         "x": 740,
         "y": 280,
         "wires": []
@@ -2108,209 +2999,5 @@
                 "9f2cb0d80444b4ab"
             ]
         ]
-    },
-    {
-        "id": "b106ce5bec21c7bb",
-        "type": "promptinput",
-        "z": "9a56025e8414a3d5",
-        "name": "City to delete",
-        "datatype": "str",
-        "prompt": "What city to delete?",
-        "property": "payload",
-        "propertyType": "msg",
-        "x": 170,
-        "y": 120,
-        "wires": [
-            [
-                "8ac7c8d417c703dd"
-            ]
-        ]
-    },
-    {
-        "id": "8d4de88d88908211",
-        "type": "promptinput",
-        "z": "9a56025e8414a3d5",
-        "name": "City to add",
-        "datatype": "str",
-        "prompt": "City to add?",
-        "property": "payload",
-        "propertyType": "msg",
-        "x": 160,
-        "y": 200,
-        "wires": [
-            [
-                "8e6c70000f600c13"
-            ]
-        ]
-    },
-    {
-        "id": "a2497f2005085264",
-        "type": "debug",
-        "z": "9a56025e8414a3d5",
-        "name": "debug 3",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 620,
-        "y": 440,
-        "wires": []
-    },
-    {
-        "id": "c518da427e363a19",
-        "type": "debug",
-        "z": "9a56025e8414a3d5",
-        "name": "debug 4",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 640,
-        "y": 520,
-        "wires": []
-    },
-    {
-        "id": "3568474e.c4c9b8",
-        "type": "ui_template",
-        "z": "f27cc9072e20fd59",
-        "group": "53cf504.e9555b",
-        "name": "user input validate",
-        "order": 4,
-        "width": "7",
-        "height": "2",
-        "format": "<md-input-container  style=\"overflow:hidden;\">\n    <span> \n    <input ng-model=\"user.input\" style=\"width:150px\" placeholder={{msg.topic}}><button class=\"bluebutton\" ng-click=\"msg.payload = user.input; send(msg)\" ng-keypress=\"($event.charCode==13)?msg.payload = user.input; send(msg)\" ngstyle=\"{background-color: #008CBA;}\" style=\"\n    color: #fff;\n    background-color: #5bc0de;\n    border-color: #46b8da;\">Ok</button></span>\n</md-input-container>\n    ",
-        "storeOutMessages": true,
-        "fwdInMessages": false,
-        "templateScope": "local",
-        "x": 450,
-        "y": 180,
-        "wires": [
-            [
-                "77f708e7.52d828",
-                "2a2db3f8.64ff1c"
-            ]
-        ]
-    },
-    {
-        "id": "77f708e7.52d828",
-        "type": "debug",
-        "z": "f27cc9072e20fd59",
-        "name": "",
-        "active": true,
-        "console": "false",
-        "complete": "false",
-        "x": 685,
-        "y": 165,
-        "wires": []
-    },
-    {
-        "id": "328882f5.827d9e",
-        "type": "ui_template",
-        "z": "f27cc9072e20fd59",
-        "group": "53cf504.e9555b",
-        "name": "user input",
-        "order": 6,
-        "width": "7",
-        "height": "2",
-        "format": "<md-input-container  style=\"overflow:hidden;\">\n    <span> \n    <input ng-model=\"user.input\" style=\"width:150px\" placeholder=\"{{msg.topic}}\" ng-change=\"msg.payload = user.input; send(msg)\"></span>\n</md-input-container>\n    ",
-        "storeOutMessages": true,
-        "fwdInMessages": false,
-        "templateScope": "local",
-        "x": 475,
-        "y": 230,
-        "wires": [
-            [
-                "77f708e7.52d828",
-                "cf78039a.54ab3"
-            ]
-        ]
-    },
-    {
-        "id": "e86c3bfa.5943e8",
-        "type": "inject",
-        "z": "f27cc9072e20fd59",
-        "name": "",
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "topic": "Name",
-        "payload": "",
-        "payloadType": "date",
-        "x": 255,
-        "y": 180,
-        "wires": [
-            [
-                "3568474e.c4c9b8"
-            ]
-        ]
-    },
-    {
-        "id": "d3468d1.929f77",
-        "type": "inject",
-        "z": "f27cc9072e20fd59",
-        "name": "",
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "topic": "Topic",
-        "payload": "",
-        "payloadType": "date",
-        "x": 245,
-        "y": 230,
-        "wires": [
-            [
-                "328882f5.827d9e"
-            ]
-        ]
-    },
-    {
-        "id": "cf78039a.54ab3",
-        "type": "ui_text",
-        "z": "f27cc9072e20fd59",
-        "group": "53cf504.e9555b",
-        "order": 7,
-        "width": "7",
-        "height": "1",
-        "name": "",
-        "label": "text",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "style": false,
-        "font": "",
-        "fontSize": "",
-        "color": "#000000",
-        "x": 670,
-        "y": 240,
-        "wires": []
-    },
-    {
-        "id": "2a2db3f8.64ff1c",
-        "type": "ui_text",
-        "z": "f27cc9072e20fd59",
-        "group": "53cf504.e9555b",
-        "order": 5,
-        "width": "7",
-        "height": "1",
-        "name": "",
-        "label": "text",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "style": false,
-        "font": "",
-        "fontSize": "",
-        "color": "#000000",
-        "x": 670,
-        "y": 200,
-        "wires": []
     }
 ]

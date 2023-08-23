@@ -1,0 +1,327 @@
+#!/usr/bin/env perl
+
+use strict;
+
+use FindBin;
+use lib "$FindBin::Bin/../perllib";
+
+use Getopt::Long qw(:config no_ignore_case);
+use File::Basename;
+use File::Path qw(make_path rmtree remove_tree);
+use File::Copy;
+use Cwd qw(abs_path);
+
+use MIME::Base64 qw(encode_base64 decode_base64);
+
+use Net::OpenSSH::Parallel;
+use Expect;
+
+use IO::Handle;
+
+use Data::Dumper;
+
+my $VCACHE_MGR_ROOT = "$FindBin::Bin/..";
+
+use constant
+  {
+   HOST => 0,
+   USER => 1,
+   KEY => 2,
+   PW => 3
+  };
+
+my $usage = "$0 [-?|--help] [-d|--debug] [-D|--dry-run] [f|--force] [-r|--roster-file <roster-file>] [-u|--ssh-user <ssh-user>] [-p|--ssh-password <ssh-password>] [-k|--ssh-key <ssh-key>] [-h|--ssh-host <ssh-host>] [-m|--mgr-addr <mgr-addr>] [-g|--gen-keys] [-t|--target-dir] (-i|--installer <installer> | -c|--command <cmd>*) [-C|--command-arg <cmd-arg>*]\n";
+
+my $help = 0;
+my $debug = 0;
+my $quiet = 0;
+my $dry_run = 0;
+my $force = 0;
+my $installer;
+my $roster;
+my $ssh_user;
+my $ssh_password;
+my $ssh_key;
+my $ssh_host;
+my $mgr_addr = qx(hostname); chomp($mgr_addr);
+my $gen_keys;
+my $target_dir;
+my @command;
+my @cmd_args;
+my $in_docker = 0;
+
+my $date_str = `date +%Y-%m-%d-%H:%m`;chomp $date_str;
+my $app = basename($0);
+my $log_file = "$VCACHE_MGR_ROOT/log/$app-$date_str.log";
+my $LOG;
+
+sub app_debug {
+  if ($debug) {
+    app_log(@_)
+  }
+}
+
+sub app_log {
+  my $text = join '',@_;
+  my $mod_text = "";
+  foreach my $line (split(/\n/, $text)){
+    $line =~ s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g;
+    $mod_text .= (scalar localtime()).":: ".$line."\n" unless $line =~ /^\w{3}\s+\w{3}\s+\d+\s+\d+:\d+:\d+ \d+/;
+  }
+  print $mod_text unless $quiet;
+  print $LOG $mod_text; $LOG->flush;
+}
+
+sub app_cmd {
+    my $cmd = shift;
+    open(F, "$cmd 2>&1 |") or app_die("open failed: $cmd [return: $?]");
+    while (<F>) {
+        app_log($_);
+    }
+    close F; # to set $?
+}
+
+sub app_die {
+  my ($package, $filename, $line) = caller;
+  app_log @_, " ($package, $filename:$line)\n";
+  app_log_close();
+  exit 1;
+}
+
+sub app_log_open {
+  if (not -e dirname($log_file)) {
+    mkdir dirname($log_file), 0777;
+  }
+  if (-e $log_file) {
+      unlink $log_file;
+  }
+  open($LOG, '>', $log_file) or die "Could not open $log_file!";
+  $LOG->autoflush;
+  print "logging to: $log_file\n";
+}
+
+sub app_log_close {
+  close $LOG;
+  system("stty echo");
+  system("stty onlcr");
+  system("stty opost");
+  print "log written to: $log_file\r\n";
+}
+
+GetOptions('help|?' => \$help, 'q|quiet' => \$quiet, 'd|debug' =>\$debug, 'D|dry-run' => \$dry_run, 'f|force' => \$force,
+		   'i|installer=s' => \$installer, 'r|deployment-roster=s' => \$roster, 'h|ssh-host=s' => \$ssh_host,
+           'u|ssh-user=s' => \$ssh_user, 'p|ssh-password=s' => \$ssh_password, 'k|ssh-key=s' => \$ssh_key,
+           'm|mgr-addr=s' => \$mgr_addr, 'g|gen-key' => \$gen_keys, 't|target-dir=s' => \$target_dir,
+           'c|command=s' => \@command, 'C|command-arg=s' => \@cmd_args) or die($usage);
+
+if ($help) {
+  print $usage; exit 0;
+}
+
+app_log_open();
+app_die("installer or command not defined") unless defined($installer) or @command;
+app_die("installer not readbale: $installer") if defined($installer) and not -r $installer;
+app_die("unable to determine deployment target (no host or roster)") unless defined($ssh_host) or defined($roster);
+app_die("unable to read roster: $roster") if defined($roster) and not -r $roster;
+
+$Net::OpenSSH::Parallel::debug = -1 if $debug;
+
+if ($gen_keys) {
+  if (-e '/.dockerenv') {
+    $in_docker = 1;
+    app_log("running inside docker: attempting direct salt-key calls");
+    system("salt-key -L >/dev/null 2>&1");
+    app_die("gen keys error: unable to execute salt-key: $?") unless $? == 0;
+  } else {
+    $in_docker = 0;
+    app_log("running outside docker: attempting to call salt-key in vCache Manager container");
+    system("sudo docker exec -it vcache_mgr salt-key -L >/dev/null");
+    app_die("gen keys error: unable to execute salt-key in container: vcache_mgr ($?)") unless $? == 0;
+  }
+}
+
+my @deployment_targets = ();
+if (defined($roster)) {
+  app_debug("processing roster: $roster");
+  open(R, '<', $roster) or app_die("could not open roster: $roster ($!)");
+  while (my $entry = <R>) {
+	chomp $entry;
+	next if $entry =~ /^\s*$/ or $entry =~ /^\s*#/;
+	app_debug("processing roster entry: $entry");
+	my ($host,$user,$key,$pw);
+	# <host-dns-or-ip[:<port>]>,<user>,[<keyfile[:passphrase]>],[<password>]
+	($host, $user, $key, $pw) = split(/(?<!\\),/, $entry, 4);
+	app_die("unable to parse host: $host [$entry])") if not defined($host) or length($host)==0;
+	app_die("unable to parse user: $user [$entry]") if not defined($user) or length($user)==0;
+	if (defined($key) and length($key)) {
+      ($key) = glob($key);
+	  app_debug("key from roster: $key");
+	  app_die("unable to read keyfile: $key [$entry]") unless -r $key;
+	}
+	push(@deployment_targets, [$host,$user,$key,$pw]);
+  }
+  close(R);
+}
+
+if (defined($ssh_host)) {
+  app_die("user not defined for deployment target: $ssh_host") unless defined($ssh_user);
+  app_die("key or password not defined for deployment target: $ssh_host") unless defined($ssh_key) or defined($ssh_password);
+  my $key = (defined($ssh_key) ? $ssh_key : '<undef>');
+  my $pw = (defined($ssh_password) ? $ssh_password : '<undef>');
+  app_debug("adding ssh host: $ssh_host, $ssh_user, $key, $pw");
+  push(@deployment_targets, [$ssh_host, $ssh_user, $ssh_key, $ssh_password]);
+}
+
+my $pssh = new Net::OpenSSH::Parallel;
+
+my %sudo_pw;
+# populate deployment targets
+foreach my $entry (@deployment_targets) {
+  my @args;
+  my ($host,$user,$key,$pw) = @{$entry};
+  push(@args, $host, 'user' => $user);
+  my $passphrase;
+  ($key,$passphrase) = split(/:/,$key) if $key =~ /:/;
+  app_debug("ssh target - adding entry: $host,$user,$key,$pw");
+  push(@args, 'key_path' => $key) if defined($key) and length($key);
+  push(@args, 'passphrase' => $passphrase) if defined($passphrase);
+  push(@args, 'password' => $pw) if (defined($pw) and length($pw)) and (not defined($key) or not length($key)); # do not pass password if key is defined
+  push(@args, 'master_opts' => [-o => "UserKnownHostsFile=/dev/null", -o => "StrictHostKeyChecking=no", -o => "LogLevel=ERROR"]);
+  $host =~ s/:.*$//;
+  $sudo_pw{$host} = $pw if defined($pw) and length($pw);
+  $pssh->add_host(@args);
+}
+
+sub sudo_cmd {
+  my ($label, $ssh, $cmd, $args, $dir) = @_;
+  my @cmd;
+  my @args;
+  my $keys_b64;
+
+  $label =~ s/:.*$//; # trim port for non-connection use
+
+  if (ref($cmd) eq 'ARRAY') {
+    @cmd = @{$cmd};
+  } else {
+    @cmd=($cmd);
+  }
+
+  if (defined($args)) {
+    if (ref($args) eq 'ARRAY') {
+      push(@args, @{$args});
+    } else {
+      push(@args, $args);
+    }
+  }
+
+  foreach my $a (@args) {
+    $a = eval($a) if $a =~ /^(\$|\&|\%|\@)\S+$/;
+  }
+  push(@cmd,@args);
+
+  if ($gen_keys) {
+    if ($in_docker) {
+      $keys_b64 = `vcache-mgr-gen-keys ${label} ${force}`;
+      if ($? != 0) {
+        app_die("unable to obtain keys for: ${label}");
+      }
+
+    } else {
+      $keys_b64 = `sudo docker exec -it vcache_mgr vcache-mgr-gen-keys ${label} ${force}`;
+      if ($? != 0) {
+        app_die("unable to obtain keys for: ${label} (container: vcache_mgr vcache-mgr-gen-keys)");
+      }
+    }
+    app_debug("base 64 keys: $keys_b64");
+    push(@cmd, '-k', $keys_b64);
+  }
+
+  my ($pty) = $ssh->open2pty;
+  my $expect = Expect->init($pty);
+  $expect->debug(3) if $debug;
+  $expect->raw_pty(0);
+  $expect->expect(5,'-re', qr/.*(\$|\#) $/);
+  if (defined($dir)) {
+    $expect->send("cd $dir\n");
+    $expect->expect(5,'-re', qr/.*(\$|\#) $/);
+  }
+  app_debug("$label: login: ", $expect->before());
+
+  my %dup_lines;
+  my $pw = $sudo_pw{$label};
+  my $ecmd = join(' ', @cmd) . "\n";
+  $ecmd = "VCACHE_SUDO_PW=$pw $ecmd" if defined($pw);
+  app_debug("$label: $ecmd");
+  $expect->raw_pty(1);
+  $expect->send("$ecmd");
+  my $sudo_prompt = qr/\[sudo\] password for \S+: $/;
+  $expect->expect(60,
+    [ $sudo_prompt => sub {
+        my $exp = shift;
+        $exp->send("$pw\n");
+        app_debug("$label: expect before (sudo): ", $exp->before());
+        exp_continue; # Continue expecting other patterns
+      }
+    ],
+    [ qr/.*(?:\$|\#) $/ => sub {
+        my $exp = shift;
+        # Successfully finished executing the command
+        app_log("$label: command succeeded\r");
+        app_debug("$label: before: ", $exp->before());
+        app_debug("$label: match: ", $exp->match());
+        app_debug("$label: after: ", $exp->after());
+      }
+    ],
+    # XXX terrible hack so that expect does not timeout during a docker-compose build - must be a better way #      qr/(?=((?!\bsudo\b).)*)/
+    [ qr/.*(vcache|done|step|install|get|run|set|prep|unpack|updat|gcc|pass|test|check|copy|env|arg).*$/i => sub {
+        my $exp = shift;
+        my $line = $exp->match();
+        #        $line =~ s/.*[^[:print:]]+//;
+        $line =~ s/(-k )(\S+)/$1<key>/s;
+        $line =~
+          s/ \e[ #%()*+\-.\/]. |
+             (?:\e\[|\x9b) [ -?]* [@-~] | # CSI ... Cmd
+             (?:\e\]|\x9d) .*? (?:\e\\|[\a\x9c]) | # OSC ... (ST|BEL)
+             (?:\e[P^_]|[\x90\x9e\x9f]) .*? (?:\e\\|\x9c) | # (DCS|PM|APC) ... ST
+             \e.|[\x80-\x9f] //xg;
+          # s/ \e[ #%()*+\-.\/]. |
+          #    \r | # Remove extra carriage returns also
+          #    (?:\e\[|\x9b) [ -?]* [@-~] | # CSI ... Cmd
+          #    (?:\e\]|\x9d) .*? (?:\e\\|[\a\x9c]) | # OSC ... (ST|BEL)
+          #    (?:\e[P^_]|[\x90\x9e\x9f]) .*? (?:\e\\|\x9c) | # (DCS|PM|APC) ... ST
+          #    \e.|[\x80-\x9f] //xg;
+        $line =~ s/\d+\.\d+s//g;
+        $line =~ s/(VCACHE_SUDO_PW=)(\S+)/$1 . 'x' x length($2)/e;
+        app_log("$label: $line\r") unless $dup_lines{"$label: $line"}++;
+        exp_continue; # Continue expecting other patterns
+      }
+    ],
+    [ eof => sub {
+        app_log("$label: command terminated unexpectedly\r");
+      }
+    ],
+    [ timeout => sub {
+        app_log("$label: command timed out\r");
+      }
+    ],
+  );
+  close $expect;
+}
+
+my $remote_installer;
+if (defined($installer)) {
+  $remote_installer = basename($installer);
+  if (defined($target_dir)) {
+    $remote_installer = "$target_dir/$remote_installer";
+  }
+  app_log("scp: $installer, $remote_installer");
+  $pssh->push('*', scp_put => {copy_attrs => 1}, $installer, $remote_installer);
+  unshift(@cmd_args, '--', '-h', '$label','-m',$mgr_addr) unless @command;
+}
+# command superceeds default installer args, use -c or -a to set
+my @cmd = (@command ? @command : ("./$remote_installer"));
+$pssh->push('*', parsub => \&sudo_cmd, \@cmd, \@cmd_args, $target_dir); # cwd => $target_dir, args => \@cmd_args);
+
+$pssh->run() unless $dry_run;
+
+app_log_close();

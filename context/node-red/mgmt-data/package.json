@@ -4,7 +4,6 @@
     "version": "0.0.1",
     "private": true,
     "dependencies": {
-        "@cappern/node-red-tls-cert-info": "~1.1.3",
         "@prescient-devices/node-red-contrib-promptinput": "~1.0.7",
         "clone": "^2.1.2",
         "node-red-contrib-file-manager": "~2.0.8",

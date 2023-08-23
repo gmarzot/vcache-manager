@@ -3,7 +3,7 @@
 die() { echo "$*" >&2; exit 6; }  # complain to STDERR and exit with error
 needs_arg() { if [ -z "$OPTARG" ]; then die "No arg for --$OPT option"; fi; }
 
-while getopts c-: OPT; do
+while getopts rc-: OPT; do
   # support long options: https://stackoverflow.com/a/28466267/519360
   if [ "$OPT" = "-" ]; then   # long option: reformulate OPT and OPTARG
     OPT="${OPTARG%%=*}"       # extract long option name
@@ -12,7 +12,7 @@ while getopts c-: OPT; do
   fi
   case "$OPT" in
     c | clean )    clean=true ;;
-    r | realclean )    realclean=true ;;
+    r | real-clean )    real_clean=true ;;
     ??* )          die "Illegal option --$OPT" ;;  # bad long option
     ? )            exit 5 ;;  # bad short option (error reported via getopts)
   esac
@@ -38,7 +38,7 @@ if [ $? != 0 ]; then
     echo "vcache manager containers are not running..."
 fi
 
-if [[ $realclean ]]; then
+if [[ $real_clean ]]; then
     echo "deep cleaning volumes and images from the vcache manager deployment..."
     sudo docker-compose down --volumes --rmi local --remove-orphans --timeout 35
     if [ $? != 0 ]; then

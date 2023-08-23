@@ -7,7 +7,7 @@ handle_stats:
       interval: 1
     - args:
       - fun: redis.hmset
-      - key: "vcache:{{ data['uuid'] }}"
+      - key: "vcache_node:{{ data['id'] }}:{{ data['uuid'] }}"
  {% for field, value in data.items() %}
       - {{ field }}: "{{ value }}"
  {% endfor %}

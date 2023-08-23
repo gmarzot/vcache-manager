@@ -1,4 +1,5 @@
 FROM nodered/node-red:latest-18
+
 RUN npm install node-red-contrib-os
 RUN npm install node-red-contrib-fs-ops
 RUN npm install node-red-contrib-cpu
@@ -19,6 +20,7 @@ RUN npm install uuid
 # uncomment the following 2 lines for production
 #COPY ./node-red/mgmt-data /data
 #VOLUME /data
+COPY ./node-red/daemon.js /usr/src/node-red/node_modules/node-red-node-daemon/daemon.js
 
 COPY ./node-red/etc/vcache-mgr /etc/vcache-mgr
 COPY ./perllib /usr/local/perllib
@@ -34,8 +36,10 @@ COPY ./node-red/salt /srv/salt
 COPY ./node-red/etc/salt/master /etc/salt/master
 COPY ./node-red/etc/salt/reactor.conf /etc/salt/master.d/reactor.conf
 
-RUN apk add py3-pip py3-numpy py3-pandas py3-scikit-learn pycryptodome contextvars
+RUN apk add py3-pip py3-numpy py3-pandas py3-scikit-learn py3-pycryptodome
+#RUN apk add py3-pip py3-numpy py3-pandas py3-scikit-learn
 RUN pip install redis
+RUN pip install contextvars
 
 RUN echo "vm.overcommit_memory = 1" >> /etc/sysctl.conf
 

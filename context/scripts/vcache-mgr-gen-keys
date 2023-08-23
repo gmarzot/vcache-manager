@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+
+if [ $# -eq 0 ]; then
+    exit 1
+else
+    ID=$1
+fi
+
+FORCE=$2
+
+cd /tmp
+
+if [ -r "/etc/salt/pki/master/minions/${ID}" ]; then
+    if [ -r "/etc/salt/pki/master/minions/private/${ID}.pem" ]; then
+        if [ -z "${FORCE}" ]; then
+            FOUND=1
+            PEM=$(cat /etc/salt/pki/master/minions/private/${ID}.pem)
+            PUB=$(cat /etc/salt/pki/master/minions/${ID})
+        fi
+    fi
+fi
+
+if [ -z "${FOUND}" ]; then
+    salt-key --gen-keys=${ID} >/dev/null 2>&1
+
+    if [ $? != 0 ]; then
+        exit 2
+    fi
+
+    cp -f ${ID}.pub /etc/salt/pki/master/minions/${ID}
+    if [ ! -d "/etc/salt/pki/master/minions/private" ]; then
+        mkdir -p /etc/salt/pki/master/minions/private
+    fi
+    cp -f ${ID}.pem /etc/salt/pki/master/minions/private/
+
+    PEM=$(cat ${ID}.pem)
+    PUB=$(cat ${ID}.pub)
+fi
+
+echo "$PUB" > ${ID}.key
+echo "" >> ${ID}.key
+echo "$PEM" >> ${ID}.key
+
+KEY=$(cat ${ID}.key | base64 -w 0 -i)
+
+if [ $? != 0 ]; then
+    exit 3
+fi
+
+rm -f ${ID}.*
+
+echo "$KEY"
+
+exit 0

@@ -982,23 +982,79 @@
             }
         }
     },
-    "node-red-contrib-jwt": {
-        "name": "node-red-contrib-jwt",
-        "version": "0.1.0",
+    "@prescient-devices/node-red-contrib-downloadfile": {
+        "name": "@prescient-devices/node-red-contrib-downloadfile",
+        "version": "1.0.8",
         "local": true,
         "user": true,
         "nodes": {
-            "jwt": {
-                "name": "jwt",
+            "downloadfile": {
+                "name": "downloadfile",
                 "types": [
-                    "jwt sign",
-                    "jwt verify"
+                    "downloadfile"
                 ],
                 "enabled": true,
                 "local": true,
                 "user": false,
-                "module": "node-red-contrib-jwt",
-                "file": "/data/node_modules/node-red-contrib-jwt/jwt.js"
+                "module": "@prescient-devices/node-red-contrib-downloadfile",
+                "file": "/data/node_modules/@prescient-devices/node-red-contrib-downloadfile/downloadfile.js"
+            }
+        }
+    },
+    "node-red-node-tail": {
+        "name": "node-red-node-tail",
+        "version": "0.4.0",
+        "local": true,
+        "user": true,
+        "nodes": {
+            "tail": {
+                "name": "tail",
+                "types": [
+                    "tail"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-node-tail",
+                "file": "/data/node_modules/node-red-node-tail/28-tail.js"
+            }
+        }
+    },
+    "node-red-contrib-ui-upload": {
+        "name": "node-red-contrib-ui-upload",
+        "version": "0.8.0",
+        "local": true,
+        "user": true,
+        "nodes": {
+            "ui_upload": {
+                "name": "ui_upload",
+                "types": [
+                    "ui_upload"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-ui-upload",
+                "file": "/data/node_modules/node-red-contrib-ui-upload/ui_upload.js"
+            }
+        }
+    },
+    "node-red-contrib-file-upload": {
+        "name": "node-red-contrib-file-upload",
+        "version": "0.0.5",
+        "local": true,
+        "user": true,
+        "nodes": {
+            "file-upload": {
+                "name": "file-upload",
+                "types": [
+                    "file-upload"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-file-upload",
+                "file": "/data/node_modules/node-red-contrib-file-upload/16-file-upload.js"
             }
         }
     }

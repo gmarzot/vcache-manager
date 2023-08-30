@@ -773,9 +773,9 @@
     },
     "node-red-node-daemon": {
         "name": "node-red-node-daemon",
-        "version": "0.5.1",
-        "local": false,
-        "user": false,
+        "version": "0.6.0",
+        "local": true,
+        "user": true,
         "nodes": {
             "daemon": {
                 "name": "daemon",
@@ -783,10 +783,10 @@
                     "daemon"
                 ],
                 "enabled": true,
-                "local": false,
+                "local": true,
                 "user": false,
                 "module": "node-red-node-daemon",
-                "file": "/usr/src/node-red/node_modules/node-red-node-daemon/daemon.js"
+                "file": "/data/node_modules/node-red-node-daemon/daemon.js"
             }
         }
     },
@@ -904,46 +904,6 @@
             }
         }
     },
-    "node-red-upload-file-to-box": {
-        "name": "node-red-upload-file-to-box",
-        "version": "0.0.1",
-        "local": true,
-        "user": true,
-        "nodes": {
-            "face-detection": {
-                "name": "face-detection",
-                "types": [
-                    "img-blur",
-                    "img-box"
-                ],
-                "enabled": true,
-                "local": true,
-                "user": false,
-                "module": "node-red-upload-file-to-box",
-                "file": "/data/node_modules/node-red-upload-file-to-box/img-box.js"
-            }
-        }
-    },
-    "node-red-contrib-file-manager": {
-        "name": "node-red-contrib-file-manager",
-        "version": "2.0.8",
-        "local": true,
-        "user": true,
-        "nodes": {
-            "node-red-contrib-file-manager": {
-                "name": "node-red-contrib-file-manager",
-                "types": [
-                    "fm-save-file",
-                    "fm-move-file"
-                ],
-                "enabled": true,
-                "local": true,
-                "user": false,
-                "module": "node-red-contrib-file-manager",
-                "file": "/data/node_modules/node-red-contrib-file-manager/file-manager.js"
-            }
-        }
-    },
     "node-red-contrib-ui-contextmenu": {
         "name": "node-red-contrib-ui-contextmenu",
         "version": "2.0.1",
@@ -1001,25 +961,6 @@
             }
         }
     },
-    "node-red-node-tail": {
-        "name": "node-red-node-tail",
-        "version": "0.4.0",
-        "local": true,
-        "user": true,
-        "nodes": {
-            "tail": {
-                "name": "tail",
-                "types": [
-                    "tail"
-                ],
-                "enabled": true,
-                "local": true,
-                "user": false,
-                "module": "node-red-node-tail",
-                "file": "/data/node_modules/node-red-node-tail/28-tail.js"
-            }
-        }
-    },
     "node-red-contrib-ui-upload": {
         "name": "node-red-contrib-ui-upload",
         "version": "0.8.0",
@@ -1039,96 +980,22 @@
             }
         }
     },
-    "node-red-contrib-file-upload": {
-        "name": "node-red-contrib-file-upload",
-        "version": "0.0.5",
+    "node-red-contrib-chunks-to-lines": {
+        "name": "node-red-contrib-chunks-to-lines",
+        "version": "0.8.0",
         "local": true,
         "user": true,
         "nodes": {
-            "file-upload": {
-                "name": "file-upload",
+            "chunks-to-lines": {
+                "name": "chunks-to-lines",
                 "types": [
-                    "file-upload"
+                    "chunks-to-lines"
                 ],
                 "enabled": true,
                 "local": true,
                 "user": false,
-                "module": "node-red-contrib-file-upload",
-                "file": "/data/node_modules/node-red-contrib-file-upload/16-file-upload.js"
-            }
-        }
-    },
-    "@icke1983/node-red-contrib-ui-popup": {
-        "name": "@icke1983/node-red-contrib-ui-popup",
-        "version": "0.9.9",
-        "local": true,
-        "user": true,
-        "nodes": {
-            "timepicker": {
-                "name": "timepicker",
-                "types": [
-                    "ui_popup-timepicker"
-                ],
-                "enabled": true,
-                "local": true,
-                "user": false,
-                "module": "@icke1983/node-red-contrib-ui-popup",
-                "file": "/data/node_modules/@icke1983/node-red-contrib-ui-popup/ui_popup_timepicker.js"
-            },
-            "colorpicker": {
-                "name": "colorpicker",
-                "types": [
-                    "ui_popup-colorpicker"
-                ],
-                "enabled": true,
-                "local": true,
-                "user": false,
-                "module": "@icke1983/node-red-contrib-ui-popup",
-                "file": "/data/node_modules/@icke1983/node-red-contrib-ui-popup/ui_popup_colorpicker.js"
-            },
-            "colortemp": {
-                "name": "colortemp",
-                "types": [
-                    "ui_popup-colortemp"
-                ],
-                "enabled": true,
-                "local": true,
-                "user": false,
-                "module": "@icke1983/node-red-contrib-ui-popup",
-                "file": "/data/node_modules/@icke1983/node-red-contrib-ui-popup/ui_popup_colortemp.js"
-            },
-            "simpleslider": {
-                "name": "simpleslider",
-                "types": [
-                    "ui_popup-simpleslider"
-                ],
-                "enabled": true,
-                "local": true,
-                "user": false,
-                "module": "@icke1983/node-red-contrib-ui-popup",
-                "file": "/data/node_modules/@icke1983/node-red-contrib-ui-popup/ui_popup_simpleslider.js"
-            },
-            "dropdown": {
-                "name": "dropdown",
-                "types": [
-                    "ui_popup-dropdown"
-                ],
-                "enabled": true,
-                "local": true,
-                "user": false,
-                "module": "@icke1983/node-red-contrib-ui-popup",
-                "file": "/data/node_modules/@icke1983/node-red-contrib-ui-popup/ui_popup_dropdown.js"
-            },
-            "iframe": {
-                "name": "iframe",
-                "types": [
-                    "ui_popup-iframe"
-                ],
-                "enabled": true,
-                "local": true,
-                "user": false,
-                "module": "@icke1983/node-red-contrib-ui-popup",
-                "file": "/data/node_modules/@icke1983/node-red-contrib-ui-popup/ui_popup_iframe.js"
+                "module": "node-red-contrib-chunks-to-lines",
+                "file": "/data/node_modules/node-red-contrib-chunks-to-lines/chunks-to-lines.js"
             }
         }
     }

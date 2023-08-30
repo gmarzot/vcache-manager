@@ -74,129 +74,6 @@
         ]
     },
     {
-        "id": "19ad2b6f.f11b85",
-        "type": "subflow",
-        "name": "Certificate Upload",
-        "info": "",
-        "category": "",
-        "in": [],
-        "out": [
-            {
-                "x": 1140,
-                "y": 280,
-                "wires": [
-                    {
-                        "id": "144a9c8f.af7e9b",
-                        "port": 0
-                    },
-                    {
-                        "id": "854a9fb8.a668a8",
-                        "port": 0
-                    }
-                ]
-            }
-        ],
-        "env": [
-            {
-                "name": "UPLOAD_DIR",
-                "type": "str",
-                "value": "."
-            },
-            {
-                "name": "EXTENSIONS",
-                "type": "json",
-                "value": "[]"
-            }
-        ],
-        "meta": {},
-        "color": "#DDAA99",
-        "outputLabels": [
-            "fileWritten"
-        ]
-    },
-    {
-        "id": "38e7de2b5e7e983e",
-        "type": "subflow",
-        "name": "Roster Upload",
-        "info": "",
-        "category": "",
-        "in": [],
-        "out": [
-            {
-                "x": 1140,
-                "y": 280,
-                "wires": [
-                    {
-                        "id": "969fd40e7d931879",
-                        "port": 0
-                    },
-                    {
-                        "id": "7da858d9b16a382f",
-                        "port": 0
-                    }
-                ]
-            }
-        ],
-        "env": [
-            {
-                "name": "UPLOAD_DIR",
-                "type": "str",
-                "value": ""
-            },
-            {
-                "name": "EXTENSIONS",
-                "type": "json",
-                "value": "[]"
-            }
-        ],
-        "meta": {},
-        "color": "#DDAA99",
-        "outputLabels": [
-            "fileWritten"
-        ]
-    },
-    {
-        "id": "f20a02c6de528163",
-        "type": "subflow",
-        "name": "Config Upload",
-        "info": "",
-        "category": "",
-        "in": [],
-        "out": [
-            {
-                "x": 1180,
-                "y": 300,
-                "wires": [
-                    {
-                        "id": "bf3f2823eed71a1a",
-                        "port": 0
-                    },
-                    {
-                        "id": "c495efc89d826399",
-                        "port": 0
-                    }
-                ]
-            }
-        ],
-        "env": [
-            {
-                "name": "UPLOAD_DIR",
-                "type": "str",
-                "value": ""
-            },
-            {
-                "name": "EXTENSIONS",
-                "type": "json",
-                "value": "[]"
-            }
-        ],
-        "meta": {},
-        "color": "#DDAA99",
-        "outputLabels": [
-            "fileWritten"
-        ]
-    },
-    {
         "id": "052b56c89572e05e",
         "type": "ui_base",
         "theme": {
@@ -284,10 +161,10 @@
             "sizes": {
                 "sx": 48,
                 "sy": 48,
-                "gx": 6,
-                "gy": 6,
-                "cx": 6,
-                "cy": 6,
+                "gx": 0,
+                "gy": 0,
+                "cx": 0,
+                "cy": 0,
                 "px": 0,
                 "py": 0
             }
@@ -320,7 +197,7 @@
         "tab": "94c965dfa02ebec9",
         "order": 1,
         "disp": true,
-        "width": "19",
+        "width": 23,
         "collapse": true,
         "className": ""
     },
@@ -331,8 +208,8 @@
         "tab": "66f7a7293d482a39",
         "order": 2,
         "disp": true,
-        "width": 21,
-        "collapse": false,
+        "width": 23,
+        "collapse": true,
         "className": ""
     },
     {
@@ -359,8 +236,8 @@
         "tab": "94c965dfa02ebec9",
         "order": 2,
         "disp": true,
-        "width": 19,
-        "collapse": false,
+        "width": 23,
+        "collapse": true,
         "className": ""
     },
     {
@@ -373,93 +250,13 @@
         "hidden": false
     },
     {
-        "id": "4727dacc99a4cf54",
-        "type": "ui_spacer",
-        "z": "08ebeea6e2046abd",
-        "name": "spacer",
-        "group": "2bfbf363d31643c1",
-        "order": 2,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "478986ae871a54b5",
-        "type": "ui_spacer",
-        "z": "08ebeea6e2046abd",
-        "name": "spacer",
-        "group": "2bfbf363d31643c1",
-        "order": 4,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "123792ca54b0051d",
-        "type": "ui_spacer",
-        "z": "08ebeea6e2046abd",
-        "name": "spacer",
-        "group": "2bfbf363d31643c1",
-        "order": 6,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "40e702f4c5323bf8",
-        "type": "ui_spacer",
-        "z": "08ebeea6e2046abd",
-        "name": "spacer",
-        "group": "2bfbf363d31643c1",
-        "order": 8,
-        "width": "1",
-        "height": "1"
-    },
-    {
-        "id": "6681e3c614da9486",
-        "type": "ui_spacer",
-        "z": "08ebeea6e2046abd",
-        "name": "spacer",
-        "group": "2bfbf363d31643c1",
-        "order": 10,
-        "width": 18,
-        "height": 1
-    },
-    {
-        "id": "4e176e16cfeb267d",
-        "type": "ui_spacer",
-        "z": "08ebeea6e2046abd",
-        "name": "spacer",
-        "group": "90cedd2a8446aa03",
-        "order": 2,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "094d9b069e4cc6a2",
-        "type": "ui_spacer",
-        "z": "08ebeea6e2046abd",
-        "name": "spacer",
-        "group": "90cedd2a8446aa03",
-        "order": 4,
-        "width": 9,
-        "height": 1
-    },
-    {
-        "id": "bb2070c19130c87e",
-        "type": "ui_spacer",
-        "z": "08ebeea6e2046abd",
-        "name": "spacer",
-        "group": "90cedd2a8446aa03",
-        "order": 6,
-        "width": 18,
-        "height": 1
-    },
-    {
         "id": "acc467dc501a1809",
         "type": "ui_group",
         "name": "Bulk Deploy",
         "tab": "94c965dfa02ebec9",
-        "order": 2,
+        "order": 3,
         "disp": true,
-        "width": "19",
+        "width": 23,
         "collapse": true,
         "className": ""
     },
@@ -470,7 +267,7 @@
         "tab": "c9737b27c85dc8ad",
         "order": 1,
         "disp": true,
-        "width": "23",
+        "width": 23,
         "collapse": true,
         "className": ""
     },
@@ -481,7 +278,7 @@
         "tab": "c9737b27c85dc8ad",
         "order": 3,
         "disp": true,
-        "width": "23",
+        "width": 23,
         "collapse": true,
         "className": ""
     },
@@ -492,279 +289,9 @@
         "tab": "c9737b27c85dc8ad",
         "order": 2,
         "disp": true,
-        "width": "23",
+        "width": 23,
         "collapse": true,
         "className": ""
-    },
-    {
-        "id": "eec54565d8baf608",
-        "type": "ui_spacer",
-        "z": "974b87f71963749f",
-        "name": "spacer",
-        "group": "d898c7987d10b482",
-        "order": 4,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "4e88ac2663a00983",
-        "type": "ui_spacer",
-        "z": "974b87f71963749f",
-        "name": "spacer",
-        "group": "d898c7987d10b482",
-        "order": 6,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "f192fbd523325d83",
-        "type": "ui_spacer",
-        "z": "974b87f71963749f",
-        "name": "spacer",
-        "group": "d898c7987d10b482",
-        "order": 8,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "f02ddfe62324bf12",
-        "type": "ui_spacer",
-        "z": "974b87f71963749f",
-        "name": "spacer",
-        "group": "d898c7987d10b482",
-        "order": 12,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "26b48d4c7ffe2e3b",
-        "type": "ui_spacer",
-        "z": "974b87f71963749f",
-        "name": "spacer",
-        "group": "d898c7987d10b482",
-        "order": 16,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "31c0d0ccd846293b",
-        "type": "ui_spacer",
-        "z": "974b87f71963749f",
-        "name": "spacer",
-        "group": "d898c7987d10b482",
-        "order": 18,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "51f33851e9f314fb",
-        "type": "ui_spacer",
-        "z": "974b87f71963749f",
-        "name": "spacer",
-        "group": "d898c7987d10b482",
-        "order": 20,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "abe48f0a3351b7da",
-        "type": "ui_spacer",
-        "z": "974b87f71963749f",
-        "name": "spacer",
-        "group": "d898c7987d10b482",
-        "order": 22,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "dbeced0bbcdf1b82",
-        "type": "ui_spacer",
-        "z": "974b87f71963749f",
-        "name": "spacer",
-        "group": "d898c7987d10b482",
-        "order": 23,
-        "width": 8,
-        "height": 1
-    },
-    {
-        "id": "07855d04ae1a599d",
-        "type": "ui_spacer",
-        "z": "974b87f71963749f",
-        "name": "spacer",
-        "group": "3a38c87d0066b087",
-        "order": 3,
-        "width": 3,
-        "height": 1
-    },
-    {
-        "id": "53092c76cb074669",
-        "type": "ui_spacer",
-        "z": "974b87f71963749f",
-        "name": "spacer",
-        "group": "3a38c87d0066b087",
-        "order": 4,
-        "width": 3,
-        "height": 1
-    },
-    {
-        "id": "96347132b4ca5565",
-        "type": "ui_spacer",
-        "z": "974b87f71963749f",
-        "name": "spacer",
-        "group": "3a38c87d0066b087",
-        "order": 5,
-        "width": 3,
-        "height": 1
-    },
-    {
-        "id": "506aba9b2d978670",
-        "type": "ui_spacer",
-        "z": "974b87f71963749f",
-        "name": "spacer",
-        "group": "3a38c87d0066b087",
-        "order": 6,
-        "width": 3,
-        "height": 1
-    },
-    {
-        "id": "6577e033836fc180",
-        "type": "ui_spacer",
-        "z": "974b87f71963749f",
-        "name": "spacer",
-        "group": "3a38c87d0066b087",
-        "order": 9,
-        "width": 3,
-        "height": 1
-    },
-    {
-        "id": "f0cd83dc691d90d5",
-        "type": "ui_spacer",
-        "z": "974b87f71963749f",
-        "name": "spacer",
-        "group": "3a38c87d0066b087",
-        "order": 10,
-        "width": 3,
-        "height": 1
-    },
-    {
-        "id": "966148d9cd87a2b7",
-        "type": "ui_spacer",
-        "z": "974b87f71963749f",
-        "name": "spacer",
-        "group": "3a38c87d0066b087",
-        "order": 11,
-        "width": 3,
-        "height": 1
-    },
-    {
-        "id": "cf06bc09ff31a194",
-        "type": "ui_spacer",
-        "z": "974b87f71963749f",
-        "name": "spacer",
-        "group": "3a38c87d0066b087",
-        "order": 12,
-        "width": 3,
-        "height": 1
-    },
-    {
-        "id": "be2da4f9b31075b5",
-        "type": "ui_spacer",
-        "z": "974b87f71963749f",
-        "name": "spacer",
-        "group": "3a38c87d0066b087",
-        "order": 15,
-        "width": 3,
-        "height": 1
-    },
-    {
-        "id": "33b8e213e4a82c0c",
-        "type": "ui_spacer",
-        "z": "974b87f71963749f",
-        "name": "spacer",
-        "group": "3a38c87d0066b087",
-        "order": 18,
-        "width": 3,
-        "height": 1
-    },
-    {
-        "id": "9d242d77effde469",
-        "type": "ui_spacer",
-        "z": "974b87f71963749f",
-        "name": "spacer",
-        "group": "3a38c87d0066b087",
-        "order": 19,
-        "width": 3,
-        "height": 1
-    },
-    {
-        "id": "91521814faafef75",
-        "type": "ui_spacer",
-        "z": "974b87f71963749f",
-        "name": "spacer",
-        "group": "3a38c87d0066b087",
-        "order": 20,
-        "width": 3,
-        "height": 1
-    },
-    {
-        "id": "31caee6027f5ef23",
-        "type": "ui_spacer",
-        "z": "974b87f71963749f",
-        "name": "spacer",
-        "group": "3a38c87d0066b087",
-        "order": 21,
-        "width": 3,
-        "height": 1
-    },
-    {
-        "id": "56bc5b7c9ac2f87f",
-        "type": "ui_spacer",
-        "z": "974b87f71963749f",
-        "name": "spacer",
-        "group": "3a38c87d0066b087",
-        "order": 24,
-        "width": 3,
-        "height": 1
-    },
-    {
-        "id": "130901c3a36461c2",
-        "type": "ui_spacer",
-        "z": "974b87f71963749f",
-        "name": "spacer",
-        "group": "3a38c87d0066b087",
-        "order": 27,
-        "width": 3,
-        "height": 1
-    },
-    {
-        "id": "ad0ef98c1936deb6",
-        "type": "ui_spacer",
-        "z": "974b87f71963749f",
-        "name": "spacer",
-        "group": "3a38c87d0066b087",
-        "order": 28,
-        "width": 3,
-        "height": 1
-    },
-    {
-        "id": "c1dd620a8e84994e",
-        "type": "ui_spacer",
-        "z": "974b87f71963749f",
-        "name": "spacer",
-        "group": "3a38c87d0066b087",
-        "order": 29,
-        "width": 3,
-        "height": 1
-    },
-    {
-        "id": "866e2c26417c2c7e",
-        "type": "ui_spacer",
-        "z": "974b87f71963749f",
-        "name": "spacer",
-        "group": "3a38c87d0066b087",
-        "order": 30,
-        "width": 3,
-        "height": 1
     },
     {
         "id": "c9737b27c85dc8ad",
@@ -782,14 +309,754 @@
         "tab": "66f7a7293d482a39",
         "order": 2,
         "disp": true,
-        "width": "21",
-        "collapse": false,
+        "width": 23,
+        "collapse": true,
         "className": ""
     },
     {
-        "id": "ee26ce9a91390b84",
+        "id": "dcf88d6c29042a56",
         "type": "ui_spacer",
-        "z": "11df8122a3459712",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "d898c7987d10b482",
+        "order": 1,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "240d6f587f8e5206",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "d898c7987d10b482",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "68c60a3dd92a9c76",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "d898c7987d10b482",
+        "order": 7,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "69a4dbee4c8029e2",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "d898c7987d10b482",
+        "order": 9,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "791e7827b22bf3a4",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "d898c7987d10b482",
+        "order": 13,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "6f277f67c7172167",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "d898c7987d10b482",
+        "order": 17,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "43478c950d5c6c3f",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "d898c7987d10b482",
+        "order": 19,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "0b5d19cddcf6e4ed",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "d898c7987d10b482",
+        "order": 22,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "4cf6ad3aca05c2ac",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3733aad54f7e21ab",
+        "order": 1,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "e90c430419855d52",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3733aad54f7e21ab",
+        "order": 3,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "a390b0ca60ddb687",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3733aad54f7e21ab",
+        "order": 6,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "e23b517f36339f7f",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3733aad54f7e21ab",
+        "order": 8,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "4598f01e7f84c872",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3733aad54f7e21ab",
+        "order": 10,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "1af987777a2d99fc",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3733aad54f7e21ab",
+        "order": 11,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "a917bb5a79382f84",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3733aad54f7e21ab",
+        "order": 13,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "49d2d34bce33bd5f",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3733aad54f7e21ab",
+        "order": 14,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "d835d00a1259a6f0",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3733aad54f7e21ab",
+        "order": 15,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "c09b54a868406108",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3733aad54f7e21ab",
+        "order": 16,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "a49e4f4bd211d1b2",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3733aad54f7e21ab",
+        "order": 18,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "44e44ae3d94edc0a",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3733aad54f7e21ab",
+        "order": 19,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "854d0e667a8de8eb",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3a38c87d0066b087",
+        "order": 1,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "bfecd36e63e74b42",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3a38c87d0066b087",
+        "order": 3,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "cea71da4f00ec8aa",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3a38c87d0066b087",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "41ef4f428afb6314",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3a38c87d0066b087",
+        "order": 6,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "1486f1b9f73d73a2",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3a38c87d0066b087",
+        "order": 7,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "88d07dc6d0e6814d",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3a38c87d0066b087",
+        "order": 8,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "537443ca224efac2",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3a38c87d0066b087",
+        "order": 9,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "e12ecb143d8314e3",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3a38c87d0066b087",
+        "order": 10,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "93470ed6485766f9",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3a38c87d0066b087",
+        "order": 11,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "2cb7812b701fe6c1",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3a38c87d0066b087",
+        "order": 12,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "76dc33bb998a1aed",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3a38c87d0066b087",
+        "order": 13,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "b11e4830490b8e3f",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3a38c87d0066b087",
+        "order": 14,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "275159ae0968ef4c",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3a38c87d0066b087",
+        "order": 15,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "98bab9694c2bf528",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3a38c87d0066b087",
+        "order": 17,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "c399dc53653c1ab4",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3a38c87d0066b087",
+        "order": 19,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "eef4054a9289c400",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3a38c87d0066b087",
+        "order": 20,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "d6e34d3f100f3936",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3a38c87d0066b087",
+        "order": 21,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "00a9fc84842b719f",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3a38c87d0066b087",
+        "order": 22,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "0e69817e484bdea7",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3a38c87d0066b087",
+        "order": 23,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "37be425b2a72ca48",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3a38c87d0066b087",
+        "order": 24,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "6fd471ce3ca7d21f",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3a38c87d0066b087",
+        "order": 25,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "9d8bbb28d9fc1ecf",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3a38c87d0066b087",
+        "order": 26,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "c1dd39ed643d175c",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3a38c87d0066b087",
+        "order": 27,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "06a474d0c3e9ff92",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3a38c87d0066b087",
+        "order": 28,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "ec3bd083b82725c6",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3a38c87d0066b087",
+        "order": 29,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "0c5e1a5b1071ad2d",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3a38c87d0066b087",
+        "order": 31,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "fa3d748b95878dfe",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3a38c87d0066b087",
+        "order": 33,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "8ae6abd9b1241f54",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3a38c87d0066b087",
+        "order": 34,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "4a0416d2a9ee34a4",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3a38c87d0066b087",
+        "order": 36,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "8cf182aee73d94ef",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3a38c87d0066b087",
+        "order": 38,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "905013923649b277",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3a38c87d0066b087",
+        "order": 39,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "3ea7ad84eea192ab",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3a38c87d0066b087",
+        "order": 40,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "38cd71027d1dcbe3",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3a38c87d0066b087",
+        "order": 41,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "d9c14b69ea0be70e",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3a38c87d0066b087",
+        "order": 42,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "679a3087c524428f",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3a38c87d0066b087",
+        "order": 43,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "f8cca6331094b605",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3a38c87d0066b087",
+        "order": 44,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "624a396d97077c8c",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3a38c87d0066b087",
+        "order": 45,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "cdd7dddb318b3808",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3a38c87d0066b087",
+        "order": 46,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "29f14a5bdad394d0",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3a38c87d0066b087",
+        "order": 47,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "f740071aee3449ef",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3a38c87d0066b087",
+        "order": 48,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "84d5ac926c61ad33",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3a38c87d0066b087",
+        "order": 50,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "c796f042fb83b7db",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3a38c87d0066b087",
+        "order": 52,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "a1c6a132514ca103",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3a38c87d0066b087",
+        "order": 53,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "7b0dae678eccc900",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3a38c87d0066b087",
+        "order": 55,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "603270586a903fa3",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3a38c87d0066b087",
+        "order": 57,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "8748150a12cf4d11",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3a38c87d0066b087",
+        "order": 58,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "acfbcaefe422c331",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3a38c87d0066b087",
+        "order": 59,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "fcb42a16c76a6bb1",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3a38c87d0066b087",
+        "order": 60,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "e8b14477b92ebf85",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3a38c87d0066b087",
+        "order": 61,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "912a43d23cd2db8c",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3a38c87d0066b087",
+        "order": 62,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "4acee53f0cab5bde",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3a38c87d0066b087",
+        "order": 63,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "4e77c0cc0470ca3a",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3a38c87d0066b087",
+        "order": 64,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "0006fa09d0698975",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3a38c87d0066b087",
+        "order": 65,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "efc31d0b5fe8c3f3",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "3a38c87d0066b087",
+        "order": 66,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "0619199d957aec37",
+        "type": "ui_spacer",
+        "z": "974b87f71963749f",
         "name": "spacer",
         "group": "2871cce383627674",
         "order": 1,
@@ -797,19 +1064,19 @@
         "height": 1
     },
     {
-        "id": "7b83479952827ad1",
+        "id": "c84c89a6e0732fec",
         "type": "ui_spacer",
-        "z": "11df8122a3459712",
+        "z": "974b87f71963749f",
         "name": "spacer",
         "group": "2871cce383627674",
         "order": 3,
-        "width": 7,
+        "width": 9,
         "height": 1
     },
     {
-        "id": "e4402b8482fa3249",
+        "id": "6a8b01d9f82043a3",
         "type": "ui_spacer",
-        "z": "11df8122a3459712",
+        "z": "974b87f71963749f",
         "name": "spacer",
         "group": "2871cce383627674",
         "order": 4,
@@ -817,109 +1084,99 @@
         "height": 1
     },
     {
-        "id": "b4bbb1c69c06e90c",
+        "id": "825e462a576277fe",
         "type": "ui_spacer",
-        "z": "11df8122a3459712",
+        "z": "974b87f71963749f",
         "name": "spacer",
         "group": "2871cce383627674",
-        "order": 7,
+        "order": 6,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "0c1bbb727de2a494",
+        "type": "ui_spacer",
+        "z": "974b87f71963749f",
+        "name": "spacer",
+        "group": "2871cce383627674",
+        "order": 8,
         "width": 2,
         "height": 1
     },
     {
-        "id": "b0bdf30668b4472d",
+        "id": "de44d960794a24d0",
         "type": "ui_spacer",
-        "z": "11df8122a3459712",
-        "name": "spacer",
-        "group": "2871cce383627674",
-        "order": 9,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "2e12ffb2bb58a223",
-        "type": "ui_spacer",
-        "z": "11df8122a3459712",
+        "z": "974b87f71963749f",
         "name": "spacer",
         "group": "2871cce383627674",
         "order": 10,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "d99b2c5dd4327008",
-        "type": "ui_spacer",
-        "z": "11df8122a3459712",
-        "name": "spacer",
-        "group": "2871cce383627674",
-        "order": 11,
-        "width": 12,
-        "height": 1
-    },
-    {
-        "id": "9c4437f27f957741",
-        "type": "ui_spacer",
-        "z": "11df8122a3459712",
-        "name": "spacer",
-        "group": "2871cce383627674",
-        "order": 12,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "a429cab9e26b17d5",
-        "type": "ui_spacer",
-        "z": "11df8122a3459712",
-        "name": "spacer",
-        "group": "2871cce383627674",
-        "order": 13,
-        "width": 12,
-        "height": 1
-    },
-    {
-        "id": "bb4fa9b113d4ca47",
-        "type": "ui_spacer",
-        "z": "11df8122a3459712",
-        "name": "spacer",
-        "group": "3a88c0294b97b966",
-        "order": 1,
-        "width": 21,
-        "height": 1
-    },
-    {
-        "id": "b1a5d80a8e5d7876",
-        "type": "ui_spacer",
-        "z": "11df8122a3459712",
-        "name": "spacer",
-        "group": "3a88c0294b97b966",
-        "order": 2,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "1139e7d6d6b95652",
-        "type": "ui_spacer",
-        "z": "11df8122a3459712",
-        "name": "spacer",
-        "group": "3a88c0294b97b966",
-        "order": 4,
         "width": 3,
         "height": 1
     },
     {
-        "id": "8006e68399f2afcf",
+        "id": "dc7850eb25124859",
         "type": "ui_spacer",
-        "z": "11df8122a3459712",
+        "z": "974b87f71963749f",
         "name": "spacer",
-        "group": "3a88c0294b97b966",
-        "order": 6,
+        "group": "2871cce383627674",
+        "order": 11,
         "width": 1,
         "height": 1
     },
     {
-        "id": "c6fd3b005aecda1d",
+        "id": "ccd87afdfc2002e9",
         "type": "ui_spacer",
-        "z": "11df8122a3459712",
+        "z": "974b87f71963749f",
+        "name": "spacer",
+        "group": "2871cce383627674",
+        "order": 13,
+        "width": 15,
+        "height": 1
+    },
+    {
+        "id": "418d1486e7844fbb",
+        "type": "ui_spacer",
+        "z": "974b87f71963749f",
+        "name": "spacer",
+        "group": "3a88c0294b97b966",
+        "order": 1,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "c2775681e549832c",
+        "type": "ui_spacer",
+        "z": "974b87f71963749f",
+        "name": "spacer",
+        "group": "3a88c0294b97b966",
+        "order": 3,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "c28ace13501108c6",
+        "type": "ui_spacer",
+        "z": "974b87f71963749f",
+        "name": "spacer",
+        "group": "3a88c0294b97b966",
+        "order": 5,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "2de64aad0a2ec2a9",
+        "type": "ui_spacer",
+        "z": "974b87f71963749f",
+        "name": "spacer",
+        "group": "3a88c0294b97b966",
+        "order": 7,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "3ce0c6fa75f6154f",
+        "type": "ui_spacer",
+        "z": "974b87f71963749f",
         "name": "spacer",
         "group": "3a88c0294b97b966",
         "order": 8,
@@ -927,43 +1184,223 @@
         "height": 1
     },
     {
-        "id": "e297689b2cd6ed7e",
+        "id": "5fd87816d526fe27",
         "type": "ui_spacer",
-        "z": "11df8122a3459712",
-        "name": "spacer",
-        "group": "3a88c0294b97b966",
-        "order": 9,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "70703d136cf80c3d",
-        "type": "ui_spacer",
-        "z": "11df8122a3459712",
+        "z": "974b87f71963749f",
         "name": "spacer",
         "group": "3a88c0294b97b966",
         "order": 10,
-        "width": 12,
+        "width": 15,
         "height": 1
     },
     {
-        "id": "52f307682f1b547e",
+        "id": "70108d42c5062b9b",
         "type": "ui_spacer",
-        "z": "11df8122a3459712",
+        "z": "974b87f71963749f",
         "name": "spacer",
-        "group": "3a88c0294b97b966",
-        "order": 11,
+        "group": "2bfbf363d31643c1",
+        "order": 1,
         "width": 1,
         "height": 1
     },
     {
-        "id": "6b0672f38dcc6993",
+        "id": "e56af5576f1d6bc3",
         "type": "ui_spacer",
-        "z": "11df8122a3459712",
+        "z": "974b87f71963749f",
         "name": "spacer",
-        "group": "3a88c0294b97b966",
+        "group": "2bfbf363d31643c1",
+        "order": 3,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "7c77c1c802c3d49e",
+        "type": "ui_spacer",
+        "z": "974b87f71963749f",
+        "name": "spacer",
+        "group": "2bfbf363d31643c1",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "efee1074751ba4b5",
+        "type": "ui_spacer",
+        "z": "974b87f71963749f",
+        "name": "spacer",
+        "group": "2bfbf363d31643c1",
+        "order": 7,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "9ff3605c62cfb7e6",
+        "type": "ui_spacer",
+        "z": "974b87f71963749f",
+        "name": "spacer",
+        "group": "2bfbf363d31643c1",
+        "order": 9,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "638e2b98317b14c8",
+        "type": "ui_spacer",
+        "z": "974b87f71963749f",
+        "name": "spacer",
+        "group": "2bfbf363d31643c1",
+        "order": 10,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "c3ca124962abc5a6",
+        "type": "ui_spacer",
+        "z": "974b87f71963749f",
+        "name": "spacer",
+        "group": "2bfbf363d31643c1",
         "order": 12,
-        "width": 12,
+        "width": 16,
+        "height": 1
+    },
+    {
+        "id": "248745e9929e07ed",
+        "type": "ui_spacer",
+        "z": "974b87f71963749f",
+        "name": "spacer",
+        "group": "90cedd2a8446aa03",
+        "order": 1,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "c6d82079a70e395b",
+        "type": "ui_spacer",
+        "z": "974b87f71963749f",
+        "name": "spacer",
+        "group": "90cedd2a8446aa03",
+        "order": 3,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "b1a3187a05c0ec9e",
+        "type": "ui_spacer",
+        "z": "974b87f71963749f",
+        "name": "spacer",
+        "group": "90cedd2a8446aa03",
+        "order": 5,
+        "width": 10,
+        "height": 1
+    },
+    {
+        "id": "e5fbacfb37fa81cf",
+        "type": "ui_spacer",
+        "z": "974b87f71963749f",
+        "name": "spacer",
+        "group": "90cedd2a8446aa03",
+        "order": 6,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "ff3b1e18618ba751",
+        "type": "ui_spacer",
+        "z": "974b87f71963749f",
+        "name": "spacer",
+        "group": "90cedd2a8446aa03",
+        "order": 8,
+        "width": 16,
+        "height": 1
+    },
+    {
+        "id": "7a8655f52edc2ae8",
+        "type": "ui_spacer",
+        "z": "974b87f71963749f",
+        "name": "spacer",
+        "group": "acc467dc501a1809",
+        "order": 3,
+        "width": 16,
+        "height": 1
+    },
+    {
+        "id": "4ef60a02f6ea9b1f",
+        "type": "ui_spacer",
+        "z": "974b87f71963749f",
+        "name": "spacer",
+        "group": "acc467dc501a1809",
+        "order": 4,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "8d5e01ab1f8e97c2",
+        "type": "ui_spacer",
+        "z": "974b87f71963749f",
+        "name": "spacer",
+        "group": "acc467dc501a1809",
+        "order": 6,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "760bb6179dc0fdd4",
+        "type": "ui_spacer",
+        "z": "974b87f71963749f",
+        "name": "spacer",
+        "group": "acc467dc501a1809",
+        "order": 8,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "9ce0b5bd179bc9d9",
+        "type": "ui_spacer",
+        "z": "974b87f71963749f",
+        "name": "spacer",
+        "group": "acc467dc501a1809",
+        "order": 10,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "c94013116ae577fb",
+        "type": "ui_spacer",
+        "z": "974b87f71963749f",
+        "name": "spacer",
+        "group": "acc467dc501a1809",
+        "order": 12,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "0c7569b4c143a481",
+        "type": "ui_spacer",
+        "z": "974b87f71963749f",
+        "name": "spacer",
+        "group": "acc467dc501a1809",
+        "order": 15,
+        "width": 16,
+        "height": 1
+    },
+    {
+        "id": "ab2e06beafc1a73c",
+        "type": "ui_spacer",
+        "z": "974b87f71963749f",
+        "name": "spacer",
+        "group": "acc467dc501a1809",
+        "order": 16,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "47ac9be9d755aee1",
+        "type": "ui_spacer",
+        "z": "974b87f71963749f",
+        "name": "spacer",
+        "group": "acc467dc501a1809",
+        "order": 18,
+        "width": 14,
         "height": 1
     },
     {
@@ -1069,1639 +1506,10 @@
         ]
     },
     {
-        "id": "954c0325.f4f63",
-        "type": "http in",
-        "z": "19ad2b6f.f11b85",
-        "name": "",
-        "url": "/fileupload",
-        "method": "post",
-        "upload": true,
-        "swaggerDoc": "",
-        "x": 140,
-        "y": 440,
-        "wires": [
-            [
-                "7433a631.a7f58",
-                "faf9ee8.6642a1"
-            ]
-        ]
-    },
-    {
-        "id": "964d2a30.34e938",
-        "type": "http response",
-        "z": "19ad2b6f.f11b85",
-        "name": "",
-        "statusCode": "",
-        "headers": {},
-        "x": 850,
-        "y": 440,
-        "wires": []
-    },
-    {
-        "id": "1617f361.5dac2d",
-        "type": "ui_template",
-        "z": "19ad2b6f.f11b85",
-        "group": "2871cce383627674",
-        "name": "Upload",
-        "order": 5,
-        "width": 8,
-        "height": 3,
-        "format": "<form id=\"upload_form\" enctype=\"multipart/form-data\" method=\"post\">\n    <input type=\"file\" name=\"file1\" id=\"file1\"><br>\n    <input type=\"button\" value=\"Upload File\" onclick=\"uploadFile()\">\n    <progress id=\"progressBar\" value=\"0\" max=\"100\" style=\"width:300px;\"></progress>\n    <p id=\"status\"></p>\n    <p id=\"loaded_n_total\"></p>\n</form>\n\n<script>\n    function _(el){\n    return document.getElementById(el);\n}\nfunction uploadFile(){\n    var file = _(\"file1\").files[0];\n    // alert(file.name+\" | \"+file.size+\" | \"+file.type);\n    var formdata = new FormData();\n    formdata.append(\"file1\", file);\n    var ajax = new XMLHttpRequest();\n    ajax.upload.addEventListener(\"progress\", progressHandler, false);\n    ajax.addEventListener(\"load\", completeHandler, false);\n    ajax.addEventListener(\"error\", errorHandler, false);\n    ajax.addEventListener(\"abort\", abortHandler, false);\n    ajax.open(\"POST\", \"/fileupload\");\n    ajax.send(formdata);\n}\nfunction progressHandler(event){\n    _(\"loaded_n_total\").innerHTML = \"Uploaded \"+event.loaded+\" bytes of \"+event.total;\n    var percent = (event.loaded / event.total) * 100;\n    _(\"progressBar\").value = Math.round(percent);\n    _(\"status\").innerHTML = Math.round(percent)+\"% uploaded... please wait\";\n}\nfunction completeHandler(event){\n    _(\"status\").innerHTML = event.target.responseText;\n    _(\"progressBar\").value = 0;\n}\nfunction errorHandler(event){\n    _(\"status\").innerHTML = \"Upload Failed\";\n}\nfunction abortHandler(event){\n    _(\"status\").innerHTML = \"Upload Aborted\";\n}\n</script>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "resendOnRefresh": false,
-        "templateScope": "local",
-        "className": "",
-        "x": 120,
-        "y": 400,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "ea605dad.7b36a8",
-        "type": "subflow:4f6b87ae.7d3bb",
-        "z": "19ad2b6f.f11b85",
-        "name": "",
-        "env": [
-            {
-                "name": "DIRECTORY",
-                "value": "UPLOAD_DIR",
-                "type": "env"
-            },
-            {
-                "name": "EXTENSIONS",
-                "value": "EXTENSIONS",
-                "type": "env"
-            }
-        ],
-        "x": 380,
-        "y": 140,
-        "wires": [
-            [
-                "b42b38bf.d5a548"
-            ]
-        ]
-    },
-    {
-        "id": "bdb6a329.8574b",
-        "type": "link in",
-        "z": "19ad2b6f.f11b85",
-        "name": "refreshFileDropdown",
-        "links": [
-            "15ae2641.f1cc7a",
-            "be23c76f.4a3988"
-        ],
-        "x": 75,
-        "y": 140,
-        "wires": [
-            [
-                "f0813c91.8c7838"
-            ]
-        ]
-    },
-    {
-        "id": "62157c1a.4444bc",
-        "type": "change",
-        "z": "19ad2b6f.f11b85",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "selectedFile",
-                "pt": "flow",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 960,
-        "y": 140,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "7433a631.a7f58",
-        "type": "change",
-        "z": "19ad2b6f.f11b85",
-        "name": "getFile",
-        "rules": [
-            {
-                "t": "set",
-                "p": "filename",
-                "pt": "msg",
-                "to": "$env('UPLOAD_DIR')  & '/' & req.files[0].originalname",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "req.files[0].buffer",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 430,
-        "y": 360,
-        "wires": [
-            [
-                "63e6ebc1.1cc124"
-            ]
-        ]
-    },
-    {
-        "id": "10c1284a.0e3f98",
-        "type": "file",
-        "z": "19ad2b6f.f11b85",
-        "name": "",
-        "filename": "filename",
-        "filenameType": "msg",
-        "appendNewline": false,
-        "createDir": true,
-        "overwriteFile": "true",
-        "x": 830,
-        "y": 340,
-        "wires": [
-            [
-                "144a9c8f.af7e9b"
-            ]
-        ]
-    },
-    {
-        "id": "af0d1f9b.6eb468",
-        "type": "inject",
-        "z": "19ad2b6f.f11b85",
-        "name": "injection",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "str",
-        "x": 140,
-        "y": 80,
-        "wires": [
-            [
-                "f0813c91.8c7838"
-            ]
-        ]
-    },
-    {
-        "id": "a0bbc93d.d6f6b8",
-        "type": "change",
-        "z": "19ad2b6f.f11b85",
-        "name": "getSelectedFile",
-        "rules": [
-            {
-                "t": "set",
-                "p": "filename",
-                "pt": "msg",
-                "to": "$env('UPLOAD_DIR')  & '/' & $flowContext('selectedFile')",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "Delete File ?",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 280,
-        "y": 220,
-        "wires": [
-            [
-                "3e909d09.b8b5f2"
-            ]
-        ]
-    },
-    {
-        "id": "854a9fb8.a668a8",
-        "type": "file",
-        "z": "19ad2b6f.f11b85",
-        "name": "",
-        "filename": "filename",
-        "filenameType": "msg",
-        "appendNewline": true,
-        "createDir": false,
-        "overwriteFile": "delete",
-        "x": 830,
-        "y": 220,
-        "wires": [
-            [
-                "be23c76f.4a3988"
-            ]
-        ]
-    },
-    {
-        "id": "3e909d09.b8b5f2",
-        "type": "ui_toast",
-        "z": "19ad2b6f.f11b85",
-        "position": "dialog",
-        "displayTime": "3",
-        "highlight": "",
-        "sendall": true,
-        "outputs": 1,
-        "ok": "OK",
-        "cancel": "Cancel",
-        "raw": false,
-        "className": "",
-        "topic": "",
-        "name": "",
-        "x": 470,
-        "y": 220,
-        "wires": [
-            [
-                "a33238b4.01cae"
-            ]
-        ]
-    },
-    {
-        "id": "a33238b4.01cae",
-        "type": "switch",
-        "z": "19ad2b6f.f11b85",
-        "name": "OK ?",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "OK",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 630,
-        "y": 220,
-        "wires": [
-            [
-                "854a9fb8.a668a8"
-            ]
-        ]
-    },
-    {
-        "id": "b54a9427.62f75",
-        "type": "catch",
-        "z": "19ad2b6f.f11b85",
-        "name": "",
-        "scope": null,
-        "uncaught": false,
-        "x": 120,
-        "y": 500,
-        "wires": [
-            [
-                "1a19fda8.e72fd2"
-            ]
-        ]
-    },
-    {
-        "id": "563135cc.7b97e4",
-        "type": "ui_toast",
-        "z": "19ad2b6f.f11b85",
-        "position": "top right",
-        "displayTime": "5",
-        "highlight": "",
-        "sendall": true,
-        "outputs": 0,
-        "ok": "OK",
-        "cancel": "",
-        "raw": false,
-        "className": "",
-        "topic": "",
-        "name": "",
-        "x": 530,
-        "y": 500,
-        "wires": []
-    },
-    {
-        "id": "1a19fda8.e72fd2",
-        "type": "change",
-        "z": "19ad2b6f.f11b85",
-        "name": "getError",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "error.message",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 300,
-        "y": 500,
-        "wires": [
-            [
-                "563135cc.7b97e4"
-            ]
-        ]
-    },
-    {
-        "id": "be23c76f.4a3988",
-        "type": "link out",
-        "z": "19ad2b6f.f11b85",
-        "name": "refreshAfterDelete",
-        "links": [
-            "bdb6a329.8574b"
-        ],
-        "x": 1135,
-        "y": 220,
-        "wires": []
-    },
-    {
-        "id": "15ae2641.f1cc7a",
-        "type": "link out",
-        "z": "19ad2b6f.f11b85",
-        "name": "refreshAfterUpload",
-        "links": [
-            "bdb6a329.8574b"
-        ],
-        "x": 1135,
-        "y": 340,
-        "wires": []
-    },
-    {
-        "id": "faf9ee8.6642a1",
-        "type": "change",
-        "z": "19ad2b6f.f11b85",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "'File ' & req.files[0].originalname & ' uploaded.'",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 460,
-        "y": 440,
-        "wires": [
-            [
-                "964d2a30.34e938"
-            ]
-        ]
-    },
-    {
-        "id": "f0813c91.8c7838",
-        "type": "delay",
-        "z": "19ad2b6f.f11b85",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "100",
-        "timeoutUnits": "milliseconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "outputs": 1,
-        "x": 190,
-        "y": 140,
-        "wires": [
-            [
-                "ea605dad.7b36a8"
-            ]
-        ]
-    },
-    {
-        "id": "a5f544d.69b9bb8",
-        "type": "watch",
-        "z": "19ad2b6f.f11b85",
-        "name": "",
-        "files": "$(UPLOAD_DIR)",
-        "recursive": "",
-        "x": 340,
-        "y": 40,
-        "wires": [
-            [
-                "f0813c91.8c7838"
-            ]
-        ]
-    },
-    {
-        "id": "b42b38bf.d5a548",
-        "type": "change",
-        "z": "19ad2b6f.f11b85",
-        "name": "options",
-        "rules": [
-            {
-                "t": "set",
-                "p": "options",
-                "pt": "msg",
-                "to": "payload",
-                "tot": "msg"
-            },
-            {
-                "t": "delete",
-                "p": "payload",
-                "pt": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 560,
-        "y": 140,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "63e6ebc1.1cc124",
-        "type": "switch",
-        "z": "19ad2b6f.f11b85",
-        "name": "extensionAllowed ?",
-        "property": "$env('EXTENSIONS')",
-        "propertyType": "jsonata",
-        "rules": [
-            {
-                "t": "cont",
-                "v": "$split(filename, '.')[-1]",
-                "vt": "jsonata"
-            },
-            {
-                "t": "else"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 2,
-        "x": 610,
-        "y": 360,
-        "wires": [
-            [
-                "10c1284a.0e3f98"
-            ],
-            [
-                "e34d7e40.c64b5"
-            ]
-        ]
-    },
-    {
-        "id": "e34d7e40.c64b5",
-        "type": "function",
-        "z": "19ad2b6f.f11b85",
-        "name": "Error",
-        "func": "node.error(`Error: only ${env.get('EXTENSIONS')} files are allowed.`, msg)\n",
-        "outputs": 0,
-        "noerr": 0,
-        "x": 830,
-        "y": 380,
-        "wires": []
-    },
-    {
-        "id": "144a9c8f.af7e9b",
-        "type": "change",
-        "z": "19ad2b6f.f11b85",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "filename",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1000,
-        "y": 340,
-        "wires": [
-            [
-                "15ae2641.f1cc7a"
-            ]
-        ]
-    },
-    {
-        "id": "eba2f0954ffe12b6",
-        "type": "http in",
-        "z": "38e7de2b5e7e983e",
-        "name": "",
-        "url": "/fileupload",
-        "method": "post",
-        "upload": true,
-        "swaggerDoc": "",
-        "x": 140,
-        "y": 440,
-        "wires": [
-            [
-                "61bd45751b54a1c2",
-                "2e2065ae0d8bc907"
-            ]
-        ]
-    },
-    {
-        "id": "dabbed8599153701",
-        "type": "http response",
-        "z": "38e7de2b5e7e983e",
-        "name": "",
-        "statusCode": "",
-        "headers": {},
-        "x": 850,
-        "y": 440,
-        "wires": []
-    },
-    {
-        "id": "5a3e566e05490194",
-        "type": "ui_template",
-        "z": "38e7de2b5e7e983e",
-        "group": "acc467dc501a1809",
-        "name": "Upload",
-        "order": 1,
-        "width": 9,
-        "height": 2,
-        "format": "<form id=\"upload_form\" enctype=\"multipart/form-data\" method=\"post\">\n    <input type=\"file\" name=\"file1\" id=\"file1\"><br>\n    <input type=\"button\" value=\"Upload File\" onclick=\"uploadFile()\">\n    <progress id=\"progressBar\" value=\"0\" max=\"100\" style=\"width:300px;\"></progress>\n    <p id=\"status\"></p>\n    <p id=\"loaded_n_total\"></p>\n</form>\n\n<script>\n    function _(el){\n    return document.getElementById(el);\n}\nfunction uploadFile(){\n    var file = _(\"file1\").files[0];\n    // alert(file.name+\" | \"+file.size+\" | \"+file.type);\n    var formdata = new FormData();\n    formdata.append(\"file1\", file);\n    var ajax = new XMLHttpRequest();\n    ajax.upload.addEventListener(\"progress\", progressHandler, false);\n    ajax.addEventListener(\"load\", completeHandler, false);\n    ajax.addEventListener(\"error\", errorHandler, false);\n    ajax.addEventListener(\"abort\", abortHandler, false);\n    ajax.open(\"POST\", \"/fileupload\");\n    ajax.send(formdata);\n}\nfunction progressHandler(event){\n    _(\"loaded_n_total\").innerHTML = \"Uploaded \"+event.loaded+\" bytes of \"+event.total;\n    var percent = (event.loaded / event.total) * 100;\n    _(\"progressBar\").value = Math.round(percent);\n    _(\"status\").innerHTML = Math.round(percent)+\"% uploaded... please wait\";\n}\nfunction completeHandler(event){\n    _(\"status\").innerHTML = event.target.responseText;\n    _(\"progressBar\").value = 0;\n}\nfunction errorHandler(event){\n    _(\"status\").innerHTML = \"Upload Failed\";\n}\nfunction abortHandler(event){\n    _(\"status\").innerHTML = \"Upload Aborted\";\n}\n</script>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "resendOnRefresh": false,
-        "templateScope": "local",
-        "className": "",
-        "x": 120,
-        "y": 400,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "26c8b7072bc383a2",
-        "type": "subflow:4f6b87ae.7d3bb",
-        "z": "38e7de2b5e7e983e",
-        "name": "",
-        "env": [
-            {
-                "name": "DIRECTORY",
-                "type": "env",
-                "value": "UPLOAD_DIR"
-            },
-            {
-                "name": "EXTENSIONS",
-                "type": "env",
-                "value": "EXTENSIONS"
-            }
-        ],
-        "x": 380,
-        "y": 140,
-        "wires": [
-            [
-                "42e0c533ebed5fc0"
-            ]
-        ]
-    },
-    {
-        "id": "80bd2f6e955d6312",
-        "type": "link in",
-        "z": "38e7de2b5e7e983e",
-        "name": "refreshFileDropdown",
-        "links": [],
-        "x": 75,
-        "y": 140,
-        "wires": [
-            [
-                "02aefb78ca8e564a"
-            ]
-        ]
-    },
-    {
-        "id": "0df006a7e577f2c2",
-        "type": "change",
-        "z": "38e7de2b5e7e983e",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "selectedFile",
-                "pt": "flow",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 960,
-        "y": 140,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "61bd45751b54a1c2",
-        "type": "change",
-        "z": "38e7de2b5e7e983e",
-        "name": "getFile",
-        "rules": [
-            {
-                "t": "set",
-                "p": "filename",
-                "pt": "msg",
-                "to": "$env('UPLOAD_DIR')  & '/' & req.files[0].originalname",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "req.files[0].buffer",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 430,
-        "y": 360,
-        "wires": [
-            [
-                "377db23277962311"
-            ]
-        ]
-    },
-    {
-        "id": "7bb7f13bd930edd1",
-        "type": "file",
-        "z": "38e7de2b5e7e983e",
-        "name": "",
-        "filename": "",
-        "appendNewline": false,
-        "createDir": true,
-        "overwriteFile": "true",
-        "x": 830,
-        "y": 340,
-        "wires": [
-            [
-                "7da858d9b16a382f"
-            ]
-        ]
-    },
-    {
-        "id": "0990e033d0cde6d3",
-        "type": "inject",
-        "z": "38e7de2b5e7e983e",
-        "name": "injection",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "str",
-        "x": 140,
-        "y": 80,
-        "wires": [
-            [
-                "02aefb78ca8e564a"
-            ]
-        ]
-    },
-    {
-        "id": "363d9a9f03ded359",
-        "type": "change",
-        "z": "38e7de2b5e7e983e",
-        "name": "getSelectedFile",
-        "rules": [
-            {
-                "t": "set",
-                "p": "filename",
-                "pt": "msg",
-                "to": "$env('UPLOAD_DIR')  & '/' & $flowContext('selectedFile')",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "Delete File ?",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 280,
-        "y": 220,
-        "wires": [
-            [
-                "b73ff728bd11173e"
-            ]
-        ]
-    },
-    {
-        "id": "969fd40e7d931879",
-        "type": "file",
-        "z": "38e7de2b5e7e983e",
-        "name": "",
-        "filename": "",
-        "appendNewline": true,
-        "createDir": false,
-        "overwriteFile": "delete",
-        "x": 830,
-        "y": 220,
-        "wires": [
-            [
-                "9c08d4de72757dbb"
-            ]
-        ]
-    },
-    {
-        "id": "b73ff728bd11173e",
-        "type": "ui_toast",
-        "z": "38e7de2b5e7e983e",
-        "position": "dialog",
-        "displayTime": "3",
-        "highlight": "",
-        "sendall": true,
-        "outputs": 1,
-        "ok": "OK",
-        "cancel": "Cancel",
-        "raw": false,
-        "className": "",
-        "topic": "",
-        "name": "",
-        "x": 470,
-        "y": 220,
-        "wires": [
-            [
-                "30bca347a1ad8604"
-            ]
-        ]
-    },
-    {
-        "id": "30bca347a1ad8604",
-        "type": "switch",
-        "z": "38e7de2b5e7e983e",
-        "name": "OK ?",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "OK",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 630,
-        "y": 220,
-        "wires": [
-            [
-                "969fd40e7d931879"
-            ]
-        ]
-    },
-    {
-        "id": "a8eccd55a28d09b7",
-        "type": "catch",
-        "z": "38e7de2b5e7e983e",
-        "name": "",
-        "scope": null,
-        "uncaught": false,
-        "x": 120,
-        "y": 500,
-        "wires": [
-            [
-                "e7e307329e4b8c35"
-            ]
-        ]
-    },
-    {
-        "id": "3d95dfedb5d64efd",
-        "type": "ui_toast",
-        "z": "38e7de2b5e7e983e",
-        "position": "top right",
-        "displayTime": "5",
-        "highlight": "",
-        "sendall": true,
-        "outputs": 0,
-        "ok": "OK",
-        "cancel": "",
-        "raw": false,
-        "className": "",
-        "topic": "",
-        "name": "",
-        "x": 530,
-        "y": 500,
-        "wires": []
-    },
-    {
-        "id": "e7e307329e4b8c35",
-        "type": "change",
-        "z": "38e7de2b5e7e983e",
-        "name": "getError",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "error.message",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 300,
-        "y": 500,
-        "wires": [
-            [
-                "3d95dfedb5d64efd"
-            ]
-        ]
-    },
-    {
-        "id": "9c08d4de72757dbb",
-        "type": "link out",
-        "z": "38e7de2b5e7e983e",
-        "name": "refreshAfterDelete",
-        "links": [],
-        "x": 1135,
-        "y": 220,
-        "wires": []
-    },
-    {
-        "id": "aeda307628b93cbb",
-        "type": "link out",
-        "z": "38e7de2b5e7e983e",
-        "name": "refreshAfterUpload",
-        "links": [],
-        "x": 1135,
-        "y": 340,
-        "wires": []
-    },
-    {
-        "id": "2e2065ae0d8bc907",
-        "type": "change",
-        "z": "38e7de2b5e7e983e",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "'File ' & req.files[0].originalname & ' uploaded.'",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 460,
-        "y": 440,
-        "wires": [
-            [
-                "dabbed8599153701"
-            ]
-        ]
-    },
-    {
-        "id": "02aefb78ca8e564a",
-        "type": "delay",
-        "z": "38e7de2b5e7e983e",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "100",
-        "timeoutUnits": "milliseconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "outputs": 1,
-        "x": 190,
-        "y": 140,
-        "wires": [
-            [
-                "26c8b7072bc383a2"
-            ]
-        ]
-    },
-    {
-        "id": "32b1333ca35e6891",
-        "type": "watch",
-        "z": "38e7de2b5e7e983e",
-        "name": "",
-        "files": "$(UPLOAD_DIR)",
-        "recursive": "",
-        "x": 340,
-        "y": 40,
-        "wires": [
-            [
-                "02aefb78ca8e564a"
-            ]
-        ]
-    },
-    {
-        "id": "42e0c533ebed5fc0",
-        "type": "change",
-        "z": "38e7de2b5e7e983e",
-        "name": "options",
-        "rules": [
-            {
-                "t": "set",
-                "p": "options",
-                "pt": "msg",
-                "to": "payload",
-                "tot": "msg"
-            },
-            {
-                "t": "delete",
-                "p": "payload",
-                "pt": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 560,
-        "y": 140,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "377db23277962311",
-        "type": "switch",
-        "z": "38e7de2b5e7e983e",
-        "name": "extensionAllowed ?",
-        "property": "$env('EXTENSIONS')",
-        "propertyType": "jsonata",
-        "rules": [
-            {
-                "t": "cont",
-                "v": "$split(filename, '.')[-1]",
-                "vt": "jsonata"
-            },
-            {
-                "t": "else"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 2,
-        "x": 610,
-        "y": 360,
-        "wires": [
-            [
-                "7bb7f13bd930edd1"
-            ],
-            [
-                "88b6d6af40a18cf9"
-            ]
-        ]
-    },
-    {
-        "id": "88b6d6af40a18cf9",
-        "type": "function",
-        "z": "38e7de2b5e7e983e",
-        "name": "Error",
-        "func": "node.error(`Error: only ${env.get('EXTENSIONS')} files are allowed.`, msg)\n",
-        "outputs": 0,
-        "noerr": 0,
-        "x": 830,
-        "y": 380,
-        "wires": []
-    },
-    {
-        "id": "7da858d9b16a382f",
-        "type": "change",
-        "z": "38e7de2b5e7e983e",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "filename",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1000,
-        "y": 340,
-        "wires": [
-            [
-                "aeda307628b93cbb"
-            ]
-        ]
-    },
-    {
-        "id": "aae34fb846665039",
-        "type": "http in",
-        "z": "f20a02c6de528163",
-        "name": "",
-        "url": "/fileupload",
-        "method": "post",
-        "upload": true,
-        "swaggerDoc": "",
-        "x": 140,
-        "y": 460,
-        "wires": [
-            [
-                "91e6cd34dc6a4637",
-                "9e295ec8dfdf24df"
-            ]
-        ]
-    },
-    {
-        "id": "5cdf4e1782c33b6d",
-        "type": "http response",
-        "z": "f20a02c6de528163",
-        "name": "",
-        "statusCode": "",
-        "headers": {},
-        "x": 850,
-        "y": 460,
-        "wires": []
-    },
-    {
-        "id": "001f6fd4312f54ea",
-        "type": "ui_template",
-        "z": "f20a02c6de528163",
-        "group": "3a88c0294b97b966",
-        "name": "Upload",
-        "order": 3,
-        "width": 8,
-        "height": 3,
-        "format": "<form id=\"upload_form\" enctype=\"multipart/form-data\" method=\"post\">\n    <input type=\"file\" name=\"file1\" id=\"file1\"><br>\n    <input type=\"button\" value=\"Upload File\" onclick=\"uploadFile()\">\n    <progress id=\"progressBar\" value=\"0\" max=\"100\" style=\"width:300px;\"></progress>\n    <p id=\"status\"></p>\n    <p id=\"loaded_n_total\"></p>\n</form>\n\n<script>\n    function _(el){\n    return document.getElementById(el);\n}\nfunction uploadFile(){\n    var file = _(\"file1\").files[0];\n    // alert(file.name+\" | \"+file.size+\" | \"+file.type);\n    var formdata = new FormData();\n    formdata.append(\"file1\", file);\n    var ajax = new XMLHttpRequest();\n    ajax.upload.addEventListener(\"progress\", progressHandler, false);\n    ajax.addEventListener(\"load\", completeHandler, false);\n    ajax.addEventListener(\"error\", errorHandler, false);\n    ajax.addEventListener(\"abort\", abortHandler, false);\n    ajax.open(\"POST\", \"/fileupload\");\n    ajax.send(formdata);\n}\nfunction progressHandler(event){\n    _(\"loaded_n_total\").innerHTML = \"Uploaded \"+event.loaded+\" bytes of \"+event.total;\n    var percent = (event.loaded / event.total) * 100;\n    _(\"progressBar\").value = Math.round(percent);\n    _(\"status\").innerHTML = Math.round(percent)+\"% uploaded... please wait\";\n}\nfunction completeHandler(event){\n    _(\"status\").innerHTML = event.target.responseText;\n    _(\"progressBar\").value = 0;\n}\nfunction errorHandler(event){\n    _(\"status\").innerHTML = \"Upload Failed\";\n}\nfunction abortHandler(event){\n    _(\"status\").innerHTML = \"Upload Aborted\";\n}\n</script>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "resendOnRefresh": false,
-        "templateScope": "local",
-        "className": "",
-        "x": 120,
-        "y": 420,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "cdbee7a0f0f485d0",
-        "type": "subflow:4f6b87ae.7d3bb",
-        "z": "f20a02c6de528163",
-        "name": "",
-        "env": [
-            {
-                "name": "DIRECTORY",
-                "type": "env",
-                "value": "UPLOAD_DIR"
-            },
-            {
-                "name": "EXTENSIONS",
-                "type": "env",
-                "value": "EXTENSIONS"
-            }
-        ],
-        "x": 380,
-        "y": 160,
-        "wires": [
-            [
-                "6e499ecb6669bb3f"
-            ]
-        ]
-    },
-    {
-        "id": "65860b0ff2045146",
-        "type": "link in",
-        "z": "f20a02c6de528163",
-        "name": "refreshFileDropdown",
-        "links": [],
-        "x": 75,
-        "y": 160,
-        "wires": [
-            [
-                "bea836c4ed6eaa3b"
-            ]
-        ]
-    },
-    {
-        "id": "6bda7659155f0c58",
-        "type": "change",
-        "z": "f20a02c6de528163",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "selectedFile",
-                "pt": "flow",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 960,
-        "y": 160,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "91e6cd34dc6a4637",
-        "type": "change",
-        "z": "f20a02c6de528163",
-        "name": "getFile",
-        "rules": [
-            {
-                "t": "set",
-                "p": "filename",
-                "pt": "msg",
-                "to": "$env('UPLOAD_DIR')  & '/' & req.files[0].originalname",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "req.files[0].buffer",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 430,
-        "y": 380,
-        "wires": [
-            [
-                "c2c986c4a1921800"
-            ]
-        ]
-    },
-    {
-        "id": "45fb57425c4d041e",
-        "type": "file",
-        "z": "f20a02c6de528163",
-        "name": "",
-        "filename": "",
-        "appendNewline": false,
-        "createDir": true,
-        "overwriteFile": "true",
-        "x": 830,
-        "y": 360,
-        "wires": [
-            [
-                "bf3f2823eed71a1a"
-            ]
-        ]
-    },
-    {
-        "id": "2ea44be0482db5d7",
-        "type": "inject",
-        "z": "f20a02c6de528163",
-        "name": "injection",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "str",
-        "x": 140,
-        "y": 100,
-        "wires": [
-            [
-                "bea836c4ed6eaa3b"
-            ]
-        ]
-    },
-    {
-        "id": "7cf7c3c34a090075",
-        "type": "change",
-        "z": "f20a02c6de528163",
-        "name": "getSelectedFile",
-        "rules": [
-            {
-                "t": "set",
-                "p": "filename",
-                "pt": "msg",
-                "to": "$env('UPLOAD_DIR')  & '/' & $flowContext('selectedFile')",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "Delete File ?",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 280,
-        "y": 240,
-        "wires": [
-            [
-                "9dd1ae344dad5701"
-            ]
-        ]
-    },
-    {
-        "id": "c495efc89d826399",
-        "type": "file",
-        "z": "f20a02c6de528163",
-        "name": "",
-        "filename": "",
-        "appendNewline": true,
-        "createDir": false,
-        "overwriteFile": "delete",
-        "x": 830,
-        "y": 240,
-        "wires": [
-            [
-                "7b85e3338a999c8d"
-            ]
-        ]
-    },
-    {
-        "id": "9dd1ae344dad5701",
-        "type": "ui_toast",
-        "z": "f20a02c6de528163",
-        "position": "dialog",
-        "displayTime": "3",
-        "highlight": "",
-        "sendall": true,
-        "outputs": 1,
-        "ok": "OK",
-        "cancel": "Cancel",
-        "raw": false,
-        "className": "",
-        "topic": "",
-        "name": "",
-        "x": 470,
-        "y": 240,
-        "wires": [
-            [
-                "1fd593e14302f6b4"
-            ]
-        ]
-    },
-    {
-        "id": "1fd593e14302f6b4",
-        "type": "switch",
-        "z": "f20a02c6de528163",
-        "name": "OK ?",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "OK",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 630,
-        "y": 240,
-        "wires": [
-            [
-                "c495efc89d826399"
-            ]
-        ]
-    },
-    {
-        "id": "64cb05eb805a65d2",
-        "type": "catch",
-        "z": "f20a02c6de528163",
-        "name": "",
-        "scope": null,
-        "uncaught": false,
-        "x": 120,
-        "y": 520,
-        "wires": [
-            [
-                "527ce43b6cd1ba1d"
-            ]
-        ]
-    },
-    {
-        "id": "a022571e1c81cb9b",
-        "type": "ui_toast",
-        "z": "f20a02c6de528163",
-        "position": "top right",
-        "displayTime": "5",
-        "highlight": "",
-        "sendall": true,
-        "outputs": 0,
-        "ok": "OK",
-        "cancel": "",
-        "raw": false,
-        "className": "",
-        "topic": "",
-        "name": "",
-        "x": 530,
-        "y": 520,
-        "wires": []
-    },
-    {
-        "id": "527ce43b6cd1ba1d",
-        "type": "change",
-        "z": "f20a02c6de528163",
-        "name": "getError",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "error.message",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 300,
-        "y": 520,
-        "wires": [
-            [
-                "a022571e1c81cb9b"
-            ]
-        ]
-    },
-    {
-        "id": "7b85e3338a999c8d",
-        "type": "link out",
-        "z": "f20a02c6de528163",
-        "name": "refreshAfterDelete",
-        "links": [],
-        "x": 1135,
-        "y": 240,
-        "wires": []
-    },
-    {
-        "id": "52c6b425a46f0428",
-        "type": "link out",
-        "z": "f20a02c6de528163",
-        "name": "refreshAfterUpload",
-        "links": [],
-        "x": 1135,
-        "y": 360,
-        "wires": []
-    },
-    {
-        "id": "9e295ec8dfdf24df",
-        "type": "change",
-        "z": "f20a02c6de528163",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "'File ' & req.files[0].originalname & ' uploaded.'",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 460,
-        "y": 460,
-        "wires": [
-            [
-                "5cdf4e1782c33b6d"
-            ]
-        ]
-    },
-    {
-        "id": "bea836c4ed6eaa3b",
-        "type": "delay",
-        "z": "f20a02c6de528163",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "100",
-        "timeoutUnits": "milliseconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "outputs": 1,
-        "x": 190,
-        "y": 160,
-        "wires": [
-            [
-                "cdbee7a0f0f485d0"
-            ]
-        ]
-    },
-    {
-        "id": "36dc7c028c6b0072",
-        "type": "watch",
-        "z": "f20a02c6de528163",
-        "name": "",
-        "files": "$(UPLOAD_DIR)",
-        "recursive": "",
-        "x": 340,
-        "y": 60,
-        "wires": [
-            [
-                "bea836c4ed6eaa3b"
-            ]
-        ]
-    },
-    {
-        "id": "6e499ecb6669bb3f",
-        "type": "change",
-        "z": "f20a02c6de528163",
-        "name": "options",
-        "rules": [
-            {
-                "t": "set",
-                "p": "options",
-                "pt": "msg",
-                "to": "payload",
-                "tot": "msg"
-            },
-            {
-                "t": "delete",
-                "p": "payload",
-                "pt": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 560,
-        "y": 160,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "c2c986c4a1921800",
-        "type": "switch",
-        "z": "f20a02c6de528163",
-        "name": "extensionAllowed ?",
-        "property": "$env('EXTENSIONS')",
-        "propertyType": "jsonata",
-        "rules": [
-            {
-                "t": "cont",
-                "v": "$split(filename, '.')[-1]",
-                "vt": "jsonata"
-            },
-            {
-                "t": "else"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 2,
-        "x": 610,
-        "y": 380,
-        "wires": [
-            [
-                "45fb57425c4d041e"
-            ],
-            [
-                "82f2868e5d916fc4"
-            ]
-        ]
-    },
-    {
-        "id": "82f2868e5d916fc4",
-        "type": "function",
-        "z": "f20a02c6de528163",
-        "name": "Error",
-        "func": "node.error(`Error: only ${env.get('EXTENSIONS')} files are allowed.`, msg)\n",
-        "outputs": 0,
-        "noerr": 0,
-        "x": 830,
-        "y": 400,
-        "wires": []
-    },
-    {
-        "id": "bf3f2823eed71a1a",
-        "type": "change",
-        "z": "f20a02c6de528163",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "filename",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1000,
-        "y": 360,
-        "wires": [
-            [
-                "52c6b425a46f0428"
-            ]
-        ]
-    },
-    {
         "id": "530b57a13f57ac7e",
         "type": "inject",
         "z": "953eb73365d84859",
-        "name": "init 1",
+        "name": "init 1s",
         "props": [
             {
                 "p": "payload"
@@ -2720,7 +1528,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 90,
-        "y": 180,
+        "y": 200,
         "wires": [
             [
                 "9c1cae2c8cd579f1",
@@ -2732,7 +1540,7 @@
         "id": "466978b03cbfdd40",
         "type": "inject",
         "z": "953eb73365d84859",
-        "name": "poll 5",
+        "name": "poll 5s",
         "props": [
             {
                 "p": "payload"
@@ -2749,8 +1557,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 90,
-        "y": 320,
+        "x": 100,
+        "y": 380,
         "wires": [
             [
                 "e573f44cd6952735"
@@ -2764,7 +1572,7 @@
         "name": "Refresh",
         "events": "all",
         "x": 280,
-        "y": 380,
+        "y": 440,
         "wires": [
             [
                 "27eedc6ffafb236a"
@@ -2775,7 +1583,7 @@
         "id": "cc06064e8a1e4629",
         "type": "inject",
         "z": "953eb73365d84859",
-        "name": "init 2",
+        "name": "init 2s",
         "props": [
             {
                 "p": "payload"
@@ -2789,7 +1597,7 @@
         "payload": "change",
         "payloadType": "str",
         "x": 90,
-        "y": 420,
+        "y": 500,
         "wires": [
             [
                 "27eedc6ffafb236a"
@@ -2801,14 +1609,14 @@
         "type": "function",
         "z": "953eb73365d84859",
         "name": "refresh table",
-        "func": "if ([\"connect\", \"change\"].includes(msg.payload)) {\n  const fields = [\"node\", \"status\", \"cpu_use_pct\", \"mem_use_pct\", \"client_bw\", \"upstream_bw\", \"users\",\"cache_eff\", ]\n  const dataSorted =\n    \"function (sorters, rows) { const ret = sorters.map((item) => { return { column: item.field, dir: item.dir }});const ids = rows.map((item)=>item.getData().id);this.send({payload:{sorters:ret,ids}});}\";\n  const rowContext = \"function (e, row) { e.preventDefault(); console.log(\\\"Row right clickt! \\\", row.getData());console.log(\\\"e event:\\\", e); this.send({payload: {row: row.getData(), clientX: e.clientX, clientY: e.clientY}});}\";\n  const rowSelect = \"function (e, row) { e.preventDefault(); console.log(\\\"Row double clickt! \\\", row.getData());console.log(\\\"e event:\\\", e); this.send({payload: {row: row.getData(), rowDoubleClick: true}});}\";\n  const effLegend = \"function (value) { return (value >= 0) ? '&nbsp;&nbsp;' + value + ' %' : '-'; }\";\n  const statusColor = \"function (value) { if (value==0) return 'lightgray'; if (value==1) return 'springgreen'; if (value==2) return 'gold'; if (value==3) return 'red'; return 'black';}\";\n  const useColor = \"function (value) { if (value > 90) return 'red'; if (value > 80) return 'gold'; return 'limegreen';}\";\n  msg = {}; \n  msg.refresh = true\n  msg.payload = []\n  msg.ui_control = {\n    tabulator: {\n      rowContext: rowContext,\n      rowDblClick: rowSelect,\n      initialSort: (global.get(\"nodeSort\", \"file\") || {}).sorters || [],\n      dataSorted,\n      columns: [\n//        {\n//          field: \"id\",\n//          title: \"&nbsp;ID\",\n//          align: \"center\",\n//          sorter: \"number\",\n//          width: 45,\n//        },\n        {\n          field: \"node\",\n          title: \"&nbsp;Node\",\n          align: \"left\",\n          sorter: \"string\",\n          width: 240,\n        },\n        {\n          field: \"status\",\n          title: \"&nbsp;Status\",\n          align: \"center\",\n          formatter: \"traffic\",\n          formatterParams: {\n            color: statusColor,\n          },\n          sorter: \"string\",\n          width: 94,\n        },\n        {\n          field: \"uptime\",\n          title: \"&nbsp;Uptime\",\n          align: \"center\",\n          sorter: \"string\",\n          width: 115,\n        },\n        {\n          field: \"cpu_use_pct\",\n          title: \"&nbsp;&nbsp;CPU\",\n          align: \"left\",\n          formatter: \"progress\",\n          formatterParams: {\n            legend: effLegend,\n            legendColor: \"#ffffff\",\n            legendAlign: \"center\",\n            color: useColor\n          },\n          sorter: \"number\",\n          width: 88,\n        }, \n        {\n          field: \"mem_use_pct\",\n          title: \"&nbsp;&nbsp;RAM\",\n          align: \"left\",\n          formatter: \"progress\",\n          formatterParams: {\n            legend: effLegend,\n            legendColor: \"#ffffff\",\n            legendAlign: \"center\",\n            color: useColor\n          },\n          sorter: \"number\",\n          width: 88,\n        },\n        {\n          field: \"disk_use_pct\",\n          title: \"&nbsp;&nbsp;HD\",\n          align: \"left\",\n          formatter: \"progress\",\n          formatterParams: {\n            legend: effLegend,\n            legendColor: \"#ffffff\",\n            legendAlign: \"center\",\n            color: useColor\n          },\n          sorter: \"number\",\n          width: 88,\n        },\n        {\n          field: \"client_bw\",\n          title: \"&nbsp;BW &#129095;\",\n          align: \"center\",\n          sorter: \"number\",\n          width: 92,\n        }, \n        {\n          field: \"upstream_bw\",\n          title: \"&nbsp;BW &#129093;\",\n          align: \"center\",\n          sorter: \"number\",\n          width: 92,\n        },\n        {\n          field: \"users\",\n          title: \"&nbsp;Users\",\n          align: \"center\",\n          sorter: \"number\",\n          width: 85,\n        },\n        {\n          field: \"cache_eff\",\n          title: \"&nbsp;&nbsp;Cache Eff\",\n          align: \"left\",\n          formatter: \"progress\",\n          formatterParams: {\n            legend: effLegend,\n            legendColor: \"#ffffff\",\n            legendAlign: \"center\",\n          },\n          sorter: \"number\",\n        },\n      ],\n    },\n  }\n  return msg\n}\n",
+        "func": "if ([\"connect\", \"change\"].includes(msg.payload)) {\n  const fields = [\"node\", \"status\", \"cpu_use_pct\", \"mem_use_pct\", \"client_bw\", \"upstream_bw\", \"users\",\"cache_eff\", ]\n  const dataSorted =\n    \"function (sorters, rows) { const ret = sorters.map((item) => { return { column: item.field, dir: item.dir }});const ids = rows.map((item)=>item.getData().id);this.send({payload:{sorters:ret,ids}});}\";\n  const rowContext = \"function (e, row) { e.preventDefault(); console.log(\\\"Row right clickt! \\\", row.getData());console.log(\\\"e event:\\\", e); this.send({payload: {row: row.getData(), clientX: e.clientX, clientY: e.clientY}});}\";\n  const rowSelect = \"function (e, row) { e.preventDefault(); console.log(\\\"Row double clickt! \\\", row.getData());console.log(\\\"e event:\\\", e); this.send({payload: {row: row.getData(), rowDoubleClick: true}});}\";\n  const effLegend = \"function (value) { if (value==100) value=parseInt(value);return (value > 0) ? '&nbsp;&nbsp;' + value + '&emsp14;%' : '-'; }\";\n  const statusColor = \"function (value) { if (value==0) return 'lightgray'; if (value==1) return 'springgreen'; if (value==2) return 'gold'; if (value==3) return 'red'; return 'black';}\";\n  const useColor = \"function (value) { if (value > 90) return 'red'; if (value > 80) return 'gold'; return 'limegreen';}\";\n  const bpsFormatter = \"function (cell, formatterParams, onRendered) {var value=cell.getValue();if (value <= 1.0) return value+'&emsp14;bps';var k=1024;var sizes=['','K','M','G','T','P','E','Z','Y'];var i=Math.floor(Math.log(value)/Math.log(k));var ret=parseFloat((value/Math.pow(k,i)).toFixed(1)) + '&emsp14;' + sizes[i] +'bps'; return ret;}\";\n  msg = {}; \n  msg.refresh = true\n  msg.payload = []\n  msg.ui_control = {\n    tabulator: {\n      rowContext: rowContext,\n      rowDblClick: rowSelect,\n      initialSort: (global.get(\"nodeSort\", \"file\") || {}).sorters || [],\n      dataSorted,\n      columns: [\n//        {\n//          field: \"id\",\n//          title: \"&nbsp;ID\",\n//          align: \"center\",\n//          sorter: \"number\",\n//          width: 45,\n//        },\n        {\n          field: \"node\",\n          title: \"&nbsp;Node\",\n          align: \"left\",\n          sorter: \"string\",\n          width: 237,\n        },\n        {\n          field: \"status\",\n          title: \"&nbsp;Status\",\n          align: \"center\",\n          formatter: \"traffic\",\n          formatterParams: {\n            color: statusColor,\n          },\n          tooltips: function (cell) {\n            const status = cell.getRow().getData().status\n            return status;\n          },\n          sorter: \"string\",\n          width: 94,\n        },\n        {\n          field: \"uptime\",\n          title: \"&nbsp;Uptime\",\n          align: \"center\",\n          sorter: \"string\",\n          width: 113,\n        },\n        {\n          field: \"cpu_use_pct\",\n          title: \"&nbsp;&nbsp;CPU\",\n          align: \"left\",\n          formatter: \"progress\",\n          formatterParams: {\n            legend: effLegend,\n            legendColor: \"#ffffff\",\n            legendAlign: \"center\",\n            color: useColor\n          },\n          sorter: \"number\",\n          width: 85,\n        }, \n        {\n          field: \"mem_use_pct\",\n          title: \"&nbsp;&nbsp;RAM\",\n          align: \"left\",\n          formatter: \"progress\",\n          formatterParams: {\n            legend: effLegend,\n            legendColor: \"#ffffff\",\n            legendAlign: \"center\",\n            color: useColor\n          },\n          sorter: \"number\",\n          width: 85,\n        },\n        {\n          field: \"disk_use_pct\",\n          title: \"&nbsp;&nbsp;HD\",\n          align: \"left\",\n          formatter: \"progress\",\n          formatterParams: {\n            legend: effLegend,\n            legendColor: \"#ffffff\",\n            legendAlign: \"center\",\n            color: useColor\n          },\n          sorter: \"number\",\n          width: 85,\n        },\n        {\n          field: \"client_bw\",\n          title: \"&nbsp;BW &#129095;\",\n          align: \"center\",\n          sorter: \"number\",\n          formatter: bpsFormatter,\n          width: 90,\n        }, \n        {\n          field: \"upstream_bw\",\n          title: \"&nbsp;BW &#129093;\",\n          align: \"center\",\n          sorter: \"number\",\n          formatter: bpsFormatter,\n          width: 90,\n        },\n        {\n          field: \"users\",\n          title: \"&nbsp;Users\",\n          align: \"center\",\n          sorter: \"number\",\n          width: 85,\n        },\n        {\n          field: \"cache_eff\",\n          title: \"&nbsp;&nbsp;Cache Eff\",\n          align: \"left\",\n          formatter: \"progress\",\n          formatterParams: {\n            legend: effLegend,\n            legendColor: \"#ffffff\",\n            legendAlign: \"center\",\n          },\n          sorter: \"number\",\n        },\n      ],\n    },\n  }\n  return msg\n}\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
         "x": 290,
-        "y": 440,
+        "y": 500,
         "wires": [
             [
                 "567783dfb28f09df",
@@ -2821,7 +1629,7 @@
         "type": "function",
         "z": "953eb73365d84859",
         "name": "node table manager",
-        "func": "///////////////\n// Functions //\n///////////////\n\nfunction byKey(obj) {\n  return function (item) {\n    return item.node === obj.node;\n  }\n}\n\nfunction byVal(val) {\n  return function (item) {\n    return item == val;\n  }\n}\n\n// Row object going to table\nfunction makeObj(obj) {\n  const colors = [\"#C8E6C8\", \"#64A064\", \"#1E461E\"]\n  const idx = obj.cache_eff < 25 ? 0 : obj.cache_eff < 50 ? 1 : 2\n  obj.displayEff = `<font color=\"${colors[idx]}\">${obj.cache_eff}</font>`\n  return obj\n}\n\n// Parameterized array sort function\nfunction sorterFactory(obj) {\n  let { column, dir } = obj[0]\n  column = column === \"displayEff\" ? \"cache_eff\" : column\n  return function sorter(itemA, itemB) {\n    const a = itemA[column]\n    const b = itemB[column]\n    const factor = dir === \"asc\" ? +1 : -1\n    return a < b ? -1 * factor : a > b ? +1 * factor : 0\n  }\n}\n\n// find the next available index of make a new one\nfunction findNextId(store) {\n  const list = [...store].sort((a, b) => a.id - b.id);\n\n  let nextId = 0;\n\n  for (const item of list) {\n    const id = item.id;\n    if (id == nextId) {\n      nextId++;\n    } else if (id > nextId) {\n      break;\n    }\n  }\n  return nextId;\n}\n\n// find the next available index of make a new one\nfunction findNextIdx(store) {\n  const list = [...store].sort((a, b) => a - b);\n\n  let nextVal = 0;\n\n  for (const val of list) {\n    if (val == nextVal) {\n      nextVal++;\n    } else if (val > nextVal) {\n      break;\n    }\n  }\n  return nextVal;\n}\n\n// Sort data store based on selected table sort\nfunction sortStore(sort, data) {\n  if (!sort || !sort.hasOwnProperty(\"sorters\") || !sort.sorters.length) {\n    node.error(\"sortStore: sort store error\");\n    return\n  }\n  data.sort(sorterFactory(sort.sorters))\n  var i;\n  for (i = 0; i < data.length; i++) {\n    if (i < sort.ids.length) {\n      data[i].id = sort.ids[i];\n    } else {\n      data[i].id = sort.ids[i] = findNextIdx(sort.ids);\n      node.warn(\"sortStore: new index not in nodeSort: \" + data[i].id)\n    }\n  }\n  if (sort.ids.length > i) {\n    let n = sort.ids.length - i;\n    node.warn(\"sortStore: trimming nodeSort: \" + n + \" (\" + i + \" to \" + (sort.ids.length-1) + \")\")\n    sort.ids.splice(-n, n);\n  }\n}\n/**\n * Set a key in Redis with an expiration time in seconds using a callback.\n * @param {string} key - The key to set.\n\n */\nasync function testDelKey(key) {\n  // Set the key with the specified value and expiration time\n  let exists = await redis.exists(key);\n  return exists;\n}\n\n////////////////\n// Processing //\n////////////////\nconst redis = global.get(\"redis\", \"file\");\nconst promisify = (fn) => {\n  return (...args) => {\n    return new Promise((resolve, reject) => {\n      fn(...args, function (err, res) {\n        if (err) {\n          return reject(err);\n        }\n        return resolve(res);\n      })\n    })\n  }\n}\nconst existsAsync = promisify(redis.exists).bind(redis);\n\nlet data_store = global.get(\"nodeData\", \"file\") || [];\nlet sort_store = global.get(\"nodeSort\", \"file\") || [];\n\nif (msg.refresh) {\n  return { payload: data_store };\n}\n\nif (Array.isArray(msg.payload)) { // process table data update or add\n  for (let in_row of msg.payload) {\n    in_row = makeObj(in_row) // This is the row that is sent to table\n    let row_data = data_store.find(byKey(in_row));\n    if (!row_data) {\n      const key = \"vcache_node:\" + in_row.node + \":\" + in_row.uuid;\n      if (await testDelKey(\"delete:\" + key)) {\n        node.warn(\"table mgr: new node was deleted: waiting: \" + in_row.node);\n        redis.del(key, function (err, reply) {\n          if (err) {\n            node.error(\"Error deleting key(\" + reply + \"): \", err);\n          } else {\n            node.warn(\"table mgr: node deleted from redis: \" + key)\n          }\n        });\n      } else {\n        in_row.id = findNextId(data_store);\n        node.warn(\"table mgr: node not in data store: \" + in_row.node + \" new id: \" + in_row.id);\n        data_store.push(in_row) // Append to store\n      }\n    } else {\n      Object.assign(row_data, in_row) // Update store (row_data is an item of mutable array)\n    }\n  }\n  for (let row of data_store) {\n    let rindx = msg.payload.findIndex(byKey(row));\n    if (rindx < 0) {\n      node.warn(\"table mgr: data store entry not in payload: \" + row.node + \" (\" + row.id + \") - SHOULD DELETE\");\n    }\n  }\n  sortStore(sort_store, data_store);\n  msg.payload = {\n    command: \"updateOrAddData\",\n    arguments: [data_store],\n  };\n} else { // process single message - delete\n  // When dashboard is reloaded or when flows start, display last table state\n  let row = msg.payload;\n  if (row.delete) {\n    let idx = data_store.findIndex(byKey(row));\n    if (idx >=0) {\n      data_store.splice(idx, 1);\n      let sidx = sort_store.ids.findIndex(byVal(row.id));\n      if (sidx>=0) {\n        sort_store.ids.splice(sidx, 1);\n      } else {\n        node.warn(\"table mgr: delete: id not found in sort store: \" + row.node + \" (\" + row.id + \"}\"); \n      }\n    } else {\n      node.warn(\"table mgr: delete: node not found in data store: \" + row.node + \" (\" + row.id + \"}\");\n    }\n    msg.payload = {\n      command: \"deleteRow\",\n      arguments: [row.id],\n    };\n  } else {\n    node.warn(\"table mgr: unrecognized message: \" + JSON.stringify(row));\n  }\n}\n\nglobal.set(\"nodeData\", data_store, \"file\");\nglobal.set(\"nodeSort\", sort_store, \"file\");\n\nreturn msg;\n\n",
+        "func": "///////////////\n// Functions //\n///////////////\n\nfunction byKey(obj) {\n  return function (item) {\n    return item.node === obj.node;\n  }\n}\n\nfunction byVal(val) {\n  return function (item) {\n    return item == val;\n  }\n}\n\n// Row object going to table\nfunction makeObj(obj) {\n  const colors = [\"#C8E6C8\", \"#64A064\", \"#1E461E\"]\n  const idx = obj.cache_eff < 25 ? 0 : obj.cache_eff < 50 ? 1 : 2\n  obj.displayEff = `<font color=\"${colors[idx]}\">${obj.cache_eff}</font>`\n  return obj\n}\n\n// Parameterized array sort function\nfunction sorterFactory(obj) {\n  let { column, dir } = obj[0]\n  column = column === \"displayEff\" ? \"cache_eff\" : column\n  return function sorter(itemA, itemB) {\n    const a = itemA[column];\n    const b = itemB[column];\n    const factor = dir === \"asc\" ? +1 : -1\n    if (isNaN(a)) {\n      return a < b ? -1 * factor : a > b ? +1 * factor : 0;\n    } else {\n      return (a - b) * factor;\n    }\n  }\n}\n\n// find the next available index of make a new one\nfunction findNextId(store) {\n  const list = [...store].sort((a, b) => a.id - b.id);\n\n  let nextId = 0;\n  for (const item of list) {\n    const id = item.id;\n    if (id == nextId) {\n      nextId++;\n    } else if (id > nextId) {\n      break;\n    }\n  }\n  return nextId;\n}\n\n// find the next available index of make a new one\nfunction findNextIdx(store) {\n  const list = [...store].sort((a, b) => a - b);\n\n  let nextVal = 0;\n  for (const val of list) {\n    if (val == nextVal) {\n      nextVal++;\n    } else if (val > nextVal) {\n      break;\n    }\n  }\n  return nextVal;\n}\n\n// Sort data store based on selected table sort\nfunction sortStore(sort, data) {\n  if (!sort || !sort.hasOwnProperty(\"sorters\")) {\n    node.error(\"sortStore: sort store error\");\n    return\n  }\n  if (!sort.sorters.length) {\n    sort.sorters = [{\n      column: \"node\",\n      dir: \"asc\"\n    }]\n  }\n  data.sort(sorterFactory(sort.sorters))\n  var i;\n  for (i = 0; i < data.length; i++) {\n    if (i < sort.ids.length) {\n      data[i].id = sort.ids[i];\n    } else {\n      data[i].id = sort.ids[i] = findNextIdx(sort.ids);\n      node.warn(\"sortStore: new index not in nodeSort: \" + data[i].id)\n    }\n  }\n  if (sort.ids.length > i) {\n    let n = sort.ids.length - i;\n    node.warn(\"sortStore: trimming nodeSort: \" + n + \" (\" + i + \" to \" + (sort.ids.length-1) + \")\")\n    sort.ids.splice(-n, n);\n  }\n}\n/**\n * Set a key in Redis with an expiration time in seconds using a callback.\n * @param {string} key - The key to set.\n\n */\nasync function testDelKey(key) {\n  // Set the key with the specified value and expiration time\n  let exists = await redis.exists(key);\n  return exists;\n}\n\n////////////////\n// Processing //\n////////////////\nconst redis = global.get(\"redis\", \"file\");\nconst promisify = (fn) => {\n  return (...args) => {\n    return new Promise((resolve, reject) => {\n      fn(...args, function (err, res) {\n        if (err) {\n          return reject(err);\n        }\n        return resolve(res);\n      })\n    })\n  }\n}\nconst existsAsync = promisify(redis.exists).bind(redis);\n\nlet data_store = global.get(\"nodeData\", \"file\") || [];\nlet sort_store = global.get(\"nodeSort\", \"file\") || [];\n\nif (msg.refresh) {\n  return { payload: data_store };\n}\n\nif (Array.isArray(msg.payload)) { // process table data update or add\n  for (let in_row of msg.payload) {\n    in_row = makeObj(in_row) // This is the row that is sent to table\n    let row_data = data_store.find(byKey(in_row));\n    if (!row_data) {\n      const key = \"vcache_node:\" + in_row.node + \":\" + in_row.uuid;\n      if (await testDelKey(\"delete:\" + key)) {\n        node.warn(\"table mgr: new node was deleted: waiting: \" + in_row.node);\n        redis.del(key, function (err, reply) {\n          if (err) {\n            node.error(\"Error deleting key(\" + reply + \"): \", err);\n          } else {\n            node.warn(\"table mgr: node deleted from redis: \" + key)\n          }\n        });\n      } else {\n        in_row.id = findNextId(data_store);\n        node.warn(\"table mgr: node not in data store: \" + in_row.node + \" new id: \" + in_row.id);\n        data_store.push(in_row) // Append to store\n      }\n    } else {\n      Object.assign(row_data, in_row) // Update store (row_data is an item of mutable array)\n    }\n  }\n  for (let row of data_store) {\n    let rindx = msg.payload.findIndex(byKey(row));\n    if (rindx < 0) {\n      node.warn(\"table mgr: data store entry not in payload: \" + row.node + \" (\" + row.id + \") - SHOULD DELETE\");\n    }\n  }\n  sortStore(sort_store, data_store);\n  msg.payload = {\n    command: \"updateOrAddData\",\n    arguments: [data_store],\n  };\n} else { // process single message - delete\n  // When dashboard is reloaded or when flows start, display last table state\n  let row = msg.payload;\n  if (row.delete) {\n    let idx = data_store.findIndex(byKey(row));\n    if (idx >=0) {\n      data_store.splice(idx, 1);\n      let sidx = sort_store.ids.findIndex(byVal(row.id));\n      if (sidx>=0) {\n        sort_store.ids.splice(sidx, 1);\n      } else {\n        node.warn(\"table mgr: delete: id not found in sort store: \" + row.node + \" (\" + row.id + \"}\"); \n      }\n    } else {\n      node.warn(\"table mgr: delete: node not found in data store: \" + row.node + \" (\" + row.id + \"}\");\n    }\n    msg.payload = {\n      command: \"deleteRow\",\n      arguments: [row.id],\n    };\n  } else {\n    node.warn(\"table mgr: unrecognized message: \" + JSON.stringify(row));\n  }\n}\n\nglobal.set(\"nodeData\", data_store, \"file\");\nglobal.set(\"nodeSort\", sort_store, \"file\");\n\nreturn msg;\n\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -2833,7 +1641,7 @@
             }
         ],
         "x": 540,
-        "y": 380,
+        "y": 440,
         "wires": [
             [
                 "567783dfb28f09df"
@@ -2852,8 +1660,8 @@
         "columns": [],
         "outputs": 1,
         "cts": true,
-        "x": 530,
-        "y": 440,
+        "x": 490,
+        "y": 500,
         "wires": [
             [
                 "05143c60bda4315f"
@@ -2864,7 +1672,7 @@
         "id": "ce2ff155071f51ec",
         "type": "switch",
         "z": "953eb73365d84859",
-        "name": "Non-empty sorter?",
+        "name": "has sorters",
         "property": "payload.ids.length",
         "propertyType": "msg",
         "rules": [
@@ -2880,8 +1688,8 @@
         "checkall": "false",
         "repair": false,
         "outputs": 2,
-        "x": 970,
-        "y": 420,
+        "x": 930,
+        "y": 480,
         "wires": [
             [],
             [
@@ -2905,7 +1713,7 @@
         "finalize": "",
         "libs": [],
         "x": 290,
-        "y": 500,
+        "y": 560,
         "wires": [
             []
         ]
@@ -2928,7 +1736,7 @@
         "payload": "true",
         "payloadType": "bool",
         "x": 90,
-        "y": 500,
+        "y": 560,
         "wires": [
             [
                 "17f908c5c029e02d"
@@ -2948,7 +1756,7 @@
         "payloadType": "json",
         "block": false,
         "x": 300,
-        "y": 320,
+        "y": 380,
         "wires": [
             [
                 "3a9bce3d609e11ce"
@@ -2971,15 +1779,15 @@
         "id": "3a9bce3d609e11ce",
         "type": "function",
         "z": "953eb73365d84859",
-        "name": "nodes from table",
-        "func": "const redis = global.get('redis'); // Assumes Redis client is globally available\nconst now = Date.now();\nvar table = [];\n/**\n* 3 - CRIT, 2 - WARN, 1 - OK, 0 - UNKNOWN\n* @param {string | number | Date} stamp\n* @param {number} now\n* @param {number} cpu\n* @param {number} mem\n* @param {number} disk\n*/\nfunction calc_status(now, stamp, cpu, mem, disk) {\n    const stamp_ms = new Date(stamp).getTime();\n    const diff = (now - stamp_ms) / 1000;\n    if (diff > 30) return 0;\n    if (cpu > 90 || mem > 90 || disk > 90) return 3;\n    if (cpu > 80 || mem > 80 || disk > 80) return 2;\n    return 1;\n}\n\n// Function to retrieve hash objects for each key\nfunction get_nodes(keys, callback) {\n    let count = 0;\n    keys.forEach(function (key) {\n        redis.hgetall(key, function (err, hash) {\n            if (err) {\n                callback(err);\n                return;\n            }\n            \n            hash.node = hash.id;\n            delete hash.id;\n\n            hash.status = calc_status(now, hash._stamp, hash.cpu_use_pct, hash.mem_use_pct, hash.disk_use_pct);\n            if (hash.status == 0) {\n                hash.cache_eff = -1;\n                hash.cpu_use_pct = -1;\n                hash.mem_use_pct = -1;\n                hash.disk_use_pct = -1;\n                hash.client_bw = NaN;\n                hash.upstream_bw = NaN;\n                hash.users = NaN;\n                hash.uptime = \"\";\n            } else {\n                hash.cache_eff = parseInt(hash.cache_eff_pct);\n                hash.mem_use_pct = parseFloat(hash.mem_use_pct);\n                hash.cpu_use_pct = parseFloat(hash.cpu_use_pct);\n                hash.disk_use_pct = parseFloat(hash.disk_use_pct);\n                hash.client_bw = parseInt(hash.client_bw);\n                hash.upstream_bw = parseInt(hash.upstream_bw);\n                hash.users = parseInt(hash.client_sess);\n            }\n            table.push(hash);\n            count++;\n            if (count >= keys.length) {\n                callback(null,table);\n            }\n        });\n    });\n}\n\nfunction sort_arr(in_arr) {\n    const arr = [...in_arr].sort((a, b) => {\n        const A = a.node.toLowerCase();\n        const B = b.node.toLowerCase();\n        if (A < B) return -1;\n        if (A > B) return 1;\n        return 0;\n    });\n    return arr;\n}\n\n// Main function\nget_nodes(msg.payload, function (err, nodes) {\n    if (err) {\n        node.error(err);\n        return;\n    }\n//  table = nodes.map((/** @type {{ id: string; cache_eff_pct: string; client_sess: string; client_bw: string; upstream_bw: string; }} */ n) => ({\n//       \"node\": n.id.toLowerCase(),\n//       \"status\": \"up\".toUpperCase(),\n//        \"cache_eff\": parseInt(n.cache_eff_pct) == 0 ? 1 : parseInt(n.cache_eff_pct),\n//        \"client_bw\": parseInt(n.client_bw),\n//        \"upstream_bw\": parseInt(n.upstream_bw),\n//        \"users\": parseInt(n.client_sess),\n//    }));\n    msg.payload = nodes;\n    node.send(msg);\n});",
+        "name": "node table data",
+        "func": "const redis = global.get('redis'); // Assumes Redis client is globally available\nconst now = Date.now();\nvar table = [];\n/**\n* 3 - CRIT, 2 - WARN, 1 - OK, 0 - UNKNOWN\n* @param {string | number | Date} stamp\n* @param {number} now\n* @param {number} cpu\n* @param {number} mem\n* @param {number} disk\n*/\nfunction calc_status(now, stamp, cpu, mem, disk) {\n    const stamp_ms = new Date(stamp).getTime();\n    const diff = (now - stamp_ms) / 1000;\n    if (diff > 30) return 0;\n    if (cpu > 90 || mem > 90 || disk > 90) return 3;\n    if (cpu > 80 || mem > 80 || disk > 80) return 2;\n    return 1;\n}\n\nfunction convertNum(val) {\n    if (/^\\d+$/.test(val)) {\n        val = parseInt(val);\n    } else if (/^\\d\\.\\d+$/.test(val)) {\n        val = parseFloat(val).toFixed(2);\n    } else if (/^\\d+\\.\\d+$/.test(val)) {\n        val = parseFloat(val).toFixed(1);\n    }\n    return val;\n}\n\nfunction convertHashNum(hash) {\n    if (typeof hash === 'object' || hash === null) {\n        for (const key in hash) {\n            hash[key] = convertNum(hash[key]);\n        }\n    }\n    return hash;\n}\n\n// Function to retrieve hash objects for each key\nfunction get_nodes(keys, callback) {\n    let count = 0;\n    keys.forEach(function (key) {\n        redis.hgetall(key, function (err, hash) {\n            if (err) {\n                callback(err);\n                return;\n            }\n            \n            hash.node = hash.id;\n            delete hash.id;\n\n            hash.status = calc_status(now, hash._stamp, hash.cpu_use_pct, hash.mem_use_pct, hash.disk_use_pct);\n            if (hash.status == 0) {\n                hash.cache_eff = -1;\n                hash.cpu_use_pct = -1;\n                hash.mem_use_pct = -1;\n                hash.disk_use_pct = -1;\n                hash.client_bw = NaN;\n                hash.upstream_bw = NaN;\n                hash.users = NaN;\n                hash.uptime = \"\";\n            } else {\n                hash = convertHashNum(hash);\n                //hash.cache_eff = parseInt(hash.cache_eff_pct);\n                //hash.mem_use_pct = parseFloat(hash.mem_use_pct).toFixed(1);\n                //hash.cpu_use_pct = parseFloat(hash.cpu_use_pct).toFixed(1);\n                //hash.disk_use_pct = parseFloat(hash.disk_use_pct).toFixed(1);\n                //hash.client_bw = parseInt(hash.client_bw);\n                //hash.upstream_bw = parseInt(hash.upstream_bw);\n                //hash.users = parseInt(hash.client_sess);\n            }\n            table.push(hash);\n            count++;\n            if (count >= keys.length) {\n                callback(null,table);\n            }\n        });\n    });\n}\n\nfunction sort_arr(in_arr) {\n    const arr = [...in_arr].sort((a, b) => {\n        const A = a.node.toLowerCase();\n        const B = b.node.toLowerCase();\n        if (A < B) return -1;\n        if (A > B) return 1;\n        return 0;\n    });\n    return arr;\n}\n\n// Main function\nget_nodes(msg.payload, function (err, nodes) {\n    if (err) {\n        node.error(err);\n        return;\n    }\n//  table = nodes.map((/** @type {{ id: string; cache_eff_pct: string; client_sess: string; client_bw: string; upstream_bw: string; }} */ n) => ({\n//       \"node\": n.id.toLowerCase(),\n//       \"status\": \"up\".toUpperCase(),\n//        \"cache_eff\": parseInt(n.cache_eff_pct) == 0 ? 1 : parseInt(n.cache_eff_pct),\n//        \"client_bw\": parseInt(n.client_bw),\n//        \"upstream_bw\": parseInt(n.upstream_bw),\n//        \"users\": parseInt(n.client_sess),\n//    }));\n    msg.payload = nodes;\n    node.send(msg);\n});",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 530,
-        "y": 320,
+        "x": 520,
+        "y": 380,
         "wires": [
             [
                 "c347b6521867b6fb"
@@ -2992,8 +1800,8 @@
         "z": "953eb73365d84859",
         "group": "66d92f18708659f1",
         "order": 2,
-        "width": 0,
-        "height": 0,
+        "width": 23,
+        "height": 1,
         "fontSize": 16,
         "inputPositionXField": "payload.clientX",
         "inputPositionXType": "msg",
@@ -3034,8 +1842,8 @@
         "startTimerAtLeave": true,
         "stopTimerAtEnter": true,
         "name": "RowCtxMenu",
-        "x": 540,
-        "y": 500,
+        "x": 520,
+        "y": 560,
         "wires": [
             [
                 "ac59be7fa2383fc7"
@@ -3070,7 +1878,7 @@
         "repair": false,
         "outputs": 3,
         "x": 730,
-        "y": 440,
+        "y": 500,
         "wires": [
             [
                 "ce2ff155071f51ec"
@@ -3107,14 +1915,14 @@
         "id": "51ab9183e6c445ee",
         "type": "file",
         "z": "953eb73365d84859",
-        "name": "",
+        "name": "vcache-mgr.uuid",
         "filename": "/var/run/vcache-mgr.uuid",
         "filenameType": "str",
         "appendNewline": true,
         "createDir": false,
         "overwriteFile": "true",
         "encoding": "utf8",
-        "x": 750,
+        "x": 760,
         "y": 200,
         "wires": [
             []
@@ -3175,7 +1983,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 730,
+        "x": 770,
         "y": 240,
         "wires": [
             []
@@ -3185,7 +1993,7 @@
         "id": "28e546a9e90ffb1f",
         "type": "file in",
         "z": "953eb73365d84859",
-        "name": "vcache mgr version",
+        "name": "vcache.version",
         "filename": "/var/run/vcache.version",
         "filenameType": "str",
         "format": "utf8",
@@ -3193,7 +2001,7 @@
         "sendError": false,
         "encoding": "none",
         "allProps": false,
-        "x": 530,
+        "x": 520,
         "y": 240,
         "wires": [
             [
@@ -3212,7 +2020,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 720,
+        "x": 760,
         "y": 160,
         "wires": [
             [
@@ -3224,7 +2032,7 @@
         "id": "ac931b189bcafeb4",
         "type": "file in",
         "z": "953eb73365d84859",
-        "name": "vcache mgr uuid",
+        "name": "vcache-mgr.uuid",
         "filename": "/var/run/vcache-mgr.uuid",
         "filenameType": "str",
         "format": "utf8",
@@ -3249,7 +2057,7 @@
         "name": "UUID (out)",
         "key": "vcache_mgr",
         "structtype": "hash",
-        "x": 950,
+        "x": 1050,
         "y": 160,
         "wires": []
     },
@@ -3265,7 +2073,7 @@
         "finalize": "",
         "libs": [],
         "x": 540,
-        "y": 560,
+        "y": 620,
         "wires": [
             [
                 "7ede68d2930d2f9d"
@@ -3284,8 +2092,8 @@
         "winHide": false,
         "oldrc": false,
         "name": "",
-        "x": 930,
-        "y": 560,
+        "x": 910,
+        "y": 680,
         "wires": [
             [],
             [],
@@ -3307,12 +2115,12 @@
             },
             {
                 "t": "eq",
-                "v": "accept",
+                "v": "delete",
                 "vt": "str"
             },
             {
                 "t": "eq",
-                "v": "delete",
+                "v": "accept",
                 "vt": "str"
             }
         ],
@@ -3320,16 +2128,16 @@
         "repair": false,
         "outputs": 3,
         "x": 730,
-        "y": 560,
+        "y": 620,
         "wires": [
             [
                 "11dd7f1faf822026"
             ],
             [
+                "b9e49c705dadd4fc",
                 "dedbd31c5db0034f"
             ],
             [
-                "b9e49c705dadd4fc",
                 "dedbd31c5db0034f"
             ]
         ]
@@ -3345,8 +2153,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 980,
-        "y": 600,
+        "x": 960,
+        "y": 620,
         "wires": [
             [
                 "c347b6521867b6fb"
@@ -3372,8 +2180,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1160,
-        "y": 420,
+        "x": 1100,
+        "y": 480,
         "wires": [
             []
         ]
@@ -3382,7 +2190,7 @@
         "id": "e054d7063c78836e",
         "type": "inject",
         "z": "953eb73365d84859",
-        "name": "init 0",
+        "name": "init 0s",
         "props": [
             {
                 "p": "payload"
@@ -3435,8 +2243,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 940,
-        "y": 460,
+        "x": 920,
+        "y": 520,
         "wires": [
             [
                 "04aa2ba4afb084b6"
@@ -3450,7 +2258,7 @@
         "name": "",
         "events": "all",
         "x": 1100,
-        "y": 460,
+        "y": 520,
         "wires": [
             [
                 "67ba704c78cb72a4"
@@ -3467,8 +2275,57 @@
             "f80372ff84e69aab"
         ],
         "x": 1205,
-        "y": 460,
+        "y": 520,
         "wires": []
+    },
+    {
+        "id": "4f03c1bab552cc28",
+        "type": "inject",
+        "z": "953eb73365d84859",
+        "name": "poll 1h",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "3600",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 300,
+        "wires": [
+            [
+                "e0c1f41c65d260dd"
+            ]
+        ]
+    },
+    {
+        "id": "e0c1f41c65d260dd",
+        "type": "exec",
+        "z": "953eb73365d84859",
+        "command": "/usr/sbin/logrotate /etc/logrotate.conf",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "logrotate",
+        "x": 280,
+        "y": 300,
+        "wires": [
+            [],
+            [],
+            []
+        ]
     },
     {
         "id": "50f9790b.49c718",
@@ -3494,7 +2351,7 @@
         "type": "ui_text",
         "z": "974b87f71963749f",
         "group": "d898c7987d10b482",
-        "order": 5,
+        "order": 6,
         "width": 8,
         "height": 1,
         "name": "",
@@ -3512,7 +2369,7 @@
         "z": "974b87f71963749f",
         "name": "CPU Historic",
         "group": "d898c7987d10b482",
-        "order": 14,
+        "order": 15,
         "width": 7,
         "height": 4,
         "label": "",
@@ -3556,7 +2413,7 @@
         "z": "974b87f71963749f",
         "name": "",
         "group": "d898c7987d10b482",
-        "order": 3,
+        "order": 4,
         "width": 7,
         "height": 3,
         "gtype": "gage",
@@ -3583,7 +2440,7 @@
         "type": "ui_text",
         "z": "974b87f71963749f",
         "group": "d898c7987d10b482",
-        "order": 7,
+        "order": 8,
         "width": 8,
         "height": 1,
         "name": "",
@@ -3604,7 +2461,7 @@
         "type": "ui_text",
         "z": "974b87f71963749f",
         "group": "d898c7987d10b482",
-        "order": 17,
+        "order": 18,
         "width": 8,
         "height": 1,
         "name": "",
@@ -3664,7 +2521,7 @@
         "z": "974b87f71963749f",
         "name": "",
         "group": "d898c7987d10b482",
-        "order": 15,
+        "order": 16,
         "width": 7,
         "height": 3,
         "gtype": "gage",
@@ -3710,7 +2567,7 @@
         "type": "ui_text",
         "z": "974b87f71963749f",
         "group": "d898c7987d10b482",
-        "order": 11,
+        "order": 12,
         "width": 7,
         "height": 1,
         "name": "",
@@ -3727,7 +2584,7 @@
         "type": "ui_text",
         "z": "974b87f71963749f",
         "group": "d898c7987d10b482",
-        "order": 10,
+        "order": 11,
         "width": 7,
         "height": 1,
         "name": "",
@@ -3768,7 +2625,7 @@
         "z": "974b87f71963749f",
         "name": "CPU use",
         "group": "d898c7987d10b482",
-        "order": 2,
+        "order": 3,
         "width": 7,
         "height": 3,
         "gtype": "gage",
@@ -3833,7 +2690,7 @@
         "type": "ui_text",
         "z": "974b87f71963749f",
         "group": "d898c7987d10b482",
-        "order": 9,
+        "order": 10,
         "width": 8,
         "height": 1,
         "name": "",
@@ -3850,7 +2707,7 @@
         "type": "ui_text",
         "z": "974b87f71963749f",
         "group": "d898c7987d10b482",
-        "order": 13,
+        "order": 14,
         "width": 8,
         "height": 1,
         "name": "",
@@ -3867,7 +2724,7 @@
         "type": "ui_text",
         "z": "974b87f71963749f",
         "group": "d898c7987d10b482",
-        "order": 19,
+        "order": 20,
         "width": 8,
         "height": 1,
         "name": "",
@@ -3884,7 +2741,7 @@
         "type": "ui_text",
         "z": "974b87f71963749f",
         "group": "d898c7987d10b482",
-        "order": 21,
+        "order": 23,
         "width": 7,
         "height": 1,
         "name": "",
@@ -3943,7 +2800,7 @@
         "type": "ui_text",
         "z": "974b87f71963749f",
         "group": "d898c7987d10b482",
-        "order": 1,
+        "order": 2,
         "width": 8,
         "height": 1,
         "name": "",
@@ -4042,7 +2899,7 @@
         "z": "974b87f71963749f",
         "name": "Upstream Requests Rate",
         "group": "3a38c87d0066b087",
-        "order": 26,
+        "order": 56,
         "width": 10,
         "height": 4,
         "label": "",
@@ -4085,7 +2942,7 @@
         "type": "ui_text",
         "z": "974b87f71963749f",
         "group": "3a38c87d0066b087",
-        "order": 23,
+        "order": 51,
         "width": 10,
         "height": 1,
         "name": "Upstream Request Rate",
@@ -4103,7 +2960,7 @@
         "z": "974b87f71963749f",
         "name": "Upstream Bandwidth",
         "group": "3a38c87d0066b087",
-        "order": 25,
+        "order": 54,
         "width": 10,
         "height": 4,
         "label": "",
@@ -4146,7 +3003,7 @@
         "type": "ui_text",
         "z": "974b87f71963749f",
         "group": "3a38c87d0066b087",
-        "order": 22,
+        "order": 49,
         "width": 10,
         "height": 1,
         "name": "",
@@ -4154,6 +3011,10 @@
         "format": "{{msg.rate}} {{msg.units}}bps",
         "layout": "row-center",
         "className": "def",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
         "x": 660,
         "y": 1380,
         "wires": []
@@ -4164,7 +3025,7 @@
         "z": "974b87f71963749f",
         "name": "Client Request Rate",
         "group": "3a38c87d0066b087",
-        "order": 17,
+        "order": 37,
         "width": 10,
         "height": 4,
         "label": "",
@@ -4207,7 +3068,7 @@
         "type": "ui_text",
         "z": "974b87f71963749f",
         "group": "3a38c87d0066b087",
-        "order": 14,
+        "order": 32,
         "width": 10,
         "height": 1,
         "name": "",
@@ -4225,7 +3086,7 @@
         "z": "974b87f71963749f",
         "name": "Client Request Efficiency",
         "group": "3a38c87d0066b087",
-        "order": 8,
+        "order": 18,
         "width": 10,
         "height": 4,
         "label": "Cache Efficiency <font size=3>[requests]</font>",
@@ -4269,7 +3130,7 @@
         "z": "974b87f71963749f",
         "name": "Client Request Efficiency",
         "group": "3a38c87d0066b087",
-        "order": 2,
+        "order": 4,
         "width": 10,
         "height": 4,
         "gtype": "gage",
@@ -4297,7 +3158,7 @@
         "z": "974b87f71963749f",
         "name": "Cache Efficiency",
         "group": "3a38c87d0066b087",
-        "order": 1,
+        "order": 2,
         "width": 10,
         "height": 4,
         "gtype": "gage",
@@ -4325,7 +3186,7 @@
         "z": "974b87f71963749f",
         "name": "Cache Efficiency",
         "group": "3a38c87d0066b087",
-        "order": 7,
+        "order": 16,
         "width": 10,
         "height": 4,
         "label": "Cache Efficiency  <font size=3>[data]</font>",
@@ -4369,7 +3230,7 @@
         "z": "974b87f71963749f",
         "name": "Client Bandwidth",
         "group": "3a38c87d0066b087",
-        "order": 16,
+        "order": 35,
         "width": 10,
         "height": 4,
         "label": "",
@@ -4412,7 +3273,7 @@
         "type": "ui_text",
         "z": "974b87f71963749f",
         "group": "3a38c87d0066b087",
-        "order": 13,
+        "order": 30,
         "width": 10,
         "height": 1,
         "name": "",
@@ -4429,7 +3290,7 @@
         "type": "ui_text",
         "z": "974b87f71963749f",
         "group": "3733aad54f7e21ab",
-        "order": 6,
+        "order": 12,
         "width": 7,
         "height": 2,
         "name": "",
@@ -4437,6 +3298,10 @@
         "format": "{{msg.payload}} {{msg.units}}bps",
         "layout": "col-center",
         "className": "huge",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
         "x": 670,
         "y": 700,
         "wires": []
@@ -4446,7 +3311,7 @@
         "type": "ui_text",
         "z": "974b87f71963749f",
         "group": "3733aad54f7e21ab",
-        "order": 7,
+        "order": 17,
         "width": 7,
         "height": 2,
         "name": "",
@@ -4467,7 +3332,7 @@
         "type": "ui_text",
         "z": "974b87f71963749f",
         "group": "3733aad54f7e21ab",
-        "order": 3,
+        "order": 5,
         "width": 7,
         "height": 2,
         "name": "",
@@ -4484,14 +3349,18 @@
         "type": "ui_text",
         "z": "974b87f71963749f",
         "group": "3733aad54f7e21ab",
-        "order": 2,
-        "width": 8,
+        "order": 4,
+        "width": 7,
         "height": 1,
         "name": "",
         "label": "Bandwidth Saving: ",
         "format": "{{msg.rate}} {{msg.units}}bps",
         "layout": "row-center",
         "className": "def",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
         "x": 650,
         "y": 780,
         "wires": []
@@ -4501,8 +3370,8 @@
         "type": "ui_text",
         "z": "974b87f71963749f",
         "group": "3733aad54f7e21ab",
-        "order": 1,
-        "width": 8,
+        "order": 2,
+        "width": 7,
         "height": 1,
         "name": "",
         "label": "User Sessions: ",
@@ -4519,8 +3388,8 @@
         "z": "974b87f71963749f",
         "name": "User Sessions Chart",
         "group": "3733aad54f7e21ab",
-        "order": 4,
-        "width": 8,
+        "order": 7,
+        "width": 7,
         "height": 5,
         "label": "",
         "chartType": "line",
@@ -4563,8 +3432,8 @@
         "z": "974b87f71963749f",
         "name": "Bandwidth Saved Chart",
         "group": "3733aad54f7e21ab",
-        "order": 5,
-        "width": 8,
+        "order": 9,
+        "width": 7,
         "height": 5,
         "label": "",
         "chartType": "line",
@@ -4677,7 +3546,7 @@
         "type": "function",
         "z": "974b87f71963749f",
         "name": "max bw saved",
-        "func": "function formatBytes(bytes, decimals) {\n    if (bytes === 0) return '0 Byte';\n    var k = 1024; // or 1024 for binary\n    var dm = decimals + 1 || 2;\n    var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];\n    var i = Math.floor(Math.log(bytes) / Math.log(k));\n    return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];\n}\n\nmsg.value = formatBytes(msg.payload.max_bw_saved);\nmsg.payload = msg.payload.max_bw_saved;\nmsg.topic = \"max_bw_saved\";\nreturn msg;",
+        "func": "function formatBytes(bytes, decimals) {\n    if (bytes === 0) return '0 Byte';\n    var k = 1024; // or 1024 for binary\n    var dm = decimals + 1 || 2;\n    var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];\n    var i = Math.floor(Math.log(bytes) / Math.log(k));\n    return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];\n}\n\nfunction formatMetric(value, decimals) {\n    if (value <= 1.0) return [value, ''];\n    var k = 1024; // or 1024 for binary\n    var dm = decimals + 1 || 2;\n    var sizes = ['', 'K', 'M', 'G', 'T', 'P', 'E', 'Z', 'Y'];\n    var i = Math.floor(Math.log(value) / Math.log(k));\n    return [parseFloat((value / Math.pow(k, i)).toFixed(dm)), sizes[i]];\n}\nmsg.payload = msg.payload.max_bw_saved;\n[msg.payload, msg.units] = formatMetric(msg.payload)\nmsg.value = formatBytes(msg.payload.max_bw_saved);\nmsg.topic = \"max_bw_saved\";\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -4696,7 +3565,7 @@
         "type": "function",
         "z": "974b87f71963749f",
         "name": "bw saved",
-        "func": "function formatBytes(bytes, decimals) {\n    if (bytes === 0) return '0 Byte';\n    var k = 1024; // or 1024 for binary\n    var dm = decimals + 1 || 2;\n    var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];\n    var i = Math.floor(Math.log(bytes) / Math.log(k));\n    return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];\n}\n\nmsg.value = formatBytes(msg.payload.bw_saved);\nmsg.payload = msg.payload.bw_saved;\nmsg.topic = \"bw_saved\";\nreturn msg;",
+        "func": "function formatMetric(value, decimals) {\n    if (value <= 1.0) return [value, ''];\n    var k = 1024; // or 1024 for binary\n    var dm = decimals + 1 || 2;\n    var sizes = ['', 'K', 'M', 'G', 'T', 'P', 'E', 'Z', 'Y'];\n    var i = Math.floor(Math.log(value) / Math.log(k));\n    return [parseFloat((value / Math.pow(k, i)).toFixed(dm)), sizes[i]];\n}\n\nmsg.payload = msg.payload.bw_saved;\n[msg.rate, msg.units] = formatMetric(msg.payload);\nmsg.topic = \"bw_saved\";\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -4774,7 +3643,7 @@
         "type": "function",
         "z": "974b87f71963749f",
         "name": "client bw",
-        "func": "function formatBytes(bytes, decimals) {\n    if (bytes === 0) return '0 Byte';\n    var k = 1024; // or 1024 for binary\n    var dm = decimals + 1 || 2;\n    var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];\n    var i = Math.floor(Math.log(bytes) / Math.log(k));\n    return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];\n}\n\nmsg.value = formatBytes(msg.payload.client_bw);\nmsg.payload = msg.payload.client_bw;\nmsg.topic = \"client_bw\";\nreturn msg;",
+        "func": "function formatBytes(bytes, decimals) {\n    if (bytes === 0) return '0 Byte';\n    var k = 1024; // or 1024 for binary\n    var dm = decimals + 1 || 2;\n    var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];\n    var i = Math.floor(Math.log(bytes) / Math.log(k));\n    return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];\n}\n\nfunction formatMetric(value, decimals) {\n    if (value <= 1.0) return [value, ''];\n    var k = 1024; // or 1024 for binary\n    var dm = decimals + 1 || 2;\n    var sizes = ['', 'K', 'M', 'G', 'T', 'P', 'E', 'Z', 'Y'];\n    var i = Math.floor(Math.log(value) / Math.log(k));\n    return [parseFloat((value / Math.pow(k, i)).toFixed(dm)), sizes[i]];\n}\nif (msg.rate < 0) {\n    node.warn(\"rate = \" + msg.rate);\n    msg.rate = 0;\n}\nmsg.payload = msg.payload.client_bw;\n\n[msg.rate, msg.units] = formatMetric(msg.payload);\n\nmsg.value = formatBytes(msg.payload);\nmsg.topic = \"client_bw\";\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -4833,14 +3702,14 @@
         "id": "e45a659d61818887",
         "type": "function",
         "z": "974b87f71963749f",
-        "name": "disk used",
-        "func": "function formatBytes(bytes, decimals) {\n    if (bytes === 0) return '0 Byte';\n    var k = 1024; // or 1024 for binary\n    var dm = decimals + 1 || 2;\n    var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];\n    var i = Math.floor(Math.log(bytes) / Math.log(k));\n    return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];\n}\n\nmsg.value = formatBytes(msg.payload.req_rate);\nmsg.payload = msg.payload.req_rate;\nmsg.topic = \"req_rate\";\nreturn msg;",
+        "name": "delivered request rate",
+        "func": "function formatBytes(bytes, decimals) {\n    if (bytes === 0) return '0 Byte';\n    var k = 1024; // or 1024 for binary\n    var dm = decimals + 1 || 2;\n    var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];\n    var i = Math.floor(Math.log(bytes) / Math.log(k));\n    return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];\n}\n\nfunction formatMetric(value, decimals) {\n    if (value <= 1.0) return [value, ''];\n    var k = 1024; // or 1024 for binary\n    var dm = decimals + 1 || 2;\n    var sizes = ['', 'K', 'M', 'G', 'T', 'P', 'E', 'Z', 'Y'];\n    var i = Math.floor(Math.log(value) / Math.log(k));\n    return [parseFloat((value / Math.pow(k, i)).toFixed(dm)), sizes[i]];\n}\nif (msg.rate < 0) {\n    node.warn(\"rate = \" + msg.rate);\n    msg.rate = 0;\n}\nmsg.payload = msg.payload.req_rate;\n\n[msg.rate, msg.units] = formatMetric(msg.payload)\n\nmsg.value = formatBytes(msg.payload);\nmsg.topic = \"req_rate\";\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 380,
+        "x": 420,
         "y": 1300,
         "wires": [
             [
@@ -4854,7 +3723,7 @@
         "type": "function",
         "z": "974b87f71963749f",
         "name": "upstream bw",
-        "func": "function formatBytes(bytes, decimals) {\n    if (bytes === 0) return '0 Byte';\n    var k = 1024; // or 1024 for binary\n    var dm = decimals + 1 || 2;\n    var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];\n    var i = Math.floor(Math.log(bytes) / Math.log(k));\n    return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];\n}\n\nmsg.value = formatBytes(msg.payload.upstream_bw);\nmsg.payload = msg.payload.upstream_bw;\nmsg.topic = \"upstream_bw\";\nreturn msg;",
+        "func": "function formatBytes(bytes, decimals) {\n    if (bytes === 0) return '0 Byte';\n    var k = 1024; // or 1024 for binary\n    var dm = decimals + 1 || 2;\n    var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];\n    var i = Math.floor(Math.log(bytes) / Math.log(k));\n    return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];\n}\n\nfunction formatMetric(value, decimals) {\n    if (value <= 1.0) return [value, ''];\n    var k = 1024; // or 1024 for binary\n    var dm = decimals + 1 || 2;\n    var sizes = ['', 'K', 'M', 'G', 'T', 'P', 'E', 'Z', 'Y'];\n    var i = Math.floor(Math.log(value) / Math.log(k));\n    return [parseFloat((value / Math.pow(k, i)).toFixed(dm)), sizes[i]];\n}\nif (msg.rate < 0) msg.rate = 0;\nmsg.payload = msg.payload.upstream_bw;\n\n[msg.rate, msg.units] = formatMetric(msg.payload)\n\nmsg.value = formatBytes(msg.payload);\nmsg.topic = \"upstream_bw\";\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -4874,7 +3743,7 @@
         "type": "function",
         "z": "974b87f71963749f",
         "name": "upstream req rate",
-        "func": "function formatBytes(bytes, decimals) {\n    if (bytes === 0) return '0 Byte';\n    var k = 1024; // or 1024 for binary\n    var dm = decimals + 1 || 2;\n    var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];\n    var i = Math.floor(Math.log(bytes) / Math.log(k));\n    return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];\n}\n\nmsg.value = formatBytes(msg.payload.upstream_req_rate);\nmsg.payload = msg.payload.upstream_req_rate;\nmsg.topic = \"upstream_req_rate\";\nreturn msg;",
+        "func": "function formatBytes(bytes, decimals) {\n    if (bytes === 0) return '0 Byte';\n    var k = 1024; // or 1024 for binary\n    var dm = decimals + 1 || 2;\n    var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];\n    var i = Math.floor(Math.log(bytes) / Math.log(k));\n    return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];\n}\nfunction formatMetric(value, decimals) {\n    if (value <= 1.0) return [value, ''];\n    var k = 1024; // or 1024 for binary\n    var dm = decimals + 1 || 2;\n    var sizes = ['', 'K', 'M', 'G', 'T', 'P', 'E', 'Z', 'Y'];\n    var i = Math.floor(Math.log(value) / Math.log(k));\n    return [parseFloat((value / Math.pow(k, i)).toFixed(dm)), sizes[i]];\n}\nif (msg.rate < 0) {\n    node.error(\"rate = \" + msg.rate);\n    msg.rate = 0;\n}\nmsg.payload = msg.payload.upstream_req_rate;\n[msg.rate, msg.units] = formatMetric(msg.payload)\n\nmsg.value = formatBytes(msg.payload);\nmsg.topic = \"upstream_req_rate\";\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -4906,28 +3775,24 @@
         ]
     },
     {
-        "id": "3696af61.5b451",
-        "type": "subflow:19ad2b6f.f11b85",
-        "z": "11df8122a3459712",
-        "name": "certificate upload",
-        "env": [
-            {
-                "name": "UPLOAD_DIR",
-                "value": "/srv/salt/pki",
-                "type": "str"
-            },
-            {
-                "name": "EXTENSIONS",
-                "value": "[\"p12\",\"pkcs12\",\"pfx\",\"pem\"]",
-                "type": "json"
-            }
-        ],
-        "x": 160,
-        "y": 80,
+        "id": "6f6232b4ef2ad0db",
+        "type": "ui_template",
+        "z": "974b87f71963749f",
+        "group": "d898c7987d10b482",
+        "name": "",
+        "order": 21,
+        "width": 8,
+        "height": 1,
+        "format": "<style>\n    .def p.value {\n        color: #4a8ad9;\n    }\n    .big p.value {\n        vertical-align: bottom;\n        font-size: 150%;\n        color: #4a8ad9;\n    }\n    .big p.label {\n        vertical-align: top;\n        font-weight: bold;\n    }\n    .huge p.value {\n        vertical-align: bottom;\n        font-size: 200%;\n        color: #4a8ad9;\n    }\n    .huge p.label {\n        vertical-align: top;\n        font-weight: bold;\n    }\n</style>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 140,
+        "y": 940,
         "wires": [
-            [
-                "54cbb1e2bf06957a"
-            ]
+            []
         ]
     },
     {
@@ -4938,7 +3803,7 @@
         "label": "certificate password",
         "tooltip": "pkcs12 password (blank if none)",
         "group": "2871cce383627674",
-        "order": 6,
+        "order": 7,
         "width": 5,
         "height": 1,
         "passthru": true,
@@ -5022,7 +3887,7 @@
         "z": "11df8122a3459712",
         "name": "publish cert",
         "group": "2871cce383627674",
-        "order": 8,
+        "order": 9,
         "width": 4,
         "height": 1,
         "passthru": false,
@@ -5049,7 +3914,7 @@
         "type": "function",
         "z": "11df8122a3459712",
         "name": "set cert file cfg",
-        "func": "function getBasename(filePath) {\n    // Split the file path by forward slash or backslash to handle different OS path separators\n    const parts = filePath.split(/[\\\\/]/);\n\n    // Get the last part of the split array, which is the basename\n    return parts[parts.length - 1];\n}\n\nglobal.set('CERT_FILE_CFG', getBasename(msg.payload));\nreturn msg;",
+        "func": "\nglobal.set('CERT_FILE_CFG', msg.filename);\nglobal.set('CERT_FILE_DATA_CFG', msg.payload);\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -5066,7 +3931,7 @@
         "type": "function",
         "z": "11df8122a3459712",
         "name": "publish cert",
-        "func": "const cert_file = global.get(\"CERT_FILE_CFG\");\nconst cert_tag = global.get(\"CERT_TAG_CFG\");\nconst cert_pw = global.get(\"CERT_PW_CFG\");\n\nif (cert_file && cert_tag) {\n    if (cert_pw && cert_pw.length) {\n        msg.payload = \"salt \\\\* state.sls vcache.util.push_cert pillar='{\\\"cert_tag\\\": \" + cert_tag + \", \\\"cert_file\\\": \" + cert_file + \", \\\"cert_pw\\\": \" + cert_pw + \"}'\";\n    } else {\n        msg.payload = \"salt \\\\* state.sls vcache.util.push_cert pillar='{\\\"cert_tag\\\": \" + cert_tag + \", \\\"cert_file\\\": \" + cert_file + \"}'\";\n    }\n} else {\n    msg.payload = \"false\";\n}\n\nreturn msg;",
+        "func": "const cert_file = global.get(\"CERT_FILE_CFG\");\nconst cert_tag = global.get(\"CERT_TAG_CFG\");\nconst cert_pw = global.get(\"CERT_PW_CFG\");\n\nif (cert_file && cert_tag) {\n    const cert_file_data = global.get(\"CERT_FILE_DATA_CFG\");\n    msg.payload = cert_file_data;\n    msg.filepath = \"/srv/salt/state/pki/\" + cert_file;\n    if (cert_pw && cert_pw.length) {\n        msg.command = \"salt \\\\* state.sls vcache.util.push_cert pillar='{\\\"cert_tag\\\": \" + cert_tag + \", \\\"cert_pw\\\": \" + cert_pw + \", \\\"cert_file\\\": \" + cert_file + \"}'\";\n    } else {\n        msg.command = \"salt \\\\* state.sls vcache.util.push_cert pillar='{\\\"cert_tag\\\": \" + cert_tag + \", \\\"cert_file\\\": \" + cert_file + \"}'\";\n    }\n} else {\n    msg.pathname = \"/dev/null\";\n    msg.command = \"false\";\n}\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -5076,7 +3941,7 @@
         "y": 200,
         "wires": [
             [
-                "503c09fd27f1752c"
+                "10b748e69b2169e6"
             ]
         ]
     },
@@ -5085,65 +3950,23 @@
         "type": "exec",
         "z": "11df8122a3459712",
         "command": "",
-        "addpay": "payload",
+        "addpay": "command",
         "append": "",
         "useSpawn": "false",
         "timer": "",
         "winHide": false,
         "oldrc": false,
         "name": "salt state run",
-        "x": 610,
+        "x": 850,
         "y": 260,
         "wires": [
             [
-                "ee9615df08fc816a"
+                "ea5ba863f377370d"
             ],
             [
-                "ee9615df08fc816a"
+                "ea5ba863f377370d"
             ],
             []
-        ]
-    },
-    {
-        "id": "ee9615df08fc816a",
-        "type": "debug",
-        "z": "11df8122a3459712",
-        "name": "debug 2",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 600,
-        "y": 200,
-        "wires": []
-    },
-    {
-        "id": "cf272c6a057d44e3",
-        "type": "subflow:f20a02c6de528163",
-        "z": "11df8122a3459712",
-        "name": "config upload",
-        "env": [
-            {
-                "name": "UPLOAD_DIR",
-                "value": "/tmp",
-                "type": "str"
-            },
-            {
-                "name": "EXTENSIONS",
-                "value": "[\"cfg\"]",
-                "type": "json"
-            }
-        ],
-        "x": 150,
-        "y": 300,
-        "wires": [
-            [
-                "49d3e4fd0b19f902"
-            ]
         ]
     },
     {
@@ -5151,7 +3974,7 @@
         "type": "function",
         "z": "11df8122a3459712",
         "name": "set cfg file cfg",
-        "func": "function getBasename(filePath) {\n    // Split the file path by forward slash or backslash to handle different OS path separators\n    const parts = filePath.split(/[\\\\/]/);\n\n    // Get the last part of the split array, which is the basename\n    return parts[parts.length - 1];\n}\n\nglobal.set('CFG_FILE_CFG', getBasename(msg.payload));\nreturn msg;",
+        "func": "\n\nglobal.set('CFG_FILE_CFG', msg.filename);\nglobal.set('CFG_FILE_DATA_CFG', msg.payload);\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -5160,9 +3983,7 @@
         "x": 380,
         "y": 300,
         "wires": [
-            [
-                "a18cde78c7338c3d"
-            ]
+            []
         ]
     },
     {
@@ -5171,7 +3992,7 @@
         "z": "11df8122a3459712",
         "name": "publish cfg",
         "group": "3a88c0294b97b966",
-        "order": 7,
+        "order": 4,
         "width": 4,
         "height": 1,
         "passthru": false,
@@ -5198,7 +4019,7 @@
         "type": "function",
         "z": "11df8122a3459712",
         "name": "publish cfg",
-        "func": "const cfg_file = global.get(\"CFG_FILE_CFG\");\n\nif (cfg_file) {\n    msg.payload = \"salt \\\\* state.sls vcache.util.push_cfg pillar='{\\\"cfg_file\\\": \" + cfg_file + \"}'\";\n} else {\n    msg.payload = \"false\";\n}\n\nreturn msg;",
+        "func": "const cfg_file = global.get(\"CFG_FILE_CFG\");\n\nif (cfg_file) {\n    const cfg_file_data = global.get(\"CFG_FILE_DATA_CFG\");\n    msg.payload = cfg_file_data;\n    msg.pathname = \"/srv/salt/state/tmp/\" + cfg_file;\n    msg.command = \"salt \\\\* state.sls vcache.util.push_cfg pillar='{\\\"cfg_file\\\": \" + cfg_file + \"}'\";\n} else {\n    msg.command = \"false\";\n}\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -5208,8 +4029,7 @@
         "y": 340,
         "wires": [
             [
-                "503c09fd27f1752c",
-                "b02f07025b62e502"
+                "cf73e19013dcacb6"
             ]
         ]
     },
@@ -5220,7 +4040,7 @@
         "name": "vcache.cfg",
         "filename": "vcache.cfg",
         "encoding": "none",
-        "x": 890,
+        "x": 970,
         "y": 380,
         "wires": [],
         "inputLabels": [
@@ -5233,8 +4053,8 @@
         "z": "11df8122a3459712",
         "name": "download cfg",
         "group": "3a88c0294b97b966",
-        "order": 5,
-        "width": 3,
+        "order": 6,
+        "width": 4,
         "height": 1,
         "passthru": false,
         "label": "Download Config",
@@ -5286,30 +4106,13 @@
         "sendError": false,
         "encoding": "none",
         "allProps": false,
-        "x": 540,
+        "x": 580,
         "y": 380,
         "wires": [
             [
                 "c989a0e565938742"
             ]
         ]
-    },
-    {
-        "id": "b02f07025b62e502",
-        "type": "debug",
-        "z": "11df8122a3459712",
-        "name": "debug 3",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 840,
-        "y": 260,
-        "wires": []
     },
     {
         "id": "c989a0e565938742",
@@ -5322,7 +4125,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 720,
+        "x": 780,
         "y": 380,
         "wires": [
             [
@@ -5331,10 +4134,79 @@
         ]
     },
     {
-        "id": "a18cde78c7338c3d",
+        "id": "8ac0c472f8bcec92",
+        "type": "ui_template",
+        "z": "11df8122a3459712",
+        "group": "3a88c0294b97b966",
+        "name": "Upload Cfg",
+        "order": 2,
+        "width": 4,
+        "height": 1,
+        "format": "\n<body>\n<button class=\"md-raised md-button md-ink-ripple\" onclick=\"importCfgData()\">Choose File</button>    \n\n<script>\nlet cfgScope = scope;\n\nfunction importCfgData() {\n  let input = document.createElement('input');\n  input.type = 'file';\n  input.id = 'cfgUpload';\n  input.onchange = _ => {\n    let fReader = new FileReader();\n    fReader.readAsText(input.files[0]);\n    fReader.onloadend = function(event){\n    cfgScope.send({payload:event.target.result, filename: input.files[0].name});}\n  };\n  input.click();\n}\n</script>\n</body>\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 150,
+        "y": 300,
+        "wires": [
+            [
+                "49d3e4fd0b19f902",
+                "5b295b8c294bc76d"
+            ]
+        ]
+    },
+    {
+        "id": "9a49fd2c6912217d",
+        "type": "ui_template",
+        "z": "11df8122a3459712",
+        "group": "2871cce383627674",
+        "name": "Upload Cert",
+        "order": 5,
+        "width": 4,
+        "height": 1,
+        "format": "\n<body>\n<button class=\"md-raised md-button md-ink-ripple\" onclick=\"importCertData()\">Choose File</button>    \n\n<script>\nlet certScope = scope;\n\nfunction importCertData() {\n  let input = document.createElement('input');\n  input.type = 'file';\n  input.id = 'uploadCert';\n  input.onchange = _ => {\n    let fReader = new FileReader();\n    fReader.readAsArrayBuffer(input.files[0]);\n    fReader.onloadend = function(event) {\n      certScope.send({payload:event.target.result, filename: input.files[0].name});\n    };\n  };\n  input.click();\n};\n</script>\n</body>\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 150,
+        "y": 80,
+        "wires": [
+            [
+                "54cbb1e2bf06957a",
+                "194bbca5beed6438"
+            ]
+        ]
+    },
+    {
+        "id": "194bbca5beed6438",
+        "type": "ui_text",
+        "z": "11df8122a3459712",
+        "group": "2871cce383627674",
+        "order": 12,
+        "width": 7,
+        "height": 1,
+        "name": "cert filename",
+        "label": "",
+        "format": "{{msg.filename}}",
+        "layout": "row-left",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 370,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "ea5ba863f377370d",
         "type": "debug",
         "z": "11df8122a3459712",
-        "name": "debug 4",
+        "name": "debug 7",
         "active": true,
         "tosidebar": true,
         "console": false,
@@ -5343,8 +4215,85 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 560,
-        "y": 560,
+        "x": 1120,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "5b295b8c294bc76d",
+        "type": "ui_text",
+        "z": "11df8122a3459712",
+        "group": "3a88c0294b97b966",
+        "order": 9,
+        "width": 7,
+        "height": 1,
+        "name": "cfg filename",
+        "label": "",
+        "format": "{{msg.filename}}",
+        "layout": "row-left",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 370,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "10b748e69b2169e6",
+        "type": "file",
+        "z": "11df8122a3459712",
+        "name": "cert_file.pfx",
+        "filename": "filepath",
+        "filenameType": "msg",
+        "appendNewline": false,
+        "createDir": true,
+        "overwriteFile": "true",
+        "encoding": "binary",
+        "x": 590,
+        "y": 200,
+        "wires": [
+            [
+                "503c09fd27f1752c"
+            ]
+        ]
+    },
+    {
+        "id": "cf73e19013dcacb6",
+        "type": "file",
+        "z": "11df8122a3459712",
+        "name": "cfg_file.cfg",
+        "filename": "pathname",
+        "filenameType": "msg",
+        "appendNewline": false,
+        "createDir": true,
+        "overwriteFile": "true",
+        "encoding": "binary",
+        "x": 590,
+        "y": 340,
+        "wires": [
+            [
+                "503c09fd27f1752c",
+                "0827ad87703775b8"
+            ]
+        ]
+    },
+    {
+        "id": "0827ad87703775b8",
+        "type": "debug",
+        "z": "11df8122a3459712",
+        "name": "debug 9",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1100,
+        "y": 320,
         "wires": []
     },
     {
@@ -5353,7 +4302,7 @@
         "z": "08ebeea6e2046abd",
         "name": "Accept All",
         "group": "2bfbf363d31643c1",
-        "order": 3,
+        "order": 4,
         "width": 3,
         "height": 1,
         "passthru": false,
@@ -5367,7 +4316,7 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 300,
+        "x": 280,
         "y": 560,
         "wires": [
             [
@@ -5407,7 +4356,7 @@
         "winHide": false,
         "oldrc": false,
         "name": "sync beacons",
-        "x": 780,
+        "x": 760,
         "y": 180,
         "wires": [
             [],
@@ -5421,8 +4370,8 @@
         "z": "08ebeea6e2046abd",
         "group": "2bfbf363d31643c1",
         "name": "Pending Minions",
-        "order": 1,
-        "width": 6,
+        "order": 2,
+        "width": 7,
         "height": 1,
         "columns": [
             {
@@ -5450,7 +4399,7 @@
         "id": "5a890de0ddaf48bb",
         "type": "inject",
         "z": "08ebeea6e2046abd",
-        "name": "poll (7)",
+        "name": "poll 5s",
         "props": [
             {
                 "p": "payload"
@@ -5460,7 +4409,7 @@
                 "vt": "str"
             }
         ],
-        "repeat": "7",
+        "repeat": "5",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
@@ -5487,7 +4436,7 @@
         "winHide": false,
         "oldrc": false,
         "name": "probe minions",
-        "x": 280,
+        "x": 300,
         "y": 340,
         "wires": [
             [
@@ -5503,7 +4452,7 @@
         "type": "function",
         "z": "08ebeea6e2046abd",
         "name": "pending minion data",
-        "func": "if (msg.payload.length === 0) return null;\nvar json = JSON.parse(msg.payload);\nvar table = json[\"minions_pre\"].map((node) => (\n    {\n        \"node\": node,\n    }\n    ));\nconst rowContext = \"function (e, row) { e.preventDefault(); console.log(\\\"Right clickt! \\\", row.getData());console.log(\\\"e event:\\\", e); this.send({payload: {row: row.getData(), clientX: e.clientX, clientY: e.clientY}});}\";\nmsg.ui_control = {\n    tabulator: {\n        rowContext: rowContext\n    }\n}\n    \nmsg.payload = table;\nreturn msg;",
+        "func": "if (msg.payload.length === 0) return null;\nvar json = JSON.parse(msg.payload);\nvar table = json[\"minions_pre\"].map((node) => (\n    {\n        \"node\": node,\n    }\n));\nconst rowContext = \"function (e, row) { e.preventDefault(); console.log(\\\"Right clickt! \\\", row.getData());console.log(\\\"e event:\\\", e); this.send({payload: {row: row.getData(), clientX: e.clientX, clientY: e.clientY}});}\";\nmsg.ui_control = {\n    tabulator: {\n        rowContext: rowContext\n    }\n}\n    \nmsg.payload = table;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -5523,13 +4472,13 @@
         "z": "08ebeea6e2046abd",
         "name": "",
         "command": "salt-master",
-        "args": "-l debug",
+        "args": "",
         "autorun": false,
         "cr": false,
         "redo": true,
         "op": "string",
         "closer": "SIGTERM",
-        "x": 770,
+        "x": 750,
         "y": 100,
         "wires": [
             [],
@@ -5591,8 +4540,8 @@
         "type": "ui_context_menu",
         "z": "08ebeea6e2046abd",
         "group": "2bfbf363d31643c1",
-        "order": 9,
-        "width": 1,
+        "order": 11,
+        "width": 6,
         "height": 1,
         "fontSize": 16,
         "inputPositionXField": "payload.clientX",
@@ -5697,7 +4646,7 @@
         "z": "08ebeea6e2046abd",
         "name": "restart salt master",
         "group": "2bfbf363d31643c1",
-        "order": 7,
+        "order": 8,
         "width": 3,
         "height": 1,
         "passthru": true,
@@ -5725,7 +4674,7 @@
         "z": "08ebeea6e2046abd",
         "name": "sync beacons",
         "group": "2bfbf363d31643c1",
-        "order": 5,
+        "order": 6,
         "width": 3,
         "height": 1,
         "passthru": true,
@@ -5771,8 +4720,8 @@
         "z": "08ebeea6e2046abd",
         "group": "90cedd2a8446aa03",
         "name": "Rejected Minions",
-        "order": 1,
-        "width": 6,
+        "order": 2,
+        "width": 7,
         "height": 1,
         "columns": [
             {
@@ -5801,7 +4750,7 @@
         "type": "function",
         "z": "08ebeea6e2046abd",
         "name": "rejected minion data",
-        "func": "if (msg.payload.length === 0) return null;\nvar json = JSON.parse(msg.payload);\nvar table = json[\"minions_rejected\"].map((node) => (\n    {\n        \"node\": node,\n    }\n    ));\nconst rowContext = \"function (e, row) { e.preventDefault(); console.log(\\\"Right clickt! \\\", row.getData());console.log(\\\"e event:\\\", e); this.send({payload: {row: row.getData(), clientX: e.clientX, clientY: e.clientY}});}\";\nmsg.ui_control = {\n    tabulator: {\n        rowContext: rowContext\n    }\n}\n    \nmsg.payload = table;\nreturn msg;",
+        "func": "if (msg.payload.length === 0) return null;\nvar json = JSON.parse(msg.payload);\nvar table = [];\nif (json[\"minions_rejected\"].length) {\n    table.push(...json[\"minions_rejected\"].map((node) => ({\"node\": node})));\n}\nif (json[\"minions_denied\"].length) {\n    table.push(...json[\"minions_denied\"].map((node) => ({ \"node\": node })));\n}\n\nconst rowContext = \"function (e, row) { e.preventDefault(); console.log(\\\"Right clickt! \\\", row.getData());console.log(\\\"e event:\\\", e); this.send({payload: {row: row.getData(), clientX: e.clientX, clientY: e.clientY}});}\";\nmsg.ui_control = {\n    tabulator: {\n        rowContext: rowContext\n    }\n}\n    \nmsg.payload = table;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -5821,7 +4770,7 @@
         "z": "08ebeea6e2046abd",
         "name": "",
         "group": "90cedd2a8446aa03",
-        "order": 3,
+        "order": 4,
         "width": 3,
         "height": 1,
         "passthru": false,
@@ -5835,7 +4784,7 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 300,
+        "x": 280,
         "y": 500,
         "wires": [
             [
@@ -5848,8 +4797,8 @@
         "type": "ui_context_menu",
         "z": "08ebeea6e2046abd",
         "group": "90cedd2a8446aa03",
-        "order": 5,
-        "width": 1,
+        "order": 7,
+        "width": 6,
         "height": 1,
         "fontSize": 16,
         "inputPositionXField": "payload.clientX",
@@ -5893,7 +4842,7 @@
         "id": "56b4fe9fdbfea327",
         "type": "exec",
         "z": "08ebeea6e2046abd",
-        "command": "salt-key -L -r --output json",
+        "command": "salt-key -L --output json",
         "addpay": "",
         "append": "",
         "useSpawn": "false",
@@ -5916,7 +4865,7 @@
         "type": "function",
         "z": "08ebeea6e2046abd",
         "name": "delete all rejected",
-        "func": "if (msg.payload.length === 0) return null;\nvar json = JSON.parse(msg.payload);\nvar table = json[\"minions_rejected\"].map((node) => (\n    {\n        \"node\": node,\n    }\n    ));\n\ntable.forEach(function (row) {\n    // Create a new message for each row\n    var msg = {\n        payload: \"salt-key -y -d \" + row.node\n    };\n\n    // Send the message to the next node or debug it\n    node.send(msg);\n});\n    ",
+        "func": "if (msg.payload.length === 0) return null;\nvar json = JSON.parse(msg.payload);\nvar table = [];\nif (json[\"minions_rejected\"].length) {\n    table.push(...json[\"minions_rejected\"].map((node) => ({ \"node\": node })));\n}\nif (json[\"minions_denied\"].length) {\n    table.push(...json[\"minions_denied\"].map((node) => ({ \"node\": node })));\n    node.warn(\"adding denioed: \" + json[\"minions_denied\"].length);\n}\ntable.forEach(function (row) {\n    // Create a new message for each row\n    var msg = {\n        payload: \"salt-key -y -d \" + row.node\n    };\n\n    // Send the message to the next node or debug it\n    node.send(msg);\n});\n    ",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -5931,26 +4880,228 @@
         ]
     },
     {
-        "id": "f3d49644fec40d89",
-        "type": "subflow:38e7de2b5e7e983e",
+        "id": "c5268070.c55a3",
+        "type": "ui_template",
+        "z": "08ebeea6e2046abd",
+        "group": "acc467dc501a1809",
+        "name": "Upload Roster",
+        "order": 14,
+        "width": 4,
+        "height": 1,
+        "format": "\n<body>\n<button class=\"md-raised md-button md-ink-ripple\" onclick=\"importRosterData()\">Choose File</button>    \n\n<script>\nvar rosterScope = scope;\n\nfunction importRosterData() {\n  let input = document.createElement('input');\n  input.type = 'file';\n  input.id = 'rosterUpload';\n  input.onchange = _ => {\n    let fReader = new FileReader();\n    fReader.readAsText(input.files[0]);\n    fReader.onloadend = function(event) {\n    rosterScope.send({payload:event.target.result, filename: input.files[0].name});}\n  };\n  input.click();\n}\n</script>\n</body>\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 300,
+        "y": 720,
+        "wires": [
+            [
+                "8b7e4ca7d4bb2e6b"
+            ]
+        ]
+    },
+    {
+        "id": "aa16085ad668c5b5",
+        "type": "ui_button",
         "z": "08ebeea6e2046abd",
         "name": "",
-        "env": [
-            {
-                "name": "UPLOAD_DIR",
-                "value": "/tmp",
-                "type": "str"
-            },
-            {
-                "name": "EXTENSIONS",
-                "value": "[\"txt\",\"csv\",\"roster\"]",
-                "type": "json"
-            }
-        ],
-        "x": 310,
-        "y": 660,
+        "group": "acc467dc501a1809",
+        "order": 9,
+        "width": 3,
+        "height": 1,
+        "passthru": false,
+        "label": "Deploy",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 800,
+        "y": 700,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "6359dd77c867ec43",
+        "type": "ui_button",
+        "z": "08ebeea6e2046abd",
+        "name": "",
+        "group": "acc467dc501a1809",
+        "order": 11,
+        "width": 3,
+        "height": 1,
+        "passthru": false,
+        "label": "Uninstall",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 940,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8b7e4ca7d4bb2e6b",
+        "type": "ui_text",
+        "z": "08ebeea6e2046abd",
+        "group": "acc467dc501a1809",
+        "order": 17,
+        "width": 6,
+        "height": 1,
+        "name": "roster filename",
+        "label": "",
+        "format": "{{msg.filename}}",
+        "layout": "row-left",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 500,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "21f95f2c06915d16",
+        "type": "ui_text",
+        "z": "08ebeea6e2046abd",
+        "group": "acc467dc501a1809",
+        "order": 5,
+        "width": 6,
+        "height": 1,
+        "name": "install filename",
+        "label": "",
+        "format": "{{msg.filename}}",
+        "layout": "row-left",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 500,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "44569ca2744bc813",
+        "type": "ui_button",
+        "z": "08ebeea6e2046abd",
+        "name": "",
+        "group": "acc467dc501a1809",
+        "order": 7,
+        "width": 3,
+        "height": 1,
+        "passthru": false,
+        "label": "Test",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 670,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d3ce6d119758890a",
+        "type": "ui_text",
+        "z": "08ebeea6e2046abd",
+        "group": "acc467dc501a1809",
+        "order": 1,
+        "width": 3,
+        "height": 1,
+        "name": "installer",
+        "label": "",
+        "format": "Installer",
+        "layout": "row-right",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 120,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "1a12cfb521bb462f",
+        "type": "ui_text",
+        "z": "08ebeea6e2046abd",
+        "group": "acc467dc501a1809",
+        "order": 13,
+        "width": 3,
+        "height": 1,
+        "name": "roster",
+        "label": "",
+        "format": "Roster",
+        "layout": "row-right",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 130,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "b47bef94379ec6a7",
+        "type": "ui_template",
+        "z": "08ebeea6e2046abd",
+        "group": "acc467dc501a1809",
+        "name": "Upload Btn",
+        "order": 2,
+        "width": 4,
+        "height": 1,
+        "format": "\n<body>\n<button class=\"md-raised md-button md-ink-ripple\" onclick=\"importData()\">Choose File</button>    \n\n<script>\nlet restoreScope = scope;\n\nfunction importData() {\n  let input = document.createElement('input');\n  input.type = 'file';\n  input.id = 'restoreBtn';\n  input.onchange = _ => {\n    // you can use this method to get file and perform respective operations\n        let fReader = new FileReader();\n        fReader.readAsArrayBuffer(input.files[0]);\n        fReader.onloadend = function(event){\n        restoreScope.send({payload:event.target.result, filename:input.files[0].name});}\n        };\n  input.click();\n}\n</script>\n</body>\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 290,
+        "y": 680,
+        "wires": [
+            [
+                "21f95f2c06915d16"
+            ]
+        ]
+    },
+    {
+        "id": "a141c74a0f8db380",
+        "type": "complete",
+        "z": "08ebeea6e2046abd",
+        "name": "reload minions",
+        "scope": [
+            "430201fe36756d7b"
+        ],
+        "uncaught": false,
+        "x": 100,
+        "y": 280,
+        "wires": [
+            [
+                "694d6fe2baa337a6"
+            ]
         ]
     }
 ]

@@ -9,7 +9,7 @@
                 "view-grid-size": "20",
                 "view-node-status": true,
                 "view-node-show-label": true,
-                "view-show-tips": true,
+                "view-show-tips": false,
                 "view-show-welcome-tours": true
             },
             "tours": {
@@ -17,19 +17,17 @@
             }
         },
         "debug": {
-            "filter": "filterSelected",
+            "filter": "filterAll",
             "filteredNodes": [
                 "cbadd1ff66949d65",
                 "9163396bf9f8dbac",
                 "46329552470bf0ff",
                 "28c64c0a77dfd933",
-                "a8c3985ad1292b73",
-                "8319d2c0d1da848a",
                 "0ec87ff34a660692",
                 "0f61c07cc7630837",
                 "3c7c3eadaffd6355"
             ]
         },
-        "menu-menu-item-sidebar": true
+        "menu-menu-item-sidebar": false
     }
 }

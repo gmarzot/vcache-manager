@@ -1,5 +1,8 @@
 FROM nodered/node-red:latest-18
 
+RUN npm install uuid
+RUN npm install redis
+RUN npm install systeminformation
 RUN npm install node-red-contrib-os
 RUN npm install node-red-contrib-fs-ops
 RUN npm install node-red-contrib-cpu
@@ -13,9 +16,8 @@ RUN npm install node-red-node-smooth
 RUN npm install node-red-dashboard
 RUN npm install node-red-node-ui-iframe
 RUN npm install node-red-node-ui-table
-RUN npm install redis
-RUN npm install systeminformation
-RUN npm install uuid
+RUN npm install node-red-contrib-ui-contextmenu
+RUN npm install node-red-contrib-ui-upload
 
 # uncomment the following 2 lines for production
 #COPY ./node-red/mgmt-data /data
@@ -38,8 +40,12 @@ COPY ./node-red/etc/salt/reactor.conf /etc/salt/master.d/reactor.conf
 
 RUN apk add py3-pip py3-numpy py3-pandas py3-scikit-learn py3-pycryptodome
 #RUN apk add py3-pip py3-numpy py3-pandas py3-scikit-learn
-RUN pip install redis
 RUN pip install contextvars
+RUN pip install redis
+RUN apk add redis
+
+RUN apk add logrotate
+COPY ./node-red/etc/logrotate.conf /etc
 
 RUN echo "vm.overcommit_memory = 1" >> /etc/sysctl.conf
 

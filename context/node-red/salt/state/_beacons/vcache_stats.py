@@ -53,7 +53,7 @@ def beacon(config):
     log.trace("config: %s", json.dumps(config))
 
     redis_host = str(config.get('redis_host', 'vcache_redis'))
-    redis_key = str(config.get('redis_key', 'vcache_stats'))
+    redis_key = str(config.get('redis_key', 'vcache:stats'))
 
     # Connect to Redis
     r = redis.Redis(host=redis_host,charset="utf-8",decode_responses=True)

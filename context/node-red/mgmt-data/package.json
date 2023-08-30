@@ -4,16 +4,13 @@
     "version": "0.0.1",
     "private": true,
     "dependencies": {
-        "@icke1983/node-red-contrib-ui-popup": "~0.9.9",
         "@prescient-devices/node-red-contrib-downloadfile": "~1.0.8",
         "@prescient-devices/node-red-contrib-promptinput": "~1.0.7",
         "clone": "^2.1.2",
-        "node-red-contrib-file-manager": "~2.0.8",
-        "node-red-contrib-file-upload": "~0.0.5",
+        "node-red-contrib-chunks-to-lines": "~0.8.0",
         "node-red-contrib-ui-contextmenu": "~2.0.1",
         "node-red-contrib-ui-upload": "~0.8.0",
-        "node-red-node-tail": "~0.4.0",
-        "node-red-node-ui-table": "~0.4.3",
-        "node-red-upload-file-to-box": "~0.0.1"
+        "node-red-node-daemon": "~0.6.0",
+        "node-red-node-ui-table": "~0.4.3"
     }
 }

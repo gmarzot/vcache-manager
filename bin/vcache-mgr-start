@@ -81,15 +81,20 @@ echo "starting vcache manager (${VCACHE_MGR_VERSION}) ..."
 
 if [[ $debug ]]; then
 	sudo docker-compose up
+    if [[ $? != 0 ]]; then
+        echo "an error occured starting vcache manager ($?) (debug), exiting..."
+        exit 5
+    fi
+    exit 0
 else
 	sudo docker-compose up -d
-fi
+    if [[ $? != 0 ]]; then
+        echo "an error occured starting vcache manager ($?), exiting..."
+        exit 4
+    else
+        echo "vcache manager started!"
+    fi
 
-if [[ $? != 0 ]]; then
-	echo "[$?] an error occured starting vcache manager, exiting..."
-	exit 4
-else
-	echo "vcache manager started!"
 fi
 
 exit 0

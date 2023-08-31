@@ -30,7 +30,7 @@ use constant
    PW => 3
   };
 
-my $usage = "$0 [-?|--help] [-d|--debug] [-D|--dry-run] [f|--force] [-r|--roster-file <roster-file>] [-u|--ssh-user <ssh-user>] [-p|--ssh-password <ssh-password>] [-k|--ssh-key <ssh-key>] [-h|--ssh-host <ssh-host>] [-m|--mgr-addr <mgr-addr>] [-g|--gen-keys] [-t|--target-dir] (-i|--installer <installer> | -c|--command <cmd>*) [-C|--command-arg <cmd-arg>*]\n";
+my $usage = "$0 [-?|--help] [-d|--debug] [-D|--dry-run] [f|--force] [-r|--roster-file <roster-file>] [-u|--ssh-user <ssh-user>] [-p|--ssh-password <ssh-password>] [-k|--ssh-key <ssh-key>] [-h|--ssh-host <ssh-host>] [-m|--mgr-addr <mgr-addr>] [-g|--gen-keys] [-t|--target-dir] (-i|--installer <installer> | -c|--command <cmd>*) [-C|--command-arg <cmd-arg>]*\n";
 
 my $help = 0;
 my $debug = 0;

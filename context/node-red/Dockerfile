@@ -18,6 +18,7 @@ RUN npm install node-red-node-ui-iframe
 RUN npm install node-red-node-ui-table
 RUN npm install node-red-contrib-ui-contextmenu
 RUN npm install node-red-contrib-ui-upload
+RUN npm install @prescient-devices/node-red-contrib-downloadfile
 
 # uncomment the following 2 lines for production
 #COPY ./node-red/mgmt-data /data

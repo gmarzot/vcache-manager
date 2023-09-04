@@ -29,7 +29,7 @@ def run():
     node = data.get('id', '')
     uuid = data.get('uuid', '')
 
-    log.warning(f"status_handler: processing event from {node}")
+    log.debug(f"status_handler: processing event from {node}")
     rc = init_redis()
 
     node_keys = rc.keys(f"vcache_node:{node}:*")

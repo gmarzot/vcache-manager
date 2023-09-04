@@ -1,4 +1,0 @@
-import redis
-
-def record_stats(uuid=None, redis_host=None, redis_port=None, **kwargs):
-    

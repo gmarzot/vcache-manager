@@ -1404,6 +1404,16 @@
         "height": 1
     },
     {
+        "id": "46a22658d1204dd3",
+        "type": "ui_spacer",
+        "z": "953eb73365d84859",
+        "name": "spacer",
+        "group": "66d92f18708659f1",
+        "order": 4,
+        "width": 17,
+        "height": 1
+    },
+    {
         "id": "208379c0.81563e",
         "type": "exec",
         "z": "4f6b87ae.7d3bb",
@@ -1609,7 +1619,7 @@
         "type": "function",
         "z": "953eb73365d84859",
         "name": "refresh table",
-        "func": "if ([\"connect\", \"change\"].includes(msg.payload)) {\n  const fields = [\"node\", \"status\", \"cpu_use_pct\", \"mem_use_pct\", \"client_bw\", \"upstream_bw\", \"users\",\"cache_eff\", ]\n  const dataSorted =\n    \"function (sorters, rows) { const ret = sorters.map((item) => { return { column: item.field, dir: item.dir }});const ids = rows.map((item)=>item.getData().id);this.send({payload:{sorters:ret,ids}});}\";\n  const rowContext = \"function (e, row) { e.preventDefault(); console.log(\\\"Row right clickt! \\\", row.getData());console.log(\\\"e event:\\\", e); this.send({payload: {row: row.getData(), clientX: e.clientX, clientY: e.clientY}});}\";\n  const rowSelect = \"function (e, row) { e.preventDefault(); console.log(\\\"Row double clickt! \\\", row.getData());console.log(\\\"e event:\\\", e); this.send({payload: {row: row.getData(), rowDoubleClick: true}});}\";\n  const effLegend = \"function (value) { if (value==100) value=parseInt(value);return (value > 0) ? '&nbsp;&nbsp;' + value + '&emsp14;%' : '-'; }\";\n  const statusColor = \"function (value) { if (value==0) return 'lightgray'; if (value==1) return 'springgreen'; if (value==2) return 'gold'; if (value==3) return 'red'; return 'black';}\";\n  const useColor = \"function (value) { if (value > 90) return 'red'; if (value > 80) return 'gold'; return 'limegreen';}\";\n  const bpsFormatter = \"function (cell, formatterParams, onRendered) {var value=cell.getValue();if (value <= 1.0) return value+'&emsp14;bps';var k=1024;var sizes=['','K','M','G','T','P','E','Z','Y'];var i=Math.floor(Math.log(value)/Math.log(k));var ret=parseFloat((value/Math.pow(k,i)).toFixed(1)) + '&emsp14;' + sizes[i] +'bps'; return ret;}\";\n  msg = {}; \n  msg.refresh = true\n  msg.payload = []\n  msg.ui_control = {\n    tabulator: {\n      rowContext: rowContext,\n      rowDblClick: rowSelect,\n      initialSort: (global.get(\"nodeSort\", \"file\") || {}).sorters || [],\n      dataSorted,\n      columns: [\n//        {\n//          field: \"id\",\n//          title: \"&nbsp;ID\",\n//          align: \"center\",\n//          sorter: \"number\",\n//          width: 45,\n//        },\n        {\n          field: \"node\",\n          title: \"&nbsp;Node\",\n          align: \"left\",\n          sorter: \"string\",\n          width: 237,\n        },\n        {\n          field: \"status\",\n          title: \"&nbsp;Status\",\n          align: \"center\",\n          formatter: \"traffic\",\n          formatterParams: {\n            color: statusColor,\n          },\n          tooltips: function (cell) {\n            const status = cell.getRow().getData().status\n            return status;\n          },\n          sorter: \"string\",\n          width: 94,\n        },\n        {\n          field: \"uptime\",\n          title: \"&nbsp;Uptime\",\n          align: \"center\",\n          sorter: \"string\",\n          width: 113,\n        },\n        {\n          field: \"cpu_use_pct\",\n          title: \"&nbsp;&nbsp;CPU\",\n          align: \"left\",\n          formatter: \"progress\",\n          formatterParams: {\n            legend: effLegend,\n            legendColor: \"#ffffff\",\n            legendAlign: \"center\",\n            color: useColor\n          },\n          sorter: \"number\",\n          width: 85,\n        }, \n        {\n          field: \"mem_use_pct\",\n          title: \"&nbsp;&nbsp;RAM\",\n          align: \"left\",\n          formatter: \"progress\",\n          formatterParams: {\n            legend: effLegend,\n            legendColor: \"#ffffff\",\n            legendAlign: \"center\",\n            color: useColor\n          },\n          sorter: \"number\",\n          width: 85,\n        },\n        {\n          field: \"disk_use_pct\",\n          title: \"&nbsp;&nbsp;HD\",\n          align: \"left\",\n          formatter: \"progress\",\n          formatterParams: {\n            legend: effLegend,\n            legendColor: \"#ffffff\",\n            legendAlign: \"center\",\n            color: useColor\n          },\n          sorter: \"number\",\n          width: 85,\n        },\n        {\n          field: \"client_bw\",\n          title: \"&nbsp;BW &#129095;\",\n          align: \"center\",\n          sorter: \"number\",\n          formatter: bpsFormatter,\n          width: 90,\n        }, \n        {\n          field: \"upstream_bw\",\n          title: \"&nbsp;BW &#129093;\",\n          align: \"center\",\n          sorter: \"number\",\n          formatter: bpsFormatter,\n          width: 90,\n        },\n        {\n          field: \"users\",\n          title: \"&nbsp;Users\",\n          align: \"center\",\n          sorter: \"number\",\n          width: 85,\n        },\n        {\n          field: \"cache_eff\",\n          title: \"&nbsp;&nbsp;Cache Eff\",\n          align: \"left\",\n          formatter: \"progress\",\n          formatterParams: {\n            legend: effLegend,\n            legendColor: \"#ffffff\",\n            legendAlign: \"center\",\n          },\n          sorter: \"number\",\n        },\n      ],\n    },\n  }\n  return msg\n}\n",
+        "func": "if ([\"connect\", \"change\"].includes(msg.payload)) {\n  const fields = [\"node\", \"status\", \"cpu_use_pct\", \"mem_use_pct\", \"client_bw\", \"upstream_bw\", \"users\",\"cache_eff\", ]\n  const dataSorted =\n    \"function (sorters, rows) { const ret = sorters.map((item) => { return { column: item.field, dir: item.dir }});const ids = rows.map((item)=>item.getData().id);this.send({payload:{sorters:ret,ids}});}\";\n  const rowContext = \"function (e, row) { e.preventDefault(); console.log(\\\"Row right clickt! \\\", row.getData());console.log(\\\"e event:\\\", e); this.send({payload: {row: row.getData(), clientX: e.clientX, clientY: e.clientY}});}\";\n  const rowSelect = \"function (e, row) { e.preventDefault(); console.log(\\\"Row double clickt! \\\", row.getData());console.log(\\\"e event:\\\", e); this.send({payload: {row: row.getData(), rowDoubleClick: true}});}\";\n  const effLegend = \"function (value) { if (value==100) value=parseInt(value);return (value > 0) ? '&nbsp;&nbsp;' + value + '&emsp14;%' : '-'; }\";\n  const statusColor = \"function (value) { if (value==0) return 'lightgray'; if (value==1) return 'springgreen'; if (value==2) return 'gold'; if (value==3) return 'red'; return 'black';}\";\n  const useColor = \"function (value) { if (value > 90) return 'red'; if (value > 80) return 'gold'; return 'limegreen';}\";\n  const bpsFormatter = \"function (cell, formatterParams, onRendered) {var value=cell.getValue();if (value == null || isNaN(value) || value < 0) return '-'; if (value <= 1.0) return value+'&emsp14;bps';var k=1024;var sizes=['','K','M','G','T','P','E','Z','Y'];var i=Math.floor(Math.log(value)/Math.log(k));var ret=parseFloat((value/Math.pow(k,i)).toFixed(1)) + '&emsp14;' + sizes[i] +'bps'; return ret;}\";\n  msg = {}; \n  msg.refresh = true\n  msg.payload = []\n  msg.ui_control = {\n    tabulator: {\n      rowContext: rowContext,\n      rowDblClick: rowSelect,\n      initialSort: (global.get(\"nodeSort\", \"file\") || {}).sorters || [],\n      dataSorted,\n      columns: [\n//        {\n//          field: \"id\",\n//          title: \"&nbsp;ID\",\n//          align: \"center\",\n//          sorter: \"number\",\n//          width: 45,\n//        },\n        {\n          field: \"node\",\n          title: \"&nbsp;Node\",\n          align: \"left\",\n          sorter: \"string\",\n          width: 237,\n        },\n        {\n          field: \"status\",\n          title: \"&nbsp;Status\",\n          align: \"center\",\n          formatter: \"traffic\",\n          formatterParams: {\n            color: statusColor,\n          },\n          tooltips: function (cell) {\n            const status = cell.getRow().getData().status\n            return status;\n          },\n          sorter: \"string\",\n          width: 94,\n        },\n        {\n          field: \"uptime\",\n          title: \"&nbsp;Uptime\",\n          align: \"center\",\n          sorter: \"string\",\n          width: 113,\n        },\n        {\n          field: \"cpu_use_pct\",\n          title: \"&nbsp;&nbsp;CPU\",\n          align: \"left\",\n          formatter: \"progress\",\n          formatterParams: {\n            legend: effLegend,\n            legendColor: \"#ffffff\",\n            legendAlign: \"center\",\n            color: useColor\n          },\n          sorter: \"number\",\n          width: 85,\n          cssClass: \"progresslegend\",\n        }, \n        {\n          field: \"mem_use_pct\",\n          title: \"&nbsp;&nbsp;RAM\",\n          align: \"left\",\n          formatter: \"progress\",\n          formatterParams: {\n            legend: effLegend,\n            legendColor: \"#ffffff\",\n            legendAlign: \"center\",\n            color: useColor\n          },\n          sorter: \"number\",\n          width: 85,\n          cssClass: \"progresslegend\",\n        },\n        {\n          field: \"disk_use_pct\",\n          title: \"&nbsp;&nbsp;HD\",\n          align: \"left\",\n          formatter: \"progress\",\n          formatterParams: {\n            legend: effLegend,\n            legendColor: \"#ffffff\",\n            legendAlign: \"center\",\n            color: useColor\n          },\n          sorter: \"number\",\n          width: 85,\n          cssClass: \"progresslegend\",\n        },\n        {\n          field: \"client_bw\",\n          title: \"&nbsp;BW &#129095;\",\n          align: \"center\",\n          sorter: \"number\",\n          formatter: bpsFormatter,\n          width: 90,\n        }, \n        {\n          field: \"upstream_bw\",\n          title: \"&nbsp;BW &#129093;\",\n          align: \"center\",\n          sorter: \"number\",\n          formatter: bpsFormatter,\n          width: 90,\n        },\n        {\n          field: \"client_sess\",\n          title: \"&nbsp;Users\",\n          align: \"center\",\n          sorter: \"number\",\n          width: 85,\n        },\n        {\n          field: \"cache_eff\",\n          title: \"&nbsp;&nbsp;Cache Eff\",\n          align: \"left\",\n          formatter: \"progress\",\n          formatterParams: {\n            legend: effLegend,\n            legendColor: \"#ffffff\",\n            legendAlign: \"center\",\n          },\n          sorter: \"number\",\n          cssClass: \"progresslegend\",\n        },\n      ],\n    },\n  }\n  return msg\n}\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -1629,7 +1639,7 @@
         "type": "function",
         "z": "953eb73365d84859",
         "name": "node table manager",
-        "func": "///////////////\n// Functions //\n///////////////\n\nfunction byKey(obj) {\n  return function (item) {\n    return item.node === obj.node;\n  }\n}\n\nfunction byVal(val) {\n  return function (item) {\n    return item == val;\n  }\n}\n\n// Row object going to table\nfunction makeObj(obj) {\n  const colors = [\"#C8E6C8\", \"#64A064\", \"#1E461E\"]\n  const idx = obj.cache_eff < 25 ? 0 : obj.cache_eff < 50 ? 1 : 2\n  obj.displayEff = `<font color=\"${colors[idx]}\">${obj.cache_eff}</font>`\n  return obj\n}\n\n// Parameterized array sort function\nfunction sorterFactory(obj) {\n  let { column, dir } = obj[0]\n  column = column === \"displayEff\" ? \"cache_eff\" : column\n  return function sorter(itemA, itemB) {\n    const a = itemA[column];\n    const b = itemB[column];\n    const factor = dir === \"asc\" ? +1 : -1\n    if (isNaN(a)) {\n      return a < b ? -1 * factor : a > b ? +1 * factor : 0;\n    } else {\n      return (a - b) * factor;\n    }\n  }\n}\n\n// find the next available index of make a new one\nfunction findNextId(store) {\n  const list = [...store].sort((a, b) => a.id - b.id);\n\n  let nextId = 0;\n  for (const item of list) {\n    const id = item.id;\n    if (id == nextId) {\n      nextId++;\n    } else if (id > nextId) {\n      break;\n    }\n  }\n  return nextId;\n}\n\n// find the next available index of make a new one\nfunction findNextIdx(store) {\n  const list = [...store].sort((a, b) => a - b);\n\n  let nextVal = 0;\n  for (const val of list) {\n    if (val == nextVal) {\n      nextVal++;\n    } else if (val > nextVal) {\n      break;\n    }\n  }\n  return nextVal;\n}\n\n// Sort data store based on selected table sort\nfunction sortStore(sort, data) {\n  if (!sort || !sort.hasOwnProperty(\"sorters\")) {\n    node.error(\"sortStore: sort store error\");\n    return\n  }\n  if (!sort.sorters.length) {\n    sort.sorters = [{\n      column: \"node\",\n      dir: \"asc\"\n    }]\n  }\n  data.sort(sorterFactory(sort.sorters))\n  var i;\n  for (i = 0; i < data.length; i++) {\n    if (i < sort.ids.length) {\n      data[i].id = sort.ids[i];\n    } else {\n      data[i].id = sort.ids[i] = findNextIdx(sort.ids);\n      node.warn(\"sortStore: new index not in nodeSort: \" + data[i].id)\n    }\n  }\n  if (sort.ids.length > i) {\n    let n = sort.ids.length - i;\n    node.warn(\"sortStore: trimming nodeSort: \" + n + \" (\" + i + \" to \" + (sort.ids.length-1) + \")\")\n    sort.ids.splice(-n, n);\n  }\n}\n/**\n * Set a key in Redis with an expiration time in seconds using a callback.\n * @param {string} key - The key to set.\n\n */\nasync function testDelKey(key) {\n  // Set the key with the specified value and expiration time\n  let exists = await redis.exists(key);\n  return exists;\n}\n\n////////////////\n// Processing //\n////////////////\nconst redis = global.get(\"redis\", \"file\");\nconst promisify = (fn) => {\n  return (...args) => {\n    return new Promise((resolve, reject) => {\n      fn(...args, function (err, res) {\n        if (err) {\n          return reject(err);\n        }\n        return resolve(res);\n      })\n    })\n  }\n}\nconst existsAsync = promisify(redis.exists).bind(redis);\n\nlet data_store = global.get(\"nodeData\", \"file\") || [];\nlet sort_store = global.get(\"nodeSort\", \"file\") || [];\n\nif (msg.refresh) {\n  return { payload: data_store };\n}\n\nif (Array.isArray(msg.payload)) { // process table data update or add\n  for (let in_row of msg.payload) {\n    in_row = makeObj(in_row) // This is the row that is sent to table\n    let row_data = data_store.find(byKey(in_row));\n    if (!row_data) {\n      const key = \"vcache_node:\" + in_row.node + \":\" + in_row.uuid;\n      if (await testDelKey(\"delete:\" + key)) {\n        node.warn(\"table mgr: new node was deleted: waiting: \" + in_row.node);\n        redis.del(key, function (err, reply) {\n          if (err) {\n            node.error(\"Error deleting key(\" + reply + \"): \", err);\n          } else {\n            node.warn(\"table mgr: node deleted from redis: \" + key)\n          }\n        });\n      } else {\n        in_row.id = findNextId(data_store);\n        node.warn(\"table mgr: node not in data store: \" + in_row.node + \" new id: \" + in_row.id);\n        data_store.push(in_row) // Append to store\n      }\n    } else {\n      Object.assign(row_data, in_row) // Update store (row_data is an item of mutable array)\n    }\n  }\n  for (let row of data_store) {\n    let rindx = msg.payload.findIndex(byKey(row));\n    if (rindx < 0) {\n      node.warn(\"table mgr: data store entry not in payload: \" + row.node + \" (\" + row.id + \") - SHOULD DELETE\");\n    }\n  }\n  sortStore(sort_store, data_store);\n  msg.payload = {\n    command: \"updateOrAddData\",\n    arguments: [data_store],\n  };\n} else { // process single message - delete\n  // When dashboard is reloaded or when flows start, display last table state\n  let row = msg.payload;\n  if (row.delete) {\n    let idx = data_store.findIndex(byKey(row));\n    if (idx >=0) {\n      data_store.splice(idx, 1);\n      let sidx = sort_store.ids.findIndex(byVal(row.id));\n      if (sidx>=0) {\n        sort_store.ids.splice(sidx, 1);\n      } else {\n        node.warn(\"table mgr: delete: id not found in sort store: \" + row.node + \" (\" + row.id + \"}\"); \n      }\n    } else {\n      node.warn(\"table mgr: delete: node not found in data store: \" + row.node + \" (\" + row.id + \"}\");\n    }\n    msg.payload = {\n      command: \"deleteRow\",\n      arguments: [row.id],\n    };\n  } else {\n    node.warn(\"table mgr: unrecognized message: \" + JSON.stringify(row));\n  }\n}\n\nglobal.set(\"nodeData\", data_store, \"file\");\nglobal.set(\"nodeSort\", sort_store, \"file\");\n\nreturn msg;\n\n",
+        "func": "///////////////\n// Functions //\n///////////////\n\nfunction byKey(obj) {\n  return function (item) {\n    return item.node === obj.node;\n  }\n}\n\nfunction byVal(val) {\n  return function (item) {\n    return item == val;\n  }\n}\n\n// Row object going to table\nfunction makeObj(obj) {\n  const colors = [\"#C8E6C8\", \"#64A064\", \"#1E461E\"]\n  const idx = obj.cache_eff < 25 ? 0 : obj.cache_eff < 50 ? 1 : 2\n  obj.displayEff = `<font color=\"${colors[idx]}\">${obj.cache_eff}</font>`\n  return obj\n}\n\n// Parameterized array sort function\nfunction sorterFactory(obj) {\n  let { column, dir } = obj[0]\n  column = column === \"displayEff\" ? \"cache_eff\" : column\n  return function sorter(itemA, itemB) {\n    const a = itemA[column];\n    const b = itemB[column];\n    const factor = dir === \"asc\" ? +1 : -1\n    if (isNaN(a)) {\n      return a < b ? -1 * factor : a > b ? +1 * factor : 0;\n    } else {\n      return (a - b) * factor;\n    }\n  }\n}\n\n// find the next available index of make a new one\nfunction findNextId(store) {\n  const list = [...store].sort((a, b) => a.id - b.id);\n\n  let nextId = 0;\n  for (const item of list) {\n    const id = item.id;\n    if (id == nextId) {\n      nextId++;\n    } else if (id > nextId) {\n      break;\n    }\n  }\n  return nextId;\n}\n\n// find the next available index of make a new one\nfunction findNextIdx(store) {\n  const list = [...store].sort((a, b) => a - b);\n\n  let nextVal = 0;\n  for (const val of list) {\n    if (val == nextVal) {\n      nextVal++;\n    } else if (val > nextVal) {\n      break;\n    }\n  }\n  return nextVal;\n}\n\n// Sort data store based on selected table sort\nfunction sortStore(sort, data) {\n  if (!sort || !sort.hasOwnProperty(\"sorters\")) {\n    node.error(\"sortStore: sort store error\");\n    return\n  }\n\n  data.sort(sorterFactory(sort.sorters));\n  var i;\n  for (i = 0; i < data.length; i++) {\n    if (i < sort.ids.length) {\n      data[i].id = sort.ids[i];\n    } else {\n      data[i].id = sort.ids[i] = findNextIdx(sort.ids);\n      node.warn(\"sortStore: new index not in nodeSort: \" + data[i].id)\n    }\n  }\n  if (sort.ids.length > i) {\n    let n = sort.ids.length - i;\n    node.warn(\"sortStore: trimming nodeSort: \" + n + \" (\" + i + \" to \" + (sort.ids.length-1) + \")\")\n    sort.ids.splice(-n, n);\n  }\n}\n/**\n * Set a key in Redis with an expiration time in seconds using a callback.\n * @param {string} key - The key to set.\n\n */\nasync function testDelKey(key) {\n  // Set the key with the specified value and expiration time\n  let exists = await redis.exists(key);\n  return exists;\n}\n\n////////////////\n// Processing //\n////////////////\nconst redis = global.get(\"redis\", \"file\");\nconst promisify = (fn) => {\n  return (...args) => {\n    return new Promise((resolve, reject) => {\n      fn(...args, function (err, res) {\n        if (err) {\n          return reject(err);\n        }\n        return resolve(res);\n      })\n    })\n  }\n}\nconst existsAsync = promisify(redis.exists).bind(redis);\n\nlet data_store = global.get(\"nodeData\", \"file\") || [];\n\nif (msg.refresh) {\n  return { payload: data_store };\n}\n\nlet sort_store = global.get(\"nodeSort\", \"file\") || [];\nif (!sort_store || !sort_store.hasOwnProperty(\"sorters\") || !sort_store.sorters.length) {\n  sort_store.sorters = [{\n    column: \"node\",\n    dir: \"asc\"\n  }];\n  sort_store.ids = [];\n}\n\nif (Array.isArray(msg.payload)) { // process table data update or add\n  for (let in_row of msg.payload) {\n    in_row = makeObj(in_row) // This is the row that is sent to table\n    let row_data = data_store.find(byKey(in_row));\n    if (!row_data) {\n      const key = \"vcache_node:\" + in_row.node + \":\" + in_row.uuid;\n      if (await testDelKey(\"delete:\" + key)) {\n        node.warn(\"table mgr: new node was deleted: waiting: \" + in_row.node);\n        redis.del(key, function (err, reply) {\n          if (err) {\n            node.error(\"Error deleting key(\" + reply + \"): \", err);\n          } else {\n            node.warn(\"table mgr: node deleted from redis: \" + key)\n          }\n        });\n      } else {\n        in_row.id = findNextId(data_store);\n        node.warn(\"table mgr: node not in data store: \" + in_row.node + \" new id: \" + in_row.id);\n        data_store.push(in_row) // Append to store\n      }\n    } else {\n      Object.assign(row_data, in_row) // Update store (row_data is an item of mutable array)\n    }\n  }\n  for (let row of data_store) {\n    let rindx = msg.payload.findIndex(byKey(row));\n    if (rindx < 0) {\n      node.warn(\"table mgr: data store entry not in payload: \" + row.node + \" (\" + row.id + \") - SHOULD DELETE\");\n    }\n  }\n  sortStore(sort_store, data_store);\n  msg.payload = {\n    command: \"updateOrAddData\",\n    arguments: [data_store],\n  };\n} else { // process single message - delete\n  // When dashboard is reloaded or when flows start, display last table state\n  let row = msg.payload;\n  if (row.delete) {\n    let idx = data_store.findIndex(byKey(row));\n    if (idx >=0) {\n      data_store.splice(idx, 1);\n      let sidx = sort_store.ids.findIndex(byVal(row.id));\n      if (sidx>=0) {\n        sort_store.ids.splice(sidx, 1);\n      } else {\n        node.warn(\"table mgr: delete: id not found in sort store: \" + row.node + \" (\" + row.id + \"}\"); \n      }\n    } else {\n      node.warn(\"table mgr: delete: node not found in data store: \" + row.node + \" (\" + row.id + \"}\");\n    }\n    msg.payload = {\n      command: \"deleteRow\",\n      arguments: [row.id],\n    };\n  } else {\n    node.warn(\"table mgr: unrecognized message: \" + JSON.stringify(row));\n  }\n}\n\nglobal.set(\"nodeData\", data_store, \"file\");\nglobal.set(\"nodeSort\", sort_store, \"file\");\n\nreturn msg;\n\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -1644,7 +1654,8 @@
         "y": 440,
         "wires": [
             [
-                "567783dfb28f09df"
+                "567783dfb28f09df",
+                "48b08cc0fd2f2879"
             ]
         ]
     },
@@ -1656,7 +1667,7 @@
         "name": "Nodes",
         "order": 1,
         "width": 23,
-        "height": 8,
+        "height": 10,
         "columns": [],
         "outputs": 1,
         "cts": true,
@@ -1780,7 +1791,7 @@
         "type": "function",
         "z": "953eb73365d84859",
         "name": "node table data",
-        "func": "const redis = global.get('redis'); // Assumes Redis client is globally available\nconst now = Date.now();\nvar table = [];\n/**\n* 3 - CRIT, 2 - WARN, 1 - OK, 0 - UNKNOWN\n* @param {string | number | Date} stamp\n* @param {number} now\n* @param {number} cpu\n* @param {number} mem\n* @param {number} disk\n*/\nfunction calc_status(now, stamp, cpu, mem, disk) {\n    const stamp_ms = new Date(stamp).getTime();\n    const diff = (now - stamp_ms) / 1000;\n    if (diff > 30) return 0;\n    if (cpu > 90 || mem > 90 || disk > 90) return 3;\n    if (cpu > 80 || mem > 80 || disk > 80) return 2;\n    return 1;\n}\n\nfunction convertNum(val) {\n    if (/^\\d+$/.test(val)) {\n        val = parseInt(val);\n    } else if (/^\\d\\.\\d+$/.test(val)) {\n        val = parseFloat(val).toFixed(2);\n    } else if (/^\\d+\\.\\d+$/.test(val)) {\n        val = parseFloat(val).toFixed(1);\n    }\n    return val;\n}\n\nfunction convertHashNum(hash) {\n    if (typeof hash === 'object' || hash === null) {\n        for (const key in hash) {\n            hash[key] = convertNum(hash[key]);\n        }\n    }\n    return hash;\n}\n\n// Function to retrieve hash objects for each key\nfunction get_nodes(keys, callback) {\n    let count = 0;\n    keys.forEach(function (key) {\n        redis.hgetall(key, function (err, hash) {\n            if (err) {\n                callback(err);\n                return;\n            }\n            \n            hash.node = hash.id;\n            delete hash.id;\n\n            hash.status = calc_status(now, hash._stamp, hash.cpu_use_pct, hash.mem_use_pct, hash.disk_use_pct);\n            if (hash.status == 0) {\n                hash.cache_eff = -1;\n                hash.cpu_use_pct = -1;\n                hash.mem_use_pct = -1;\n                hash.disk_use_pct = -1;\n                hash.client_bw = NaN;\n                hash.upstream_bw = NaN;\n                hash.users = NaN;\n                hash.uptime = \"\";\n            } else {\n                hash = convertHashNum(hash);\n                //hash.cache_eff = parseInt(hash.cache_eff_pct);\n                //hash.mem_use_pct = parseFloat(hash.mem_use_pct).toFixed(1);\n                //hash.cpu_use_pct = parseFloat(hash.cpu_use_pct).toFixed(1);\n                //hash.disk_use_pct = parseFloat(hash.disk_use_pct).toFixed(1);\n                //hash.client_bw = parseInt(hash.client_bw);\n                //hash.upstream_bw = parseInt(hash.upstream_bw);\n                //hash.users = parseInt(hash.client_sess);\n            }\n            table.push(hash);\n            count++;\n            if (count >= keys.length) {\n                callback(null,table);\n            }\n        });\n    });\n}\n\nfunction sort_arr(in_arr) {\n    const arr = [...in_arr].sort((a, b) => {\n        const A = a.node.toLowerCase();\n        const B = b.node.toLowerCase();\n        if (A < B) return -1;\n        if (A > B) return 1;\n        return 0;\n    });\n    return arr;\n}\n\n// Main function\nget_nodes(msg.payload, function (err, nodes) {\n    if (err) {\n        node.error(err);\n        return;\n    }\n//  table = nodes.map((/** @type {{ id: string; cache_eff_pct: string; client_sess: string; client_bw: string; upstream_bw: string; }} */ n) => ({\n//       \"node\": n.id.toLowerCase(),\n//       \"status\": \"up\".toUpperCase(),\n//        \"cache_eff\": parseInt(n.cache_eff_pct) == 0 ? 1 : parseInt(n.cache_eff_pct),\n//        \"client_bw\": parseInt(n.client_bw),\n//        \"upstream_bw\": parseInt(n.upstream_bw),\n//        \"users\": parseInt(n.client_sess),\n//    }));\n    msg.payload = nodes;\n    node.send(msg);\n});",
+        "func": "const redis = global.get('redis'); // Assumes Redis client is globally available\nconst now = Date.now();\nvar table = [];\n/**\n* 3 - CRIT, 2 - WARN, 1 - OK, 0 - UNKNOWN\n* @param {string | number | Date} stamp\n* @param {number} now\n* @param {number} cpu\n* @param {number} mem\n* @param {number} disk\n*/\nfunction calc_status(now, stamp, cpu, mem, disk) {\n    const stamp_ms = new Date(stamp).getTime();\n    const diff = (now - stamp_ms) / 1000;\n    if (diff > 30) return 0;\n    if (cpu > 90 || mem > 90 || disk > 90) return 3;\n    if (cpu > 80 || mem > 80 || disk > 80) return 2;\n    return 1;\n}\n\nfunction convertNum(val) {\n    if (/^\\d+$/.test(val)) {\n        val = parseInt(val);\n    } else if (/^\\d\\.\\d+$/.test(val)) {\n        val = parseFloat(val).toFixed(2);\n    } else if (/^\\d+\\.\\d+$/.test(val)) {\n        val = parseFloat(val).toFixed(1);\n    }\n    return val;\n}\n\nfunction convertHashNum(hash) {\n    if (typeof hash === 'object' || hash === null) {\n        for (const key in hash) {\n            hash[key] = convertNum(hash[key]);\n        }\n    }\n    return hash;\n}\n\n// Function to retrieve hash objects for each key\nfunction get_nodes(keys, callback) {\n    let count = 0;\n    keys.forEach(function (key) {\n        redis.hgetall(key, function (err, hash) {\n            if (err) {\n                callback(err);\n                return;\n            }\n            \n            hash.node = hash.id;\n            delete hash.id;\n\n            hash.status = calc_status(now, hash._stamp, hash.cpu_use_pct, hash.mem_use_pct, hash.disk_use_pct);\n            if (hash.status == 0) {\n                hash.cache_eff = -1;\n                hash.cpu_use_pct = -1;\n                hash.mem_use_pct = -1;\n                hash.disk_use_pct = -1;\n                hash.client_bw = NaN;\n                hash.upstream_bw = NaN;\n                hash.users = NaN;\n                hash.client_sess = \"-\";\n                hash.uptime = \"-\";\n            } else {\n                hash = convertHashNum(hash);\n                //hash.cache_eff = parseInt(hash.cache_eff_pct);\n                //hash.mem_use_pct = parseFloat(hash.mem_use_pct).toFixed(1);\n                //hash.cpu_use_pct = parseFloat(hash.cpu_use_pct).toFixed(1);\n                //hash.disk_use_pct = parseFloat(hash.disk_use_pct).toFixed(1);\n                //hash.client_bw = parseInt(hash.client_bw);\n                //hash.upstream_bw = parseInt(hash.upstream_bw);\n                //hash.users = parseInt(hash.client_sess);\n            }\n            table.push(hash);\n            count++;\n            if (count >= keys.length) {\n                callback(null,table);\n            }\n        });\n    });\n}\n\nfunction sort_arr(in_arr) {\n    const arr = [...in_arr].sort((a, b) => {\n        const A = a.node.toLowerCase();\n        const B = b.node.toLowerCase();\n        if (A < B) return -1;\n        if (A > B) return 1;\n        return 0;\n    });\n    return arr;\n}\n\n// Main function\nget_nodes(msg.payload, function (err, nodes) {\n    if (err) {\n        node.error(err);\n        return;\n    }\n//  table = nodes.map((/** @type {{ id: string; cache_eff_pct: string; client_sess: string; client_bw: string; upstream_bw: string; }} */ n) => ({\n//       \"node\": n.id.toLowerCase(),\n//       \"status\": \"up\".toUpperCase(),\n//        \"cache_eff\": parseInt(n.cache_eff_pct) == 0 ? 1 : parseInt(n.cache_eff_pct),\n//        \"client_bw\": parseInt(n.client_bw),\n//        \"upstream_bw\": parseInt(n.upstream_bw),\n//        \"users\": parseInt(n.client_sess),\n//    }));\n    msg.payload = nodes;\n    node.send(msg);\n});",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -1790,7 +1801,8 @@
         "y": 380,
         "wires": [
             [
-                "c347b6521867b6fb"
+                "c347b6521867b6fb",
+                "55f5c3ae07f9c416"
             ]
         ]
     },
@@ -1800,7 +1812,7 @@
         "z": "953eb73365d84859",
         "group": "66d92f18708659f1",
         "order": 2,
-        "width": 23,
+        "width": 3,
         "height": 1,
         "fontSize": 16,
         "inputPositionXField": "payload.clientX",
@@ -1922,7 +1934,7 @@
         "createDir": false,
         "overwriteFile": "true",
         "encoding": "utf8",
-        "x": 760,
+        "x": 740,
         "y": 200,
         "wires": [
             []
@@ -1983,7 +1995,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 770,
+        "x": 750,
         "y": 240,
         "wires": [
             []
@@ -2020,7 +2032,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 760,
+        "x": 740,
         "y": 160,
         "wires": [
             [
@@ -2057,7 +2069,7 @@
         "name": "UUID (out)",
         "key": "vcache_mgr",
         "structtype": "hash",
-        "x": 1050,
+        "x": 950,
         "y": 160,
         "wires": []
     },
@@ -2066,7 +2078,7 @@
         "type": "function",
         "z": "953eb73365d84859",
         "name": "handle context menu",
-        "func": "msg.topic = msg.payload.toLowerCase();\nif (msg.topic === 'delete') {\n    const node_id = msg.sourceMsg.payload.row.node;\n    msg.payload = \"salt-key -y -d \" + node_id;\n} else if (msg.topic === 'accept') {\n    const node_id = msg.sourceMsg.payload.row.node;\n    msg.payload = \"salt-key -y -a \" + node_id;\n} else if (msg.topic === 'details') {\n    msg.payload.row = msg.sourceMsg.payload.row;\n} else {\n    msg.topic = null;\n}\nreturn msg;",
+        "func": "msg.topic = msg.payload.toLowerCase();\nif (msg.topic == 'delete') {\n    const node_id = msg.sourceMsg.payload.row.node;\n    msg.payload = \"salt-key -y -d \" + node_id;\n} else if (msg.topic == 'accept') {\n    const node_id = msg.sourceMsg.payload.row.node;\n    msg.payload = \"salt-key -y -a \" + node_id;\n} else if (msg.topic == 'details') {\n    msg.payload = {\n        row: msg.sourceMsg.payload.row\n    }; \n} else {\n    msg.topic = null;\n}\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -2091,8 +2103,8 @@
         "timer": "",
         "winHide": false,
         "oldrc": false,
-        "name": "",
-        "x": 910,
+        "name": "salt-key",
+        "x": 920,
         "y": 680,
         "wires": [
             [],
@@ -2326,6 +2338,61 @@
             [],
             []
         ]
+    },
+    {
+        "id": "3cc18776c5dc0ebe",
+        "type": "ui_template",
+        "z": "953eb73365d84859",
+        "group": "66d92f18708659f1",
+        "name": "",
+        "order": 3,
+        "width": 3,
+        "height": 1,
+        "format": "<style>\n.tabulator-row .tabulator-cell .tabulator-traffic-light {\ndisplay: inline-block;\nheight: 14px;\nwidth: 22px;\nborder-radius: 14px;\n}\n.tabulator-row {\npadding-top: 4px;\n}\n.tabulator-row .tabulator-cell.progresslegend > div:nth-child(2)[style] {\ntop: 7px !important;\n}\n</style>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 280,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "55f5c3ae07f9c416",
+        "type": "debug",
+        "z": "953eb73365d84859",
+        "name": "redis tbl data",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 930,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "48b08cc0fd2f2879",
+        "type": "debug",
+        "z": "953eb73365d84859",
+        "name": "tbl mgr data",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 930,
+        "y": 440,
+        "wires": []
     },
     {
         "id": "50f9790b.49c718",
@@ -3931,7 +3998,7 @@
         "type": "function",
         "z": "11df8122a3459712",
         "name": "publish cert",
-        "func": "const cert_file = global.get(\"CERT_FILE_CFG\");\nconst cert_tag = global.get(\"CERT_TAG_CFG\");\nconst cert_pw = global.get(\"CERT_PW_CFG\");\n\nif (cert_file && cert_tag) {\n    const cert_file_data = global.get(\"CERT_FILE_DATA_CFG\");\n    msg.payload = cert_file_data;\n    msg.filepath = \"/srv/salt/state/pki/\" + cert_file;\n    if (cert_pw && cert_pw.length) {\n        msg.command = \"salt \\\\* state.sls vcache.util.push_cert pillar='{\\\"cert_tag\\\": \" + cert_tag + \", \\\"cert_pw\\\": \" + cert_pw + \", \\\"cert_file\\\": \" + cert_file + \"}'\";\n    } else {\n        msg.command = \"salt \\\\* state.sls vcache.util.push_cert pillar='{\\\"cert_tag\\\": \" + cert_tag + \", \\\"cert_file\\\": \" + cert_file + \"}'\";\n    }\n} else {\n    msg.pathname = \"/dev/null\";\n    msg.command = \"false\";\n}\n\nreturn msg;",
+        "func": "const cert_file = global.get(\"CERT_FILE_CFG\");\nconst cert_tag = global.get(\"CERT_TAG_CFG\");\nconst cert_pw = global.get(\"CERT_PW_CFG\");\n\nif (cert_file && cert_tag) {\n    const cert_file_data = global.get(\"CERT_FILE_DATA_CFG\");\n    node.warn(\"cert len: \" + cert_file_data.length);\n    msg.payload = cert_file_data;\n    msg.filepath = \"/srv/salt/state/pki/\" + cert_file;\n    if (cert_pw && cert_pw.length) {\n        msg.command = \"salt \\\\* state.sls vcache.util.push_cert pillar='{\\\"cert_tag\\\": \" + cert_tag + \", \\\"cert_pw\\\": \" + cert_pw + \", \\\"cert_file\\\": \" + cert_file + \"}'\";\n    } else {\n        msg.command = \"salt \\\\* state.sls vcache.util.push_cert pillar='{\\\"cert_tag\\\": \" + cert_tag + \", \\\"cert_file\\\": \" + cert_file + \"}'\";\n    }\n} else {\n    msg.pathname = \"/dev/null\";\n    msg.command = \"false\";\n}\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -4019,7 +4086,7 @@
         "type": "function",
         "z": "11df8122a3459712",
         "name": "publish cfg",
-        "func": "const cfg_file = global.get(\"CFG_FILE_CFG\");\n\nif (cfg_file) {\n    const cfg_file_data = global.get(\"CFG_FILE_DATA_CFG\");\n    msg.payload = cfg_file_data;\n    msg.pathname = \"/srv/salt/state/tmp/\" + cfg_file;\n    msg.command = \"salt \\\\* state.sls vcache.util.push_cfg pillar='{\\\"cfg_file\\\": \" + msg.pathname + \"}'\";\n} else {\n    msg.command = \"false\";\n}\n\nreturn msg;",
+        "func": "const cfg_file = global.get(\"CFG_FILE_CFG\");\n\nif (cfg_file) {\n    const cfg_file_data = global.get(\"CFG_FILE_DATA_CFG\");\n    msg.payload = cfg_file_data;\n    msg.pathname = \"/srv/salt/state/tmp/\" + cfg_file;\n    msg.command = \"salt \\\\* state.sls vcache.util.push_cfg pillar='{\\\"cfg_file\\\": \" + cfg_file + \"}'\";\n} else {\n    msg.command = \"false\";\n}\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -4031,20 +4098,6 @@
             [
                 "cf73e19013dcacb6"
             ]
-        ]
-    },
-    {
-        "id": "975b39d4159692ed",
-        "type": "downloadfile",
-        "z": "11df8122a3459712",
-        "name": "vcache.cfg",
-        "filename": "vcache.cfg",
-        "encoding": "none",
-        "x": 970,
-        "y": 380,
-        "wires": [],
-        "inputLabels": [
-            "file"
         ]
     },
     {
@@ -4250,12 +4303,13 @@
         "appendNewline": false,
         "createDir": true,
         "overwriteFile": "true",
-        "encoding": "binary",
+        "encoding": "none",
         "x": 590,
         "y": 200,
         "wires": [
             [
-                "503c09fd27f1752c"
+                "503c09fd27f1752c",
+                "0827ad87703775b8"
             ]
         ]
     },
@@ -4269,13 +4323,12 @@
         "appendNewline": false,
         "createDir": true,
         "overwriteFile": "true",
-        "encoding": "binary",
+        "encoding": "utf8",
         "x": 590,
         "y": 340,
         "wires": [
             [
-                "503c09fd27f1752c",
-                "0827ad87703775b8"
+                "503c09fd27f1752c"
             ]
         ]
     },
@@ -4292,9 +4345,23 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1100,
-        "y": 320,
+        "x": 1120,
+        "y": 160,
         "wires": []
+    },
+    {
+        "id": "975b39d4159692ed",
+        "type": "downloadfile",
+        "z": "11df8122a3459712",
+        "name": "vcache.cfg",
+        "filename": "vcache.cfg",
+        "encoding": "none",
+        "x": 970,
+        "y": 380,
+        "wires": [],
+        "inputLabels": [
+            "file"
+        ]
     },
     {
         "id": "9ca920d805009264",
@@ -4357,7 +4424,7 @@
         "oldrc": false,
         "name": "sync beacons",
         "x": 760,
-        "y": 180,
+        "y": 200,
         "wires": [
             [],
             [],
@@ -4479,7 +4546,7 @@
         "op": "string",
         "closer": "SIGTERM",
         "x": 750,
-        "y": 100,
+        "y": 80,
         "wires": [
             [],
             [],
@@ -4498,7 +4565,7 @@
         "finalize": "",
         "libs": [],
         "x": 550,
-        "y": 100,
+        "y": 80,
         "wires": [
             [
                 "20322f0058561fd5"
@@ -4661,7 +4728,7 @@
         "topic": "topic",
         "topicType": "msg",
         "x": 330,
-        "y": 100,
+        "y": 80,
         "wires": [
             [
                 "941674b482aa389f"
@@ -4689,7 +4756,7 @@
         "topic": "topic",
         "topicType": "msg",
         "x": 320,
-        "y": 180,
+        "y": 200,
         "wires": [
             [
                 "d6147e86664e5e9b"
@@ -4707,7 +4774,7 @@
         ],
         "uncaught": false,
         "x": 110,
-        "y": 180,
+        "y": 200,
         "wires": [
             [
                 "fd6fa0f7672dae01"
@@ -5101,6 +5168,56 @@
         "wires": [
             [
                 "694d6fe2baa337a6"
+            ]
+        ]
+    },
+    {
+        "id": "fd5a873088e11741",
+        "type": "inject",
+        "z": "08ebeea6e2046abd",
+        "name": "stop",
+        "props": [
+            {
+                "p": "stop",
+                "v": "true",
+                "vt": "bool"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 750,
+        "y": 20,
+        "wires": [
+            [
+                "20322f0058561fd5"
+            ]
+        ]
+    },
+    {
+        "id": "38fb5e3cb942d8c7",
+        "type": "inject",
+        "z": "08ebeea6e2046abd",
+        "name": "start",
+        "props": [
+            {
+                "p": "start",
+                "v": "true",
+                "vt": "bool"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 750,
+        "y": 140,
+        "wires": [
+            [
+                "20322f0058561fd5"
             ]
         ]
     }

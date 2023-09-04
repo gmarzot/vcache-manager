@@ -38,6 +38,7 @@ RUN apk add salt-master
 COPY ./node-red/salt /srv/salt
 COPY ./node-red/etc/salt/master /etc/salt/master
 COPY ./node-red/etc/salt/reactor.conf /etc/salt/master.d/reactor.conf
+VOLUME /etc/salt
 
 RUN apk add py3-pip py3-numpy py3-pandas py3-scikit-learn py3-pycryptodome
 #RUN apk add py3-pip py3-numpy py3-pandas py3-scikit-learn

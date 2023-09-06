@@ -10,7 +10,7 @@
     {
         "id": "974b87f71963749f",
         "type": "tab",
-        "label": "vCache Node Detail ",
+        "label": "Node Detail ",
         "disabled": false,
         "info": "",
         "env": []
@@ -1404,9 +1404,9 @@
         "height": 1
     },
     {
-        "id": "46a22658d1204dd3",
+        "id": "b593faa3a706f59c",
         "type": "ui_spacer",
-        "z": "953eb73365d84859",
+        "z": "11df8122a3459712",
         "name": "spacer",
         "group": "66d92f18708659f1",
         "order": 4,
@@ -1538,7 +1538,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 90,
-        "y": 200,
+        "y": 120,
         "wires": [
             [
                 "9c1cae2c8cd579f1",
@@ -1568,7 +1568,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 100,
-        "y": 380,
+        "y": 520,
         "wires": [
             [
                 "e573f44cd6952735"
@@ -1582,7 +1582,7 @@
         "name": "Refresh",
         "events": "all",
         "x": 280,
-        "y": 440,
+        "y": 580,
         "wires": [
             [
                 "27eedc6ffafb236a"
@@ -1607,7 +1607,7 @@
         "payload": "change",
         "payloadType": "str",
         "x": 90,
-        "y": 500,
+        "y": 640,
         "wires": [
             [
                 "27eedc6ffafb236a"
@@ -1626,7 +1626,7 @@
         "finalize": "",
         "libs": [],
         "x": 290,
-        "y": 500,
+        "y": 640,
         "wires": [
             [
                 "567783dfb28f09df",
@@ -1651,11 +1651,10 @@
             }
         ],
         "x": 540,
-        "y": 440,
+        "y": 580,
         "wires": [
             [
-                "567783dfb28f09df",
-                "48b08cc0fd2f2879"
+                "567783dfb28f09df"
             ]
         ]
     },
@@ -1667,12 +1666,12 @@
         "name": "Nodes",
         "order": 1,
         "width": 23,
-        "height": 10,
+        "height": 11,
         "columns": [],
         "outputs": 1,
         "cts": true,
         "x": 490,
-        "y": 500,
+        "y": 640,
         "wires": [
             [
                 "05143c60bda4315f"
@@ -1699,8 +1698,8 @@
         "checkall": "false",
         "repair": false,
         "outputs": 2,
-        "x": 930,
-        "y": 480,
+        "x": 950,
+        "y": 620,
         "wires": [
             [],
             [
@@ -1724,7 +1723,7 @@
         "finalize": "",
         "libs": [],
         "x": 290,
-        "y": 560,
+        "y": 700,
         "wires": [
             []
         ]
@@ -1747,7 +1746,7 @@
         "payload": "true",
         "payloadType": "bool",
         "x": 90,
-        "y": 560,
+        "y": 700,
         "wires": [
             [
                 "17f908c5c029e02d"
@@ -1767,7 +1766,7 @@
         "payloadType": "json",
         "block": false,
         "x": 300,
-        "y": 380,
+        "y": 520,
         "wires": [
             [
                 "3a9bce3d609e11ce"
@@ -1783,7 +1782,7 @@
         "topic": "redis",
         "location": "global",
         "x": 110,
-        "y": 40,
+        "y": 460,
         "wires": []
     },
     {
@@ -1791,18 +1790,17 @@
         "type": "function",
         "z": "953eb73365d84859",
         "name": "node table data",
-        "func": "const redis = global.get('redis'); // Assumes Redis client is globally available\nconst now = Date.now();\nvar table = [];\n/**\n* 3 - CRIT, 2 - WARN, 1 - OK, 0 - UNKNOWN\n* @param {string | number | Date} stamp\n* @param {number} now\n* @param {number} cpu\n* @param {number} mem\n* @param {number} disk\n*/\nfunction calc_status(now, stamp, cpu, mem, disk) {\n    const stamp_ms = new Date(stamp).getTime();\n    const diff = (now - stamp_ms) / 1000;\n    if (diff > 30) return 0;\n    if (cpu > 90 || mem > 90 || disk > 90) return 3;\n    if (cpu > 80 || mem > 80 || disk > 80) return 2;\n    return 1;\n}\n\nfunction convertNum(val) {\n    if (/^\\d+$/.test(val)) {\n        val = parseInt(val);\n    } else if (/^\\d\\.\\d+$/.test(val)) {\n        val = parseFloat(val).toFixed(2);\n    } else if (/^\\d+\\.\\d+$/.test(val)) {\n        val = parseFloat(val).toFixed(1);\n    }\n    return val;\n}\n\nfunction convertHashNum(hash) {\n    if (typeof hash === 'object' || hash === null) {\n        for (const key in hash) {\n            hash[key] = convertNum(hash[key]);\n        }\n    }\n    return hash;\n}\n\n// Function to retrieve hash objects for each key\nfunction get_nodes(keys, callback) {\n    let count = 0;\n    keys.forEach(function (key) {\n        redis.hgetall(key, function (err, hash) {\n            if (err) {\n                callback(err);\n                return;\n            }\n            \n            hash.node = hash.id;\n            delete hash.id;\n\n            hash.status = calc_status(now, hash._stamp, hash.cpu_use_pct, hash.mem_use_pct, hash.disk_use_pct);\n            if (hash.status == 0) {\n                hash.cache_eff = -1;\n                hash.cpu_use_pct = -1;\n                hash.mem_use_pct = -1;\n                hash.disk_use_pct = -1;\n                hash.client_bw = NaN;\n                hash.upstream_bw = NaN;\n                hash.users = NaN;\n                hash.client_sess = \"-\";\n                hash.uptime = \"-\";\n            } else {\n                hash = convertHashNum(hash);\n                //hash.cache_eff = parseInt(hash.cache_eff_pct);\n                //hash.mem_use_pct = parseFloat(hash.mem_use_pct).toFixed(1);\n                //hash.cpu_use_pct = parseFloat(hash.cpu_use_pct).toFixed(1);\n                //hash.disk_use_pct = parseFloat(hash.disk_use_pct).toFixed(1);\n                //hash.client_bw = parseInt(hash.client_bw);\n                //hash.upstream_bw = parseInt(hash.upstream_bw);\n                //hash.users = parseInt(hash.client_sess);\n            }\n            table.push(hash);\n            count++;\n            if (count >= keys.length) {\n                callback(null,table);\n            }\n        });\n    });\n}\n\nfunction sort_arr(in_arr) {\n    const arr = [...in_arr].sort((a, b) => {\n        const A = a.node.toLowerCase();\n        const B = b.node.toLowerCase();\n        if (A < B) return -1;\n        if (A > B) return 1;\n        return 0;\n    });\n    return arr;\n}\n\n// Main function\nget_nodes(msg.payload, function (err, nodes) {\n    if (err) {\n        node.error(err);\n        return;\n    }\n//  table = nodes.map((/** @type {{ id: string; cache_eff_pct: string; client_sess: string; client_bw: string; upstream_bw: string; }} */ n) => ({\n//       \"node\": n.id.toLowerCase(),\n//       \"status\": \"up\".toUpperCase(),\n//        \"cache_eff\": parseInt(n.cache_eff_pct) == 0 ? 1 : parseInt(n.cache_eff_pct),\n//        \"client_bw\": parseInt(n.client_bw),\n//        \"upstream_bw\": parseInt(n.upstream_bw),\n//        \"users\": parseInt(n.client_sess),\n//    }));\n    msg.payload = nodes;\n    node.send(msg);\n});",
+        "func": "const redis = global.get('redis'); // Assumes Redis client is globally available\nconst now = Date.now();\nvar table = [];\n/**\n* 3 - CRIT, 2 - WARN, 1 - OK, 0 - UNKNOWN\n* @param {string | number | Date} stamp\n* @param {number} now\n* @param {number} cpu\n* @param {number} mem\n* @param {number} disk\n*/\nfunction calc_status(now, stamp, cpu, mem, disk) {\n    const stamp_ms = new Date(stamp).getTime();\n    const diff = (now - stamp_ms) / 1000;\n    if (diff > 30) return 0;\n    if (cpu > 90 || mem > 90 || disk > 90) return 3;\n    if (cpu > 80 || mem > 80 || disk > 80) return 2;\n    return 1;\n}\n\nfunction convertNum(val) {\n    if (/^\\d+$/.test(val)) {\n        val = parseInt(val);\n    } else if (/^\\d\\.\\d+$/.test(val)) {\n        val = parseFloat(val).toFixed(2);\n    } else if (/^\\d+\\.\\d+$/.test(val)) {\n        val = parseFloat(val).toFixed(1);\n    }\n    return val;\n}\n\nfunction convertHashNum(hash) {\n    if (typeof hash === 'object' || hash === null) {\n        for (const key in hash) {\n            hash[key] = convertNum(hash[key]);\n        }\n    }\n    return hash;\n}\n\n// Function to retrieve hash objects for each key\nfunction get_nodes(keys, callback) {\n    let count = 0;\n    keys.forEach(function (key) {\n        redis.hgetall(key, function (err, hash) {\n            if (err) {\n                callback(err);\n                return;\n            }\n            \n            hash.node = hash.id;\n            delete hash.id;\n\n            hash.status = calc_status(now, hash._stamp, hash.cpu_use_pct, hash.mem_use_pct, hash.disk_use_pct);\n            if (hash.status == 0) {\n                hash.cache_eff = -1;\n                hash.cpu_use_pct = -1;\n                hash.mem_use_pct = -1;\n                hash.disk_use_pct = -1;\n                hash.client_bw = NaN;\n                hash.upstream_bw = NaN;\n                hash.users = NaN;\n                hash.client_sess = \"-\";\n                hash.uptime = \"-\";\n            } else {\n                hash = convertHashNum(hash);\n            }\n            table.push(hash);\n            count++;\n            if (count >= keys.length) {\n                callback(null,table);\n            }\n        });\n    });\n}\n\nfunction sort_arr(in_arr) {\n    const arr = [...in_arr].sort((a, b) => {\n        const A = a.node.toLowerCase();\n        const B = b.node.toLowerCase();\n        if (A < B) return -1;\n        if (A > B) return 1;\n        return 0;\n    });\n    return arr;\n}\n\n// Main function\nget_nodes(msg.payload, function (err, nodes) {\n    if (err) {\n        node.error(err);\n        return;\n    }\n\n    msg.payload = nodes;\n    node.send(msg);\n});",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
         "x": 520,
-        "y": 380,
+        "y": 520,
         "wires": [
             [
-                "c347b6521867b6fb",
-                "55f5c3ae07f9c416"
+                "c347b6521867b6fb"
             ]
         ]
     },
@@ -1855,7 +1853,7 @@
         "stopTimerAtEnter": true,
         "name": "RowCtxMenu",
         "x": 520,
-        "y": 560,
+        "y": 700,
         "wires": [
             [
                 "ac59be7fa2383fc7"
@@ -1890,7 +1888,7 @@
         "repair": false,
         "outputs": 3,
         "x": 730,
-        "y": 500,
+        "y": 640,
         "wires": [
             [
                 "ce2ff155071f51ec"
@@ -1915,7 +1913,7 @@
         "field": "payload",
         "fieldType": "msg",
         "x": 510,
-        "y": 200,
+        "y": 120,
         "wires": [
             [
                 "51ab9183e6c445ee",
@@ -1934,8 +1932,8 @@
         "createDir": false,
         "overwriteFile": "true",
         "encoding": "utf8",
-        "x": 740,
-        "y": 200,
+        "x": 760,
+        "y": 120,
         "wires": [
             []
         ]
@@ -1953,7 +1951,7 @@
         "write": true,
         "throwerror": false,
         "x": 300,
-        "y": 180,
+        "y": 100,
         "wires": [
             [
                 "ac931b189bcafeb4"
@@ -1976,7 +1974,7 @@
         "write": false,
         "throwerror": false,
         "x": 310,
-        "y": 220,
+        "y": 140,
         "wires": [
             [
                 "28e546a9e90ffb1f"
@@ -1995,8 +1993,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 750,
-        "y": 240,
+        "x": 770,
+        "y": 160,
         "wires": [
             []
         ]
@@ -2014,7 +2012,7 @@
         "encoding": "none",
         "allProps": false,
         "x": 520,
-        "y": 240,
+        "y": 160,
         "wires": [
             [
                 "05bef2ebd6355241"
@@ -2032,8 +2030,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 740,
-        "y": 160,
+        "x": 760,
+        "y": 80,
         "wires": [
             [
                 "c5ba86245edf6da7"
@@ -2053,7 +2051,7 @@
         "encoding": "none",
         "allProps": false,
         "x": 520,
-        "y": 160,
+        "y": 80,
         "wires": [
             [
                 "03470a367efdaf2e"
@@ -2070,7 +2068,7 @@
         "key": "vcache_mgr",
         "structtype": "hash",
         "x": 950,
-        "y": 160,
+        "y": 80,
         "wires": []
     },
     {
@@ -2085,7 +2083,7 @@
         "finalize": "",
         "libs": [],
         "x": 540,
-        "y": 620,
+        "y": 760,
         "wires": [
             [
                 "7ede68d2930d2f9d"
@@ -2104,8 +2102,8 @@
         "winHide": false,
         "oldrc": false,
         "name": "salt-key",
-        "x": 920,
-        "y": 680,
+        "x": 940,
+        "y": 820,
         "wires": [
             [],
             [],
@@ -2140,7 +2138,7 @@
         "repair": false,
         "outputs": 3,
         "x": 730,
-        "y": 620,
+        "y": 760,
         "wires": [
             [
                 "11dd7f1faf822026"
@@ -2165,8 +2163,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 960,
-        "y": 620,
+        "x": 980,
+        "y": 760,
         "wires": [
             [
                 "c347b6521867b6fb"
@@ -2193,7 +2191,7 @@
         "to": "",
         "reg": false,
         "x": 1100,
-        "y": 480,
+        "y": 620,
         "wires": [
             []
         ]
@@ -2220,7 +2218,7 @@
         "payload": "true",
         "payloadType": "bool",
         "x": 90,
-        "y": 120,
+        "y": 40,
         "wires": [
             [
                 "bb8e27c46b8ff662"
@@ -2239,7 +2237,7 @@
         "finalize": "",
         "libs": [],
         "x": 300,
-        "y": 120,
+        "y": 40,
         "wires": [
             []
         ]
@@ -2255,8 +2253,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 920,
-        "y": 520,
+        "x": 940,
+        "y": 660,
         "wires": [
             [
                 "04aa2ba4afb084b6"
@@ -2270,7 +2268,7 @@
         "name": "",
         "events": "all",
         "x": 1100,
-        "y": 520,
+        "y": 660,
         "wires": [
             [
                 "67ba704c78cb72a4"
@@ -2287,7 +2285,7 @@
             "f80372ff84e69aab"
         ],
         "x": 1205,
-        "y": 520,
+        "y": 660,
         "wires": []
     },
     {
@@ -2312,7 +2310,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 100,
-        "y": 300,
+        "y": 200,
         "wires": [
             [
                 "e0c1f41c65d260dd"
@@ -2332,7 +2330,7 @@
         "oldrc": false,
         "name": "logrotate",
         "x": 280,
-        "y": 300,
+        "y": 200,
         "wires": [
             [],
             [],
@@ -2355,44 +2353,223 @@
         "templateScope": "local",
         "className": "",
         "x": 280,
-        "y": 620,
+        "y": 760,
         "wires": [
             []
         ]
     },
     {
-        "id": "55f5c3ae07f9c416",
-        "type": "debug",
+        "id": "d6147e86664e5e9b",
+        "type": "exec",
         "z": "953eb73365d84859",
-        "name": "redis tbl data",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 930,
-        "y": 380,
-        "wires": []
+        "command": "sleep 10; salt '*' saltutil.sync_beacons",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "sync beacons",
+        "x": 760,
+        "y": 340,
+        "wires": [
+            [],
+            [],
+            []
+        ]
     },
     {
-        "id": "48b08cc0fd2f2879",
-        "type": "debug",
+        "id": "20322f0058561fd5",
+        "type": "daemon",
         "z": "953eb73365d84859",
-        "name": "tbl mgr data",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 930,
-        "y": 440,
-        "wires": []
+        "name": "",
+        "command": "salt-master",
+        "args": "",
+        "autorun": false,
+        "cr": false,
+        "redo": true,
+        "op": "string",
+        "closer": "SIGTERM",
+        "x": 750,
+        "y": 260,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "941674b482aa389f",
+        "type": "function",
+        "z": "953eb73365d84859",
+        "name": "restart mgr agent",
+        "func": "msg.kill =  true;\nmsg.start = true;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 260,
+        "wires": [
+            [
+                "20322f0058561fd5"
+            ]
+        ]
+    },
+    {
+        "id": "27206406fc11d2ef",
+        "type": "inject",
+        "z": "953eb73365d84859",
+        "name": "init 0.5s",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.5",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 300,
+        "wires": [
+            [
+                "d8c7f242128e6d08",
+                "fd6fa0f7672dae01"
+            ]
+        ]
+    },
+    {
+        "id": "d8c7f242128e6d08",
+        "type": "ui_button",
+        "z": "953eb73365d84859",
+        "name": "restart salt master",
+        "group": "2bfbf363d31643c1",
+        "order": 8,
+        "width": 3,
+        "height": 1,
+        "passthru": true,
+        "label": "Restart Salt",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 310,
+        "y": 260,
+        "wires": [
+            [
+                "941674b482aa389f"
+            ]
+        ]
+    },
+    {
+        "id": "fd6fa0f7672dae01",
+        "type": "ui_button",
+        "z": "953eb73365d84859",
+        "name": "sync beacons",
+        "group": "2bfbf363d31643c1",
+        "order": 6,
+        "width": 3,
+        "height": 1,
+        "passthru": true,
+        "label": "Sync Beacons",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 300,
+        "y": 340,
+        "wires": [
+            [
+                "d6147e86664e5e9b"
+            ]
+        ]
+    },
+    {
+        "id": "3e0cb6f98233ae1e",
+        "type": "complete",
+        "z": "953eb73365d84859",
+        "name": "sync beacons",
+        "scope": [
+            "1e980162154930d3",
+            "430201fe36756d7b"
+        ],
+        "uncaught": false,
+        "x": 90,
+        "y": 380,
+        "wires": [
+            [
+                "fd6fa0f7672dae01"
+            ]
+        ]
+    },
+    {
+        "id": "fd5a873088e11741",
+        "type": "inject",
+        "z": "953eb73365d84859",
+        "name": "stop",
+        "props": [
+            {
+                "p": "stop",
+                "v": "true",
+                "vt": "bool"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 570,
+        "y": 220,
+        "wires": [
+            [
+                "20322f0058561fd5"
+            ]
+        ]
+    },
+    {
+        "id": "38fb5e3cb942d8c7",
+        "type": "inject",
+        "z": "953eb73365d84859",
+        "name": "start",
+        "props": [
+            {
+                "p": "start",
+                "v": "true",
+                "vt": "bool"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 570,
+        "y": 300,
+        "wires": [
+            [
+                "20322f0058561fd5"
+            ]
+        ]
     },
     {
         "id": "50f9790b.49c718",
@@ -4027,12 +4204,8 @@
         "x": 850,
         "y": 260,
         "wires": [
-            [
-                "ea5ba863f377370d"
-            ],
-            [
-                "ea5ba863f377370d"
-            ],
+            [],
+            [],
             []
         ]
     },
@@ -4256,23 +4429,6 @@
         "wires": []
     },
     {
-        "id": "ea5ba863f377370d",
-        "type": "debug",
-        "z": "11df8122a3459712",
-        "name": "debug 7",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1120,
-        "y": 200,
-        "wires": []
-    },
-    {
         "id": "5b295b8c294bc76d",
         "type": "ui_text",
         "z": "11df8122a3459712",
@@ -4308,8 +4464,7 @@
         "y": 200,
         "wires": [
             [
-                "503c09fd27f1752c",
-                "0827ad87703775b8"
+                "503c09fd27f1752c"
             ]
         ]
     },
@@ -4331,23 +4486,6 @@
                 "503c09fd27f1752c"
             ]
         ]
-    },
-    {
-        "id": "0827ad87703775b8",
-        "type": "debug",
-        "z": "11df8122a3459712",
-        "name": "debug 9",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1120,
-        "y": 160,
-        "wires": []
     },
     {
         "id": "975b39d4159692ed",
@@ -4383,8 +4521,8 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 280,
-        "y": 560,
+        "x": 300,
+        "y": 380,
         "wires": [
             [
                 "1e980162154930d3"
@@ -4403,28 +4541,8 @@
         "winHide": false,
         "oldrc": false,
         "name": "",
-        "x": 750,
-        "y": 560,
-        "wires": [
-            [],
-            [],
-            []
-        ]
-    },
-    {
-        "id": "d6147e86664e5e9b",
-        "type": "exec",
-        "z": "08ebeea6e2046abd",
-        "command": "sleep 10; salt '*' saltutil.sync_beacons",
-        "addpay": "",
-        "append": "",
-        "useSpawn": "false",
-        "timer": "",
-        "winHide": false,
-        "oldrc": false,
-        "name": "sync beacons",
-        "x": 760,
-        "y": 200,
+        "x": 770,
+        "y": 380,
         "wires": [
             [],
             [],
@@ -4454,8 +4572,8 @@
         ],
         "outputs": 1,
         "cts": true,
-        "x": 530,
-        "y": 300,
+        "x": 550,
+        "y": 120,
         "wires": [
             [
                 "acf4447a9db5dc4c"
@@ -4483,8 +4601,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 100,
-        "y": 340,
+        "x": 120,
+        "y": 160,
         "wires": [
             [
                 "694d6fe2baa337a6"
@@ -4503,8 +4621,8 @@
         "winHide": false,
         "oldrc": false,
         "name": "probe minions",
-        "x": 300,
-        "y": 340,
+        "x": 320,
+        "y": 160,
         "wires": [
             [
                 "f1ecdf3d66c25ebd",
@@ -4525,80 +4643,11 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 540,
-        "y": 240,
+        "x": 560,
+        "y": 60,
         "wires": [
             [
                 "32ac04d1f6fe6e9e"
-            ]
-        ]
-    },
-    {
-        "id": "20322f0058561fd5",
-        "type": "daemon",
-        "z": "08ebeea6e2046abd",
-        "name": "",
-        "command": "salt-master",
-        "args": "",
-        "autorun": false,
-        "cr": false,
-        "redo": true,
-        "op": "string",
-        "closer": "SIGTERM",
-        "x": 750,
-        "y": 80,
-        "wires": [
-            [],
-            [],
-            []
-        ]
-    },
-    {
-        "id": "941674b482aa389f",
-        "type": "function",
-        "z": "08ebeea6e2046abd",
-        "name": "restart mgr agent",
-        "func": "msg.kill =  true;\nmsg.start = true;\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 550,
-        "y": 80,
-        "wires": [
-            [
-                "20322f0058561fd5"
-            ]
-        ]
-    },
-    {
-        "id": "27206406fc11d2ef",
-        "type": "inject",
-        "z": "08ebeea6e2046abd",
-        "name": "init",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 90,
-        "y": 40,
-        "wires": [
-            [
-                "d8c7f242128e6d08",
-                "fd6fa0f7672dae01"
             ]
         ]
     },
@@ -4660,8 +4709,8 @@
         "startTimerAtLeave": true,
         "stopTimerAtEnter": true,
         "name": "pending nodes ctx",
-        "x": 770,
-        "y": 300,
+        "x": 790,
+        "y": 120,
         "wires": [
             [
                 "7965e8cf8c0f94ee"
@@ -4679,8 +4728,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1000,
-        "y": 340,
+        "x": 1020,
+        "y": 160,
         "wires": [
             [
                 "430201fe36756d7b"
@@ -4699,86 +4748,12 @@
         "winHide": false,
         "oldrc": false,
         "name": "salt-key cmd",
-        "x": 1010,
-        "y": 420,
+        "x": 1030,
+        "y": 240,
         "wires": [
             [],
             [],
             []
-        ]
-    },
-    {
-        "id": "d8c7f242128e6d08",
-        "type": "ui_button",
-        "z": "08ebeea6e2046abd",
-        "name": "restart salt master",
-        "group": "2bfbf363d31643c1",
-        "order": 8,
-        "width": 3,
-        "height": 1,
-        "passthru": true,
-        "label": "Restart Salt",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "payload": "true",
-        "payloadType": "bool",
-        "topic": "topic",
-        "topicType": "msg",
-        "x": 330,
-        "y": 80,
-        "wires": [
-            [
-                "941674b482aa389f"
-            ]
-        ]
-    },
-    {
-        "id": "fd6fa0f7672dae01",
-        "type": "ui_button",
-        "z": "08ebeea6e2046abd",
-        "name": "sync beacons",
-        "group": "2bfbf363d31643c1",
-        "order": 6,
-        "width": 3,
-        "height": 1,
-        "passthru": true,
-        "label": "Sync Beacons",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "payload": "",
-        "payloadType": "str",
-        "topic": "topic",
-        "topicType": "msg",
-        "x": 320,
-        "y": 200,
-        "wires": [
-            [
-                "d6147e86664e5e9b"
-            ]
-        ]
-    },
-    {
-        "id": "3e0cb6f98233ae1e",
-        "type": "complete",
-        "z": "08ebeea6e2046abd",
-        "name": "sync beacons trigger",
-        "scope": [
-            "1e980162154930d3",
-            "430201fe36756d7b"
-        ],
-        "uncaught": false,
-        "x": 110,
-        "y": 200,
-        "wires": [
-            [
-                "fd6fa0f7672dae01"
-            ]
         ]
     },
     {
@@ -4804,8 +4779,8 @@
         ],
         "outputs": 1,
         "cts": true,
-        "x": 530,
-        "y": 360,
+        "x": 550,
+        "y": 180,
         "wires": [
             [
                 "82b1693fd1f95a9a"
@@ -4823,8 +4798,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 540,
-        "y": 420,
+        "x": 560,
+        "y": 240,
         "wires": [
             [
                 "c66030ce72b513a0"
@@ -4851,8 +4826,8 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 280,
-        "y": 500,
+        "x": 300,
+        "y": 320,
         "wires": [
             [
                 "56b4fe9fdbfea327"
@@ -4897,8 +4872,8 @@
         "startTimerAtLeave": true,
         "stopTimerAtEnter": true,
         "name": "rejected nodes ctx",
-        "x": 770,
-        "y": 360,
+        "x": 790,
+        "y": 180,
         "wires": [
             [
                 "7965e8cf8c0f94ee"
@@ -4917,8 +4892,8 @@
         "winHide": false,
         "oldrc": false,
         "name": "probe minions",
-        "x": 760,
-        "y": 500,
+        "x": 780,
+        "y": 320,
         "wires": [
             [
                 "4991dec486cbc8e7"
@@ -4938,8 +4913,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 990,
-        "y": 500,
+        "x": 1010,
+        "y": 320,
         "wires": [
             [
                 "430201fe36756d7b"
@@ -4961,8 +4936,8 @@
         "resendOnRefresh": false,
         "templateScope": "local",
         "className": "",
-        "x": 300,
-        "y": 720,
+        "x": 320,
+        "y": 520,
         "wires": [
             [
                 "8b7e4ca7d4bb2e6b"
@@ -4989,8 +4964,8 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 800,
-        "y": 700,
+        "x": 880,
+        "y": 500,
         "wires": [
             []
         ]
@@ -5015,8 +4990,8 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 940,
-        "y": 700,
+        "x": 1020,
+        "y": 500,
         "wires": [
             []
         ]
@@ -5038,8 +5013,8 @@
         "font": "",
         "fontSize": 16,
         "color": "#000000",
-        "x": 500,
-        "y": 720,
+        "x": 540,
+        "y": 520,
         "wires": []
     },
     {
@@ -5059,8 +5034,8 @@
         "font": "",
         "fontSize": 16,
         "color": "#000000",
-        "x": 500,
-        "y": 680,
+        "x": 540,
+        "y": 480,
         "wires": []
     },
     {
@@ -5083,8 +5058,8 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 670,
-        "y": 700,
+        "x": 750,
+        "y": 500,
         "wires": [
             []
         ]
@@ -5106,8 +5081,8 @@
         "font": "",
         "fontSize": 16,
         "color": "#000000",
-        "x": 120,
-        "y": 680,
+        "x": 100,
+        "y": 480,
         "wires": []
     },
     {
@@ -5127,8 +5102,8 @@
         "font": "",
         "fontSize": 16,
         "color": "#000000",
-        "x": 130,
-        "y": 720,
+        "x": 110,
+        "y": 520,
         "wires": []
     },
     {
@@ -5146,8 +5121,8 @@
         "resendOnRefresh": false,
         "templateScope": "local",
         "className": "",
-        "x": 290,
-        "y": 680,
+        "x": 310,
+        "y": 480,
         "wires": [
             [
                 "21f95f2c06915d16"
@@ -5163,61 +5138,11 @@
             "430201fe36756d7b"
         ],
         "uncaught": false,
-        "x": 100,
-        "y": 280,
+        "x": 120,
+        "y": 100,
         "wires": [
             [
                 "694d6fe2baa337a6"
-            ]
-        ]
-    },
-    {
-        "id": "fd5a873088e11741",
-        "type": "inject",
-        "z": "08ebeea6e2046abd",
-        "name": "stop",
-        "props": [
-            {
-                "p": "stop",
-                "v": "true",
-                "vt": "bool"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "x": 750,
-        "y": 20,
-        "wires": [
-            [
-                "20322f0058561fd5"
-            ]
-        ]
-    },
-    {
-        "id": "38fb5e3cb942d8c7",
-        "type": "inject",
-        "z": "08ebeea6e2046abd",
-        "name": "start",
-        "props": [
-            {
-                "p": "start",
-                "v": "true",
-                "vt": "bool"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "x": 750,
-        "y": 140,
-        "wires": [
-            [
-                "20322f0058561fd5"
             ]
         ]
     }

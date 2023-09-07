@@ -2156,14 +2156,14 @@
         "id": "b9e49c705dadd4fc",
         "type": "function",
         "z": "953eb73365d84859",
-        "name": "delete node from table",
+        "name": "delete node",
         "func": "/**\n * Set a key in Redis with an expiration time in seconds using a callback.\n * @param {string} key - The key to set.\n * @param {string} value - The value to set.\n * @param {number} seconds - The expiration time in seconds.\n */\nfunction setDelKey(key, value, seconds) {\n    // Set the key with the specified value and expiration time\n    redis.set(key, value, 'EX', seconds, (error, result) => {\n        if (error) {\n            node.error(\"setDeKey: error setting key: \" + key +\" : \" + error.message);\n        }\n    });\n}\n\nconst redis = global.get('redis'); // Assumes Redis client is globally available\n\nconst row = msg.sourceMsg.payload.row;\nconst key = \"vcache_node:\" + row.node + \":\" + row.uuid;\n\nsetDelKey(\"delete:\" + key, true, 15); // set hold off timer before accepting this node again\n\nredis.del(key, function (err, reply) {\n    if (err) {\n        node.error(\"Error deleting key(\" + reply + \"): \", err );\n    } else {\n        row.delete = true;\n        msg.payload = row\n        node.send(msg);\n        node.warn(\"node delete: node deleted from redis: \" + key)\n    }\n});\n\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 980,
+        "x": 950,
         "y": 760,
         "wires": [
             [
@@ -2362,11 +2362,11 @@
         "id": "d6147e86664e5e9b",
         "type": "exec",
         "z": "953eb73365d84859",
-        "command": "sleep 10; salt '*' saltutil.sync_beacons",
+        "command": "sleep 5; salt '*' saltutil.sync_beacons",
         "addpay": "",
         "append": "",
         "useSpawn": "false",
-        "timer": "",
+        "timer": "20",
         "winHide": false,
         "oldrc": false,
         "name": "sync beacons",
@@ -2393,9 +2393,15 @@
         "x": 750,
         "y": 260,
         "wires": [
-            [],
-            [],
-            []
+            [
+                "a054a07f70411955"
+            ],
+            [
+                "a054a07f70411955"
+            ],
+            [
+                "a054a07f70411955"
+            ]
         ]
     },
     {
@@ -2538,7 +2544,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 570,
+        "x": 510,
         "y": 220,
         "wires": [
             [
@@ -2563,13 +2569,29 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 570,
+        "x": 510,
         "y": 300,
         "wires": [
             [
                 "20322f0058561fd5"
             ]
         ]
+    },
+    {
+        "id": "a054a07f70411955",
+        "type": "debug",
+        "z": "953eb73365d84859",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1020,
+        "y": 260,
+        "wires": []
     },
     {
         "id": "50f9790b.49c718",
@@ -4605,31 +4627,8 @@
         "y": 160,
         "wires": [
             [
-                "694d6fe2baa337a6"
+                "2f2e94ea3008ee23"
             ]
-        ]
-    },
-    {
-        "id": "694d6fe2baa337a6",
-        "type": "exec",
-        "z": "08ebeea6e2046abd",
-        "command": "salt-key -L --output json",
-        "addpay": "",
-        "append": "",
-        "useSpawn": "false",
-        "timer": "30",
-        "winHide": false,
-        "oldrc": false,
-        "name": "probe minions",
-        "x": 320,
-        "y": 160,
-        "wires": [
-            [
-                "f1ecdf3d66c25ebd",
-                "75933c13fdf23b68"
-            ],
-            [],
-            []
         ]
     },
     {
@@ -4884,15 +4883,15 @@
         "id": "56b4fe9fdbfea327",
         "type": "exec",
         "z": "08ebeea6e2046abd",
-        "command": "salt-key -L --output json",
+        "command": "vcache-mgr-nodes",
         "addpay": "",
         "append": "",
         "useSpawn": "false",
-        "timer": "30",
+        "timer": "",
         "winHide": false,
         "oldrc": false,
-        "name": "probe minions",
-        "x": 780,
+        "name": "vcache-mgr-nodes",
+        "x": 790,
         "y": 320,
         "wires": [
             [
@@ -5102,7 +5101,7 @@
         "font": "",
         "fontSize": 16,
         "color": "#000000",
-        "x": 110,
+        "x": 90,
         "y": 520,
         "wires": []
     },
@@ -5111,7 +5110,7 @@
         "type": "ui_template",
         "z": "08ebeea6e2046abd",
         "group": "acc467dc501a1809",
-        "name": "Upload Btn",
+        "name": "Upload Installer",
         "order": 2,
         "width": 4,
         "height": 1,
@@ -5121,7 +5120,7 @@
         "resendOnRefresh": false,
         "templateScope": "local",
         "className": "",
-        "x": 310,
+        "x": 320,
         "y": 480,
         "wires": [
             [
@@ -5142,8 +5141,48 @@
         "y": 100,
         "wires": [
             [
-                "694d6fe2baa337a6"
+                "2f2e94ea3008ee23"
             ]
         ]
+    },
+    {
+        "id": "2f2e94ea3008ee23",
+        "type": "exec",
+        "z": "08ebeea6e2046abd",
+        "command": "vcache-mgr-nodes",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "vcache-mgr-nodes",
+        "x": 310,
+        "y": 160,
+        "wires": [
+            [
+                "f1ecdf3d66c25ebd",
+                "75933c13fdf23b68"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "80e631f90d1def1e",
+        "type": "debug",
+        "z": "08ebeea6e2046abd",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 740,
+        "y": 780,
+        "wires": []
     }
 ]

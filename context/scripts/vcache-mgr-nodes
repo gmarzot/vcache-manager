@@ -1,0 +1,19 @@
+#!/usr/bin/env perl
+use strict;
+use FindBin;
+use lib "$FindBin::Bin/../perllib";
+
+use JSON;
+use JSON::Relaxed;
+use Getopt::Long qw(:config gnu_getopt pass_through);
+use File::Basename;
+use Data::Dumper;
+
+my %nodes;
+chdir("/etc/salt/pki/master") or die;
+my @dirs = <minion*>;
+foreach my $dir (@dirs) {
+   next if $dir =~ /auto/;
+   $nodes{$dir} = [map { $_ =~ s|.*/(.*)|$1|; $_ } (<$dir/*>)];
+}
+print JSON->new->pretty(1)->encode(\%nodes);

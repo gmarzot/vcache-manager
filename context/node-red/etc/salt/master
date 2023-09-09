@@ -157,7 +157,7 @@ pidfile: /var/run/salt-master.pid
 # configuration values. (See also, event_return_queue, and event_return_queue_max_seconds below.)
 #
 #event_return: mysql
-event_track: true
+# event_track: true
 
 # On busy systems, enabling event_returns can cause a considerable load on
 # the storage system for returners. Events can be queued on the master and

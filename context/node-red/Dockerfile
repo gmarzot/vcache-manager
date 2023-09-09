@@ -18,7 +18,7 @@ RUN npm install node-red-node-ui-iframe
 RUN npm install node-red-node-ui-table
 RUN npm install node-red-contrib-ui-contextmenu
 RUN npm install node-red-contrib-ui-upload
-RUN npm install @prescient-devices/node-red-contrib-downloadfile
+RUN npm install "@prescient-devices/node-red-contrib-downloadfile"
 
 # uncomment the following 2 lines for production
 #COPY ./node-red/mgmt-data /data
@@ -27,7 +27,7 @@ COPY ./node-red/daemon.js /usr/src/node-red/node_modules/node-red-node-daemon/da
 
 COPY ./node-red/etc/vcache-mgr /etc/vcache-mgr
 COPY ./perllib /usr/local/perllib
-COPY ./scripts/* /usr/local/bin
+COPY ./scripts/ /usr/local/bin
 
 USER root
 RUN apk add bash

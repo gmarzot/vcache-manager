@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  vcache_sim_node:
+    image: saltstack/salt:latest
+    networks:
+      - vcache_sim_net
+      - vcache_mgr_ext_net
+    volumes:
+      - ./beacons.conf:/etc/salt/minion.d/beacons.conf
+      - ./minion.tmpl:/etc/salt/minion
+    deploy:
+      replicas: 200
+#    hostname: "vcache-sim-node"
+    environment:
+      - VCAHCE_MGR_ADDR=${VCACHE_MGR_ADDR}
+    entrypoint: sh -c 'echo "vcache-sim-node-$(hostname)" > /etc/salt/minion_id && salt-minion'
+
+networks:
+  vcache_sim_net:
+  vcache_mgr_ext_net:
+    external:
+      name: vcache_mgr_net
+
+

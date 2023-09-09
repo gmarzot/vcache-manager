@@ -14,7 +14,6 @@ __virtualname__ = "vcache_stats"
 
 LAST_STATUS = {}
 
-
 def __virtual__():
         return __virtualname__
 
@@ -22,7 +21,7 @@ def validate(config):
     """
     Validate the beacon configuration
     """
-    # Configuration for load beacon should be a list of dicts
+    # Configuration for stats beacon should be a list of dicts
     if not isinstance(config, list):
         return False, "Configuration for load beacon must be a list."
     else:
@@ -49,16 +48,13 @@ def beacon(config):
     log.trace("vcache stats beacon starting")
 
     config = salt.utils.beacons.list_to_dict(config)
-
-    log.trace("config: %s", json.dumps(config))
-
     redis_host = str(config.get('redis_host', 'vcache_redis'))
     redis_key = str(config.get('redis_key', 'vcache:stats'))
+    log.trace("vcache_stats: %s %s", redis_host, redis_key)
 
     # Connect to Redis
     r = redis.Redis(host=redis_host,charset="utf-8",decode_responses=True)
 
-    log.trace("vcache_stats: %s %s", redis_host, redis_key)
     # Get the JSON data from Redis
     stats = r.hgetall(redis_key)
     log.debug("vcache_stats: %s", json.dumps(stats));

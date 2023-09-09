@@ -20,7 +20,7 @@ services:
       - 4505:4505
       - 4506:4506
       - 1880:1880     # close this for production
-    pid: shareable
+#    pid: shareable
     restart: always
     depends_on:
       - vcache_mgr_redis

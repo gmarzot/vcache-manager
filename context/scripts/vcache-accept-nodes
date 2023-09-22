@@ -1,0 +1,41 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+use JSON;
+
+my $json_input = '';
+
+# Read JSON input from either stdin or a file
+if (@ARGV) {
+    my $filename = $ARGV[0];
+    open(my $fh, '<', $filename) or die "Cannot open file '$filename' for reading: $!";
+    local $/; # Slurp mode
+    $json_input = <$fh>;
+    close($fh);
+} else {
+    while (<STDIN>) {
+        $json_input .= $_;
+    }
+}
+
+# Parse the JSON data
+my $data = decode_json($json_input);
+
+# Check if the data contains a 'minions' array
+if (exists $data->{'minions_pre'} && ref($data->{'minions_pre'}) eq 'ARRAY') {
+    my @minions = @{$data->{'minions_pre'}};
+
+    # Iterate through the list of minions and run 'salt-key -y -a' for each
+    foreach my $minion (@minions) {
+        my $command = "salt-key -y -a $minion";
+        print "Running command: $command\n";
+        system($command);
+        
+        sleep(2);
+    }
+} else {
+    die "No 'minions' array found in the JSON data.\n";
+}
+
+exit 0;

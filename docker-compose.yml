@@ -16,6 +16,9 @@ services:
       - etc_frontend:/etc/nginx-fe
     networks:
       - vcache_mgr_net
+    environment:
+      - VCACHE_MGR_VERSION=${VCACHE_VERSION}
+      - VCACHE_MGR_HOSTNAME=${VCACHE_MGR_HOSTNAME}
     ports:
       - 4505:4505
       - 4506:4506
@@ -46,12 +49,15 @@ services:
       - vcache_mgr
       
   vcache_mgr_redis:
-    image: redis:latest
+    image: redis/redis-stack
     container_name: vcache_mgr_redis
     volumes:
       - redis_data:/data
     networks:
       - vcache_mgr_net
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+      - REDIS_ARGS="--safe-mode no"
     # close this for production
     ports:
       - 6379:6379

@@ -10,7 +10,7 @@ services:
       - ./beacons.conf:/etc/salt/minion.d/beacons.conf
       - ./minion.tmpl:/etc/salt/minion
     deploy:
-      replicas: 200
+      replicas: 300
 #    hostname: "vcache-sim-node"
     environment:
       - VCAHCE_MGR_ADDR=${VCACHE_MGR_ADDR}

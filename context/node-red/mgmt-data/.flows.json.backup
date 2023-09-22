@@ -2,7 +2,7 @@
     {
         "id": "953eb73365d84859",
         "type": "tab",
-        "label": "vCache Manager",
+        "label": "Monitor",
         "disabled": false,
         "info": "",
         "env": []
@@ -18,7 +18,7 @@
     {
         "id": "11df8122a3459712",
         "type": "tab",
-        "label": "Configuration",
+        "label": "Configure",
         "disabled": false,
         "info": "",
         "env": []
@@ -26,7 +26,23 @@
     {
         "id": "08ebeea6e2046abd",
         "type": "tab",
-        "label": "Provisioning",
+        "label": "Provision",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "fa2fab6babb7f320",
+        "type": "tab",
+        "label": "Admin",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "84f8ac6cd53e32a0",
+        "type": "tab",
+        "label": "System",
         "disabled": false,
         "info": "",
         "env": []
@@ -173,7 +189,7 @@
     {
         "id": "01520deab0927305",
         "type": "ui_tab",
-        "name": "vCache Manager",
+        "name": "Monitor",
         "icon": "dashboard",
         "order": 1,
         "disabled": false,
@@ -204,11 +220,11 @@
     {
         "id": "2871cce383627674",
         "type": "ui_group",
-        "name": "Certificate Upload",
+        "name": "Certificate Update",
         "tab": "66f7a7293d482a39",
-        "order": 2,
+        "order": 5,
         "disp": true,
-        "width": 23,
+        "width": "23",
         "collapse": true,
         "className": ""
     },
@@ -223,7 +239,7 @@
     {
         "id": "94c965dfa02ebec9",
         "type": "ui_tab",
-        "name": "Provisioning",
+        "name": "Provision",
         "icon": "dashboard",
         "order": 4,
         "disabled": false,
@@ -243,7 +259,7 @@
     {
         "id": "66f7a7293d482a39",
         "type": "ui_tab",
-        "name": "Configuration",
+        "name": "Configure",
         "icon": "dashboard",
         "order": 3,
         "disabled": false,
@@ -305,11 +321,11 @@
     {
         "id": "3a88c0294b97b966",
         "type": "ui_group",
-        "name": "Config Upload",
+        "name": "Config Update",
         "tab": "66f7a7293d482a39",
-        "order": 2,
+        "order": 6,
         "disp": true,
-        "width": 23,
+        "width": "23",
         "collapse": true,
         "className": ""
     },
@@ -1054,146 +1070,6 @@
         "height": 1
     },
     {
-        "id": "0619199d957aec37",
-        "type": "ui_spacer",
-        "z": "974b87f71963749f",
-        "name": "spacer",
-        "group": "2871cce383627674",
-        "order": 1,
-        "width": 9,
-        "height": 1
-    },
-    {
-        "id": "c84c89a6e0732fec",
-        "type": "ui_spacer",
-        "z": "974b87f71963749f",
-        "name": "spacer",
-        "group": "2871cce383627674",
-        "order": 3,
-        "width": 9,
-        "height": 1
-    },
-    {
-        "id": "6a8b01d9f82043a3",
-        "type": "ui_spacer",
-        "z": "974b87f71963749f",
-        "name": "spacer",
-        "group": "2871cce383627674",
-        "order": 4,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "825e462a576277fe",
-        "type": "ui_spacer",
-        "z": "974b87f71963749f",
-        "name": "spacer",
-        "group": "2871cce383627674",
-        "order": 6,
-        "width": 4,
-        "height": 1
-    },
-    {
-        "id": "0c1bbb727de2a494",
-        "type": "ui_spacer",
-        "z": "974b87f71963749f",
-        "name": "spacer",
-        "group": "2871cce383627674",
-        "order": 8,
-        "width": 2,
-        "height": 1
-    },
-    {
-        "id": "de44d960794a24d0",
-        "type": "ui_spacer",
-        "z": "974b87f71963749f",
-        "name": "spacer",
-        "group": "2871cce383627674",
-        "order": 10,
-        "width": 3,
-        "height": 1
-    },
-    {
-        "id": "dc7850eb25124859",
-        "type": "ui_spacer",
-        "z": "974b87f71963749f",
-        "name": "spacer",
-        "group": "2871cce383627674",
-        "order": 11,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "ccd87afdfc2002e9",
-        "type": "ui_spacer",
-        "z": "974b87f71963749f",
-        "name": "spacer",
-        "group": "2871cce383627674",
-        "order": 13,
-        "width": 15,
-        "height": 1
-    },
-    {
-        "id": "418d1486e7844fbb",
-        "type": "ui_spacer",
-        "z": "974b87f71963749f",
-        "name": "spacer",
-        "group": "3a88c0294b97b966",
-        "order": 1,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "c2775681e549832c",
-        "type": "ui_spacer",
-        "z": "974b87f71963749f",
-        "name": "spacer",
-        "group": "3a88c0294b97b966",
-        "order": 3,
-        "width": 4,
-        "height": 1
-    },
-    {
-        "id": "c28ace13501108c6",
-        "type": "ui_spacer",
-        "z": "974b87f71963749f",
-        "name": "spacer",
-        "group": "3a88c0294b97b966",
-        "order": 5,
-        "width": 3,
-        "height": 1
-    },
-    {
-        "id": "2de64aad0a2ec2a9",
-        "type": "ui_spacer",
-        "z": "974b87f71963749f",
-        "name": "spacer",
-        "group": "3a88c0294b97b966",
-        "order": 7,
-        "width": 3,
-        "height": 1
-    },
-    {
-        "id": "3ce0c6fa75f6154f",
-        "type": "ui_spacer",
-        "z": "974b87f71963749f",
-        "name": "spacer",
-        "group": "3a88c0294b97b966",
-        "order": 8,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "5fd87816d526fe27",
-        "type": "ui_spacer",
-        "z": "974b87f71963749f",
-        "name": "spacer",
-        "group": "3a88c0294b97b966",
-        "order": 10,
-        "width": 15,
-        "height": 1
-    },
-    {
         "id": "70108d42c5062b9b",
         "type": "ui_spacer",
         "z": "974b87f71963749f",
@@ -1414,6 +1290,549 @@
         "height": 1
     },
     {
+        "id": "07348f93a10a8484",
+        "type": "ui_group",
+        "name": "Target Nodes",
+        "tab": "66f7a7293d482a39",
+        "order": 1,
+        "disp": true,
+        "width": "23",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "7ce2b6fdc15cf765",
+        "type": "ui_spacer",
+        "z": "11df8122a3459712",
+        "name": "spacer",
+        "group": "9f98ad8fa2960050",
+        "order": 1,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "65c6c850bd576382",
+        "type": "ui_spacer",
+        "z": "11df8122a3459712",
+        "name": "spacer",
+        "group": "9f98ad8fa2960050",
+        "order": 4,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "90adafdb577e8dde",
+        "type": "ui_spacer",
+        "z": "11df8122a3459712",
+        "name": "spacer",
+        "group": "07348f93a10a8484",
+        "order": 1,
+        "width": 15,
+        "height": 1
+    },
+    {
+        "id": "3c6f78894132ac02",
+        "type": "ui_spacer",
+        "z": "11df8122a3459712",
+        "name": "spacer",
+        "group": "07348f93a10a8484",
+        "order": 3,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "d1acf2e41d798b38",
+        "type": "ui_spacer",
+        "z": "11df8122a3459712",
+        "name": "spacer",
+        "group": "07348f93a10a8484",
+        "order": 4,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "eef5df1696d9d959",
+        "type": "ui_spacer",
+        "z": "11df8122a3459712",
+        "name": "spacer",
+        "group": "07348f93a10a8484",
+        "order": 6,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "1238b9d4101199e8",
+        "type": "ui_spacer",
+        "z": "11df8122a3459712",
+        "name": "spacer",
+        "group": "07348f93a10a8484",
+        "order": 8,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "d0c5d777968d1196",
+        "type": "ui_spacer",
+        "z": "11df8122a3459712",
+        "name": "spacer",
+        "group": "07348f93a10a8484",
+        "order": 9,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "338268c383197566",
+        "type": "ui_spacer",
+        "z": "11df8122a3459712",
+        "name": "spacer",
+        "group": "07348f93a10a8484",
+        "order": 10,
+        "width": 15,
+        "height": 1
+    },
+    {
+        "id": "c23a90ad1688099d",
+        "type": "ui_spacer",
+        "z": "11df8122a3459712",
+        "name": "spacer",
+        "group": "07348f93a10a8484",
+        "order": 11,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "f28462bc561732ab",
+        "type": "ui_spacer",
+        "z": "11df8122a3459712",
+        "name": "spacer",
+        "group": "07348f93a10a8484",
+        "order": 12,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "706f5289a8a6b05f",
+        "type": "ui_spacer",
+        "z": "11df8122a3459712",
+        "name": "spacer",
+        "group": "07348f93a10a8484",
+        "order": 14,
+        "width": 18,
+        "height": 1
+    },
+    {
+        "id": "8ef748bc68c3d068",
+        "type": "ui_spacer",
+        "z": "11df8122a3459712",
+        "name": "spacer",
+        "group": "2871cce383627674",
+        "order": 1,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "426dacf8d92973ec",
+        "type": "ui_spacer",
+        "z": "11df8122a3459712",
+        "name": "spacer",
+        "group": "2871cce383627674",
+        "order": 3,
+        "width": 17,
+        "height": 1
+    },
+    {
+        "id": "c114c28c47b5e13e",
+        "type": "ui_spacer",
+        "z": "11df8122a3459712",
+        "name": "spacer",
+        "group": "2871cce383627674",
+        "order": 4,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "c74676c792e908d4",
+        "type": "ui_spacer",
+        "z": "11df8122a3459712",
+        "name": "spacer",
+        "group": "2871cce383627674",
+        "order": 6,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "081f4ff6baf98a77",
+        "type": "ui_spacer",
+        "z": "11df8122a3459712",
+        "name": "spacer",
+        "group": "2871cce383627674",
+        "order": 8,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "8a9dc3a96e046070",
+        "type": "ui_spacer",
+        "z": "11df8122a3459712",
+        "name": "spacer",
+        "group": "2871cce383627674",
+        "order": 10,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "b01a1f3669be78d8",
+        "type": "ui_spacer",
+        "z": "11df8122a3459712",
+        "name": "spacer",
+        "group": "2871cce383627674",
+        "order": 11,
+        "width": 9,
+        "height": 1
+    },
+    {
+        "id": "5f2b75014a3c5baf",
+        "type": "ui_spacer",
+        "z": "11df8122a3459712",
+        "name": "spacer",
+        "group": "2871cce383627674",
+        "order": 13,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "db779e0c3e44117d",
+        "type": "ui_spacer",
+        "z": "11df8122a3459712",
+        "name": "spacer",
+        "group": "3a88c0294b97b966",
+        "order": 1,
+        "width": 23,
+        "height": 1
+    },
+    {
+        "id": "7eb6c0c86719b8d7",
+        "type": "ui_spacer",
+        "z": "11df8122a3459712",
+        "name": "spacer",
+        "group": "3a88c0294b97b966",
+        "order": 2,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "bd34aa3d8f0a35a6",
+        "type": "ui_spacer",
+        "z": "11df8122a3459712",
+        "name": "spacer",
+        "group": "3a88c0294b97b966",
+        "order": 4,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "3189a7f402d81b68",
+        "type": "ui_spacer",
+        "z": "11df8122a3459712",
+        "name": "spacer",
+        "group": "3a88c0294b97b966",
+        "order": 6,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "00fc31cc341007b7",
+        "type": "ui_spacer",
+        "z": "11df8122a3459712",
+        "name": "spacer",
+        "group": "3a88c0294b97b966",
+        "order": 8,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "03a72c28cb28bc11",
+        "type": "ui_spacer",
+        "z": "11df8122a3459712",
+        "name": "spacer",
+        "group": "3a88c0294b97b966",
+        "order": 9,
+        "width": 9,
+        "height": 1
+    },
+    {
+        "id": "c75b16cb6cb03f56",
+        "type": "ui_spacer",
+        "z": "11df8122a3459712",
+        "name": "spacer",
+        "group": "3a88c0294b97b966",
+        "order": 11,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "345b053b0ab90b64",
+        "type": "ui_tab",
+        "name": "Admin",
+        "icon": "dashboard",
+        "order": 5,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "a60c456977c4f620",
+        "type": "ui_group",
+        "name": "Local Management System",
+        "tab": "345b053b0ab90b64",
+        "order": 1,
+        "disp": true,
+        "width": "23",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "f1217b32bda055e4",
+        "type": "ui_group",
+        "name": "Certificate Update",
+        "tab": "345b053b0ab90b64",
+        "order": 2,
+        "disp": true,
+        "width": 23,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "3c055d5fa85d4ea9",
+        "type": "ui_group",
+        "name": "Config Update",
+        "tab": "345b053b0ab90b64",
+        "order": 3,
+        "disp": true,
+        "width": 23,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "e725a52e88c6c36a",
+        "type": "ui_spacer",
+        "z": "84f8ac6cd53e32a0",
+        "name": "spacer",
+        "group": "a60c456977c4f620",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "7ac82d3127fade40",
+        "type": "ui_spacer",
+        "z": "84f8ac6cd53e32a0",
+        "name": "spacer",
+        "group": "a60c456977c4f620",
+        "order": 7,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "b70b4e7e38bd9911",
+        "type": "ui_spacer",
+        "z": "84f8ac6cd53e32a0",
+        "name": "spacer",
+        "group": "a60c456977c4f620",
+        "order": 9,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "37207b65bdc2ec2b",
+        "type": "ui_spacer",
+        "z": "84f8ac6cd53e32a0",
+        "name": "spacer",
+        "group": "a60c456977c4f620",
+        "order": 14,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "ea4a8fbcf2c0db7c",
+        "type": "ui_spacer",
+        "z": "84f8ac6cd53e32a0",
+        "name": "spacer",
+        "group": "a60c456977c4f620",
+        "order": 19,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "deeffb8a53ebd434",
+        "type": "ui_spacer",
+        "z": "84f8ac6cd53e32a0",
+        "name": "spacer",
+        "group": "a60c456977c4f620",
+        "order": 21,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "fb13b1434bc2ad0b",
+        "type": "ui_spacer",
+        "z": "84f8ac6cd53e32a0",
+        "name": "spacer",
+        "group": "a60c456977c4f620",
+        "order": 23,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "98940111f5174f74",
+        "type": "ui_spacer",
+        "z": "84f8ac6cd53e32a0",
+        "name": "spacer",
+        "group": "f1217b32bda055e4",
+        "order": 1,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "756330bf91ce81a8",
+        "type": "ui_spacer",
+        "z": "84f8ac6cd53e32a0",
+        "name": "spacer",
+        "group": "f1217b32bda055e4",
+        "order": 3,
+        "width": 17,
+        "height": 1
+    },
+    {
+        "id": "096cd6e5f4ea8771",
+        "type": "ui_spacer",
+        "z": "84f8ac6cd53e32a0",
+        "name": "spacer",
+        "group": "f1217b32bda055e4",
+        "order": 4,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "b6b33d31693cff39",
+        "type": "ui_spacer",
+        "z": "84f8ac6cd53e32a0",
+        "name": "spacer",
+        "group": "f1217b32bda055e4",
+        "order": 6,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "dd193a17ad5380cb",
+        "type": "ui_spacer",
+        "z": "84f8ac6cd53e32a0",
+        "name": "spacer",
+        "group": "f1217b32bda055e4",
+        "order": 8,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "22cb2f1e070d04c5",
+        "type": "ui_spacer",
+        "z": "84f8ac6cd53e32a0",
+        "name": "spacer",
+        "group": "f1217b32bda055e4",
+        "order": 10,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "6125fd0f74533ad3",
+        "type": "ui_spacer",
+        "z": "84f8ac6cd53e32a0",
+        "name": "spacer",
+        "group": "f1217b32bda055e4",
+        "order": 11,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "cf09a538512c6a2a",
+        "type": "ui_spacer",
+        "z": "84f8ac6cd53e32a0",
+        "name": "spacer",
+        "group": "f1217b32bda055e4",
+        "order": 13,
+        "width": 9,
+        "height": 1
+    },
+    {
+        "id": "43d1239094e733ae",
+        "type": "ui_spacer",
+        "z": "84f8ac6cd53e32a0",
+        "name": "spacer",
+        "group": "3c055d5fa85d4ea9",
+        "order": 1,
+        "width": 23,
+        "height": 1
+    },
+    {
+        "id": "2ee42a134b4531f9",
+        "type": "ui_spacer",
+        "z": "84f8ac6cd53e32a0",
+        "name": "spacer",
+        "group": "3c055d5fa85d4ea9",
+        "order": 2,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "4beaa681d2fcb3ca",
+        "type": "ui_spacer",
+        "z": "84f8ac6cd53e32a0",
+        "name": "spacer",
+        "group": "3c055d5fa85d4ea9",
+        "order": 4,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "2b6223623c2023d6",
+        "type": "ui_spacer",
+        "z": "84f8ac6cd53e32a0",
+        "name": "spacer",
+        "group": "3c055d5fa85d4ea9",
+        "order": 6,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "14b2a7644f9792a1",
+        "type": "ui_spacer",
+        "z": "84f8ac6cd53e32a0",
+        "name": "spacer",
+        "group": "3c055d5fa85d4ea9",
+        "order": 8,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "ad089e237a1670ef",
+        "type": "ui_spacer",
+        "z": "84f8ac6cd53e32a0",
+        "name": "spacer",
+        "group": "3c055d5fa85d4ea9",
+        "order": 9,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "629c5f958276a4ef",
+        "type": "ui_spacer",
+        "z": "84f8ac6cd53e32a0",
+        "name": "spacer",
+        "group": "3c055d5fa85d4ea9",
+        "order": 11,
+        "width": 9,
+        "height": 1
+    },
+    {
         "id": "208379c0.81563e",
         "type": "exec",
         "z": "4f6b87ae.7d3bb",
@@ -1538,7 +1957,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 90,
-        "y": 120,
+        "y": 140,
         "wires": [
             [
                 "9c1cae2c8cd579f1",
@@ -1639,7 +2058,7 @@
         "type": "function",
         "z": "953eb73365d84859",
         "name": "node table manager",
-        "func": "///////////////\n// Functions //\n///////////////\n\nfunction byKey(obj) {\n  return function (item) {\n    return item.node === obj.node;\n  }\n}\n\nfunction byVal(val) {\n  return function (item) {\n    return item == val;\n  }\n}\n\n// Row object going to table\nfunction makeObj(obj) {\n  const colors = [\"#C8E6C8\", \"#64A064\", \"#1E461E\"]\n  const idx = obj.cache_eff_pct < 25 ? 0 : obj.cache_eff_pct < 50 ? 1 : 2\n  obj.displayEff = `<font color=\"${colors[idx]}\">${obj.cache_eff_pct}</font>`\n  return obj\n}\n\n// Parameterized array sort function\nfunction sorterFactory(obj) {\n  let { column, dir } = obj[0]\n  column = column === \"displayEff\" ? \"cache_eff_pct\" : column\n  return function sorter(itemA, itemB) {\n    const a = itemA[column];\n    const b = itemB[column];\n    const factor = dir === \"asc\" ? +1 : -1\n    if (isNaN(a)) {\n      return a < b ? -1 * factor : a > b ? +1 * factor : 0;\n    } else {\n      return (a - b) * factor;\n    }\n  }\n}\n\n// find the next available index of make a new one\nfunction findNextId(store) {\n  const list = [...store].sort((a, b) => a.id - b.id);\n\n  let nextId = 0;\n  for (const item of list) {\n    const id = item.id;\n    if (id == nextId) {\n      nextId++;\n    } else if (id > nextId) {\n      break;\n    }\n  }\n  return nextId;\n}\n\n// find the next available index of make a new one\nfunction findNextIdx(store) {\n  const list = [...store].sort((a, b) => a - b);\n\n  let nextVal = 0;\n  for (const val of list) {\n    if (val == nextVal) {\n      nextVal++;\n    } else if (val > nextVal) {\n      break;\n    }\n  }\n  return nextVal;\n}\n\n// Sort data store based on selected table sort\nfunction sortStore(sort, data) {\n  if (!sort || !sort.hasOwnProperty(\"sorters\")) {\n    node.error(\"sortStore: sort store error\");\n    return\n  }\n\n  data.sort(sorterFactory(sort.sorters));\n  var i;\n  for (i = 0; i < data.length; i++) {\n    if (i < sort.ids.length) {\n      data[i].id = sort.ids[i];\n    } else {\n      data[i].id = sort.ids[i] = findNextIdx(sort.ids);\n      node.warn(\"sortStore: new index not in nodeSort: \" + data[i].id)\n    }\n  }\n  if (sort.ids.length > i) {\n    let n = sort.ids.length - i;\n    node.warn(\"sortStore: trimming nodeSort: \" + n + \" (\" + i + \" to \" + (sort.ids.length-1) + \")\")\n    sort.ids.splice(-n, n);\n  }\n}\n/**\n * Set a key in Redis with an expiration time in seconds using a callback.\n * @param {string} key - The key to set.\n\n */\nasync function testDelKey(key) {\n  // Set the key with the specified value and expiration time\n  let exists = await redis.exists(key);\n  return exists;\n}\n\n////////////////\n// Processing //\n////////////////\nconst redis = global.get(\"redis\", \"file\");\nconst promisify = (fn) => {\n  return (...args) => {\n    return new Promise((resolve, reject) => {\n      fn(...args, function (err, res) {\n        if (err) {\n          return reject(err);\n        }\n        return resolve(res);\n      })\n    })\n  }\n}\nconst existsAsync = promisify(redis.exists).bind(redis);\n\nlet data_store = global.get(\"nodeData\", \"file\") || [];\n\nif (msg.refresh) {\n  return { payload: data_store };\n}\n\nlet sort_store = global.get(\"nodeSort\", \"file\") || [];\nif (!sort_store || !sort_store.hasOwnProperty(\"sorters\") || !sort_store.sorters.length) {\n  sort_store.sorters = [{\n    column: \"node\",\n    dir: \"asc\"\n  }];\n  sort_store.ids = [];\n}\n\nif (Array.isArray(msg.payload)) { // process table data update or add\n  for (let in_row of msg.payload) {\n    in_row = makeObj(in_row) // This is the row that is sent to table\n    let row_data = data_store.find(byKey(in_row));\n    if (!row_data) {\n      const key = \"vcache_node:\" + in_row.node + \":\" + in_row.uuid;\n      if (await testDelKey(\"delete:\" + key)) {\n        node.warn(\"table mgr: new node was deleted: waiting: \" + in_row.node);\n        redis.del(key, function (err, reply) {\n          if (err) {\n            node.error(\"Error deleting key(\" + reply + \"): \", err);\n          } else {\n            node.warn(\"table mgr: node deleted from redis: \" + key)\n          }\n        });\n      } else {\n        in_row.id = findNextId(data_store);\n        node.warn(\"table mgr: node not in data store: \" + in_row.node + \" new id: \" + in_row.id);\n        data_store.push(in_row) // Append to store\n      }\n    } else {\n      Object.assign(row_data, in_row) // Update store (row_data is an item of mutable array)\n    }\n  }\n  for (let row of data_store) {\n    let rindx = msg.payload.findIndex(byKey(row));\n    if (rindx < 0) {\n      node.warn(\"table mgr: data store entry not in payload: \" + row.node + \" (\" + row.id + \") - SHOULD DELETE\");\n      var del_msg = {};\n      del_msg.payload = {\n        command: \"deleteRow\",\n        arguments: [row.id],\n      };\n      node.send(del_msg);\n    }\n  }\n  sortStore(sort_store, data_store);\n  msg.payload = {\n    command: \"updateOrAddData\",\n    arguments: [data_store],\n  };\n} else { // process single message - delete\n  // When dashboard is reloaded or when flows start, display last table state\n  let row = msg.payload;\n  if (row.delete) {\n    let idx = data_store.findIndex(byKey(row));\n    if (idx >=0) {\n      data_store.splice(idx, 1);\n      let sidx = sort_store.ids.findIndex(byVal(row.id));\n      if (sidx>=0) {\n        sort_store.ids.splice(sidx, 1);\n      } else {\n        node.warn(\"table mgr: delete: id not found in sort store: \" + row.node + \" (\" + row.id + \"}\"); \n      }\n    } else {\n      node.warn(\"table mgr: delete: node not found in data store: \" + row.node + \" (\" + row.id + \"}\");\n    }\n    msg.payload = {\n      command: \"deleteRow\",\n      arguments: [row.id],\n    };\n  } else {\n    node.warn(\"table mgr: unrecognized message: \" + JSON.stringify(row));\n  }\n}\n\nglobal.set(\"nodeData\", data_store, \"file\");\nglobal.set(\"nodeSort\", sort_store, \"file\");\n\nreturn msg;\n\n",
+        "func": "///////////////\n// Functions //\n///////////////\n\nfunction byKey(obj) {\n  return function (item) {\n    return item.node === obj.node;\n  }\n}\n\nfunction byVal(val) {\n  return function (item) {\n    return item == val;\n  }\n}\n\n// Row object going to table\nfunction makeObj(obj) {\n  const colors = [\"#C8E6C8\", \"#64A064\", \"#1E461E\"]\n  const idx = obj.cache_eff_pct < 25 ? 0 : obj.cache_eff_pct < 50 ? 1 : 2\n  obj.displayEff = `<font color=\"${colors[idx]}\">${obj.cache_eff_pct}</font>`\n  return obj\n}\n\n// Parameterized array sort function\nfunction sorterFactory(obj) {\n  let { column, dir } = obj[0]\n  column = column === \"displayEff\" ? \"cache_eff_pct\" : column\n  return function sorter(itemA, itemB) {\n    const a = itemA[column];\n    const b = itemB[column];\n    const factor = dir === \"asc\" ? +1 : -1\n    if (isNaN(a)) {\n      return a < b ? -1 * factor : a > b ? +1 * factor : 0;\n    } else {\n      return (a - b) * factor;\n    }\n  }\n}\n\n// find the next available index of make a new one\nfunction findNextId(store) {\n  const list = [...store].sort((a, b) => a.id - b.id);\n\n  let nextId = 0;\n  for (const item of list) {\n    const id = item.id;\n    if (id == nextId) {\n      nextId++;\n    } else if (id > nextId) {\n      break;\n    }\n  }\n  return nextId;\n}\n\n// find the next available index of make a new one\nfunction findNextIdx(store) {\n  const list = [...store].sort((a, b) => a - b);\n\n  let nextVal = 0;\n  for (const val of list) {\n    if (val == nextVal) {\n      nextVal++;\n    } else if (val > nextVal) {\n      break;\n    }\n  }\n  return nextVal;\n}\n\n// Sort data store based on selected table sort\nfunction sortStore(sort, data) {\n  if (!sort || !sort.hasOwnProperty(\"sorters\")) {\n    node.error(\"sortStore: sort store error\");\n    return\n  }\n\n  data.sort(sorterFactory(sort.sorters));\n  var i;\n  for (i = 0; i < data.length; i++) {\n    if (i < sort.ids.length) {\n      data[i].id = sort.ids[i];\n    } else {\n      data[i].id = sort.ids[i] = findNextIdx(sort.ids);\n      node.warn(\"sortStore: new index not in nodeSort: \" + data[i].id)\n    }\n  }\n  if (sort.ids.length > i) {\n    let n = sort.ids.length - i;\n    node.warn(\"sortStore: trimming nodeSort: \" + n + \" (\" + i + \" to \" + (sort.ids.length-1) + \")\")\n    sort.ids.splice(-n, n);\n  }\n}\n/**\n * Set a key in Redis with an expiration time in seconds using a callback.\n * @param {string} key - The key to set.\n\n */\nasync function testDelKey(key) {\n  // Set the key with the specified value and expiration time\n  let exists = await redis.exists(key);\n  return exists;\n}\n\n////////////////\n// Processing //\n////////////////\nconst redis = global.get(\"redis\", \"file\");\nconst promisify = (fn) => {\n  return (...args) => {\n    return new Promise((resolve, reject) => {\n      fn(...args, function (err, res) {\n        if (err) {\n          return reject(err);\n        }\n        return resolve(res);\n      })\n    })\n  }\n}\nconst existsAsync = promisify(redis.exists).bind(redis);\n\nlet data_store = global.get(\"nodeData\", \"file\") || [];\n\nif (msg.refresh) {\n  return { payload: data_store };\n}\n\nlet sort_store = global.get(\"nodeSort\", \"file\") || [];\nif (!sort_store || !sort_store.hasOwnProperty(\"sorters\") || !sort_store.sorters.length) {\n  sort_store.sorters = [{\n    column: \"node\",\n    dir: \"asc\"\n  }];\n  sort_store.ids = [];\n}\n\nif (Array.isArray(msg.payload)) { // process table data update or add\n  for (let in_row of msg.payload) {\n    in_row = makeObj(in_row) // This is the row that is sent to table\n    let row_data = data_store.find(byKey(in_row));\n    if (!row_data) {\n      const key = \"vcache_node:\" + in_row.node + \":\" + in_row.uuid;\n      if (await testDelKey(\"delete:\" + key)) {\n        node.warn(\"table mgr: new node was deleted: waiting: \" + in_row.node);\n        redis.del(key, function (err, reply) {\n          if (err) {\n            node.error(\"Error deleting key(\" + reply + \"): \", err);\n          } else {\n            node.warn(\"table mgr: node deleted from redis: \" + key)\n          }\n        });\n      } else {\n        in_row.id = findNextId(data_store);\n        node.warn(\"table mgr: node not in data store: \" + in_row.node + \" new id: \" + in_row.id);\n        data_store.push(in_row) // Append to store\n      }\n    } else {\n      Object.assign(row_data, in_row) // Update store (row_data is an item of mutable array)\n    }\n  }\n  for (let i = data_store.length - 1; i >= 0; i--) {\n    let row = data_store[i];\n    let rindx = msg.payload.findIndex(byKey(row));\n    if (rindx < 0) {\n      node.warn(\"table mgr: data store entry not in payload: \" + row.node + \" (\" + row.id + \") - SHOULD DELETE\");\n      var del_msg = {};\n      del_msg.payload = {\n        command: \"deleteRow\",\n        arguments: [row.id],\n      };\n      node.send(del_msg);\n      data_store.splice(i, 1);\n    }\n  }\n  sortStore(sort_store, data_store);\n  msg.payload = {\n    command: \"updateOrAddData\",\n    arguments: [data_store],\n  };\n} else { // process single message - delete\n  // When dashboard is reloaded or when flows start, display last table state\n  let row = msg.payload;\n  if (row.delete) {\n    let idx = data_store.findIndex(byKey(row));\n    if (idx >=0) {\n      data_store.splice(idx, 1);\n      let sidx = sort_store.ids.findIndex(byVal(row.id));\n      if (sidx>=0) {\n        sort_store.ids.splice(sidx, 1);\n      } else {\n        node.warn(\"table mgr: delete: id not found in sort store: \" + row.node + \" (\" + row.id + \"}\"); \n      }\n    } else {\n      node.warn(\"table mgr: delete: node not found in data store: \" + row.node + \" (\" + row.id + \"}\");\n    }\n    msg.payload = {\n      command: \"deleteRow\",\n      arguments: [row.id],\n    };\n  } else {\n    node.warn(\"table mgr: unrecognized message: \" + JSON.stringify(row));\n  }\n}\n\nglobal.set(\"nodeData\", data_store, \"file\");\nglobal.set(\"nodeSort\", sort_store, \"file\");\n\nreturn msg;\n\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -1790,7 +2209,7 @@
         "type": "function",
         "z": "953eb73365d84859",
         "name": "node table data",
-        "func": "const redis = global.get('redis'); // Assumes Redis client is globally available\nconst now = Date.now();\nvar table = [];\n/**\n* 3 - CRIT, 2 - WARN, 1 - OK, 0 - UNKNOWN\n* @param {string | number | Date} stamp\n* @param {number} now\n* @param {number} cpu\n* @param {number} mem\n* @param {number} disk\n*/\nfunction calc_status(now, stamp, cpu, mem, disk) {\n    const stamp_ms = new Date(stamp).getTime();\n    const diff = (now - stamp_ms) / 1000;\n    if (diff > 30) return 0;\n    if (cpu > 90 || mem > 90 || disk > 90) return 3;\n    if (cpu > 80 || mem > 80 || disk > 80) return 2;\n    return 1;\n}\n\nfunction convertNum(val) {\n    if (/^\\d+$/.test(val)) {\n        val = parseInt(val);\n    } else if (/^\\d\\.\\d+$/.test(val)) {\n        val = parseFloat(val).toFixed(2);\n    } else if (/^\\d+\\.\\d+$/.test(val)) {\n        val = parseFloat(val).toFixed(1);\n    }\n    return val;\n}\n\nfunction convertHashNum(hash) {\n    if (typeof hash === 'object' || hash === null) {\n        for (const key in hash) {\n            hash[key] = convertNum(hash[key]);\n        }\n    }\n    return hash;\n}\n\n// Function to retrieve hash objects for each key\nfunction get_nodes(keys, callback) {\n    let count = 0;\n    keys.forEach(function (key) {\n        redis.hgetall(key, function (err, hash) {\n            if (err) {\n                callback(err);\n                return;\n            }\n            \n            hash.node = hash.id;\n            delete hash.id;\n\n            hash.status = calc_status(now, hash._stamp, hash.cpu_use_pct, hash.mem_use_pct, hash.disk_use_pct);\n            if (hash.status == 0) {\n                hash.cache_eff_pct = -1;\n                hash.cpu_use_pct = -1;\n                hash.mem_use_pct = -1;\n                hash.disk_use_pct = -1;\n                hash.client_bw = NaN;\n                hash.upstream_bw = NaN;\n                hash.users = NaN;\n                hash.client_sess = \"-\";\n                hash.uptime = \"-\";\n            } else {\n                hash = convertHashNum(hash);\n            }\n            table.push(hash);\n            count++;\n            if (count >= keys.length) {\n                callback(null,table);\n            }\n        });\n    });\n}\n\nfunction sort_arr(in_arr) {\n    const arr = [...in_arr].sort((a, b) => {\n        const A = a.node.toLowerCase();\n        const B = b.node.toLowerCase();\n        if (A < B) return -1;\n        if (A > B) return 1;\n        return 0;\n    });\n    return arr;\n}\n\n// Main function\nget_nodes(msg.payload, function (err, nodes) {\n    if (err) {\n        node.error(err);\n        return;\n    }\n\n    msg.payload = nodes;\n    node.send(msg);\n});",
+        "func": "const redis = global.get('redis'); // Assumes Redis client is globally available\nconst now = Date.now();\nvar table = [];\n/**\n* 3 - CRIT, 2 - WARN, 1 - OK, 0 - UNKNOWN\n* @param {string | number | Date} stamp\n* @param {number} now\n* @param {number} cpu\n* @param {number} mem\n* @param {number} disk\n*/\nfunction calc_status(now, stamp, cpu, mem, disk) {\n    const stamp_ms = new Date(stamp).getTime();\n    const diff = (now - stamp_ms) / 1000;\n    if (diff > 30) return 0;\n    if (cpu > 90 || mem > 90 || disk > 90) return 3;\n    if (cpu > 80 || mem > 80 || disk > 80) return 2;\n    return 1;\n}\n\nfunction convertNum(val) {\n    if (/^\\d+$/.test(val)) {\n        val = parseInt(val);\n    } else if (/^\\d\\.\\d+$/.test(val)) {\n        val = parseFloat(val).toFixed(2);\n    } else if (/^\\d+\\.\\d+$/.test(val)) {\n        val = parseFloat(val).toFixed(1);\n    }\n    return val;\n}\n\nfunction convertHashNum(hash) {\n    if (typeof hash === 'object' || hash === null) {\n        for (const key in hash) {\n            hash[key] = convertNum(hash[key]);\n        }\n    }\n    return hash;\n}\n\n// Function to retrieve hash objects for each key\nfunction get_nodes(keys, callback) {\n    let count = 0;\n    keys.forEach(function (key) {\n        redis.hgetall(key, function (err, hash) {\n            if (err) {\n                callback(err);\n                return;\n            }\n            \n            hash.node = hash.id;\n            delete hash.id;\n\n            hash.status = calc_status(now, hash._stamp, hash.cpu_use_pct, hash.mem_use_pct, hash.disk_use_pct);\n            if (hash.status == 0) {\n                hash.cache_eff_pct = -1;\n                hash.cpu_use_pct = -1;\n                hash.mem_use_pct = -1;\n                hash.disk_use_pct = -1;\n                hash.client_bw = NaN;\n                hash.upstream_bw = NaN;\n                hash.users = NaN;\n                hash.client_sess = \"-\";\n                hash.uptime = \"-\";\n            } else {\n                hash = convertHashNum(hash);\n            }\n            table.push(hash);\n            count++;\n            if (count >= keys.length) {\n                callback(null,table);\n            }\n        });\n    });\n}\n\n// Main function\nget_nodes(msg.payload, function (err, nodes) {\n    if (err) {\n        node.error(err);\n        return;\n    }\n\n    msg.payload = nodes;\n    node.send(msg);\n});",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -1825,6 +2244,16 @@
                 "id": "",
                 "icon": "",
                 "label": "Details",
+                "topic": "",
+                "payload": "",
+                "payloadType": "str",
+                "visible": true,
+                "enabled": true
+            },
+            {
+                "id": "",
+                "icon": "",
+                "label": "Configure",
                 "topic": "",
                 "payload": "",
                 "payloadType": "str",
@@ -1913,7 +2342,7 @@
         "field": "payload",
         "fieldType": "msg",
         "x": 510,
-        "y": 120,
+        "y": 140,
         "wires": [
             [
                 "51ab9183e6c445ee",
@@ -1933,7 +2362,7 @@
         "overwriteFile": "true",
         "encoding": "utf8",
         "x": 760,
-        "y": 120,
+        "y": 140,
         "wires": [
             []
         ]
@@ -1951,7 +2380,7 @@
         "write": true,
         "throwerror": false,
         "x": 300,
-        "y": 100,
+        "y": 120,
         "wires": [
             [
                 "ac931b189bcafeb4"
@@ -1974,7 +2403,7 @@
         "write": false,
         "throwerror": false,
         "x": 310,
-        "y": 140,
+        "y": 160,
         "wires": [
             [
                 "28e546a9e90ffb1f"
@@ -1994,7 +2423,7 @@
         "finalize": "",
         "libs": [],
         "x": 770,
-        "y": 160,
+        "y": 180,
         "wires": [
             []
         ]
@@ -2004,7 +2433,7 @@
         "type": "file in",
         "z": "953eb73365d84859",
         "name": "vcache.version",
-        "filename": "/var/run/vcache.version",
+        "filename": "/var/run/vcache-mgr.version",
         "filenameType": "str",
         "format": "utf8",
         "chunk": false,
@@ -2012,7 +2441,7 @@
         "encoding": "none",
         "allProps": false,
         "x": 520,
-        "y": 160,
+        "y": 180,
         "wires": [
             [
                 "05bef2ebd6355241"
@@ -2031,7 +2460,7 @@
         "finalize": "",
         "libs": [],
         "x": 760,
-        "y": 80,
+        "y": 100,
         "wires": [
             [
                 "c5ba86245edf6da7"
@@ -2051,7 +2480,7 @@
         "encoding": "none",
         "allProps": false,
         "x": 520,
-        "y": 80,
+        "y": 100,
         "wires": [
             [
                 "03470a367efdaf2e"
@@ -2068,7 +2497,7 @@
         "key": "vcache_mgr",
         "structtype": "hash",
         "x": 950,
-        "y": 80,
+        "y": 100,
         "wires": []
     },
     {
@@ -2076,7 +2505,7 @@
         "type": "function",
         "z": "953eb73365d84859",
         "name": "handle context menu",
-        "func": "msg.topic = msg.payload.toLowerCase();\nif (msg.topic == 'delete') {\n    const node_id = msg.sourceMsg.payload.row.node;\n    msg.payload = \"salt-key -y -d \" + node_id;\n} else if (msg.topic == 'accept') {\n    const node_id = msg.sourceMsg.payload.row.node;\n    msg.payload = \"salt-key -y -a \" + node_id;\n} else if (msg.topic == 'details') {\n    msg.payload = {\n        row: msg.sourceMsg.payload.row\n    }; \n} else {\n    msg.topic = null;\n}\nreturn msg;",
+        "func": "msg.topic = msg.payload.toLowerCase();\nconst node_id = msg.sourceMsg.payload.row.node;\n\nif (msg.topic == 'delete') {\n    msg.payload = \"salt-key -y -d \" + node_id;\n} else if (msg.topic == 'accept') {\n    msg.payload = \"salt-key -y -a \" + node_id;\n} else if (msg.topic == 'details') {\n    msg.payload = {\n        row: msg.sourceMsg.payload.row\n    }; \n} else if (msg.topic == 'configure') {\n    global.set(\"cfg_select_flt\", node_id)\n    msg.payload = node_id;\n} else {\n    msg.topic = null;\n}\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -2103,7 +2532,7 @@
         "oldrc": false,
         "name": "salt-key",
         "x": 940,
-        "y": 820,
+        "y": 780,
         "wires": [
             [],
             [],
@@ -2130,7 +2559,7 @@
             },
             {
                 "t": "eq",
-                "v": "accept",
+                "v": "configure",
                 "vt": "str"
             }
         ],
@@ -2148,7 +2577,7 @@
                 "dedbd31c5db0034f"
             ],
             [
-                "dedbd31c5db0034f"
+                "388fa95e75dc405b"
             ]
         ]
     },
@@ -2164,7 +2593,7 @@
         "finalize": "",
         "libs": [],
         "x": 950,
-        "y": 760,
+        "y": 720,
         "wires": [
             [
                 "c347b6521867b6fb"
@@ -2221,7 +2650,8 @@
         "y": 40,
         "wires": [
             [
-                "bb8e27c46b8ff662"
+                "bb8e27c46b8ff662",
+                "62f9394874b16107"
             ]
         ]
     },
@@ -2246,14 +2676,14 @@
         "id": "11dd7f1faf822026",
         "type": "function",
         "z": "953eb73365d84859",
-        "name": "row select",
+        "name": "row details",
         "func": "const row = msg.payload.row;\nglobal.set(\"nodeSelected\", row, \"file\");\nmsg.payload = \"Node Details\";\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 940,
+        "x": 950,
         "y": 660,
         "wires": [
             [
@@ -2267,8 +2697,8 @@
         "z": "953eb73365d84859",
         "name": "",
         "events": "all",
-        "x": 1100,
-        "y": 660,
+        "x": 1200,
+        "y": 720,
         "wires": [
             [
                 "67ba704c78cb72a4"
@@ -2310,7 +2740,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 100,
-        "y": 200,
+        "y": 220,
         "wires": [
             [
                 "e0c1f41c65d260dd"
@@ -2330,7 +2760,7 @@
         "oldrc": false,
         "name": "logrotate",
         "x": 280,
-        "y": 200,
+        "y": 220,
         "wires": [
             [],
             [],
@@ -2371,7 +2801,7 @@
         "oldrc": false,
         "name": "sync beacons",
         "x": 760,
-        "y": 340,
+        "y": 360,
         "wires": [
             [],
             [],
@@ -2391,7 +2821,7 @@
         "op": "string",
         "closer": "SIGTERM",
         "x": 750,
-        "y": 260,
+        "y": 280,
         "wires": [
             [
                 "a054a07f70411955"
@@ -2404,7 +2834,7 @@
         "id": "941674b482aa389f",
         "type": "function",
         "z": "953eb73365d84859",
-        "name": "restart mgr agent",
+        "name": "restart salt master",
         "func": "msg.kill =  true;\nmsg.start = true;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
@@ -2412,7 +2842,7 @@
         "finalize": "",
         "libs": [],
         "x": 530,
-        "y": 260,
+        "y": 280,
         "wires": [
             [
                 "20322f0058561fd5"
@@ -2441,7 +2871,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 100,
-        "y": 300,
+        "y": 320,
         "wires": [
             [
                 "d8c7f242128e6d08",
@@ -2470,7 +2900,7 @@
         "topic": "topic",
         "topicType": "msg",
         "x": 310,
-        "y": 260,
+        "y": 280,
         "wires": [
             [
                 "941674b482aa389f"
@@ -2498,7 +2928,7 @@
         "topic": "topic",
         "topicType": "msg",
         "x": 300,
-        "y": 340,
+        "y": 360,
         "wires": [
             [
                 "d6147e86664e5e9b"
@@ -2516,7 +2946,7 @@
         ],
         "uncaught": false,
         "x": 90,
-        "y": 380,
+        "y": 400,
         "wires": [
             [
                 "fd6fa0f7672dae01"
@@ -2541,7 +2971,7 @@
         "onceDelay": 0.1,
         "topic": "",
         "x": 510,
-        "y": 220,
+        "y": 240,
         "wires": [
             [
                 "20322f0058561fd5"
@@ -2566,7 +2996,7 @@
         "onceDelay": 0.1,
         "topic": "",
         "x": 510,
-        "y": 300,
+        "y": 320,
         "wires": [
             [
                 "20322f0058561fd5"
@@ -2586,8 +3016,57 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 1020,
-        "y": 260,
+        "y": 280,
         "wires": []
+    },
+    {
+        "id": "62f9394874b16107",
+        "type": "OS",
+        "z": "953eb73365d84859",
+        "name": "",
+        "x": 270,
+        "y": 80,
+        "wires": [
+            [
+                "b6e56177be3ad159"
+            ]
+        ]
+    },
+    {
+        "id": "b6e56177be3ad159",
+        "type": "function",
+        "z": "953eb73365d84859",
+        "name": "MGR_HOSTNAME",
+        "func": "global.set(\"MGR_HOSTNAME\", msg.payload.hostname);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "388fa95e75dc405b",
+        "type": "function",
+        "z": "953eb73365d84859",
+        "name": "row configure",
+        "func": "const row_id = msg.payload;\nglobal.set(\"cfg_select_flt\", row_id, \"file\");\nmsg.payload = \"Configure\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 960,
+        "y": 840,
+        "wires": [
+            [
+                "04aa2ba4afb084b6"
+            ]
+        ]
     },
     {
         "id": "50f9790b.49c718",
@@ -4065,7 +4544,7 @@
         "label": "certificate password",
         "tooltip": "pkcs12 password (blank if none)",
         "group": "2871cce383627674",
-        "order": 7,
+        "order": 5,
         "width": 5,
         "height": 1,
         "passthru": true,
@@ -4075,8 +4554,8 @@
         "sendOnBlur": true,
         "className": "",
         "topicType": "msg",
-        "x": 140,
-        "y": 160,
+        "x": 240,
+        "y": 400,
         "wires": [
             [
                 "cbb5141d17c16d5c"
@@ -4101,8 +4580,8 @@
         "sendOnBlur": true,
         "className": "",
         "topicType": "msg",
-        "x": 140,
-        "y": 120,
+        "x": 240,
+        "y": 360,
         "wires": [
             [
                 "a1954ee40501addf"
@@ -4120,8 +4599,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 380,
-        "y": 160,
+        "x": 480,
+        "y": 400,
         "wires": [
             []
         ]
@@ -4137,8 +4616,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 380,
-        "y": 120,
+        "x": 480,
+        "y": 360,
         "wires": [
             []
         ]
@@ -4163,8 +4642,8 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 150,
-        "y": 200,
+        "x": 250,
+        "y": 440,
         "wires": [
             [
                 "b6084da73970284e"
@@ -4182,8 +4661,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 380,
-        "y": 80,
+        "x": 480,
+        "y": 320,
         "wires": [
             []
         ]
@@ -4193,14 +4672,14 @@
         "type": "function",
         "z": "11df8122a3459712",
         "name": "publish cert",
-        "func": "const cert_file = global.get(\"CERT_FILE_CFG\");\nconst cert_tag = global.get(\"CERT_TAG_CFG\");\nconst cert_pw = global.get(\"CERT_PW_CFG\");\n\nif (cert_file && cert_tag) {\n    const cert_file_data = global.get(\"CERT_FILE_DATA_CFG\");\n    node.warn(\"cert len: \" + cert_file_data.length);\n    msg.payload = cert_file_data;\n    msg.filepath = \"/srv/salt/state/pki/\" + cert_file;\n    if (cert_pw && cert_pw.length) {\n        msg.command = \"salt \\\\* state.sls vcache.util.push_cert pillar='{\\\"cert_tag\\\": \" + cert_tag + \", \\\"cert_pw\\\": \" + cert_pw + \", \\\"cert_file\\\": \" + cert_file + \"}'\";\n    } else {\n        msg.command = \"salt \\\\* state.sls vcache.util.push_cert pillar='{\\\"cert_tag\\\": \" + cert_tag + \", \\\"cert_file\\\": \" + cert_file + \"}'\";\n    }\n} else {\n    msg.pathname = \"/dev/null\";\n    msg.command = \"false\";\n}\n\nreturn msg;",
+        "func": "const os = require('os');\nvar mgr_host = os.hostname();\n\nconst cert_file = global.get(\"CERT_FILE_CFG\");\nconst cert_tag = global.get(\"CERT_TAG_CFG\");\nconst cert_pw = global.get(\"CERT_PW_CFG\");\nvar selection = global.get(\"nodeSelected\");\nif (selection == '*') {\n    selection = selection.replace(/\\*/g, '\\\\*');\n}\nif (cert_file && cert_tag) {\n    const cert_file_data = global.get(\"CERT_FILE_DATA_CFG\");\n    node.warn(\"cert len: \" + cert_file_data.length);\n    msg.payload = cert_file_data;\n    msg.filepath = \"/srv/salt/state/pki/\" + cert_file;\n    if (selection == mgr_host) {\n        node.warning(\"set our own cert\");\n    } else {\n        if (cert_pw && cert_pw.length) {\n            msg.command = \"salt \" + selection + \" state.sls vcache.util.push_cert pillar='{\\\"cert_tag\\\": \" + cert_tag + \", \\\"cert_pw\\\": \" + cert_pw + \", \\\"cert_file\\\": \" + cert_file + \"}'\";\n        } else {\n            msg.command = \"salt \" + selection + \" state.sls vcache.util.push_cert pillar='{\\\"cert_tag\\\": \" + cert_tag + \", \\\"cert_file\\\": \" + cert_file + \"}'\";\n        }\n    }\n} else {\n    msg.pathname = \"/dev/null\";\n    msg.command = \"false\";\n}\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 370,
-        "y": 200,
+        "x": 470,
+        "y": 440,
         "wires": [
             [
                 "10b748e69b2169e6"
@@ -4219,8 +4698,8 @@
         "winHide": false,
         "oldrc": false,
         "name": "salt state run",
-        "x": 850,
-        "y": 260,
+        "x": 950,
+        "y": 500,
         "wires": [
             [],
             [],
@@ -4238,8 +4717,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 380,
-        "y": 300,
+        "x": 480,
+        "y": 540,
         "wires": [
             []
         ]
@@ -4250,7 +4729,7 @@
         "z": "11df8122a3459712",
         "name": "publish cfg",
         "group": "3a88c0294b97b966",
-        "order": 4,
+        "order": 7,
         "width": 4,
         "height": 1,
         "passthru": false,
@@ -4264,8 +4743,8 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 150,
-        "y": 340,
+        "x": 250,
+        "y": 580,
         "wires": [
             [
                 "147e6bfc2bfa57f1"
@@ -4283,8 +4762,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 370,
-        "y": 340,
+        "x": 470,
+        "y": 580,
         "wires": [
             [
                 "cf73e19013dcacb6"
@@ -4297,7 +4776,7 @@
         "z": "11df8122a3459712",
         "name": "download cfg",
         "group": "3a88c0294b97b966",
-        "order": 6,
+        "order": 3,
         "width": 4,
         "height": 1,
         "passthru": false,
@@ -4311,8 +4790,8 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 150,
-        "y": 380,
+        "x": 250,
+        "y": 620,
         "wires": [
             [
                 "bf39125bdea15489"
@@ -4330,8 +4809,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 370,
-        "y": 380,
+        "x": 470,
+        "y": 620,
         "wires": [
             [
                 "51ea5884e4306929"
@@ -4350,8 +4829,8 @@
         "sendError": false,
         "encoding": "none",
         "allProps": false,
-        "x": 580,
-        "y": 380,
+        "x": 680,
+        "y": 620,
         "wires": [
             [
                 "c989a0e565938742"
@@ -4369,8 +4848,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 780,
-        "y": 380,
+        "x": 880,
+        "y": 620,
         "wires": [
             [
                 "975b39d4159692ed"
@@ -4383,7 +4862,7 @@
         "z": "11df8122a3459712",
         "group": "3a88c0294b97b966",
         "name": "Upload Cfg",
-        "order": 2,
+        "order": 5,
         "width": 4,
         "height": 1,
         "format": "\n<body>\n<button class=\"md-raised md-button md-ink-ripple\" onclick=\"importCfgData()\">Choose File</button>    \n\n<script>\nlet cfgScope = scope;\n\nfunction importCfgData() {\n  let input = document.createElement('input');\n  input.type = 'file';\n  input.id = 'cfgUpload';\n  input.onchange = _ => {\n    let fReader = new FileReader();\n    fReader.readAsText(input.files[0]);\n    fReader.onloadend = function(event){\n    cfgScope.send({payload:event.target.result, filename: input.files[0].name});}\n  };\n  input.click();\n}\n</script>\n</body>\n",
@@ -4392,8 +4871,8 @@
         "resendOnRefresh": false,
         "templateScope": "local",
         "className": "",
-        "x": 150,
-        "y": 300,
+        "x": 250,
+        "y": 540,
         "wires": [
             [
                 "49d3e4fd0b19f902",
@@ -4407,7 +4886,7 @@
         "z": "11df8122a3459712",
         "group": "2871cce383627674",
         "name": "Upload Cert",
-        "order": 5,
+        "order": 7,
         "width": 4,
         "height": 1,
         "format": "\n<body>\n<button class=\"md-raised md-button md-ink-ripple\" onclick=\"importCertData()\">Choose File</button>    \n\n<script>\nlet certScope = scope;\n\nfunction importCertData() {\n  let input = document.createElement('input');\n  input.type = 'file';\n  input.id = 'uploadCert';\n  input.onchange = _ => {\n    let fReader = new FileReader();\n    fReader.readAsArrayBuffer(input.files[0]);\n    fReader.onloadend = function(event) {\n      certScope.send({payload:event.target.result, filename: input.files[0].name});\n    };\n  };\n  input.click();\n};\n</script>\n</body>\n",
@@ -4416,8 +4895,8 @@
         "resendOnRefresh": false,
         "templateScope": "local",
         "className": "",
-        "x": 150,
-        "y": 80,
+        "x": 250,
+        "y": 320,
         "wires": [
             [
                 "54cbb1e2bf06957a",
@@ -4431,7 +4910,7 @@
         "z": "11df8122a3459712",
         "group": "2871cce383627674",
         "order": 12,
-        "width": 7,
+        "width": 6,
         "height": 1,
         "name": "cert filename",
         "label": "",
@@ -4442,8 +4921,8 @@
         "font": "",
         "fontSize": 16,
         "color": "#000000",
-        "x": 370,
-        "y": 40,
+        "x": 470,
+        "y": 280,
         "wires": []
     },
     {
@@ -4451,8 +4930,8 @@
         "type": "ui_text",
         "z": "11df8122a3459712",
         "group": "3a88c0294b97b966",
-        "order": 9,
-        "width": 7,
+        "order": 10,
+        "width": 6,
         "height": 1,
         "name": "cfg filename",
         "label": "",
@@ -4463,8 +4942,8 @@
         "font": "",
         "fontSize": 16,
         "color": "#000000",
-        "x": 370,
-        "y": 260,
+        "x": 470,
+        "y": 500,
         "wires": []
     },
     {
@@ -4478,8 +4957,8 @@
         "createDir": true,
         "overwriteFile": "true",
         "encoding": "none",
-        "x": 590,
-        "y": 200,
+        "x": 690,
+        "y": 440,
         "wires": [
             [
                 "503c09fd27f1752c"
@@ -4497,8 +4976,8 @@
         "createDir": true,
         "overwriteFile": "true",
         "encoding": "utf8",
-        "x": 590,
-        "y": 340,
+        "x": 690,
+        "y": 580,
         "wires": [
             [
                 "503c09fd27f1752c"
@@ -4512,11 +4991,398 @@
         "name": "vcache.cfg",
         "filename": "vcache.cfg",
         "encoding": "none",
-        "x": 970,
-        "y": 380,
+        "x": 1070,
+        "y": 620,
         "wires": [],
         "inputLabels": [
             "file"
+        ]
+    },
+    {
+        "id": "2c4f8cd472a6408d",
+        "type": "ui_ui_control",
+        "z": "11df8122a3459712",
+        "name": "Refresh",
+        "events": "all",
+        "x": 100,
+        "y": 100,
+        "wires": [
+            [
+                "d6107a77f1dd3933"
+            ]
+        ]
+    },
+    {
+        "id": "bcaa1e503f2c37dc",
+        "type": "ui_text_input",
+        "z": "11df8122a3459712",
+        "name": "",
+        "label": "Selection Filter",
+        "tooltip": "",
+        "group": "07348f93a10a8484",
+        "order": 7,
+        "width": 6,
+        "height": 1,
+        "passthru": true,
+        "mode": "text",
+        "delay": "0",
+        "topic": "cfg_select_flt",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "global",
+        "x": 460,
+        "y": 160,
+        "wires": [
+            [
+                "e7566ddd855a6c39"
+            ]
+        ]
+    },
+    {
+        "id": "6a787b545c055172",
+        "type": "ui_table",
+        "z": "11df8122a3459712",
+        "group": "07348f93a10a8484",
+        "name": "Nodes",
+        "order": 2,
+        "width": 6,
+        "height": 3,
+        "columns": [
+            {
+                "field": "node",
+                "title": "Nodes",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 1,
+        "cts": true,
+        "x": 1050,
+        "y": 80,
+        "wires": [
+            [
+                "22938240a8f2b3b0"
+            ]
+        ]
+    },
+    {
+        "id": "e7566ddd855a6c39",
+        "type": "function",
+        "z": "11df8122a3459712",
+        "name": "select nodes",
+        "func": "var target = msg.payload;\nif (msg.manager || msg.payload === \"\") {\n    var mgr_host = global.get(\"MGR_HOSTNAME\");\n    msg.payload = mgr_host\n} else {\n    global.set(\"cfg_select_flt\", target);\n    target = target.replace(/\\*/g, '\\\\*');\n    msg.command = \"salt \" + target + \" --preview-target --output json\";\n}\n\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 160,
+        "wires": [
+            [
+                "1af429e23733ad97"
+            ]
+        ]
+    },
+    {
+        "id": "013a5c6ca5ac037a",
+        "type": "function",
+        "z": "11df8122a3459712",
+        "name": "set mgr flt",
+        "func": "msg.payload = \"\";\nmsg.manager = true;\nglobal.set(\"cfg_select_flt\",\"\");\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 260,
+        "y": 180,
+        "wires": [
+            [
+                "bcaa1e503f2c37dc"
+            ]
+        ]
+    },
+    {
+        "id": "79ab8b7c05db6547",
+        "type": "ui_template",
+        "z": "11df8122a3459712",
+        "group": "07348f93a10a8484",
+        "name": "",
+        "order": 13,
+        "width": 3,
+        "height": 1,
+        "format": "<div ng-bind-html=\"msg.payload\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 480,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7f14c039b681c6bb",
+        "type": "ui_button",
+        "z": "11df8122a3459712",
+        "name": "",
+        "group": "07348f93a10a8484",
+        "order": 5,
+        "width": 4,
+        "height": 1,
+        "passthru": true,
+        "label": "All Nodes",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "*",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 100,
+        "y": 220,
+        "wires": [
+            [
+                "c17c21e9b49759d6"
+            ]
+        ]
+    },
+    {
+        "id": "d6107a77f1dd3933",
+        "type": "function",
+        "z": "11df8122a3459712",
+        "name": "select flt default",
+        "func": "\nvar cur = global.get(\"cfg_select_flt\");\nif (typeof cur === 'undefined' || cur === null) {\n    cur = \"*\"\n}\nglobal.set(\"cfg_select_flt\", cur);\nmsg.payload = cur;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 100,
+        "wires": [
+            [
+                "bcaa1e503f2c37dc"
+            ]
+        ]
+    },
+    {
+        "id": "54983162ebc9d28b",
+        "type": "exec",
+        "z": "11df8122a3459712",
+        "command": "",
+        "addpay": "command",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "salt preview target",
+        "x": 710,
+        "y": 80,
+        "wires": [
+            [
+                "19ce1ff653d30446"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "1af429e23733ad97",
+        "type": "switch",
+        "z": "11df8122a3459712",
+        "name": "",
+        "property": "command",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nnull"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 890,
+        "y": 160,
+        "wires": [
+            [
+                "54983162ebc9d28b"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "19ce1ff653d30446",
+        "type": "function",
+        "z": "11df8122a3459712",
+        "name": "node tbl",
+        "func": "const rowSelect = \"function (e, row) { e.preventDefault(); this.send({payload: {node: row.getData().node, rowDblClick: true}});}\";\nvar table = [];\ntry {\n    // Parse the JSON string into a JavaScript object\n    var json = JSON.parse(msg.payload);\n    table = json.map((node) => { return {\"node\": node};})\n} catch (error) {\n    // Handle JSON parsing errors here\n    console.error(\"Error parsing JSON:\", error);\n}\nmsg.payload = table;\nmsg.ui_control = {\n    tabulator: {\n        rowDblClick: rowSelect,\n    }\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 900,
+        "y": 80,
+        "wires": [
+            [
+                "6a787b545c055172"
+            ]
+        ]
+    },
+    {
+        "id": "c17c21e9b49759d6",
+        "type": "function",
+        "z": "11df8122a3459712",
+        "name": "set * flt",
+        "func": "global.set(\"cfg_select_flt\", msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 250,
+        "y": 220,
+        "wires": [
+            [
+                "bcaa1e503f2c37dc"
+            ]
+        ]
+    },
+    {
+        "id": "f8d9696851e429f0",
+        "type": "inject",
+        "z": "11df8122a3459712",
+        "name": "init",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 40,
+        "wires": [
+            [
+                "d6107a77f1dd3933"
+            ]
+        ]
+    },
+    {
+        "id": "2498d124453c3e29",
+        "type": "ui_template",
+        "z": "11df8122a3459712",
+        "group": "",
+        "name": "",
+        "order": 8,
+        "width": 4,
+        "height": 1,
+        "format": "<div ng-bind-html=\"msg.payload\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 680,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4944f5a3f72fe95a",
+        "type": "function",
+        "z": "11df8122a3459712",
+        "name": "node selected",
+        "func": "msg.payload = msg.payload.node;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1140,
+        "y": 140,
+        "wires": [
+            [
+                "c7fb9e7134d44403"
+            ]
+        ]
+    },
+    {
+        "id": "b542c4f3688f3f35",
+        "type": "link in",
+        "z": "11df8122a3459712",
+        "name": "node select",
+        "links": [
+            "c7fb9e7134d44403"
+        ],
+        "x": 215,
+        "y": 140,
+        "wires": [
+            [
+                "bcaa1e503f2c37dc"
+            ]
+        ]
+    },
+    {
+        "id": "c7fb9e7134d44403",
+        "type": "link out",
+        "z": "11df8122a3459712",
+        "name": "node dbl click",
+        "mode": "link",
+        "links": [
+            "b542c4f3688f3f35"
+        ],
+        "x": 1315,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "22938240a8f2b3b0",
+        "type": "switch",
+        "z": "11df8122a3459712",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "hask",
+                "v": "rowDblClick",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1190,
+        "y": 80,
+        "wires": [
+            [
+                "4944f5a3f72fe95a"
+            ]
         ]
     },
     {
@@ -4632,7 +5498,7 @@
         "type": "function",
         "z": "08ebeea6e2046abd",
         "name": "pending minion data",
-        "func": "if (msg.payload.length === 0) return null;\nvar json = JSON.parse(msg.payload);\nvar table = json[\"minions_pre\"].map((node) => (\n    {\n        \"node\": node,\n    }\n));\nconst rowContext = \"function (e, row) { e.preventDefault(); console.log(\\\"Right clickt! \\\", row.getData());console.log(\\\"e event:\\\", e); this.send({payload: {row: row.getData(), clientX: e.clientX, clientY: e.clientY}});}\";\nmsg.ui_control = {\n    tabulator: {\n        rowContext: rowContext\n    }\n}\n    \nmsg.payload = table;\nreturn msg;",
+        "func": "if (msg.payload.length === 0) return null;\nvar json = JSON.parse(msg.payload);\nvar table = json[\"minions_pre\"].map((node) => (\n    {\n        \"node\": node,\n    }\n));\nconst rowContext = \"function (e, row) { e.preventDefault(); this.send({payload: {row: row.getData(), clientX: e.clientX, clientY: e.clientY}});}\";\nmsg.ui_control = {\n    tabulator: {\n        rowContext: rowContext\n    }\n}\n    \nmsg.payload = table;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -5161,6 +6027,1298 @@
                 "75933c13fdf23b68"
             ],
             [],
+            []
+        ]
+    },
+    {
+        "id": "edf12038240ce538",
+        "type": "ui_text_input",
+        "z": "fa2fab6babb7f320",
+        "name": "cert pw",
+        "label": "certificate password",
+        "tooltip": "pkcs12 password (blank if none)",
+        "group": "f1217b32bda055e4",
+        "order": 5,
+        "width": 5,
+        "height": 1,
+        "passthru": true,
+        "mode": "password",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 160,
+        "y": 240,
+        "wires": [
+            [
+                "ce2b8b621ad44eb7"
+            ]
+        ]
+    },
+    {
+        "id": "75280cfbd523d046",
+        "type": "ui_text_input",
+        "z": "fa2fab6babb7f320",
+        "name": "cert tag",
+        "label": "certificate tag",
+        "tooltip": "certificate tag name identifying the destination",
+        "group": "f1217b32bda055e4",
+        "order": 2,
+        "width": 5,
+        "height": 1,
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 160,
+        "y": 200,
+        "wires": [
+            [
+                "4912e7bd5cb811a1"
+            ]
+        ]
+    },
+    {
+        "id": "ce2b8b621ad44eb7",
+        "type": "function",
+        "z": "fa2fab6babb7f320",
+        "name": "set cert pw cfg",
+        "func": "global.set('CERT_PW_CFG', msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4912e7bd5cb811a1",
+        "type": "function",
+        "z": "fa2fab6babb7f320",
+        "name": "set cert tag cfg",
+        "func": "global.set('CERT_TAG_CFG', msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c090e42cab3b307e",
+        "type": "ui_button",
+        "z": "fa2fab6babb7f320",
+        "name": "publish cert",
+        "group": "f1217b32bda055e4",
+        "order": 9,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "Publish Certificate",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 170,
+        "y": 280,
+        "wires": [
+            [
+                "67491a9b8e890714"
+            ]
+        ]
+    },
+    {
+        "id": "fa21d47ff0471d7b",
+        "type": "function",
+        "z": "fa2fab6babb7f320",
+        "name": "set cert file cfg",
+        "func": "\nglobal.set('CERT_FILE_CFG', msg.filename);\nglobal.set('CERT_FILE_DATA_CFG', msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "67491a9b8e890714",
+        "type": "function",
+        "z": "fa2fab6babb7f320",
+        "name": "publish cert",
+        "func": "const os = require('os');\nvar mgr_host = os.hostname();\n\nconst cert_file = global.get(\"CERT_FILE_CFG\");\nconst cert_tag = global.get(\"CERT_TAG_CFG\");\nconst cert_pw = global.get(\"CERT_PW_CFG\");\nvar selection = global.get(\"nodeSelected\");\nif (selection == '*') {\n    selection = selection.replace(/\\*/g, '\\\\*');\n}\nif (cert_file && cert_tag) {\n    const cert_file_data = global.get(\"CERT_FILE_DATA_CFG\");\n    node.warn(\"cert len: \" + cert_file_data.length);\n    msg.payload = cert_file_data;\n    msg.filepath = \"/srv/salt/state/pki/\" + cert_file;\n    if (selection == mgr_host) {\n        node.warning(\"set our own cert\");\n    } else {\n        if (cert_pw && cert_pw.length) {\n            msg.command = \"salt \" + selection + \" state.sls vcache.util.push_cert pillar='{\\\"cert_tag\\\": \" + cert_tag + \", \\\"cert_pw\\\": \" + cert_pw + \", \\\"cert_file\\\": \" + cert_file + \"}'\";\n        } else {\n            msg.command = \"salt \" + selection + \" state.sls vcache.util.push_cert pillar='{\\\"cert_tag\\\": \" + cert_tag + \", \\\"cert_file\\\": \" + cert_file + \"}'\";\n        }\n    }\n} else {\n    msg.pathname = \"/dev/null\";\n    msg.command = \"false\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 280,
+        "wires": [
+            [
+                "a60c14566eaf3f35"
+            ]
+        ]
+    },
+    {
+        "id": "7753121e1c1cef2b",
+        "type": "exec",
+        "z": "fa2fab6babb7f320",
+        "command": "",
+        "addpay": "command",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "salt state run",
+        "x": 870,
+        "y": 340,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "ea0d9d08c6b0db14",
+        "type": "function",
+        "z": "fa2fab6babb7f320",
+        "name": "set cfg file cfg",
+        "func": "\n\nglobal.set('CFG_FILE_CFG', msg.filename);\nglobal.set('CFG_FILE_DATA_CFG', msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e55d101fba2d2acc",
+        "type": "ui_button",
+        "z": "fa2fab6babb7f320",
+        "name": "publish cfg",
+        "group": "3c055d5fa85d4ea9",
+        "order": 7,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "Publish Config",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 170,
+        "y": 420,
+        "wires": [
+            [
+                "ed61a546e6ac37b9"
+            ]
+        ]
+    },
+    {
+        "id": "ed61a546e6ac37b9",
+        "type": "function",
+        "z": "fa2fab6babb7f320",
+        "name": "publish cfg",
+        "func": "const cfg_file = global.get(\"CFG_FILE_CFG\");\n\nif (cfg_file) {\n    const cfg_file_data = global.get(\"CFG_FILE_DATA_CFG\");\n    msg.payload = cfg_file_data;\n    msg.pathname = \"/srv/salt/state/tmp/\" + cfg_file;\n    msg.command = \"salt \\\\* state.sls vcache.util.push_cfg pillar='{\\\"cfg_file\\\": \" + cfg_file + \"}'\";\n} else {\n    msg.command = \"false\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 420,
+        "wires": [
+            [
+                "93a95e7e7a387a43"
+            ]
+        ]
+    },
+    {
+        "id": "0a75e5d612a53f16",
+        "type": "ui_button",
+        "z": "fa2fab6babb7f320",
+        "name": "download cfg",
+        "group": "3c055d5fa85d4ea9",
+        "order": 3,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "Download Config",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 170,
+        "y": 460,
+        "wires": [
+            [
+                "5ffe6046f776a8af"
+            ]
+        ]
+    },
+    {
+        "id": "5ffe6046f776a8af",
+        "type": "function",
+        "z": "fa2fab6babb7f320",
+        "name": "download cfg",
+        "func": "msg.filename = \"vcache.cfg\";\nmsg.payload = \"/etc/vcache-mgr/vcache.cfg\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 460,
+        "wires": [
+            [
+                "8be836b205d695ba"
+            ]
+        ]
+    },
+    {
+        "id": "8be836b205d695ba",
+        "type": "file in",
+        "z": "fa2fab6babb7f320",
+        "name": "",
+        "filename": "payload",
+        "filenameType": "msg",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 600,
+        "y": 460,
+        "wires": [
+            [
+                "a9195db12f26e0c3"
+            ]
+        ]
+    },
+    {
+        "id": "a9195db12f26e0c3",
+        "type": "function",
+        "z": "fa2fab6babb7f320",
+        "name": "function 2",
+        "func": "msg.filename  = \"vcache.cfg\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 800,
+        "y": 460,
+        "wires": [
+            [
+                "f7448adc9e63ca5d"
+            ]
+        ]
+    },
+    {
+        "id": "c5bd6dcde8356531",
+        "type": "ui_template",
+        "z": "fa2fab6babb7f320",
+        "group": "3c055d5fa85d4ea9",
+        "name": "Upload Cfg",
+        "order": 5,
+        "width": 4,
+        "height": 1,
+        "format": "\n<body>\n<button class=\"md-raised md-button md-ink-ripple\" onclick=\"importCfgData()\">Choose File</button>    \n\n<script>\nlet cfgScope = scope;\n\nfunction importCfgData() {\n  let input = document.createElement('input');\n  input.type = 'file';\n  input.id = 'cfgUpload';\n  input.onchange = _ => {\n    let fReader = new FileReader();\n    fReader.readAsText(input.files[0]);\n    fReader.onloadend = function(event){\n    cfgScope.send({payload:event.target.result, filename: input.files[0].name});}\n  };\n  input.click();\n}\n</script>\n</body>\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 170,
+        "y": 380,
+        "wires": [
+            [
+                "ea0d9d08c6b0db14",
+                "ed4d6cd6216494bd"
+            ]
+        ]
+    },
+    {
+        "id": "d4e9863c3efb6eda",
+        "type": "ui_template",
+        "z": "fa2fab6babb7f320",
+        "group": "f1217b32bda055e4",
+        "name": "Upload Cert",
+        "order": 7,
+        "width": 4,
+        "height": 1,
+        "format": "\n<body>\n<button class=\"md-raised md-button md-ink-ripple\" onclick=\"importCertData()\">Choose File</button>    \n\n<script>\nlet certScope = scope;\n\nfunction importCertData() {\n  let input = document.createElement('input');\n  input.type = 'file';\n  input.id = 'uploadCert';\n  input.onchange = _ => {\n    let fReader = new FileReader();\n    fReader.readAsArrayBuffer(input.files[0]);\n    fReader.onloadend = function(event) {\n      certScope.send({payload:event.target.result, filename: input.files[0].name});\n    };\n  };\n  input.click();\n};\n</script>\n</body>\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 170,
+        "y": 160,
+        "wires": [
+            [
+                "fa21d47ff0471d7b",
+                "a710bd7708840b83"
+            ]
+        ]
+    },
+    {
+        "id": "a710bd7708840b83",
+        "type": "ui_text",
+        "z": "fa2fab6babb7f320",
+        "group": "f1217b32bda055e4",
+        "order": 12,
+        "width": 6,
+        "height": 1,
+        "name": "cert filename",
+        "label": "",
+        "format": "{{msg.filename}}",
+        "layout": "row-left",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 390,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "ed4d6cd6216494bd",
+        "type": "ui_text",
+        "z": "fa2fab6babb7f320",
+        "group": "3c055d5fa85d4ea9",
+        "order": 10,
+        "width": 6,
+        "height": 1,
+        "name": "cfg filename",
+        "label": "",
+        "format": "{{msg.filename}}",
+        "layout": "row-left",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 390,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "a60c14566eaf3f35",
+        "type": "file",
+        "z": "fa2fab6babb7f320",
+        "name": "cert_file.pfx",
+        "filename": "filepath",
+        "filenameType": "msg",
+        "appendNewline": false,
+        "createDir": true,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 610,
+        "y": 280,
+        "wires": [
+            [
+                "7753121e1c1cef2b"
+            ]
+        ]
+    },
+    {
+        "id": "93a95e7e7a387a43",
+        "type": "file",
+        "z": "fa2fab6babb7f320",
+        "name": "cfg_file.cfg",
+        "filename": "pathname",
+        "filenameType": "msg",
+        "appendNewline": false,
+        "createDir": true,
+        "overwriteFile": "true",
+        "encoding": "utf8",
+        "x": 610,
+        "y": 420,
+        "wires": [
+            [
+                "7753121e1c1cef2b"
+            ]
+        ]
+    },
+    {
+        "id": "f7448adc9e63ca5d",
+        "type": "downloadfile",
+        "z": "fa2fab6babb7f320",
+        "name": "vcache.cfg",
+        "filename": "vcache.cfg",
+        "encoding": "none",
+        "x": 990,
+        "y": 460,
+        "wires": [],
+        "inputLabels": [
+            "file"
+        ]
+    },
+    {
+        "id": "6bdfab9a6550cc9d",
+        "type": "Drives",
+        "z": "84f8ac6cd53e32a0",
+        "name": "",
+        "x": 230,
+        "y": 720,
+        "wires": [
+            [
+                "c6261c303b3e80e5",
+                "918db9a64c2d29e3",
+                "a1144232948ffef6"
+            ]
+        ]
+    },
+    {
+        "id": "e8cb0c3e58e999ca",
+        "type": "Memory",
+        "z": "84f8ac6cd53e32a0",
+        "name": "Memory",
+        "scale": "Byte",
+        "x": 240,
+        "y": 540,
+        "wires": [
+            [
+                "c392722973e17a04",
+                "d014f559d758d559",
+                "425ea84420b08482"
+            ]
+        ]
+    },
+    {
+        "id": "6ab7e1e9f4227464",
+        "type": "function",
+        "z": "84f8ac6cd53e32a0",
+        "name": " uptime",
+        "func": " var totalNumberOfSeconds = msg.payload.uptime;\n var days = parseInt( totalNumberOfSeconds / 86400 );\n var hours = parseInt (( totalNumberOfSeconds - ( days * 86400 )) / 3600  );\n var minutes = parseInt ((totalNumberOfSeconds - ((hours * 3600)+( days * 86400 ))) / 60 );\n var seconds = parseInt(totalNumberOfSeconds - ((hours * 3600) + (minutes * 60)+( days * 86400 )));\n var result = (days < 10 ? \"0\" + days : days) + \":\" + (hours < 10 ? \"0\" + hours : hours) + \":\" + (minutes < 10 ? \"0\" + minutes : minutes) + \":\" + (seconds  < 10 ? \"0\" + seconds : seconds);\n msg.payload = result;\n msg.topic = \"uptime\";\n return msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 510,
+        "y": 120,
+        "wires": [
+            [
+                "eabc6c0589a35e5b"
+            ]
+        ]
+    },
+    {
+        "id": "eabc6c0589a35e5b",
+        "type": "ui_text",
+        "z": "84f8ac6cd53e32a0",
+        "group": "a60c456977c4f620",
+        "order": 6,
+        "width": 7,
+        "height": 1,
+        "name": "",
+        "label": "UpTime: ",
+        "format": "<font size=3>{{msg.payload}}</font>",
+        "layout": "row-left",
+        "className": "def",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 880,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "ead07793eb15dece",
+        "type": "cpu",
+        "z": "84f8ac6cd53e32a0",
+        "name": "",
+        "msgCore": false,
+        "msgOverall": true,
+        "msgArray": false,
+        "msgTemp": false,
+        "x": 250,
+        "y": 380,
+        "wires": [
+            [
+                "056724b158ac72cb",
+                "d55219de949686a9"
+            ]
+        ]
+    },
+    {
+        "id": "9b79c1ad7cdb9add",
+        "type": "ui_chart",
+        "z": "84f8ac6cd53e32a0",
+        "name": "CPU Historic",
+        "group": "a60c456977c4f620",
+        "order": 16,
+        "width": 5,
+        "height": 3,
+        "label": "",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "",
+        "removeOlder": "3",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 890,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "425ea84420b08482",
+        "type": "ui_gauge",
+        "z": "84f8ac6cd53e32a0",
+        "name": "",
+        "group": "a60c456977c4f620",
+        "order": 3,
+        "width": 5,
+        "height": 3,
+        "gtype": "gage",
+        "title": "RAM",
+        "label": "",
+        "format": "{{msg.payload.memusage | number:1}}%",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "80",
+        "seg2": "90",
+        "diff": false,
+        "className": "def",
+        "x": 870,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "66ed6f7fa80a65e4",
+        "type": "ui_text",
+        "z": "84f8ac6cd53e32a0",
+        "group": "a60c456977c4f620",
+        "order": 8,
+        "width": 7,
+        "height": 1,
+        "name": "",
+        "label": "Version: ",
+        "format": "<font size=3>{{msg.payload}}</font>",
+        "layout": "row-left",
+        "className": "def",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 880,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "3e948c5674376fdf",
+        "type": "ui_text",
+        "z": "84f8ac6cd53e32a0",
+        "group": "a60c456977c4f620",
+        "order": 20,
+        "width": 7,
+        "height": 1,
+        "name": "",
+        "label": "Memory:  ",
+        "format": "<font size=3>{{msg.value}}</font>",
+        "layout": "row-left",
+        "className": "def",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 880,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "c392722973e17a04",
+        "type": "function",
+        "z": "84f8ac6cd53e32a0",
+        "name": "mem total",
+        "func": "function formatBytes(bytes, decimals) {\n    if (bytes === 0) return '0 Byte';\n    var k = 1024; // or 1024 for binary\n    var dm = decimals + 1 || 2;\n    var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];\n    var i = Math.floor(Math.log(bytes) / Math.log(k));\n    return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];\n}\nmsg.value = formatBytes(msg.payload.totalmem);\nmsg.payload = msg.payload.totalmem/(1024*1024*1024);\nmsg.topic = \"mem_total\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 500,
+        "wires": [
+            [
+                "3e948c5674376fdf"
+            ]
+        ]
+    },
+    {
+        "id": "c6261c303b3e80e5",
+        "type": "function",
+        "z": "84f8ac6cd53e32a0",
+        "name": "disk use %",
+        "func": "msg.payload = msg.payload[0].capacity * 100.0;\nmsg.payload = msg.payload.toFixed(2);\nmsg.topic = \"disk_use_pct\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 700,
+        "wires": [
+            [
+                "158fc618c1825f92"
+            ]
+        ]
+    },
+    {
+        "id": "158fc618c1825f92",
+        "type": "ui_gauge",
+        "z": "84f8ac6cd53e32a0",
+        "name": "",
+        "group": "a60c456977c4f620",
+        "order": 4,
+        "width": 5,
+        "height": 3,
+        "gtype": "gage",
+        "title": "HD",
+        "label": "",
+        "format": "{{value | number:1}}%",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "80",
+        "seg2": "90",
+        "diff": false,
+        "className": "def",
+        "x": 870,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "d014f559d758d559",
+        "type": "function",
+        "z": "84f8ac6cd53e32a0",
+        "name": "mem used",
+        "func": "function formatBytes(bytes, decimals) {\n    if (bytes === 0) return '0 Byte';\n    var k = 1024; // or 1024 for binary\n    var dm = decimals + 1 || 2;\n    var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];\n    var i = Math.floor(Math.log(bytes) / Math.log(k));\n    return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];\n}\n\nmsg.value = formatBytes(msg.payload.totalmem - msg.payload.freemem);\nmsg.payload = (msg.payload.totalmem - msg.payload.freemem)/(1024*1024*1024);\nmsg.topic = \"mem_use\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 620,
+        "wires": [
+            [
+                "36d3416bac33cefe",
+                "d6de0e90e9a74a19"
+            ]
+        ]
+    },
+    {
+        "id": "36d3416bac33cefe",
+        "type": "ui_text",
+        "z": "84f8ac6cd53e32a0",
+        "group": "a60c456977c4f620",
+        "order": 13,
+        "width": 5,
+        "height": 1,
+        "name": "",
+        "label": "Used: ",
+        "format": "{{msg.value}}",
+        "layout": "row-center",
+        "className": "def",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 870,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "7fa6bfdcbf3bde4d",
+        "type": "ui_text",
+        "z": "84f8ac6cd53e32a0",
+        "group": "a60c456977c4f620",
+        "order": 11,
+        "width": 5,
+        "height": 1,
+        "name": "",
+        "label": "Load: ",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "className": "def",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 870,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "4d664f72d4e142d2",
+        "type": "function",
+        "z": "84f8ac6cd53e32a0",
+        "name": "load avgs",
+        "func": "msg.payload = msg.payload.loadavg.join(', ');\nmsg.topic = \"cpu_load_avg\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 440,
+        "wires": [
+            [
+                "7fa6bfdcbf3bde4d"
+            ]
+        ]
+    },
+    {
+        "id": "6073c7e107c31dfc",
+        "type": "Loadavg",
+        "z": "84f8ac6cd53e32a0",
+        "name": "",
+        "x": 240,
+        "y": 440,
+        "wires": [
+            [
+                "4d664f72d4e142d2"
+            ]
+        ]
+    },
+    {
+        "id": "3fdec46b5a0d395d",
+        "type": "ui_gauge",
+        "z": "84f8ac6cd53e32a0",
+        "name": "CPU use",
+        "group": "a60c456977c4f620",
+        "order": 2,
+        "width": 5,
+        "height": 3,
+        "gtype": "gage",
+        "title": "CPU",
+        "label": "",
+        "format": "{{value | number:1}}%",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "80",
+        "seg2": "90",
+        "diff": false,
+        "className": "def",
+        "x": 880,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "f37e026c3700c25d",
+        "type": "CPUs",
+        "z": "84f8ac6cd53e32a0",
+        "name": "",
+        "x": 230,
+        "y": 300,
+        "wires": [
+            [
+                "d98f5873c939f44e",
+                "9f248d8562d51d1e"
+            ]
+        ]
+    },
+    {
+        "id": "d98f5873c939f44e",
+        "type": "function",
+        "z": "84f8ac6cd53e32a0",
+        "name": "cpu model",
+        "func": "msg.payload = msg.payload.cpus[0].model.replace(/^Intel[^ ]*\\s+[^ ]* /i,\"\");\nmsg.topic = \"cpu_model\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 280,
+        "wires": [
+            [
+                "05662d375965b2f6"
+            ]
+        ]
+    },
+    {
+        "id": "9f248d8562d51d1e",
+        "type": "function",
+        "z": "84f8ac6cd53e32a0",
+        "name": "cpu cores",
+        "func": "msg.payload = msg.payload.cpus.length;\nmsg.topic = \"cpu_cores\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 320,
+        "wires": [
+            [
+                "2536e60a7b6b218d"
+            ]
+        ]
+    },
+    {
+        "id": "05662d375965b2f6",
+        "type": "ui_text",
+        "z": "84f8ac6cd53e32a0",
+        "group": "a60c456977c4f620",
+        "order": 10,
+        "width": 7,
+        "height": 1,
+        "name": "",
+        "label": "CPU: ",
+        "format": "<font size=3>{{msg.payload}}</font>",
+        "layout": "row-left",
+        "className": "def",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 870,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "2536e60a7b6b218d",
+        "type": "ui_text",
+        "z": "84f8ac6cd53e32a0",
+        "group": "a60c456977c4f620",
+        "order": 15,
+        "width": 7,
+        "height": 1,
+        "name": "",
+        "label": "Cores: ",
+        "format": "<font size=3>{{msg.payload}}</font>",
+        "layout": "row-left",
+        "className": "def",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 870,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "77101608c8a741d0",
+        "type": "ui_text",
+        "z": "84f8ac6cd53e32a0",
+        "group": "a60c456977c4f620",
+        "order": 22,
+        "width": 7,
+        "height": 1,
+        "name": "",
+        "label": "Disk: ",
+        "format": "<font size=3>{{msg.value}}</font>",
+        "layout": "row-left",
+        "className": "def",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 870,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "a24bda0decd7715b",
+        "type": "ui_text",
+        "z": "84f8ac6cd53e32a0",
+        "group": "a60c456977c4f620",
+        "order": 12,
+        "width": 5,
+        "height": 1,
+        "name": "",
+        "label": "Used: ",
+        "format": "{{msg.value}}",
+        "layout": "row-center",
+        "className": "def",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 870,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "918db9a64c2d29e3",
+        "type": "function",
+        "z": "84f8ac6cd53e32a0",
+        "name": "disk used",
+        "func": "function formatBytes(bytes, decimals) {\n    if (bytes === 0) return '0 Byte';\n    var k = 1024; // or 1024 for binary\n    var dm = decimals + 1 || 2;\n    var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];\n    var i = Math.floor(Math.log(bytes) / Math.log(k));\n    return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];\n}\n\nmsg.value = formatBytes(msg.payload[0].used);\nmsg.payload = msg.payload[0].used/(1024*1024);\nmsg.topic = \"disk_use\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 780,
+        "wires": [
+            [
+                "a24bda0decd7715b",
+                "411b1173ce5f2e46"
+            ]
+        ]
+    },
+    {
+        "id": "a1144232948ffef6",
+        "type": "function",
+        "z": "84f8ac6cd53e32a0",
+        "name": "disk size",
+        "func": "function formatBytes(bytes, decimals) {\n    if (bytes === 0) return '0 Byte';\n    var k = 1024; // or 1024 for binary\n    var dm = decimals + 1 || 2;\n    var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];\n    var i = Math.floor(Math.log(bytes) / Math.log(k));\n    return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];\n}\nmsg.value = formatBytes(msg.payload[0].size)\nmsg.payload = msg.payload[0].size\nmsg.topic = \"disk_total\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 660,
+        "wires": [
+            [
+                "77101608c8a741d0"
+            ]
+        ]
+    },
+    {
+        "id": "fd0a6cc27781ff92",
+        "type": "ui_text",
+        "z": "84f8ac6cd53e32a0",
+        "group": "a60c456977c4f620",
+        "order": 1,
+        "width": 7,
+        "height": 1,
+        "name": "",
+        "label": "Host: ",
+        "format": "<font size=3>{{msg.payload.hostname}}</font>",
+        "layout": "row-left",
+        "className": "def",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 870,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "f577981565971b18",
+        "type": "OS",
+        "z": "84f8ac6cd53e32a0",
+        "name": "",
+        "x": 230,
+        "y": 200,
+        "wires": [
+            [
+                "fd0a6cc27781ff92",
+                "4609c2c8fe72143b"
+            ]
+        ]
+    },
+    {
+        "id": "056724b158ac72cb",
+        "type": "smooth",
+        "z": "84f8ac6cd53e32a0",
+        "name": "",
+        "property": "payload",
+        "action": "mean",
+        "count": "8",
+        "round": "",
+        "mult": "single",
+        "reduce": false,
+        "x": 520,
+        "y": 400,
+        "wires": [
+            [
+                "9b79c1ad7cdb9add"
+            ]
+        ]
+    },
+    {
+        "id": "97f92eee552ea64b",
+        "type": "function",
+        "z": "84f8ac6cd53e32a0",
+        "name": "vcache mgr version",
+        "func": "msg.payload = global.get(\"version\") || env.get(\"VCACHE_MGR_VERSION\") || '0.0.0';\nmsg.topic =\"version\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 80,
+        "wires": [
+            [
+                "66ed6f7fa80a65e4"
+            ]
+        ]
+    },
+    {
+        "id": "d55219de949686a9",
+        "type": "function",
+        "z": "84f8ac6cd53e32a0",
+        "name": "cpu use %",
+        "func": "msg.payload = parseFloat(msg.payload).toFixed(2);\nmsg.topic = \"cpu_use_pct\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 360,
+        "wires": [
+            [
+                "3fdec46b5a0d395d"
+            ]
+        ]
+    },
+    {
+        "id": "4609c2c8fe72143b",
+        "type": "function",
+        "z": "84f8ac6cd53e32a0",
+        "name": "cpu arch",
+        "func": "msg.payload = msg.payload.arch;\nmsg.topic = \"cpu_arch\";\nreturn msg;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a68058dd96e20e58",
+        "type": "inject",
+        "z": "84f8ac6cd53e32a0",
+        "name": "loop 5s",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.5",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 80,
+        "y": 40,
+        "wires": [
+            [
+                "f577981565971b18",
+                "f37e026c3700c25d",
+                "ead07793eb15dece",
+                "6073c7e107c31dfc",
+                "e8cb0c3e58e999ca",
+                "6bdfab9a6550cc9d",
+                "044158cc196c6b64",
+                "97f92eee552ea64b"
+            ]
+        ]
+    },
+    {
+        "id": "044158cc196c6b64",
+        "type": "Uptime",
+        "z": "84f8ac6cd53e32a0",
+        "name": "",
+        "x": 240,
+        "y": 120,
+        "wires": [
+            [
+                "6ab7e1e9f4227464",
+                "5eb9a7e4910f3538"
+            ]
+        ]
+    },
+    {
+        "id": "411b1173ce5f2e46",
+        "type": "ui_chart",
+        "z": "84f8ac6cd53e32a0",
+        "name": "Disk Historic",
+        "group": "a60c456977c4f620",
+        "order": 18,
+        "width": 5,
+        "height": 3,
+        "label": "",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "",
+        "removeOlder": "3",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 890,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5eb9a7e4910f3538",
+        "type": "debug",
+        "z": "84f8ac6cd53e32a0",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 540,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "d6de0e90e9a74a19",
+        "type": "ui_chart",
+        "z": "84f8ac6cd53e32a0",
+        "name": "RAM Historic",
+        "group": "a60c456977c4f620",
+        "order": 17,
+        "width": 5,
+        "height": 3,
+        "label": "",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "",
+        "removeOlder": "3",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 890,
+        "y": 580,
+        "wires": [
             []
         ]
     }

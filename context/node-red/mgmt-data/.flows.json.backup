@@ -1301,26 +1301,6 @@
         "className": ""
     },
     {
-        "id": "7ce2b6fdc15cf765",
-        "type": "ui_spacer",
-        "z": "11df8122a3459712",
-        "name": "spacer",
-        "group": "9f98ad8fa2960050",
-        "order": 1,
-        "width": 2,
-        "height": 1
-    },
-    {
-        "id": "65c6c850bd576382",
-        "type": "ui_spacer",
-        "z": "11df8122a3459712",
-        "name": "spacer",
-        "group": "9f98ad8fa2960050",
-        "order": 4,
-        "width": 8,
-        "height": 1
-    },
-    {
         "id": "90adafdb577e8dde",
         "type": "ui_spacer",
         "z": "11df8122a3459712",
@@ -2432,7 +2412,7 @@
         "id": "28e546a9e90ffb1f",
         "type": "file in",
         "z": "953eb73365d84859",
-        "name": "vcache.version",
+        "name": "vcache-mgr.version",
         "filename": "/var/run/vcache-mgr.version",
         "filenameType": "str",
         "format": "utf8",
@@ -2440,7 +2420,7 @@
         "sendError": false,
         "encoding": "none",
         "allProps": false,
-        "x": 520,
+        "x": 530,
         "y": 180,
         "wires": [
             [
@@ -7212,8 +7192,7 @@
         "y": 120,
         "wires": [
             [
-                "6ab7e1e9f4227464",
-                "5eb9a7e4910f3538"
+                "6ab7e1e9f4227464"
             ]
         ]
     },
@@ -7260,23 +7239,6 @@
         "wires": [
             []
         ]
-    },
-    {
-        "id": "5eb9a7e4910f3538",
-        "type": "debug",
-        "z": "84f8ac6cd53e32a0",
-        "name": "debug 2",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 540,
-        "y": 180,
-        "wires": []
     },
     {
         "id": "d6de0e90e9a74a19",

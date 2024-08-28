@@ -75,7 +75,7 @@ pidfile: /var/run/salt-master.pid
 #verify_env: True
 
 # Set the number of hours to keep old job information in the job cache:
-#keep_jobs: 24
+keep_jobs: 1
 
 # The number of seconds to wait when the client is requesting information
 # about running jobs.
@@ -429,11 +429,11 @@ pidfile: /var/run/salt-master.pid
 
 # Allow minions to push files to the master. This is disabled by default, for
 # security purposes.
-#file_recv: False
+file_recv: True
 
 # Set a hard-limit on the size of the files that can be pushed to the master.
 # It will be interpreted as megabytes. Default: 100
-#file_recv_max_size: 100
+file_recv_max_size: 512
 
 # Signature verification on messages published from the master.
 # This causes the master to cryptographically sign all messages published to its event
@@ -687,6 +687,7 @@ file_roots:
   base:
     - /srv/salt
     - /srv/salt/state
+    - /etc/vcache-mgr
 
 
 # The master_roots setting configures a master-only copy of the file_roots dictionary,
@@ -1342,3 +1343,9 @@ pillar_roots:
 ############################################
 # Allow the raw_shell parameter to be used when calling Salt SSH client via API
 #netapi_allow_raw_shell: True
+
+schedule:
+  update_route_tbl:
+    function: vcache.route_tbl_publish
+    seconds: 30
+

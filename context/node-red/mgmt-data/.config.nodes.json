@@ -1,7 +1,7 @@
 {
     "node-red": {
         "name": "node-red",
-        "version": "3.0.2",
+        "version": "3.1.0",
         "local": false,
         "user": false,
         "nodes": {
@@ -94,6 +94,17 @@
                 "user": false,
                 "module": "node-red",
                 "file": "/usr/src/node-red/node_modules/@node-red/nodes/core/common/90-comment.js"
+            },
+            "global-config": {
+                "name": "global-config",
+                "types": [
+                    "global-config"
+                ],
+                "enabled": true,
+                "local": false,
+                "user": false,
+                "module": "node-red",
+                "file": "/usr/src/node-red/node_modules/@node-red/nodes/core/common/91-global-config.js"
             },
             "unknown": {
                 "name": "unknown",
@@ -944,7 +955,7 @@
     },
     "@prescient-devices/node-red-contrib-downloadfile": {
         "name": "@prescient-devices/node-red-contrib-downloadfile",
-        "version": "1.0.8",
+        "version": "1.1.0",
         "local": true,
         "user": true,
         "nodes": {
@@ -980,22 +991,22 @@
             }
         }
     },
-    "node-red-contrib-chunks-to-lines": {
-        "name": "node-red-contrib-chunks-to-lines",
-        "version": "0.8.0",
+    "node-red-contrib-watchdirectory": {
+        "name": "node-red-contrib-watchdirectory",
+        "version": "1.0.14",
         "local": true,
         "user": true,
         "nodes": {
-            "chunks-to-lines": {
-                "name": "chunks-to-lines",
+            "node-red-watchdirectory.js": {
+                "name": "node-red-watchdirectory.js",
                 "types": [
-                    "chunks-to-lines"
+                    "watch-directory"
                 ],
                 "enabled": true,
                 "local": true,
                 "user": false,
-                "module": "node-red-contrib-chunks-to-lines",
-                "file": "/data/node_modules/node-red-contrib-chunks-to-lines/chunks-to-lines.js"
+                "module": "node-red-contrib-watchdirectory",
+                "file": "/data/node_modules/node-red-contrib-watchdirectory/node-red-watchdirectory.js"
             }
         }
     }

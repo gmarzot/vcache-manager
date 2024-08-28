@@ -4,12 +4,12 @@
     "version": "0.0.1",
     "private": true,
     "dependencies": {
-        "@prescient-devices/node-red-contrib-downloadfile": "~1.0.8",
+        "@prescient-devices/node-red-contrib-downloadfile": "~1.1.0",
         "@prescient-devices/node-red-contrib-promptinput": "~1.0.7",
         "clone": "^2.1.2",
-        "node-red-contrib-chunks-to-lines": "~0.8.0",
         "node-red-contrib-ui-contextmenu": "~2.0.1",
         "node-red-contrib-ui-upload": "~0.8.0",
+        "node-red-contrib-watchdirectory": "~1.0.14",
         "node-red-node-daemon": "~0.6.0",
         "node-red-node-ui-table": "~0.4.3"
     }

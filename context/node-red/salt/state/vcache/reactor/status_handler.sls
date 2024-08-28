@@ -11,8 +11,12 @@ def init_redis():
     global rc
     if not redis or not isinstance(redis, redis.Redis):
         rc = redis.Redis(host='vcache_mgr_redis', port=6379)
-        log.warning(f"status_handler: reconnecting to redis")
+        log.debug(f"status_handler: reconnecting to redis")
     return rc
+
+
+ts_data = ["cache_eff_pct", "client_bw", "upstream_bw"]
+
 
 def run():
     """
@@ -21,17 +25,16 @@ def run():
     if data is None:
         log.error("handle_status_beacon: null event")
         return None
-
+    
     if (not isinstance(data, dict)):
         log.error("status_handler: data not a dict")
         return None
 
     node = data.get('id', '')
     uuid = data.get('uuid', '')
-
     log.debug(f"status_handler: processing event from {node}")
     rc = init_redis()
-
+        
     node_keys = rc.keys(f"vcache_node:{node}:*")
     uuid_keys = rc.keys(f"vcache_node:*:{uuid}")
     node_key = f"vcache_node:{node}:{uuid}"
@@ -42,7 +45,8 @@ def run():
                 log.warning(f"status_handler: deleting conflicting key: {key} ({node_key})")
                 pipe.delete(key)
         pipe.execute()
-
+    
     rc.hmset(node_key, data)
 
     return {}
+

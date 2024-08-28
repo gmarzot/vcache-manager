@@ -34,6 +34,8 @@ module.exports = function(RED) {
         function inputlistener(msg) {
             if (msg != null) {
                 if (msg.hasOwnProperty("stop")) {
+                    node.warn("stopping daemon");
+                    console.log("stopping daemon");
                     node.stopped = true;
                     if (node.running) {
                         node.child.kill(node.closer);

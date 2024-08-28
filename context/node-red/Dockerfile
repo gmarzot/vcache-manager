@@ -33,6 +33,7 @@ USER root
 RUN apk add bash
 RUN apk add perl
 RUN apk add gettext
+RUN apk add zip
 
 RUN apk add salt-master
 COPY ./node-red/salt /srv/salt

@@ -860,7 +860,7 @@
     },
     "node-red-contrib-uuid": {
         "name": "node-red-contrib-uuid",
-        "version": "0.0.4",
+        "version": "0.0.4-rc-1",
         "local": false,
         "user": false,
         "nodes": {

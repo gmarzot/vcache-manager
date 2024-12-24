@@ -2340,7 +2340,7 @@
         "field": "payload",
         "fieldType": "msg",
         "x": 510,
-        "y": 140,
+        "y": 120,
         "wires": [
             [
                 "51ab9183e6c445ee",
@@ -2406,7 +2406,9 @@
             [
                 "28e546a9e90ffb1f"
             ],
-            []
+            [
+                "fc81090b71c2f79e"
+            ]
         ]
     },
     {
@@ -2416,6 +2418,7 @@
         "name": "set global version",
         "func": "global.set(\"version\", msg.payload);\nreturn msg;",
         "outputs": 1,
+        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -2423,7 +2426,9 @@
         "x": 770,
         "y": 180,
         "wires": [
-            []
+            [
+                "ab8b7a155a8d2732"
+            ]
         ]
     },
     {
@@ -2439,7 +2444,7 @@
         "encoding": "none",
         "allProps": false,
         "x": 530,
-        "y": 180,
+        "y": 160,
         "wires": [
             [
                 "05bef2ebd6355241"
@@ -2453,6 +2458,7 @@
         "name": "UUID (object)",
         "func": "msg.payload = { \"uuid\": msg.payload.replace(/\\n+$/, '')};\nreturn msg;",
         "outputs": 1,
+        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -2478,7 +2484,7 @@
         "encoding": "none",
         "allProps": false,
         "x": 520,
-        "y": 100,
+        "y": 80,
         "wires": [
             [
                 "03470a367efdaf2e"
@@ -2494,7 +2500,7 @@
         "name": "UUID (out)",
         "key": "vcache_mgr",
         "structtype": "hash",
-        "x": 950,
+        "x": 970,
         "y": 100,
         "wires": []
     },
@@ -3066,9 +3072,63 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1020,
+        "x": 960,
         "y": 280,
         "wires": []
+    },
+    {
+        "id": "ab8b7a155a8d2732",
+        "type": "debug",
+        "z": "953eb73365d84859",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 960,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "9d6db01a0a361b12",
+        "type": "file",
+        "z": "953eb73365d84859",
+        "name": "vcache-mgr.version",
+        "filename": "/var/run/vcache-mgr.version",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "utf8",
+        "x": 770,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fc81090b71c2f79e",
+        "type": "function",
+        "z": "953eb73365d84859",
+        "name": "gen version",
+        "func": "msg.payload = env.get(\"VCACHE_MGR_VERSION\") || '0.0.0';\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 510,
+        "y": 200,
+        "wires": [
+            [
+                "05bef2ebd6355241",
+                "9d6db01a0a361b12"
+            ]
+        ]
     },
     {
         "id": "50f9790b.49c718",
@@ -4560,12 +4620,8 @@
         "x": 570,
         "y": 100,
         "wires": [
-            [
-                "c06b2ec06df08746"
-            ],
-            [
-                "c06b2ec06df08746"
-            ],
+            [],
+            [],
             [
                 "263db5ed3496c07b"
             ]
@@ -4658,23 +4714,6 @@
                 "48b274f862eab375"
             ]
         ]
-    },
-    {
-        "id": "c06b2ec06df08746",
-        "type": "debug",
-        "z": "26063e3cce767688",
-        "name": "debug 1",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 860,
-        "y": 40,
-        "wires": []
     },
     {
         "id": "b1d1fd628d350803",

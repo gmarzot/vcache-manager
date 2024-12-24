@@ -41,10 +41,10 @@ COPY ./node-red/etc/salt/master /etc/salt/master
 COPY ./node-red/etc/salt/reactor.conf /etc/salt/master.d/reactor.conf
 VOLUME /etc/salt
 
-RUN apk add py3-pip py3-numpy py3-pandas py3-scikit-learn py3-pycryptodome
-#RUN apk add py3-pip py3-numpy py3-pandas py3-scikit-learn
-RUN pip install contextvars
-RUN pip install redis
+RUN apk add py3-pip py3-numpy py3-pandas py3-scikit-learn py3-cryptography
+RUN pip install --break-system-packages 'pycryptodome>=3.9.8'
+RUN pip install --break-system-packages contextvars
+RUN pip install --break-system-packages redis
 RUN apk add redis
 
 RUN apk add logrotate

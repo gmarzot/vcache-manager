@@ -35,7 +35,7 @@ def validate(config):
     return True, "Valid beacon configuration"
 
 
-def gen_vcache_staus_data():
+def gen_vcache_status_data():
     hostname = salt.utils.network.get_fqhostname()
     data = {
         "bw_saved": str(random.randint(10000, 10000000)),

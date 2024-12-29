@@ -128,7 +128,7 @@ jobs:
         echo "Checking running containers:"
         docker ps
         echo "Testing health endpoint:"
-        health=$(curl -m 5 -k -s https://localhost:8443/health)
+        health=$(curl -m 5 -k -s https://localhost:9443/health)
         echo "Health response: $health ($?)"
         if ! echo "$health" | jq -e '.status == "up"' > /dev/null; then
           echo "Health Check Failed: Status not 'up'"

@@ -55,7 +55,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ${{ env.REGISTRY }}/${{ env.OWNER }}/vcache-${{ matrix.image }}
+          images: ${{ env.REGISTRY }}/${{ env.OWNER }}/vcache-mgr-${{ matrix.image }}
           tags: |
             type=ref,event=tag
             type=raw,value=${{ steps.get_version.outputs.version }},enable=${{ github.event_name == 'workflow_dispatch' }}

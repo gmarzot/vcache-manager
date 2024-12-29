@@ -62,15 +62,11 @@ jobs:
         mkdir -p context/nginx/etc/nginx/pki
         cd context/nginx/etc/nginx/pki
         openssl req -x509 -newkey rsa:4096 -sha256 -days 365 -nodes \
-          -keyout cache-cert.key -out cache-cert.crt \
+          -keyout vcache-mgr-cert.key -out vcache-mgr-cert.crt \
           -subj "/CN=localhost" \
           -addext "subjectAltName=DNS:test.gh.com,DNS:live-ak.vimeocdn.com,DNS:ontime.demo.vivoh.com" \
           -addext "keyUsage=digitalSignature,keyEncipherment" \
           -addext "extendedKeyUsage=serverAuth"
-        cp cache-cert.key live-ak.vimeocdn.com.key
-        cp cache-cert.key ontime.demo.vivoh.com.key
-        cp cache-cert.crt live-ak.vimeocdn.com.crt
-        cp cache-cert.crt ontime.demo.vivoh.com.crt
 
     - name: Compose Build
       run: docker-compose build --no-cache 2>&1 | tee compose-build.log
@@ -143,9 +139,7 @@ jobs:
       if: always()
       run: |
         mkdir -p logs
-        docker cp vcache_mgr_agent:/var/log-fe logs/frontend
-        docker cp vcache_mgr_agent:/var/log-be logs/backend
-        docker cp vcache_mgr_agent:/var/log logs/system
+        docker cp vcache_mgr:/var/log logs/
       
     - name: Upload Logs
       if: always()
@@ -157,9 +151,4 @@ jobs:
 
     - name: Compose Down
       if: always()
-      run: docker-compose down 2>&1 | tee compose-down.log
-    - name: Upload Compose Down Logs
-      uses: actions/upload-artifact@v3
-      with:
-        name: compose-down-${{ matrix.config.os }}.log
-        path: compose-down.log
+      run: docker-compose down

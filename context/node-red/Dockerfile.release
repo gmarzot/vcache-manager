@@ -21,8 +21,8 @@ RUN npm install node-red-contrib-ui-upload
 RUN npm install "@prescient-devices/node-red-contrib-downloadfile"
 
 # uncomment the following 2 lines for production
-#COPY ./node-red/mgmt-data /data
-#VOLUME /data
+COPY ./node-red/mgmt-data /data
+VOLUME /data
 COPY ./node-red/daemon.js /usr/src/node-red/node_modules/node-red-node-daemon/daemon.js
 
 COPY ./node-red/etc/vcache-mgr /etc/vcache-mgr

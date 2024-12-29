@@ -13,7 +13,12 @@
                 "view-show-welcome-tours": true
             },
             "tours": {
-                "welcome": "3.0.2"
+                "welcome": "3.1.0"
+            },
+            "dialog": {
+                "export": {
+                    "pretty": true
+                }
             }
         },
         "debug": {
@@ -25,7 +30,8 @@
                 "28c64c0a77dfd933",
                 "0ec87ff34a660692",
                 "0f61c07cc7630837",
-                "3c7c3eadaffd6355"
+                "3c7c3eadaffd6355",
+                "fa49c3ce35cbcdb2"
             ]
         },
         "menu-menu-item-sidebar": true

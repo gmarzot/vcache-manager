@@ -19,7 +19,7 @@ else
 fi
 
 if [[ -e /etc/vcache/vcache-mgr.version ]]; then
-	echo "copying vcache.version to /var/run"
+	echo "copying vcache-mgr.version to /var/run"
 	cp /etc/vcache/vcache-mgr.version /var/run/
 fi
 

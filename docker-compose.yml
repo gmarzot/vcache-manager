@@ -17,7 +17,7 @@ services:
     networks:
       - vcache_mgr_net
     environment:
-      - VCACHE_MGR_VERSION=${VCACHE_VERSION}
+      - VCACHE_MGR_VERSION=${VCACHE_MGR_VERSION}
       - VCACHE_MGR_HOSTNAME=${VCACHE_MGR_HOSTNAME}
     ports:
       - 4505:4505

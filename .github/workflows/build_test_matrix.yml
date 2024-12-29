@@ -81,15 +81,15 @@ jobs:
 #   uses: mxschmitt/action-tmate@v3
 #   timeout-minutes: 30
 
-    - name: Set Environment
-      run: |
-        cat > .env << EOF
-        VCACHE_MGR_HOSTNAME=test.gh.com
-        VCACHE_MGR_VERSION=$(git describe)
-        EOF
 
     - name: Compose Up
-      run: docker-compose --env-file .env up -d --quiet-pull 2>&1 | tee compose-up.log
+      run: |
+        VERSION=$(git describe)
+        cat > .env << EOF
+        VCACHE_MGR_HOSTNAME=test.gh.com
+        VCACHE_MGR_VERSION=$VERSION
+        EOF
+        docker-compose up -d --quiet-pull 2>&1 | tee compose-up.log
     - name: Upload Compose Up Logs
       if: always()
       uses: actions/upload-artifact@v3
